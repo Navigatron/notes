@@ -1,123 +1,83 @@
 <!DOCTYPE html>
-<!--
-NEUTRALS
-lighter: #f6f0ed
-darker: #d4d2d5
-dark: #353a47
-ACCENT
-light: #cae5ff
-dark: #5d4954
--->
+
 <html>
 <head>
-	<style>
-	html{height:100%;}
-	#header{
-		background-color: #353a47;
-		z-index: 1;
-		color: #f6f0ed;
-		padding: 5px;
-		box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.24);
-		min-width: 540px;
-	}
-	#header h2{margin:0px;}
-	body{background-color: #d4d2d5;height: 100%;line-height: 1.4; font-size: 18px;}
-	#content{
-		background-color: #f6f0ed;
-		color: #353a47;
-		margin-left: 3%;
-		margin-right: 3%;
-		max-width: 50%;
-		margin-bottom: 30px;
-		padding: 1px 20px;
-		box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.24);
-		min-width: 452px;
-	}
-	#content h2{margin: 0px; margin-top:18px;line-height:1.1;}
-	#content hr{margin: 3px 0px; max-width: 70%;}
-	table {
-	    border-collapse: collapse;
-		border: 1px solid #353a47;
-		margin: 18px 0px;
-	}
-
-	table, th, td {
-	    border-left: 1px solid #353a47;
-	}
-	th, td {
-	    padding: 5px;
-	    text-align: left;
-	}
-	th{
-	    background-color: #353a47;
-		color: #f6f0ed;
-	}
-	tr:nth-child(even) {background-color: #d4d2d5}
-	.notop{margin-top: 0px;}
-	</style>
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 	<!--Header-->
-	<div id='header'>
+	<header id='header'>
 		<h2>Ethan Witherington's Eagle Scout Project</h2>
-	</div>
+	</header>
 	<!--Content-->
 	<div id='content'>
-		<p>
+		<section>
+			<p>
 				<b>Hey!</b> Thanks for considering helping out.
-			All are welcome - bring the family, bring scout/non-scout friends, bring the dog.
-			This site contains the schedule, what to bring, and what we'll be doing on each day.
-			To contact me, please reply to the original email -
-			I'd prefer to not put an email or phone number on this public website.
-		</p>
-		<h2>Schedule</h2>
-		<hr/>
-		<table>
-			<tr>
-				<th>Date</th><th>Start Time</th><th>End Time</th>
-			</tr>
-			<tr>
-				<td>Thursday, Aug. 4th</td><td>6:30pm</td><td>9:30pm</td>
-			</tr>
-			<tr>
-				<td>Friday, Aug. 5th</td><td>6:30pm</td><td>9:30pm</td>
-			</tr>
-			<tr>
-				<td>Saturday, Aug. 6th</td><td>9:00am</td><td>4:00pm</td>
-			</tr>
-			<tr>
-				<td>Sunday, Aug. 7th</td><td>9:00am</td><td>3:00pm</td>
-			</tr>
-		</table>
-		<h2>What to Bring</h2>
-		<hr/>
-		<p>
+				All are welcome - bring the family, bring scout/non-scout friends, bring the dog.
+				This site contains the schedule, what to bring, and what we'll be doing on each day.
+				To contact me, please reply to the original email -
+				I'd prefer to not put an email or phone number on this public website.
+			</p>
+		</section>
+		<section>
+			<header>
+				<h2>Schedule</h2>
+				<hr/>
+			</header>
+			<table>
+				<tr>
+					<th>Date</th><th>Start Time</th><th>End Time</th>
+				</tr>
+				<tr>
+					<td>Thursday, Aug. 4th</td><td>6:30pm</td><td>9:30pm</td>
+				</tr>
+				<tr>
+					<td>Friday, Aug. 5th</td><td>6:30pm</td><td>9:30pm</td>
+				</tr>
+				<tr>
+					<td>Saturday, Aug. 6th</td><td>9:00am</td><td>4:00pm</td>
+				</tr>
+				<tr>
+					<td>Sunday, Aug. 7th</td><td>9:00am</td><td>3:00pm</td>
+				</tr>
+			</table>
+		</section>
+		<section>
+			<header>
+				<h2>What to Bring</h2>
+				<hr/>
+			</header>
 			<ul>
 				<li>Other People - children, adults, everybody. We need as many people as we can get.</li>
 				<li>Water</li>
 				<li>Eye protection, if you have it. We have some, but not a lot.</li>
 			</ul>
-		</p>
-		<h2>Itinerary</h2>
-		<hr/>
-		<p>
-			<b>Thursday</b>
+		</section>
+		<section>
+			<header>
+				<h2>Itinerary</h2>
+				<hr/>
+			</header>
+			<p>
+				<b>Thursday</b>
+			</p>
 			<ul>
 				<li>Cut door frames (4)</li>
 				<li>Cut grooves in outer door frames (2)</li>
 				<li>Cut front/top panel (2)</li>
 				<li>Possibly begin assembly</li>
 			</ul>
-		</p>
-		<p>
-			<b>Friday</b> - Activites to be determined.
-		</p>
-		<p>
-			<b>Saturday</b> - Activites to be determined.
-		</p>
-		<p>
-			<b>Sunday</b> - Activites to be determined.
-		</p>
+			<p>
+				<b>Friday</b> - Activites to be determined.
+			</p>
+			<p>
+				<b>Saturday</b> - Activites to be determined.
+			</p>
+			<p>
+				<b>Sunday</b> - Activites to be determined.
+			</p>
+		</section>
 	<div>
 </body>
 </html>
