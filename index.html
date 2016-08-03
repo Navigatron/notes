@@ -12,7 +12,17 @@ dark: #5d4954
 <head>
 	<style>
 	html{height:100%;}
-	#header{background-color: #353a47;position: absolute;z-index: 1;width: 100%; color: #d4d2d5; padding: 5px}
+	#header{
+		background-color: #353a47;
+		position: fixed;
+		top: 0px;
+		left: 0px;
+		z-index: 1;
+		width: 100%;
+		color: #d4d2d5;
+		padding: 5px
+		box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.24);
+	}
 	#header h2{margin:0px;}
 	body{background-color: #d4d2d5;height: 100%;}
 	#content{
