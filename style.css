@@ -81,3 +81,6 @@ h4{
 iframe{
     border: 1px solid #353a47 !important;/*Overrides google maps no-border code.*/
 }
+.counter{
+    margin-left: 3%;
+}
