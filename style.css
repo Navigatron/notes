@@ -35,13 +35,13 @@ body{
     max-width: 50%;
     margin-bottom: 30px;
     padding: 1px 20px;
-    padding-bottom: 18px;
+    padding-bottom: 36px;
     box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.24);
-    min-width: 452px;
+    min-width: 600px;
 }
 #content h2{
     margin: 0px;
-    margin-top:18px;
+    margin-top:36px;
     line-height:1.1;
 }
 #content hr{
@@ -77,4 +77,10 @@ h4{
     margin-top: 18px;
     margin-bottom: 0px;
     display: inline-block;
+}
+iframe{
+    border: 1px solid #353a47 !important;/*Overrides google maps no-border code.*/
+}
+hr + * {
+    margin-top: 3px;
 }
