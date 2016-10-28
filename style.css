@@ -1,86 +1,54 @@
-/*
-NEUTRALS
-lighter: #f6f0ed
-darker: #d4d2d5
-dark: #353a47
-ACCENT
-light: #cae5ff
-dark: #5d4954
-*/
-html{
-    height:100%;
+body {
+  padding-top: 51px;
 }
-#header{
-    background-color: #353a47;
-    z-index: 1;
-    color: #f6f0ed;
-    padding: 5px;
-    box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.24);
-    min-width: 540px;
+.text-center {
+  padding-top: 20px;
 }
-#header h2{
-    margin:0px;
+.col-xs-12 {
+  background-color: #fff;
 }
-body{
-    background-color: #d4d2d5;
-    height: 100%;
-    line-height: 1.4;
-    font-size: 18px;
+#sidebar {
+  height: 100%;
+  padding-right: 0;
+  padding-top: 20px;
 }
-#content{
-    background-color: #f6f0ed;
-    color: #353a47;
-    margin-left: 3%;
-    margin-right: 3%;
-    max-width: 50%;
-    margin-bottom: 30px;
-    padding: 1px 20px;
-    padding-bottom: 36px;
-    box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.24);
-    min-width: 600px;
+#sidebar .nav {
+  width: 95%;
 }
-#content h2{
-    margin: 0px;
-    margin-top:36px;
-    line-height:1.1;
+#sidebar li {
+  border:0 #f2f2f2 solid;
+  border-bottom-width:1px;
 }
-#content hr{
-    margin: 3px 0px;
-    max-width: 70%;
-}
-table {
-    border-collapse: collapse;
-    border: 1px solid #353a47;
-    margin: 0px;
-}
-table, th, td {
-    border-left: 1px solid #353a47;
-}
-th, td {
-    padding: 5px;
-    text-align: left;
-}
-th{
-    background-color: #353a47;
-    color: #f6f0ed;
-}
-tr:nth-child(even) {
-    background-color: #d4d2d5;
-}
-.notop{
-    margin-top: 0px;
-}
-ul{
-    margin: 0px;
-}
-h4{
-    margin-top: 18px;
-    margin-bottom: 0px;
-    display: inline-block;
-}
-iframe{
-    border: 1px solid #353a47 !important;/*Overrides google maps no-border code.*/
-}
-.counter{
-    margin-left: 3%;
+
+/* collapsed sidebar styles */
+@media screen and (max-width: 767px) {
+  .row-offcanvas {
+    position: relative;
+    -webkit-transition: all 0.25s ease-out;
+    -moz-transition: all 0.25s ease-out;
+    transition: all 0.25s ease-out;
+  }
+  .row-offcanvas-right
+  .sidebar-offcanvas {
+    right: -41.6%;
+  }
+
+  .row-offcanvas-left
+  .sidebar-offcanvas {
+    left: -41.6%;
+  }
+  .row-offcanvas-right.active {
+    right: 41.6%;
+  }
+  .row-offcanvas-left.active {
+    left: 41.6%;
+  }
+  .sidebar-offcanvas {
+    position: absolute;
+    top: 0;
+    width: 41.6%;
+  }
+  #sidebar {
+    padding-top:0;
+  }
 }

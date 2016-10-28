@@ -3,97 +3,78 @@
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<script src="js/bootstrap.min.js"></script>
 </head>
 <body>
-	<!--Header-->
-	<header id='header'>
-		<h2>(REDACTED)'s Eagle Scout Project (The Musical) Act II</h2>
-	</header>
-	<!--Content-->
-	<div id='content'>
-		<section id='intro'>
-			<p>
-				<i>Thank you reddit, for reminding me to remove my real name.
-				I've left the rest here for your amusement.</i>
-			</p>
-			<p>
-				<b>Hey!</b> Thanks for considering helping out.
-				All are welcome - bring the family, bring scout/non-scout friends, bring the dog.
-				This site contains the schedule, what to bring, where to go, and what we'll be doing on each day.
-				To contact me, please reply to the original email.
-			</p>
-		</section>
-		<section id='schedule'>
-			<header>
-				<h2>Schedule</h2>
-				<hr/>
-			</header>
-			<table>
-				<tr>
-					<th>Date</th><th>Start Time</th><th>End Time</th>
-				</tr>
-				<tr>
-					<td>Saturday, Aug. 20th</td><td>9:30am</td><td>completion (mid afternoon)</td>
-				</tr>
-				<tr>
-					<td>Sunday, Aug. 21th</td><td>TBD</td><td>TBD</td>
-				</tr>
-			</table>
-		</section>
-		<section id='whatToBring'>
-			<header>
-				<h2>What to Bring</h2>
-				<hr/>
-			</header>
-			<ul>
-				<li>Paint Brushes</li>
-				<li>Other People - children, adults, everybody. Especially adults.</li>
-				<li>Water</li>
-				<li>Eye protection, if you have it. We have some, but not a lot.</li>
-			</ul>
-		</section>
-		<section id='whereToGo'>
-			<header>
-				<h2>Where to Go</h2>
-				<hr/>
-			</header>
-			<p class='notop'>
-				1314 E Philadelphia Avenue.<br/>
-				The large Beige/Brown building behind the douglasville police department. Parking is available in
-				the police station parking lot, alongside the building, and adjacent to the nearbye basketball court.
-			</p>
-			<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3041.969974046325!2d-75.61210849685057!3d40.32082392128276!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c683dcfd4738d3%3A0x358f04c1dd4e2e84!2s1314+E+Philadelphia+Ave%2C+Gilbertsville%2C+PA+19525!5e0!3m2!1sen!2sus!4v1470274208529" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-		</section>
-		<section id='itinerary'>
-			<header>
-				<h2>Itinerary</h2>
-				<hr/>
-			</header>
-			<section id='itinerary-thursday'>
-				<header>
-					<h4 class='notop'>Saturday</h4>
-				</header>
-				<ul>
-					<li>Coat Two of Paint</li>
-					<li>Lunch, Song and dance, Ice cream?, paint drying</li>
-					<li>Final assembly</li>
-					<li>Really cool door latches</li>
-				</ul>
-			</section>
-			<section id='itinerary-friday'>
-				<header>
-					<h4>Sunday</h4> - Install day!
-				</header>
-				<ul>
-					<li>Take it all to the pool</li>
-					<li>Paint the post</li>
-					<li>Put the box on the post</li>
-					<li>Paint the post again</li>
-					<li>Song and dance, Ice cream?</li>
-				</ul>
-			</section>
-		</section>
-	</div>
+	<div class="page-container">
 
+		<!-- top navbar -->
+	    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	       <div class="container">
+	    	<div class="navbar-header">
+	           <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target=".sidebar-nav">
+	             <span class="icon-bar"></span>
+	             <span class="icon-bar"></span>
+	             <span class="icon-bar"></span>
+	           </button>
+	           <a class="navbar-brand" href="#">Project Name</a>
+	    	</div>
+	       </div>
+	    </div>
+
+	    <div class="container">
+	      <div class="row row-offcanvas row-offcanvas-left">
+
+	        <!-- sidebar -->
+	        <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+	            <ul class="nav">
+	              <li class="active"><a href="#">Home</a></li>
+	              <li><a href="#">Link 1</a></li>
+	              <li><a href="#">Link 2</a></li>
+	              <li><a href="#">Link 3</a></li>
+	            </ul>
+	        </div>
+
+	        <!-- main area -->
+	        <div class="col-xs-12 col-sm-9">
+	          <h1>Shrink Width to Collapse Sidebar</h1>
+	          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus in nisi eu arcu tempus vehicula.
+	            Nulla faucibus cursus metus in sagittis. Nunc elit leo, imperdiet in ligula in, euismod varius est.
+	            Aenean pellentesque lorem a porttitor placerat. Vestibulum placerat nunc ac rutrum fringilla. Donec
+	            arcu leo, tempus adipiscing volutpat id, congue in purus. Pellentesque scelerisque mattis nibh vel
+	            semper. Sed a risus purus. Fusce pulvinar, velit eget rhoncus facilisis, enim elit vulputate nisl, a
+	            euismod diam metus eu enim. Nullam congue justo vitae justo accumsan, sit amet malesuada nulla sagittis.
+	            Nam neque tellus, tristique in est vel, sagittis congue turpis. Aliquam nulla lacus, laoreet dapibus
+	            odio vitae, posuere volutpat magna. Nam pulvinar lacus in sapien feugiat, sit amet vestibulum enim
+	            eleifend. Integer sit amet ante auctor, lacinia sem quis, consectetur nulla.</p>
+
+	          <p>Vestibulum porttitor massa eget pellentesque eleifend. Suspendisse tempor, nisi eu placerat auctor,
+	            est erat tempus neque, pellentesque venenatis eros lorem vel quam. Nulla luctus malesuada porttitor.
+	            Fusce risus mi, luctus scelerisque hendrerit feugiat, volutpat gravida nisi. Quisque facilisis risus
+	            in lacus sagittis malesuada. Suspendisse non purus diam. Nunc commodo felis sit amet tortor
+	            adipiscing varius. Fusce commodo nulla quis fermentum hendrerit. Donec vulputate, tellus sed
+	            venenatis sodales, purus nibh ullamcorper quam, sit amet tristique justo velit molestie lorem.</p>
+
+	          <p>Fusce sollicitudin lacus lacinia mi tincidunt ullamcorper. Aenean velit ipsum, vestibulum nec
+	            tincidunt eu, lobortis vitae erat. Nullam ultricies fringilla ultricies. Sed euismod nibh quis
+	            tincidunt dapibus. Nulla quam velit, porta sit amet felis eu, auctor fringilla elit. Donec
+	            convallis tincidunt nibh, quis pellentesque sapien condimentum a. Phasellus purus dui, rhoncus
+	            id suscipit id, ornare et sem. Duis aliquet posuere arcu a ornare. Pellentesque consequat libero
+	            id massa accumsan volutpat. Fusce a hendrerit lacus. Nam elementum ac eros eu porttitor.
+	            Phasellus enim mi, auctor sit amet luctus a, commodo fermentum arcu. In volutpat scelerisque
+	            quam, nec lacinia libero.</p>
+
+	          <p>Aliquam a lacinia orci, iaculis porttitor neque. Nullam cursus dolor tempus mauris posuere, eu
+	            scelerisque sem tincidunt. Praesent blandit sapien at sem pulvinar, vel egestas orci varius.
+	            Praesent vitae purus at ante aliquet luctus vel quis nibh. Mauris id nulla vitae est lacinia
+	            rhoncus a vel justo. Donec iaculis quis sapien vel molestie. Aliquam sed elementum orci.
+	            Vestibulum tristique tempor risus et malesuada. Sed eget ligula sed quam placerat dapibus.
+	            Integer accumsan ac massa at tempus.</p>
+
+	        </div><!-- /.col-xs-12 main -->
+	    </div><!--/.row-->
+	  </div><!--/.container-->
+	</div><!--/.page-container-->
 </body>
 </html>
