@@ -92,6 +92,16 @@ It's worth noting that $A^c$ is "A Complement", or the probability that a *won't
 
 ## Discrete Probability - PMF
 
+PMF = Probability Mass Function
 
+For Discrete Probability (drawing from a set), this is more of a lookup table than a function.
+
+Sum of two coin flips (heads=1, tails=0):
+
+event | $P(event)$
+--- | ---
+0 | $\frac {1} {4}$
+1 | $\frac {1} {2}$
+2 | $\frac {1} {4}$
 
 ## Expectation
