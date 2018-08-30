@@ -54,13 +54,31 @@ $$P(L = 7) = \frac {1} {30}$$
 
     $$P(\cup_{k}A_{k}) = \Sigma P(A_{k})$$
 
-*The last one is a little confusing.*
+The last one is a *little* confusing. Take the union of a bunch of things.
 
+> Combine all our little sets... INTO A **SUPER SET.**
 
+This is just the same as adding them all together - *As long as they don't overlap.*
 
 ## Conditional Probability
 
+$A$ and $B$ are possible events. They could both happen, or maybe only one. If B has already happened, What's the probability that A will also happen?
+
+The following is read as "The Probability of $A$ given $B$."
+
+$$P(A \| B)$$
+
+Think of this as this:
+
+$$\frac {The area of that bit where A and B overlap} {Total Area of B}$$
+
+In fancy notation, it looks like this:
+
+$$P(A \| B) = \frac {P(A \cap B)} {P(B)}$$
+
 ## Magic Formulas
+
+
 
 ## Discrete Probability - PMF
 
