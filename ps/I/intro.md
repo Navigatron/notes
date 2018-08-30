@@ -68,9 +68,7 @@ The following is read as "The Probability of $A$ given $B$."
 
 $$P(A \| B)$$
 
-Think of this as this:
-
-$$\frac {The area of that bit where A and B overlap} {Total Area of B}$$
+You're falling from the sky. You're going to land in B. What's the probability that you also land in A? Think of it as Overlap of A and B divided by total area of B.
 
 In fancy notation, it looks like this:
 
@@ -78,8 +76,22 @@ $$P(A \| B) = \frac {P(A \cap B)} {P(B)}$$
 
 ## Magic Formulas
 
+1. The Probability that something will happen Plus the Probability that it wont Equals One. It either will or wont, there's no other option.
 
+    $$P(A)+P(A^k)=1$$
+
+2. `A Union B` equals `A+B-overlap`. Don't count the overlap twice.
+
+    $$P(A \cup B) = P(A) + P(B) - P(A \cap B)$$
+
+3. If B is only defined in relation to A, use this.
+
+    $$P(B)=P(X\cap A)+P(X\cap A^c)$$
+
+It's worth noting that $A^c$ is "A Complement", or the probability that a *won't* happen, aka $1-P(A)$
 
 ## Discrete Probability - PMF
+
+
 
 ## Expectation
