@@ -5,4 +5,4 @@ mathjax: false
 
 I'm a college student. These are my notes.
 
-[Prob and Stats](./ps/index.md)
+[Probability and Staticstics I and II](./ps/index.md)
