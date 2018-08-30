@@ -43,16 +43,11 @@ $$P(L = 7) = \frac 1 30$$
 ## Axioms of Probability
 
 1. The Probability of an Event is Greater than or Equal to Zero.
-
-$$P(A) \geq 1$$
-
+    $$P(A) \geq 1$$
 2. The Probability of Everything is 1.
-
-$$P(\varepsilon) = 1$$
-
+    $$P(\varepsilon) = 1$$
 3. The probability of something in a group occurring, is equal to the sum of the probabilities of each thing.
-
-$$P()\cup_{k}A_{k}) = \SigmaP(A_{k})$$
+    $$P()\cup_{k}A_{k}) = \SigmaP(A_{k})$$
 
 *The last one is a little confusing.*
 
