@@ -15,7 +15,7 @@ A capital letter denotes a set. Sets are collections of... stuff.
 
 Below, the set $$A$$ contains some numbers.
 
-$$A = \{5, 10, 15, 20, 2\}$$
+$$ A = \{ 5, 10, 15, 20, 2 \} $$
 
 There are some symbols involved for operations.
 
