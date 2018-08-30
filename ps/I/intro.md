@@ -105,3 +105,37 @@ event | $P(event)$
 2 | $\frac {1} {4}$
 
 ## Expectation
+
+### Definition
+
+The Weighted average of all possible outcomes. The weights are the probabilities of the outcome.
+
+$$E(X)=\Sigma x*P(X=x)$$
+
+A function of a random variable evaluates to... a random variable. Fortunately, it's the same idea.
+
+$$E(g(X))=\Sigma g(x)\*P(X=x)$$
+
+What is $E(X^2)$? Think of it as $E(g(x))$, where $g(x)=x^2$
+
+$$E(X^2)=\Sigma x^2*P(X=x)$$
+
+### Mean
+
+The Mean is what you expect the results to be on average. This greek letter is pronounced "mew".
+
+$$\mu = E(X)$$
+
+### Variance
+
+Take each Data Point, find it's distance from the center. Square it. Find the expectation of that.
+
+Variance tells you how far data points will be, on average, from the mean.
+
+Hard but understandable:
+
+$$V(X)=E((X-\mu)^2)$$
+
+Simplified:
+
+$$V(X)=E(X^2)-(E(X))^2$$
