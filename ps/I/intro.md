@@ -110,15 +110,15 @@ event | $P(event)$
 
 The Weighted average of all possible outcomes. The weights are the probabilities of the outcome.
 
-$$E(X)=\Sigma x*P(X=x)$$
+$$E(X)=\Sigma (xP(X=x))$$
 
 A function of a random variable evaluates to... a random variable. Fortunately, it's the same idea.
 
-$$E(g(X))=\Sigma g(x)\*P(X=x)$$
+$$E(g(X))=\Sigma (g(x)P(X=x))$$
 
 What is $E(X^2)$? Think of it as $E(g(x))$, where $g(x)=x^2$
 
-$$E(X^2)=\Sigma x^2*P(X=x)$$
+$$E(X^2)=\Sigma (x^2*P(X=x))$$
 
 ### Mean
 
