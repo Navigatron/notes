@@ -4,4 +4,4 @@
 
 [AUG 30 - basics](./notes/AUG30.md)
 
-[SEP 04 - ](./notes/SEP04.md)
+[SEP 04 - Super Basic Chem](./notes/SEP04.md)
