@@ -2,4 +2,4 @@
 
 # Network Services
 
-[Lab1 - Secret Commands to make CentOS not terrible]()
+[Lab1 - Secret Commands to make CentOS not terrible](./lab1.md)

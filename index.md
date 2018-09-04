@@ -11,4 +11,6 @@ I'm a college student. These are my notes.
 
 [Concepts of Computer Systems](./content/cs/index.md)
 
+[Biology 1 Lecture](./content/bio/index.md)
+
 [Probability and Staticstics I and II](./content/ps/index.md)
