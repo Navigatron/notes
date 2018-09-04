@@ -1,4 +1,4 @@
-[up](./index.html)
+[up](../index.html)
 
 # August 29th - Abstract
 

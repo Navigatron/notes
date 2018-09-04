@@ -2,6 +2,6 @@
 
 # Biology 1
 
-[AUG 30 - basics](./AUG30.md)
+[AUG 30 - basics](./notes/AUG30.md)
 
-[SEP 04 - ](./SEP04.md)
+[SEP 04 - ](./notes/SEP04.md)

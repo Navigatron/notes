@@ -7,6 +7,8 @@ I'm a college student. These are my notes.
 
 ## Fall 2018
 
+[Intro to Environmental Studies](./content/envi/index.md)
+
 [Network Services](./content/ns/index.md)
 
 [Concepts of Computer Systems](./content/cs/index.md)

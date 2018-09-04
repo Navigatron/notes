@@ -1,3 +1,5 @@
+[up](../index.md)
+
 # Biology Lecture - Day 2
 
 - First Two graded homeworks due September 9th

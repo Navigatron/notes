@@ -1,7 +1,7 @@
 ---
 mathjax: true
 ---
-[up](./index.html)
+[up](../index.html)
 
 ### ISA
 
