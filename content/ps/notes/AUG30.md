@@ -77,11 +77,11 @@ E(\bar x) & = \mu
 \end{align}
 $$
 
-# How to show $\t$ is unbiased for $\theta$ (Or producing one if it isn't)
+# How to show $t$ is unbiased for $\theta$ (Or producing one if it isn't)
 
 Show that $E(t)=\theta$, typically by doing the following:
 
-$$E(t) = E(\text{definition of }t)&&
+$$E(t) = E(\text{definition of }t)$$
 
 Then, simplify the right hand side down to $a\theta$.
 
