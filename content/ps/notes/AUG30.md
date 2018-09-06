@@ -1,7 +1,7 @@
 ---
 mathjax: true
 ---
-[up](./index.md)
+[up](../index.md)
 
 # Properties of Expectation
 
