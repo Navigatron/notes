@@ -5,3 +5,5 @@
 [August 29th - Abstract](./notes/AUG29.md)
 
 [August 31st - CISC vs RISC](./notes/AUG31.md)
+
+[SEP 05 - Style and ALU Assembly](./notes/SEP05.md)
