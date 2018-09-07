@@ -16,3 +16,5 @@ I'm a college student. These are my notes.
 [Biology 1 Lecture](./content/bio/index.md)
 
 [Probability and Staticstics I and II](./content/ps/index.md)
+
+[How to Cook](./content/eat/index.md)
