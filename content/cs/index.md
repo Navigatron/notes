@@ -9,3 +9,5 @@
 [SEP 05 - Style and ALU Assembly](./notes/SEP05.md)
 
 [SEP 07 - Immediates and the Register Table](./notes/SEP07.md)
+
+[SEP 10 - More math, LI and MOVE](./notes/SEP10.md)
