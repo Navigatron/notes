@@ -7,3 +7,7 @@
 [SEP 05 - SSH](./notes/SEP05.md)
 
 [SEP 07 - Review IRS, kinda.](./notes/SEP07.md)
+
+SEP 12 - no notes, more irs basics
+
+SEP 14 - 

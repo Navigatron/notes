@@ -9,3 +9,5 @@
 [SEP 06 - Free Radicals and Water (but mostly water)](./notes/SEP06.md)
 
 [SEP 11 - Organic Macro-Molecules - Carbohydrates, Lipids, Proteins. (Now with Pictures!)](./notes/SEP11.md)
+
+[SEP 13 - organelles](./notes/SEP13.md)

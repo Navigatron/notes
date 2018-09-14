@@ -8,4 +8,8 @@
 
 [SEP 07 - Ocean Acidification, We're almost out of fish.](./notes/SEP07.md)
 
-[SEP 10 - ??](./notes/SEP10.md)
+[SEP 10 - Out of fish part II - a new hope](./notes/SEP10.md)
+
+[SEP 12 - Discussion, no notes.](./notes/SEP12.md)
+
+[SEP 14 - Environmental Principles](./notes/SEP14.md)

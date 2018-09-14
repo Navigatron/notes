@@ -6,6 +6,15 @@ mathjax: false
 
 # Probability and Statistics I & II
 
+So this section of notes is really a mess.
+
+I take my notes for these classes on paper, so it takes a lot of extra effort to transcribe
+to MathJax and individual topics for web publishing.
+
+Maybe I'll get around to it, maybe I wont.
+
+For here, WYSIWYG - what you see is what you get.
+
 ## Prob and Stats One
 
 [Groundwork and Discrete Probability](./notes-ps1/intro.md)

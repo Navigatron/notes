@@ -11,3 +11,5 @@
 [SEP 07 - Immediates and the Register Table](./notes/SEP07.md)
 
 [SEP 10 - More math, LI and MOVE](./notes/SEP10.md)
+
+[SEP 12 - Data Alignment, load and store, adress modes](./notes/SEP12.md)
