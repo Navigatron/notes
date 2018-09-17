@@ -13,3 +13,5 @@
 [SEP 12 - Discussion, no notes.](./notes/SEP12.md)
 
 [SEP 14 - Environmental Principles](./notes/SEP14.md)
+
+[SEP 17 - Biomes cont, Energy flow](./notes/SEP17.md)
