@@ -78,4 +78,4 @@ Go buy some ramen
 
 Dinner is made of 3 components: Starch, Protien, and Vegetable
 
-*Vegetable should be pronounced vee gee Table*
+*Vegetable should be pronounced VuJetaBull*
