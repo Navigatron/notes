@@ -6,18 +6,40 @@ mathjax: false
 
 # Probability and Statistics I & II
 
-So this section of notes is really a mess.
+I take/took my notes for these classes on paper. Getting them online is more work than
+for other classes.
 
-I take my notes for these classes on paper, so it takes a lot of extra effort to transcribe
-to MathJax and individual topics for web publishing.
+Expect infrequent updates. What you see is what you get.
 
-Maybe I'll get around to it, maybe I wont.
+## Prob and Stats Two
 
-For here, WYSIWYG - what you see is what you get.
+I've decided to organize the notes for this class by topic rather than by date.
 
-## Prob and Stats One
+- Point Estimation
+    - principles (Click AUG30 below)
+    - Proving Unbiasedness (Also under AUG30 below)
+    - Which Estimator to Use (Lowest Variance)
+    - Creating Estimators ()
+        - Method of Moments
+            - [principles](./notes/method_of_moments/principles.md)
+        - Maximum Likelihood
+            - [principles]
 
-[Groundwork and Discrete Probability](./notes-ps1/intro.md)
+
+
+## Misc
+
+This is the leftovers from a poor attempt at organization by date.
+
+### Prob and Stats Two
+
+[AUG 30 - Definitions and Point Estimation](./archive/notes/AUG30.md)
+
+[TODO - SEP 04 - Which Estimator to Use, Properties of Uniform Distribution](./archive/notes/SEP04.md)
+
+### Prob and Stats One
+
+[Groundwork and Discrete Probability](./archive/notes-ps1/intro.md)
 
 ```
 Haven't written these yet
@@ -28,8 +50,3 @@ Haven't written these yet
 
 [Linear Combinations, Samples, Confidence Intervals](./I/end.md)
 ```
-## Prob and Stats Two
-
-[AUG 30 - Definitions and Point Estimation](./notes/AUG30.md)
-
-[TODO - SEP 04 - Which Estimator to Use, Properties of Uniform Distribution](./notes/SEP04.md)
