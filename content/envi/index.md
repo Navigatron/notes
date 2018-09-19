@@ -10,8 +10,10 @@
 
 [SEP 10 - Out of fish part II - a new hope](./notes/SEP10.md)
 
-[SEP 12 - Discussion, no notes.](./notes/SEP12.md)
+SEP 12 - no notes - Discussion
 
 [SEP 14 - Environmental Principles](./notes/SEP14.md)
 
 [SEP 17 - Biomes cont, Energy flow](./notes/SEP17.md)
+
+SEP 19 - no notes - Wealth Inequality
