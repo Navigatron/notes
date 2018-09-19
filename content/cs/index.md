@@ -15,3 +15,5 @@
 [SEP 12 - Data Alignment, load and store, adress modes](./notes/SEP12.md)
 
 [SEP 17 - Instruction Encoding and Putting Constants into Registers](./notes/SEP17.md)
+
+[SEP 19 - Goto and Function Calls](./notes/SEP19.md)
