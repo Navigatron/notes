@@ -24,7 +24,7 @@ I've decided to organize the notes for this class by topic rather than by date.
             - [principles](./notes/method_of_moments/principles.md)
             - [example - exponential distro](./notes/method_of_moments/ex_exponential.md)
         - Maximum Likelihood Estimators (MLE)
-            - [principles]
+            - [principles](./notes/max_likelyhood_estimators/principles.md)
 
 
 
