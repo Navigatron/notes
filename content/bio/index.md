@@ -11,3 +11,7 @@
 [SEP 11 - Organic Macro-Molecules - Carbohydrates, Lipids, Proteins. (Now with Pictures!)](./notes/SEP11.md)
 
 [SEP 13 - organelles](./notes/SEP13.md)
+
+SEP 18 - No Notes - Exam 1
+
+[SEP 20 - The Plasma Membrane](./notes/SEP20.md)
