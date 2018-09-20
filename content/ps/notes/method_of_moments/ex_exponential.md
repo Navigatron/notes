@@ -26,13 +26,11 @@ Estimate $\lambda$ using the method of moments. Since there's only one parameter
 
 $$
 \begin {align}
-
-m_1 &= \mu _ 1 &&
-\bar x &= \mu &&
-\bar x &= \frac 1 \lambda &&
-\lambda &= \frac 1 {\bar x} &&
-\therefore \hat \lambda &= \frac 1 {\bar x} &&
-
+m_1 &= \mu _ 1 \\
+\bar x &= \mu \\
+\bar x &= \frac 1 \lambda \\
+\lambda &= \frac 1 {\bar x} \\
+\therefore \hat \lambda &= \frac 1 {\bar x} \\
 \end {align}
 $$
 

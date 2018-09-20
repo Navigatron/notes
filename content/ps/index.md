@@ -20,10 +20,10 @@ I've decided to organize the notes for this class by topic rather than by date.
     - Proving Unbiasedness (Also under AUG30 below)
     - Which Estimator to Use (Lowest Variance)
     - Creating Estimators ()
-        - Method of Moments
+        - Method of Moments (MoM)
             - [principles](./notes/method_of_moments/principles.md)
             - [example - exponential distro](./notes/method_of_moments/ex_exponential.md)
-        - Maximum Likelihood
+        - Maximum Likelihood Estimators (MLE)
             - [principles]
 
 
