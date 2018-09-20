@@ -22,7 +22,7 @@ f(x) = \theta X ^ {\theta - 1}
 $$
 
 $$
-L(\theta _ 1 , \theta _ 2 , ... \theta _ k ; x_1, x_2, ... x_n) = f(x_1) \dot f(x_2) \dot ... \dot f(x_n)
+L(\theta _ 1 , \theta _ 2 , ... \theta _ k ; x_1, x_2, ... x_n) = f(x_1) \cdot f(x_2) \cdot ... \cdot f(x_n)
 $$
 
 ## Process:
@@ -41,6 +41,6 @@ $$
 
 These are helpful.
 
-$ln(a\dot b)=ln(a)+ln(b)$
+$ln(a\cdot b)=ln(a)+ln(b)$
 
-$ln(a^b) = b\dot ln(a)$
+$ln(a^b) = b\cdot ln(a)$
