@@ -17,3 +17,5 @@
 [SEP 17 - Instruction Encoding and Putting Constants into Registers](./notes/SEP17.md)
 
 [SEP 19 - Goto and Function Calls](./notes/SEP19.md)
+
+[SEP 21 - Branch!](./notes/SEP21.md)

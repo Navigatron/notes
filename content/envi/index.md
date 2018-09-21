@@ -17,3 +17,5 @@ SEP 12 - no notes - Discussion
 [SEP 17 - Biomes cont, Energy flow](./notes/SEP17.md)
 
 SEP 19 - no notes - Wealth Inequality
+
+[SEP 21 - Here come the greenhouse gasses](./notes/SEP21.md)
