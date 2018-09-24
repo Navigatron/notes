@@ -2,6 +2,12 @@
 
 # Concepts of Computer Systems
 
+[Quick Reference - Instructions]
+
+[Quick Reference - Registers](./reference/registers.md)
+
+[Quick Reference - Strategies]
+
 [August 29th - Abstract](./notes/AUG29.md)
 
 [August 31st - CISC vs RISC](./notes/AUG31.md)
@@ -19,3 +25,5 @@
 [SEP 19 - Goto and Function Calls](./notes/SEP19.md)
 
 [SEP 21 - Branch!](./notes/SEP21.md)
+
+[SEP 24 - Do-While and Switch](./notes/SEP24.md)
