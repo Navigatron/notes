@@ -17,3 +17,5 @@ SEP 18 - No Notes - Exam 1
 [SEP 20 - The Plasma Membrane](./notes/SEP20.md)
 
 [SEP 25 - Energy, Enzymes.](./notes/SEP25.md)
+
+[SEP 27 - intro to intro to cellular respiration](./notes/SEP27.md)

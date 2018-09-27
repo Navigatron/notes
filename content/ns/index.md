@@ -8,6 +8,6 @@
 
 [SEP 07 - Review IRS, kinda.](./notes/SEP07.md)
 
-SEP 12 - no notes, more irs basics
+Lots of basics here, didn't really take notes.
 
-SEP 14 - 
+[SEP 26 - TCP half-teardown, Options, Timers.](./notes/SEP26.md)
