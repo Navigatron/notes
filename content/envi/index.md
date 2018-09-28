@@ -21,3 +21,5 @@ SEP 19 - no notes - Wealth Inequality
 [SEP 21 - Here come the greenhouse gasses](./notes/SEP21.md)
 
 SEP 26 - no notes - Chasing Coral day One
+
+SEP 28 - no notes - Chasing Coral day Two

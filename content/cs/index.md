@@ -27,3 +27,5 @@
 [SEP 21 - Branch!](./notes/SEP21.md)
 
 [SEP 24 - Do-While and Switch](./notes/SEP24.md)
+
+[SEP 28 - Using dot directives to build a switch data block](./notes/SEP28.md)
