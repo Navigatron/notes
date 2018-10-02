@@ -19,3 +19,5 @@ SEP 18 - No Notes - Exam 1
 [SEP 25 - Energy, Enzymes.](./notes/SEP25.md)
 
 [SEP 27 - intro to intro to cellular respiration](./notes/SEP27.md)
+
+[OCT 02 - Cellular respiration, photosynthesis teaser](./notes/OCT02.md)

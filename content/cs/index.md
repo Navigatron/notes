@@ -29,3 +29,5 @@
 [SEP 24 - Do-While and Switch](./notes/SEP24.md)
 
 [SEP 28 - Using dot directives to build a switch data block](./notes/SEP28.md)
+
+[OCT 01 - Dot directives and Data Structures](./notes/OCT01.md)
