@@ -21,3 +21,5 @@ SEP 18 - No Notes - Exam 1
 [SEP 27 - intro to intro to cellular respiration](./notes/SEP27.md)
 
 [OCT 02 - Cellular respiration, photosynthesis teaser](./notes/OCT02.md)
+
+[OCT 04 - Photosynthesis!](./notes/OCT04.md)
