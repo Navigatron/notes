@@ -31,3 +31,7 @@
 [SEP 28 - Using dot directives to build a switch data block](./notes/SEP28.md)
 
 [OCT 01 - Dot directives and Data Structures](./notes/OCT01.md)
+
+OCT 03 - Skipped for Career Fair - rumor says stack frames? Fortran structure?
+
+[OCT 05 - The Standard Stack Frame](./notes/OCT05.md)
