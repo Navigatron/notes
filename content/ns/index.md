@@ -11,3 +11,7 @@
 Lots of basics here, didn't really take notes.
 
 [SEP 26 - TCP half-teardown, Options, Timers.](./notes/SEP26.md)
+
+OCT 03 - No Notes - Skipped class for Career Fair
+
+[OCT 05 - very sparse notes on DHCP DORA process](./notes/OCT05.md)
