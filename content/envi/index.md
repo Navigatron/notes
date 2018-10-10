@@ -23,3 +23,11 @@ SEP 19 - no notes - Wealth Inequality
 SEP 26 - no notes - Chasing Coral day One
 
 SEP 28 - no notes - Chasing Coral day Two
+
+OCT 03 - no notes - Career Fair
+
+OCT 06 - no notes - No class? Alternate assignment
+
+OCT 08 - no notes - no class - Columbus day
+
+[OCT 10 - Air Pollution](./notes/OCT10.md)
