@@ -15,3 +15,7 @@ Lots of basics here, didn't really take notes.
 OCT 03 - No Notes - Skipped class for Career Fair
 
 [OCT 05 - very sparse notes on DHCP DORA process](./notes/OCT05.md)
+
+OCT 08 - no notes - Columbus Day
+
+[OCT 10 - more DHCP, relays and load balancing](./notes/OCT10.md)
