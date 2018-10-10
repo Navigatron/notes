@@ -35,3 +35,5 @@
 OCT 03 - Skipped for Career Fair - rumor says stack frames? Fortran structure?
 
 [OCT 05 - The Standard Stack Frame](./notes/OCT05.md)
+
+[OCT 10 - System Calls and Intro to IO](./notes/OCT10.md)
