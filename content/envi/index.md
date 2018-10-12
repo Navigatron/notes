@@ -31,3 +31,5 @@ OCT 06 - no notes - No class? Alternate assignment
 OCT 08 - no notes - no class - Columbus day
 
 [OCT 10 - Air Pollution](./notes/OCT10.md)
+
+[OCT 12 - Air Pollution](./notes/OCT12.md)
