@@ -39,3 +39,5 @@ OCT 03 - Skipped for Career Fair - rumor says stack frames? Fortran structure?
 [OCT 10 - System Calls and Intro to IO](./notes/OCT10.md)
 
 [OCT12 - DMA IO and some assembly](./notes/OCT12.md)
+
+[OCT 15 - The Asssembly Passes and the Linker](./notes/OCT15.md)
