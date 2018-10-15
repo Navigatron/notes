@@ -4,7 +4,7 @@
 
 [AUG 31 - Demographic Transition, Industrialization of a Country](./notes/AUG31.md)
 
-[SEP 05 - We are the problem and why](./notes/SEP05.ms)
+[SEP 05 - We are the problem and why](./notes/SEP05.md)
 
 [SEP 07 - Ocean Acidification, We're almost out of fish.](./notes/SEP07.md)
 
@@ -33,3 +33,5 @@ OCT 08 - no notes - no class - Columbus day
 [OCT 10 - Air Pollution](./notes/OCT10.md)
 
 [OCT 12 - Air Pollution](./notes/OCT12.md)
+
+[OCT 15 - CCL carbon fee proposal](./notes/OCT15.md)
