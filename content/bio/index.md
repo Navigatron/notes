@@ -23,3 +23,7 @@ SEP 18 - No Notes - Exam 1
 [OCT 02 - Cellular respiration, photosynthesis teaser](./notes/OCT02.md)
 
 [OCT 04 - Photosynthesis!](./notes/OCT04.md)
+
+I'm missing stuff here and I don't know what?
+
+[OCT 16 - Cellular Division, Project part 2 intro](./notes/OCT16.md)
