@@ -21,3 +21,5 @@ OCT 08 - no notes - Columbus Day
 [OCT 10 - more DHCP, relays and load balancing](./notes/OCT10.md)
 
 [OCT 12 - TCP Timers](./notes/OCT12.md)
+
+[My notes on Lab4](./lab4.md)
