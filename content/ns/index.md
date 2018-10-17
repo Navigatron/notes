@@ -23,3 +23,5 @@ OCT 08 - no notes - Columbus Day
 [OCT 12 - TCP Timers](./notes/OCT12.md)
 
 [My notes on Lab4](./lab4.md)
+
+[OCT 17 - TCP Flow and Error Control - these are some nice notes](./notes/OCT17.md)

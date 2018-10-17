@@ -35,3 +35,7 @@ OCT 08 - no notes - no class - Columbus day
 [OCT 12 - Air Pollution](./notes/OCT12.md)
 
 [OCT 15 - CCL carbon fee proposal](./notes/OCT15.md)
+
+[OCT 17 - gasland](./notes/OCT17.md)
+
+OCT 19 - no notes - no class
