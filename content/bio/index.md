@@ -27,3 +27,5 @@ SEP 18 - No Notes - Exam 1
 I'm missing stuff here and I don't know what?
 
 [OCT 16 - Cellular Division, Project part 2 intro](./notes/OCT16.md)
+
+[Oct 18 - Mitosis ish](./notes/OCT18.md)
