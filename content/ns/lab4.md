@@ -146,6 +146,112 @@ Linux | Client | Russet
 
 ### Configuration
 
+*Remember to Change the IP addresses to match your bench.*
+
+#### PRIMARY
+
+```
+# dhcpd.conf
+
+# option definitions common to all supported networks
+option domain-name "networkA.com";
+option domain-name-servers 8.8.8.8, 8.8.4.4;
+
+# Configure Failover
+# I named it alaskan to fit with the potato theme
+failover peer "alaskan" {
+	primary;						# This is the Primary server
+	address 10.150.12.2;			# This server's IP
+	port 321;						# The port we use to talk to Secondary
+	peer address 10.150.12.200;		# SECONDARY's IP
+	peer port 321;					# port Secondary uses to communicate with us
+	max-response-delay 60;			# I'm not sure from here down
+	max-unacked-updates 10;
+	mclt 3600;
+	split 128;
+	load balance max seconds 3;
+}
+
+# How long do leases last for?
+default-lease-time 120;
+max-lease-time 120;
+
+# If this DHCP server is the official DHCP server for the local
+# network, the authoritative directive should be uncommented.
+authoritative;
+
+# NOTE - Copy paste all lines below here into SECONDARY where it says to.
+
+# Network B subnet
+subnet 10.150.12.0 netmask 255.255.255.0 {
+	pool{
+		failover peer "alaskan";
+		# Note: remove "dynamic-bootp"
+		range 10.150.12.40 10.150.12.42;
+		range 10.150.12.46 10.150.12.60;
+	}
+	option broadcast-address 10.150.12.255;
+	option routers 10.150.12.254;
+}
+
+# Network A subnet
+subnet 10.150.11.0 netmask 255.255.255.0 {
+	pool{
+		failover peer "alaskan";
+		range 10.150.11.80 10.150.11.90;
+	}
+	option broadcast-address 10.150.11.255;
+	option routers 10.150.11.254;
+}
+
+# Reservation for 48
+host Russet {
+	hardware ethernet 00:0c:29:c7:60:58;
+	fixed-address 10.150.12.48;
+}
+
+```
+
+#### SECONDARY
+
+```
+# dhcpd.conf
+
+# option definitions common to all supported networks...
+option domain-name "networkB.com";
+option domain-name-servers 8.8.8.8, 8.8.4.4;
+
+
+# Secondary
+failover peer "alaskan" {
+	secondary;					# This is the backup
+	address 10.150.12.200;
+	port 321;
+	peer address 10.150.12.2;
+	peer port 321;
+	max-response-delay 60;
+	max-unacked-updates 10;
+	load balance max seconds 3;
+	# NOTE: There are lines in PRIMARY that aren't here.
+	# They cannot be here. This is correct.
+}
+
+default-lease-time 120;
+max-lease-time 120;
+
+# Use this to enble / disable dynamic dns updates globally.
+#ddns-update-style none;
+
+# If this DHCP server is the official DHCP server for the local
+# network, the authoritative directive should be uncommented.
+authoritative;
+
+# NOTE
+# Here, copy/paste the EXACT SAME subnet and host delcarations as in PRIMARY.
+
+```
+
+
 ### Allowing the failover servers to communicate
 
 #### Attempt 1 - Firewall Rules
@@ -254,9 +360,15 @@ If 10a hasn't told you to 'run the loop' yet, goto 10a.
 4. Extract all PRIMARY pcaps to flash drive
 5. Backup ALL vms used.
 
-# Time
+#### Celebrating
+1. Congrats, you're done with the lab!
+2. Good luck with the report.
 
-*God help you*
+---
+
+# Assorted bonus notes below this point
+
+*God help us*
 
 ## Lab
 
@@ -266,6 +378,9 @@ Class Lab 1 | Got signoff 1 | 2 hours | 2 hours
 Class Lab 2 | Not enough to get signoff 2 | 2 hours | 4 hours
 Oct 16th | up to act6, TA MIA though. | 6 hours | 10 hours
 Oct 18th | saving and restoring VMS killed DHCPD. Fixed that. | 2 hours | 12 hours
+Oct18th | Activity 6 | 2 Hours | 14 Hours
+
+Having your caffeine wear off in the middle of a work session is just a bad time.
 
 ## Lab Report
 
@@ -278,7 +393,7 @@ Haven't started yet, I'm guessing this will take 4 to 6 hours.
 - Unpack
 - Switch cables from DHCP to VLAN
 - Configure bench IPs as 71.1 and 72.1
-- Add mapped network drive
+- Add mapped network drives
 - Determine what VMs on network A
 - Copy those VMs to A
 - Determine what VMs on network B
