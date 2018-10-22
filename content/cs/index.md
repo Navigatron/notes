@@ -41,3 +41,9 @@ OCT 03 - Skipped for Career Fair - rumor says stack frames? Fortran structure?
 [OCT12 - DMA IO and some assembly](./notes/OCT12.md)
 
 [OCT 15 - The Asssembly Passes and the Linker](./notes/OCT15.md)
+
+OCT 17 - no notes - Exam 2
+
+[OCT 16 - Linker! Linker! Linker! Linker!](./notes/OCT19.md)
+
+[OCT 22 - Base 2, Flipping Bits, and Squishies.](./notes/OCT22.md)
