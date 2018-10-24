@@ -39,3 +39,5 @@ OCT 08 - no notes - no class - Columbus day
 [OCT 17 - gasland](./notes/OCT17.md)
 
 OCT 19 - no notes - no class
+
+[OCT 22 and 24 - Toxicology - Endocrine disruptors are bad](./notes/OCT24.md)
