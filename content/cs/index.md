@@ -47,3 +47,5 @@ OCT 17 - no notes - Exam 2
 [OCT 16 - Linker! Linker! Linker! Linker!](./notes/OCT19.md)
 
 [OCT 22 - Base 2, Flipping Bits, and Squishies.](./notes/OCT22.md)
+
+[OCT 24 - Hardware begins](./notes/OCT24.md)
