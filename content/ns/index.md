@@ -34,6 +34,6 @@ OCT 08 - no notes - Columbus Day
 
 [OCT 19 - Congestion Control](./notes/OCT19.md)
 
-[OCT 24 - ]
+[OCT 24 - DNS Root](./notes/OCT24.md)
 
-[OCT 26 - ]
+[OCT 26 - Barely notes, DNS day 2](./notes/OCT26.md)

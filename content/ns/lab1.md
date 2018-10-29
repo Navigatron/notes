@@ -21,12 +21,14 @@ Then, config the interface.
 ifconfig eno16777736 10.150.x.y netmask 255.255.255.0 up
 ```
 
-Then, hit the up arrow and hit enter again. Running this once isn't enough. (I suspect the first time configures it, but the 'up' command doesn't take effect until the second run.)
+Then, hit the up arrow and hit enter again. Running this once isn't enough. Sometimes twice isn't enough.
 
 ### Set Gateway:
 ```bash
 ip route add default via 10.150.x.254
 ```
+
+Run this twice too.
 
 ### Set DNS:
 ```bash
