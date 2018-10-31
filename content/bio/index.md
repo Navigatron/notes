@@ -33,3 +33,5 @@ I'm missing stuff here and I don't know what?
 [OCT 23 - Barely notes on Mitosis Errors](./notes/OCT23.md)
 
 [OCT 25 - Barely notes on DNA -> Protein](./notes/OCT25.md)
+
+[OCT 30 - I took a nap - Genetics](./notes/OCT30.md)
