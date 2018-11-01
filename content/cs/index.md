@@ -53,3 +53,5 @@ OCT 17 - no notes - Exam 2
 [OCT 26 - Circuits, Levels, Minterms and Maxterms](./notes/OCT26.md)
 
 [OCT 29 - Decoders are amazing](./notes/OCT29.md)
+
+[OCT 31 - Multiplexer](./notes/OCT31.md)
