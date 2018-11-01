@@ -35,3 +35,5 @@ I'm missing stuff here and I don't know what?
 [OCT 25 - Barely notes on DNA -> Protein](./notes/OCT25.md)
 
 [OCT 30 - I took a nap - Genetics](./notes/OCT30.md)
+
+[NOV 01 - What Mendel got right and wrong](./notes/NOV01.md)
