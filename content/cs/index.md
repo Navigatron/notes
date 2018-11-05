@@ -55,3 +55,7 @@ OCT 17 - no notes - Exam 2
 [OCT 29 - Decoders are amazing](./notes/OCT29.md)
 
 [OCT 31 - Multiplexer](./notes/OCT31.md)
+
+[NOV 02 - Sequential Circuits and Clock Cycles](./notes/NOV02.md)
+
+[NOV 05 - The SR latch and flip-flop - this is hard](./notes/NOV05.md)

@@ -1,6 +1,6 @@
 # Lab 5 - DNS
 
-Mr. David Norse Soloman, founder of Double Neutron Star Digital Network Solutions, Son of Daniel N. Soloman (Department of Nuclear Safety) and Mrs. Daisy N. Soloman (Director of Nusing Services), has responded to our requests with "Do Not Survey" - and as such, his Data is Not Shown in our survey of Daily Nutritional Support.
+Mr. David Norse Soloman, founder of Double Neutron Star Digital Network Solutions, Son of Daniel N. Soloman (Department of Nuclear Safety) and Mrs. Daisy N. Soloman (Director of Nursing Services), has responded to our requests with "Do Not Survey" - and as such, his Data is Not Shown in our survey of Daily Nutritional Support.
 
 Remember: Without proper Daily Nutritional Support, one could become a Drowning Non-Swimmer - and then who would manufacture the Doppler Navigation Systems?
 
@@ -135,11 +135,72 @@ Now we use the above reference info to create the configs.
 4. Use 1.5 to make a reverse lookup
 5. Use 1.6 to make a loopback zone
 6. add the reverse and loopback zones the named.conf
-7. Test, start service, signoff.
+7. make sure all configs are good via the above commands
+8. Signoff!
 
 > This is where I got to during the first lab session.
 
 # Activity 2 - Does it Work?
+
+## 2.1 - make errors and fix them
+
+deleting a semicolon is all you really need to do.
+
+## 2.2 - rndc and screenshots
+
+Run the following command:
+
+```
+rndc status
+```
+
+Take a screenshot.
+
+Change the debug level with:
+
+```
+rndc trace X
+```
+
+where X is the debug level you want. I used 71.
+
+```
+rndc status
+```
+
+Take a screenshot.
+
+run:
+
+```
+rndc reload
+```
+
+Take a screenshot.
+
+Just for fun, you may run `man rndc`, scroll to commands, and take a screenshot of the reload command description.
+
+## 2.3
+
+At this point, the instructions and the report diverge.
+
+Here's my understanding of the report:
+
+#### Question 9
+- screenshot of command of choice - for me it's dig
+- explain how it's output can be used in troubleshooting
+- explain what debug levels are
+- include a screenshot of nslookup
+- include a screenshot of host
+
+#### Question 10
+using info from nslookup, dig, or host:
+- explain args used, how useful in troubleshooting
+- screenshot showing args used, info provided
+
+Back to activity 2.3.
+
+> This is as far as I've gotten in lab section 2, understanding this part, 2.3, really held me up a lot.
 
 # Bonus Content
 
@@ -148,6 +209,7 @@ Now we use the above reference info to create the configs.
 Data | Time Spent | Progress
 ---|---
 First lab session | 2 hours | Finish act 1, got signoff 1.
+Lab nov05 | 2 hours |
 
 ## Storing VMs
 - Shutdown All
