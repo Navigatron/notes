@@ -41,3 +41,5 @@ OCT 08 - no notes - Columbus Day
 [OCT 31 - DNS Components](./notes/OCT31.md)
 
 [NOV 02 - DNS configuration](./notes/NOV02.md)
+
+[NOV 07 - DNS delegation](./notes/NOV07.md)

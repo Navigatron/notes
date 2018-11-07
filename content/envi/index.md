@@ -41,3 +41,11 @@ OCT 08 - no notes - no class - Columbus day
 OCT 19 - no notes - no class
 
 [OCT 22 and 24 - Toxicology - Endocrine disruptors are bad](./notes/OCT24.md)
+
+oct 31 -
+
+nov 02 -
+
+[NOV 05 - Environmental disease](./notes/NOV05.md)
+
+[NOV 07 - Envi disease day II - don't get cancer](./notes/NOV07.md)
