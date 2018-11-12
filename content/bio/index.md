@@ -37,3 +37,7 @@ I'm missing stuff here and I don't know what?
 [OCT 30 - I took a nap - Genetics](./notes/OCT30.md)
 
 [NOV 01 - What Mendel got right and wrong](./notes/NOV01.md)
+
+nov 06 - skipped to sleep
+
+[NOV 08 - Macro evolution](./notes/NOV08.md)

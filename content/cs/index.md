@@ -59,3 +59,5 @@ OCT 17 - no notes - Exam 2
 [NOV 02 - Sequential Circuits and Clock Cycles](./notes/NOV02.md)
 
 [NOV 05 - The SR latch and flip-flop - this is hard](./notes/NOV05.md)
+
+[NOV 07 - Single bit memory becomes registers](./notes/NOV07.md)
