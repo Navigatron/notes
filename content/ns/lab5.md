@@ -180,6 +180,8 @@ Take a screenshot.
 
 Just for fun, you may run `man rndc`, scroll to commands, and take a screenshot of the reload command description.
 
+> Note - we never configured rndc to communicate with the server, this could be a problem later? Saving this link here just in case: [config rndc with bind](https://www.centos.org/docs/5/html/Deployment_Guide-en-US/s1-bind-rndc.html)
+
 ## 2.3
 
 At this point, the instructions and the report diverge.
@@ -202,6 +204,109 @@ Back to activity 2.3.
 
 > This is as far as I've gotten in lab section 2, understanding this part, 2.3, really held me up a lot.
 
+Question 9's requirements are easy, question ten requires the use of command line arguments.
+
+Dig @server name type
+
+type can be A, NS, ANY, whatever you're looking for
+
+-4 forces ipv4, -6 forces ipv6, -p to specify port (53 is default), +trace enables tracing the delegation path, +norecurse turns off the recursive resolve bit
+
+```
+dig @10.150.71.2 lambsauce.myco.[name].com CNAME -4 +norecurse -p 53
+```
+
+# Activity 3 - Bring on the Clients
+
+## 3.1 - /etc/resolv.conf
+
+The instructions do not tell you how to do this. Fortunately, it's very easy.
+
+Here's what mine looks like:
+```
+nameserver 10.150.71.2
+```
+
+Do that on both CentOS vms, the server and the client.
+
+## 3.2
+
+Set the windows VMs to use LambSauce as the DNS server. Easy.
+
+## 3.3
+
+Instructions don't specify which VMs to start wireshark on, nor which VM to run ping from.
+
+This relates to question 12 on the report. Question 12 doesn't care which VM sends the requests, as long as we can see the request and reply. (One request reply pair, no need to ping every client.)
+
+1. Start wireshark on Lucy
+2. Ping wisdom: `ping wisdom.myco.[name].com`
+3. stop wireshark - Save this trace to show the request reply pair in Question 12
+4. `cat /etc/resolv.conf`
+
+The signoff also wants to be able to resolve requests from windows.
+
+1. Start wireshark on Wisdom
+2. Ping Lucy
+3. Stop wireshark - no need to save this trace
+4. run `ipconfig /all`
+
+Signoff!
+
+> TODO: Save 3.3.reqrep.pcapng from Lucy
+
+# Activity 4 - Second in Command
+
+We're setting up a Windows DNS server as a secondary - in my case, Wisdom.
+
+## 4.1 - Install
+
+The instructions go step-by-step here. Follow those.
+
+## 4.2 - Configure Server
+
+The instructions go pretty much step by step.
+
+For part E, use `myco.[name].com`
+
+For part J, use the ip address as normal - `10.150.71`, it will reverse it on its own.
+
+## 4.3 - Configure Clients
+
+Gotta add `nameserver 10.150.71.3` to the CentOS VMs, and set the secondary on the windows VMs. Easy.
+
+## 4.4 - The End is Near!
+
+This works with questions 14 and 15 in the report.
+
+For 14, we need a screenshot of the dig output showing if the second server is authoritative
+
+For 15, we need a network trace of a zone transfer.
+
+For the signoff, we need a network trace of a DNS request/reply on the secondary server, as well as the transfer trace for question 15.
+
+Steps for capture 1:
+1. Activate wireshark on Lucy
+2. dig wisdom
+3. stop wireshark
+4. Save wireshark capture
+5. Screenshot dig to show authoritativeness of secondary
+
+
+Steps for capture 2:
+1. Enable named on LambSauce
+2. Disable dns on wisdom
+3. Update zone file on lambsauce, increment serial number
+4. Start wireshark on Wisdom
+5. start dns on wisdom - this will check lambsauce, and due to serial number, initiate transfer.
+6. stop wireshark, save trace
+
+Signoff.
+
+> At the end of the third lab session, I wrote the above steps but have yet to execute them.
+
+
+
 # Bonus Content
 
 ## How long did this take me?
@@ -209,7 +314,8 @@ Back to activity 2.3.
 Data | Time Spent | Progress
 ---|---
 First lab session | 2 hours | Finish act 1, got signoff 1.
-Lab nov05 | 2 hours |
+Lab nov05 | 2 hours | Got signoff 2
+Lab nov12 | 2 hours | Got signoff 3 - so close to signoff 4, but not close enough.
 
 ## Storing VMs
 - Shutdown All
