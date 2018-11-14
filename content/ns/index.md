@@ -43,3 +43,7 @@ OCT 08 - no notes - Columbus Day
 [NOV 02 - DNS configuration](./notes/NOV02.md)
 
 [NOV 07 - DNS delegation](./notes/NOV07.md)
+
+[NOV 09 - brief notes](./notes/NOV09.md)
+
+[NOV 14 - DNS Zone Transfers](./notes/NOV14.md)
