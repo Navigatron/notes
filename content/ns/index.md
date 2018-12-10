@@ -10,6 +10,10 @@
 
 [LAB 5 - DNS](./lab5.md)
 
+[LAB 6 - DNS II](./lab6.md)
+
+[LAB 7 - VoIP](./lab7.md)
+
 ## Lectures
 
 [SEP 05 - SSH](./notes/SEP05.md)
