@@ -2,7 +2,8 @@
 
 ## Ocean Acidification
 
-Acid dissolves calcium things, making it harder for coral and other things to create shells.
+- Acid dissolves calcium things
+- When the ocean becomes more acidic, it becomes harder for coral and such to create shells.
 
 ## Film - "End of the Line"
 
@@ -14,7 +15,8 @@ Acid dissolves calcium things, making it harder for coral and other things to cr
 
 - Global fish catching has been going down since 1988
 - discovered in 2002, china fudging numbers.
-- why the sep?
+
+
 
 - Bluefin tuna catch down 80%
 - scientists advise 15k catch

@@ -1,14 +1,16 @@
 [up](../index.md)
 
 # Video - Watch the US stall on climate change for 12 years
-- Republicans started with climate change, shifted to against.
 
-# PowerPoint - The Best Solution to Global Warming - Citizen's Climate Lobby
+- Climate change used to be a bi-partisan issue, everyone was on board
+- This is no longer the case
+
+# PowerPoint - "The Best Solution to Global Warming" - Citizen's Climate Lobby
 
 Citizen's Climate Lobby believes the gov can and should work.
 
 At the point of extraction, where the fuel enters the economy, charge a
-$100 fee per ton of Carbon. This charges coal more than oil more than gas.
+$100 fee per ton of Carbon. This charges coal more than oil, and oil more than gas.
 
 Fee, not a tax - "Taxes are evil", taxes create programs. Fee goes directly
 back into US households.

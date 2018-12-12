@@ -4,19 +4,19 @@
 
 "Alternate assignment" from last class overdue now
 
-"Research paper due this month"
+> Note, december 4th: I never figured out what the alternate assignment was
 
 # Air Pollution
 
 - atmospheric stratification
 	- atmosphere divided into layers
-	- we live in the troposphere, bottom 6 miles
+	- we live in the troposphere, from here to 6 miles up
 	- top is Thermosphere, 62 miles up
 - Ozone (O_3)
 	- Can be Good
 		- Naturally occurring
 		- in stratosphere
-		- filters out UV light (Mission Critical)
+		- filters out UV light (Mission Critical) [UV is very bad]
 	- Can be Bad
 		- Man made
 		- Ground level (Troposphere)
@@ -64,7 +64,7 @@ have removed leaded gasoline have also seen a decrease in crime.
 Use cold water when cooking to avoid lead exposure
 
 High efficiency diesel engines produce ultra-fine particulate matter, which can
-build up in the brain
+build up in the brain - This is why we see those "No idling" signs at gas stations
 
 - Volatile Organic Compounds
 	- Higher concentrations indoors

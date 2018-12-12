@@ -53,4 +53,6 @@ PCBS are endocrine disruptors, along with many other things.
 1 and 2 plastics are intended for single use - the plastic breaks down. Leaks
 phthlates - bad stuff I guess.
 
+> Note - December 4th - "Phthalate" - a plasticizer. These things are everywhere. Some act as endocrine disruptors. [Wikipedia has basic info](https://en.wikipedia.org/wiki/Phthalate)
+
 There is pretty clear evidence that endocrine disruptors are causing birth defects.

@@ -27,6 +27,12 @@ Point mutations
 	- Addition - drop another one in there - caused a frame shift, because codons are read in groups of 3.
 	- Deletion - also causes a fame shift
 
+> Note - December 4th - Frame shifts are pretty remarkable. Codons in DNA are read in groups of 3, and
+each one becomes an amino acid in a protein. Take this: "CAT YES GOO BRO DOG", and frame shift it.
+"ATY ESG OOB ROD OGC" - that makes no sense. Worse yet, this disrupts start and stop codons, which basically wreck
+the mRNA transcription process. In short, a frame shift pretty much disables the creation of whatever protein this
+part of the DNA was for. For more on pre-mRNA, I built [This](https://navigatron.github.io/nowaymrna/) for Bio 101.
+
 ## Translocation
 
 when some DNA exchanges a piece with another bit of DNA.

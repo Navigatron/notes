@@ -6,6 +6,8 @@
 
 We cannot understand a complex system by understanding each part.
 
+> "The whole is more than the sum of the parts" - Dad
+
 ## Biosphere
 
 Zone of air/soil/water that supports life.
@@ -30,6 +32,7 @@ Broken up into smaller regions called *Biomes*
                 - More methane means more heat
                     - More heat means more methane
                         - ...
+			    - Oh no
 - Taiga
     - Pine trees
     - Pine beetle kills pine trees

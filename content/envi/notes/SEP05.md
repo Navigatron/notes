@@ -20,9 +20,9 @@
 
 *The time in which we live is a new geological epic.*
 
-We're changing the earth enough that **we** are noticing it, now.
+We're changing the earth enough that **we** are noticing it, *now*.
 
-Future geologists will see this time period as a unique stripe.
+Future geologists will see this time period as a unique stripe in the rocks.
 
 ### Nitrogen - we do a lot of that.
 
@@ -49,12 +49,12 @@ Nitrogen is a component of Proteins. It's essential for us to exist. We eat it i
 #### Why do we do this - Professor
 - Focus on short-term gain
     - future rewards weighted less important due to time
-        - Built-in human fallacy
+        - Built-in human fallacy to prioritize rewards *now*.
 - Failure of 'economic and political systems' to encourage earth-sustaining forms of economic development
     - "The government's not telling us to stop"
     - aka we didn't make a gov that tells us to stop.
     - See below on neo-liberal economic thought
-    - neither Capitalism nor Communism preserve the env all that well
+    - neither Capitalism nor Communism preserve the environment all that well
         - USSR grew cotton, dried up the Aral Sea.
 - Economic Systems do not factor environmental impact into market price
     - Externalities - things involved in a trade not factored into price.
@@ -87,7 +87,7 @@ Nitrogen is a component of Proteins. It's essential for us to exist. We eat it i
 *Freedom for business, anti-regulatory stance.*
 
 From Milton Friedman  
-Best seen in Chile under Pinochet
+"Best seen in Chile under Pinochet"
 
 Fans:
 - Reagan

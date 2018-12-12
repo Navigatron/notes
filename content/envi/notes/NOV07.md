@@ -29,6 +29,6 @@ cancer tumors can become "malignant", in which chunks of cells break off and go 
 
 cancer is 90% environmental
 
-Smoking is very bad for you
+Smoking is *very* bad for you
 
-5% of breast cancer patients may have inherited a genetic pre-disposition - the rest is environmental.
+5% of breast cancer patients *may* have inherited a genetic *pre-disposition* - the rest is environmental.

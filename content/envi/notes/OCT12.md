@@ -32,7 +32,7 @@ AC, spray cans, styrofoam, etc.
 
 1. UV hits a CFC
 2. Chlorine breaks off
-3. Chlorine + O3 = Chlorine+O + O2
+3. Chlorine + O3 = (Chlorine+O) + O2; The chlorine steals an oxygen from the ozone
 4. Single O hits the Chlorine+O = Chlorine + O2
 5. Chlorine is free to go break another O3
 
@@ -59,6 +59,9 @@ If all ozone disappeared, there would be no life on land.
 - 1990, clean air act amended to add acid rain
 	- Cap and Trade system
 		- You get X allowed pollution, and can buy and sell pollution allowance
+
+> December 4th note: The surface of all water interacts with CO2 in the atmosphere,
+creating a thin layer of carbonic acid. This is why rain is slightly acidic naturally.
 
 ## Citizens Climate Lobby
 
