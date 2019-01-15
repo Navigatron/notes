@@ -126,7 +126,29 @@ button 1:1
 - Hit CTRL+Z to apply changes
 - Plug the phones back in and hope for the best
 
-# AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+# How to get the signoffs
+
+These will be out of order - that's okay.
+
+## 2B
+
+Take a screenshot of PuTTY when the router says the phones are registered.
+
+## 2Signoff
+
+Show an instructor that you can call the other phone
+
+## 2C
+
+Run a cable from switch output 7 to PC2 NIC. Start wireshark on PC2.
+
+Call from one phone to the other.
+
+
+
+# I had issues on attempt 1.
+
+Below here are misc notes I took while troubleshooting.
 
 
 `Show Run` on the router should reveal this:
@@ -180,7 +202,3 @@ Phone | MAC
 
 Lucas goes to switch config
 Lucas re-runs my vlan commands
-
-> Issue: The proff who wrote the cheat sheet (Guess who) forgot to include
-the part where you load the files present. Gotta figure out what that is,
-and then hopefully this will work.

@@ -2,7 +2,7 @@
 mathjax: false
 ---
 
-[up](../../index.md)
+[up](../../../index.md)
 
 # Probability and Statistics I & II
 

@@ -182,6 +182,8 @@ Just for fun, you may run `man rndc`, scroll to commands, and take a screenshot 
 
 > Note - we never configured rndc to communicate with the server, this could be a problem later? Saving this link here just in case: [config rndc with bind](https://www.centos.org/docs/5/html/Deployment_Guide-en-US/s1-bind-rndc.html)
 
+> Note as of completing the lab, the above is not needed - the report doesn't care than it never worked properly. I'll use this as another testament to how horrid these labs are.
+
 ## 2.3
 
 At this point, the instructions and the report diverge.
@@ -253,7 +255,7 @@ The signoff also wants to be able to resolve requests from windows.
 
 Signoff!
 
-> TODO: Save 3.3.reqrep.pcapng from Lucy
+> TODO: Save 3.3.reqrep.pcapng from Lucy [TODO offload file]
 
 # Activity 4 - Second in Command
 
@@ -287,11 +289,10 @@ For the signoff, we need a network trace of a DNS request/reply on the secondary
 
 Steps for capture 1:
 1. Activate wireshark on Lucy
-2. dig wisdom
+2. dig @secondary wacco.myco.[name].com
 3. stop wireshark
 4. Save wireshark capture
-5. Screenshot dig to show authoritativeness of secondary
-
+5. Screenshot dig to show authoritativeness of secondary (Secondary is not authoritative) [TODO offload file]
 
 Steps for capture 2:
 1. Enable named on LambSauce
@@ -299,13 +300,13 @@ Steps for capture 2:
 3. Update zone file on lambsauce, increment serial number
 4. Start wireshark on Wisdom
 5. start dns on wisdom - this will check lambsauce, and due to serial number, initiate transfer.
-6. stop wireshark, save trace
+6. stop wireshark, save trace [TODO offload File]
 
 Signoff.
 
 > At the end of the third lab session, I wrote the above steps but have yet to execute them.
 
-
+> It's November 15th. Bench 7 wasn't available. Reset IPs, did the above, signoff. Boom! Done! All is well once again, until tomorrow at least.
 
 # Bonus Content
 
@@ -316,6 +317,9 @@ Data | Time Spent | Progress
 First lab session | 2 hours | Finish act 1, got signoff 1.
 Lab nov05 | 2 hours | Got signoff 2
 Lab nov12 | 2 hours | Got signoff 3 - so close to signoff 4, but not close enough.
+Nov 15th | 45 minutes | Setup, run 4.4 - got last signoff! - teardown
+
+In total, this lab took me 6 hours and 45 minutes.
 
 ## Storing VMs
 - Shutdown All

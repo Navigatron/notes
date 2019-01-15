@@ -1,4 +1,4 @@
-[up](../../index.md)
+[up](../../../index.md)
 
 # How to Cook Food
 

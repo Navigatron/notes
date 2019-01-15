@@ -1,4 +1,4 @@
-[up](../../index.html)
+[up](../../../index.html)
 
 # Concepts of Computer Systems
 
