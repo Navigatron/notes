@@ -2,4 +2,6 @@
 
 # Biology II Lecture
 
-[JAN 15 - SillyBus day](JAN15.md)
+[JAN 15 - SillyBus day](./notes/JAN15.md)
+
+[JAN17 - Tissues, Organ Systems](./notes/JAN17.md)
