@@ -1,81 +1,98 @@
 [up](../../../index.md)
 
-# How to Cook Food
+> I'm pretty good at eating, I've been practicing every day for a long time.
+
+![](https://elvino.co.uk/wp-content/uploads/2016/03/Food-banner.jpg)
+
+# Eat
+
+Butter enhances everything here (Except the oatmeal)
 
 ## Breakfast
 
-### Oatmeal
+### Coffee Maker Oatmeal (Every Day, 10 seconds)
 
-1. Make sure there's no coffee in the coffee maker.
-1. Fill mug 3/4 with water
-2. pour into coffee maker
-1. Put the oatmeal in the mug
-3. Put the mug under the drip
-11. start the coffee maker.
-8. Go get ready for the day
-8. Stir and make sure it's cool before slurping down.
-9. **Wash your mug and spoon**
+- Instant oatmeal with hot water from the coffee machine
 
-### Toast and Eggs
+### Eggs (15 mins)
 
-#### Shit you'll need
+- Submerge in warm water for 5 mins prior to cooking for light, fluffy eggs
+- Fried over easy, scrambled with milk, whatever works
+- Toast is good with this
 
-##### Equipment
+### 10/10 Brekky (Expensive, takes time)
 
-- Sauce pan / Frying pan, size of your hand ish.
-- Metal spatula
-- plate+fork, bowl+fork, something to eat it with.
-
-##### Food
-
-- Bread
-	- Carbohydrates are great.
-- Eggs
-	- like 3 bucks for 2 dozen.
-- Butter
-	- so much butter.
-
-#### Sequence of Events
-
-##### Toast
-
-1. make that pan HOT.
-2. drop in 1/2 dollop of butter.
-	- watch it melt
-3. Drop in that bread
-	- It'll soak up the butter, don't worry if the pan looks dry.
-	- The dry part is what makes it toasty.
-4. This is the secret - *Press down on the bread*.
-5. Repeat steps 2 through 4 for each side of each piece.
-	- I usually make 2 pieces.
-	- Yes, it's a lot of butter.
-
-##### Eggs
-
-I usually make two at once in the same pan.
-
-1. make the pan a little less hot?
-	- still hot, but not toasting hot.
-2. Add Butter. Full dollop this time.
-	- I forgot to do this one time and those eggs weren't pretty.
-		- still tasty tho
-3. Crack the eggs directly into the pan
-	- Heck outta here middle school FCS teacher with your pastry dish shenanigans
-	- Aight ACT FAST YOU GOT LIKE 30 SECONDS
-4. Seasoning! Salt and Pepper!
-	- I'm poor
-	- It's tasty
-5. Once the bottom layer is white, edges a little fried, and it looks like a propper egg, flip it.
-	- Idk how to do this. Just wing it.
-6. Cook em' for ~12 seconds on the second side
-7. take the pan off the heat before you eat. Maybe put some water on it so it's easier to clean.
+- Brown breakfast sausage in skillet
+- Drain
+- Crack like 10 eggs in there, sausage shouldn't be submerged but close
+- Add diced potato, peppers, onion
+- Add cornbread batter on top
+- Bake
 
 ## Lunch
 
-Go buy some ramen
+- Like, PB&J I guess
+- I don't own sandwich meats cause I don't eat at home often enough
 
-## Dinner
+## Dinner Components
 
-Dinner is made of 3 components: Starch, Protien, and Vegetable
+Dinner is made of 3 components, sometimes 2 if I'm lazy
 
-*Vegetable should be pronounced VuJetaBull*
+### Starch
+
+- Rice
+- Pasta
+- Bread + butter?
+- Potato!
+- Beans
+
+### Brotein
+
+- Chicken breast, easy.
+	- Seasoning: rosemary? Salt and pepper of course
+- Meatballs?
+- Hot dogs / Bratwurst
+- Beans!
+
+### Veg
+
+- Sauerkraut
+- Frozen mixed veges, boiled / steamed (My Favorite)
+- Beans!
+
+### Choice Combinations
+
+- Chicken + Rice + Veg
+	- Go for rice cooker, wait 5 mins (This takes the longest)
+	- Go for chicken, wait until almost done
+	- Go for boiling veg (Done in like 1 min)
+- Pasta
+	- Boil Pasta
+	- Warm Sauce
+	- Meatballs in the sauce? Okay.
+- Sausage + Sauerkraut
+	- Get those onions browning
+	- Rinse Sauerkraut, add
+	- Add meat of choice and bake
+- Nachos Supreme
+	- Big baking tray
+	- Tortilla chips, salsa, sour creme, other toppings
+	- Make layers for days
+	- Bake
+- ChilliMac
+	- Cook elbow noodles
+	- Brown ground beef and onion
+	- add 11oz can condensed tomato soup
+	- add 11ox can condensed cream of mushroom soup
+	- Strain noodles, add to skillet
+	- Corn / Peas can be thrown in, why not
+- Triple Corn Chowder
+	- don't drain the corn
+	- add 1 can yellow corn
+	- add 1 can white corn
+
+## Shopping List
+
+- Better than Bouillon
+- canned corn / soup
+- lentils
