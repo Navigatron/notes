@@ -8,4 +8,8 @@
 
 ### Lectures
 
+> Prof loves telling stories. Any notes that are just XXXYY aren't very long.
+
 [JAN16](./notes/JAN16.md)
+
+[JAN18](./notes/JAN18.md)
