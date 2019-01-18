@@ -1,6 +1,6 @@
 [up](../index.md)
 
-# Database, JAN16
+# Database, JAN16 - Starting mysql
 
 There's a new Syllabus with more office hours, perhaps more changes. Updated
 version is on MyCourses.

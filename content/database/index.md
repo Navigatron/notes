@@ -4,4 +4,6 @@
 
 JAN14 - no notes - syllabus day
 
-[JAN16 - ](./JAN16.md)
+[JAN16 - Starting MySQL, emailing Prof](./notes/JAN16.md)
+
+[JAN18 - What is DB, Composite primary keys, Intro to queries](./notes/JAN18.md)
