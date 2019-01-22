@@ -10,6 +10,8 @@ Butter enhances everything here (Except the oatmeal)
 
 ## Breakfast
 
+(Recipe for "10/10Brekky" AKA breakfast casserole at bottom)
+
 ### Coffee Maker Oatmeal (Every Day, 10 seconds)
 
 - Instant oatmeal with hot water from the coffee machine
@@ -96,3 +98,20 @@ Dinner is made of 3 components, sometimes 2 if I'm lazy
 - Better than Bouillon
 - canned corn / soup
 - lentils
+
+## 10/10 Brekky
+
+- pre-heat oven 375
+- put 7 eggs in warm water
+- Number 8 cast iron skillet, medium
+- quarter of oil
+- add 1 onion, diced
+- when 25% browned, add 1lb raw breakfast sausage (In the tube, not links)
+- When 50% browned, add 1 red pepper, diced
+- cook till meat browned, distribute evenly
+- 6 eggs + splash milk, scrambled, pour over. Do Not Stir.
+- Potato, diced, add
+- Egg is the mortar for the potato and sausage, cornbread should sit on top
+- Add hella shredded cheese
+- Cornbread batter (7th egg), pour evenly over top
+- bake until knife comes out clean (~30 mins?)
