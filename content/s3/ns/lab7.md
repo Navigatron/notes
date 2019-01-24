@@ -1,4 +1,4 @@
-[up](../index.md)
+[up](./index.md)
 
 # Lab 7 - VoIP
 

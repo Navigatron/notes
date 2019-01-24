@@ -1,3 +1,5 @@
+[up](./index.md)
+
 # CentOS is hard
 
 ### First, activate root:

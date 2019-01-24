@@ -1,3 +1,5 @@
+[up](./index.md)
+
 # Lab 5 - DNS
 
 Mr. David Norse Soloman, founder of Double Neutron Star Digital Network Solutions, Son of Daniel N. Soloman (Department of Nuclear Safety) and Mrs. Daisy N. Soloman (Director of Nursing Services), has responded to our requests with "Do Not Survey" - and as such, his Data is Not Shown in our survey of Daily Nutritional Support.
