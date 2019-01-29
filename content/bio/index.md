@@ -9,3 +9,5 @@
 [JAN22 - Gas Exchange](./notes/JAN22.md)
 
 [JAN24 - Transportation of Gasses, Circulatory Systems](./notes/JAN24.md)
+
+[JAN29 - The Heart, Cardiac Cycle, and Blood Composition.](./notes/JAN29.md)
