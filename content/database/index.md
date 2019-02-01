@@ -2,6 +2,8 @@
 
 # Intro to Database and Data Modeling
 
+As with sysadmin, a date with no description has little useful info.
+
 JAN14 - no notes - syllabus day
 
 [JAN16 - Starting MySQL, emailing Prof](./notes/JAN16.md)
@@ -11,3 +13,9 @@ JAN14 - no notes - syllabus day
 [JAN23 - LIKE and Diagrams](./notes/JAN23.md)
 
 [JAN25 - CONCAT, AS, JOIN, USING](./notes/JAN25.md)
+
+[JAN28 - Constraints and MUL](./notes/JAN28.md)
+
+[JAN30 - Normal Form 1](./notes/JAN30.md)
+
+[FEB01](./notes/FEB01.md)
