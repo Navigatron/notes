@@ -19,3 +19,7 @@ JAN14 - no notes - syllabus day
 [JAN30 - Normal Form 1](./notes/JAN30.md)
 
 [FEB01](./notes/FEB01.md)
+
+FEB04 - didn't take notes
+
+[FEB06 - MEI, Normalization](./notes/FEB06.md)

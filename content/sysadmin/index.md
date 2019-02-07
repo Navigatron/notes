@@ -15,3 +15,5 @@
 [JAN18](./notes/JAN18.md)
 
 [JAN25](./notes/JAN25.md)
+
+[FEB06](./notes/FEB06.md)
