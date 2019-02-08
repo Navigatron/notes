@@ -40,3 +40,18 @@ The joys of the user add command
 ## DHCP
 
 Review from netserv, pretty simple stuff.
+
+## Sitebook Info
+
+> "Information is Gold"
+
+Don't throw in Fluff, it makes indexing harder.
+
+There's no reason to not put in useful info.
+
+Main goal is to get through the final practical. It's tough.
+
+Anything in this course is on the table for the practical.
+
+- Add OS section to sitebook
+- Add scripting assignments to reference?
