@@ -17,3 +17,5 @@ JAN31 - no notes - university closed due to cold
 FEB05 - no notes - Exam 1
 
 [FEB07 - Chapter 21, Digestion](./notes/FEB07.md)
+
+[FEB12 - Chapter 24 - immunity - part 1](./notes/FEB12.md)
