@@ -21,3 +21,5 @@ FEB05 - no notes - Exam 1
 [FEB12 - Chapter 24 - immunity - part 1](./notes/FEB12.md)
 
 [FEB14 - Chapter 24 - immunity - part 2](./notes/FEB14.md)
+
+[FEB19 - Chapter 28 - The Nervous System](./notes/FEB19.md)
