@@ -2,13 +2,17 @@
 
 I'm a college student. These are my notes.
 
+## Spring 2020
+
+![we will get there when we get there](./getthere.jpg)
+
 ## Spring 2019
 
-[Database](./content/database/index.md)
+[Database](./content/s4/database/index.md)
 
-[System Administration](./content/sysadmin/index.md)
+[System Administration](./content/s4/sysadmin/index.md)
 
-[Biology II Lecture](./content/bio/index.md)
+[Biology II Lecture](./content/s4/bio/index.md)
 
 ## Fall 2018
 
@@ -24,4 +28,4 @@ I'm a college student. These are my notes.
 
 ## Other
 
-[Recipes](./content/s3/eat/index.md)
+[Cooking](./content/cooking/index.md)

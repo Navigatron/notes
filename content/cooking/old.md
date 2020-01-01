@@ -31,6 +31,8 @@ Butter enhances everything here (Except the oatmeal)
 - Add cornbread batter on top
 - Bake
 
+> 2019-01-01: THE CHEESE YOU FOOL, you always forget the cheese, omg. Get heaps of shredded cheese in there, before the cornbread.
+
 ## Lunch
 
 - Like, PB&J I guess

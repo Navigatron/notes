@@ -1,4 +1,4 @@
-[up](../../index.md)
+[up](../../../index.md)
 
 # Co-op seminar
 
