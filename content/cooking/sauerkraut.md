@@ -26,3 +26,7 @@ Here's a good idea:
 - then add the dry sauerkraut, spices and liquids to the same pan
 
 It's done when it's hot, I guess. Goes good with pork or kielbasa.
+
+Dad threw it in the oven at 350, left for maybe an hour. Got dark brown on top.
+
+Whole black peppercorns.
