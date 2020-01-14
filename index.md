@@ -4,7 +4,11 @@ I'm a college student. These are my notes.
 
 ## Spring 2020
 
-![we will get there when we get there](./getthere.jpg)
+[Network and System Security Audit](./content/s5/audit/index.md)
+
+[Network Security and Forensics](./content/s5/NetSecForensics/index.md)
+
+*BCP and DR is pending approval from prof.*
 
 ## Spring 2019
 
