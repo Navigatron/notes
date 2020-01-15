@@ -8,7 +8,9 @@ I'm a college student. These are my notes.
 
 [Network Security and Forensics](./content/s5/NetSecForensics/index.md)
 
-*BCP and DR is pending approval from prof.*
+[Disaster Recovery and Business Continuity Planning](./content/s5/bcpdr/index.md)
+
+[Intro to Database and Data Modeling - Take II](./content/s5/database/index.md)
 
 ## Spring 2019
 
