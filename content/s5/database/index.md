@@ -7,3 +7,5 @@
 [2020-01-16 - Starting data modeling](./2020-01-16.md)
 
 [Entity Relationship Diagrams with Chen Notation](https://www.vertabelo.com/blog/chen-erd-notation/)
+
+[2020-01-21 - Transposing to Relations and **First Normal Form**](./2020-01-21.md)
