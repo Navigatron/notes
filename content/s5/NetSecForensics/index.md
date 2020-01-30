@@ -11,4 +11,6 @@
 
 [2020-01-22 - Security Properties](./2020-01-22.md)
 
-[2020-01-27 - ](./2020-01-27.md)
+[2020-01-27 - STRIDE, CAM floods, DHCP](./2020-01-27.md)
+
+[2020-01-29 - layers, attacking dhcp](./2020-01-29.md)
