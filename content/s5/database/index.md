@@ -13,3 +13,9 @@
 [2020-01-23 - No new info, optional class for hw questions](./2020-01-23.md)
 
 [2020-01-28 - The SQL begins - create tables and DBs](./2020-01-28.md)
+
+[2020-01-30 - A touch more SQL, HW1 review](./2020-01-30.md)
+
+2020-02-04 - Skipped for no good reason. Probably assigned HW3.
+
+2020-02-06 - hasn't happened yet
