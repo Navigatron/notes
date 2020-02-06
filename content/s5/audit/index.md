@@ -15,3 +15,9 @@
 [2020-01-27 - Risk](./2020-01-27.md)
 
 [2020-01-29 - Policy!](./2020-01-29.md)
+
+[2020-01-31 - Policy Components](./2020-01-31.md)
+
+[2020-02-03 - Threat Modeling Activity](./2020-02-02.md)
+
+[2020-02-05 - Standards and Compliance](./2020-02-05.md)
