@@ -11,3 +11,9 @@
 [2020-01-23 - Workshop - Building our Companies](./2020-01-23.md)
 
 [2020-01-28 - BC, DR, and IR](./2020-01-28.md)
+
+[2020-01-30 - Workshop - Creating Security Incident Response Plans](./2020-01-30.md)
+
+2020-01-04 - skipped to meet with potential club sponsors
+
+[2020-02-06 - Workshop - Creating the Interim Plan](./2020-02-06.md)
