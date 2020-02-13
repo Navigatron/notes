@@ -18,4 +18,8 @@
 
 2020-02-04 - Skipped for no good reason. Probably assigned HW3.
 
-2020-02-06 - hasn't happened yet
+[2020-02-06 - Some more sql, HW2 review](./2020-02-06.md)
+
+[2020-02-11 - Normalization process walk-through.](./2020-02-11.md)
+
+[2020-02-13 - A good example of normalization](./2020-02-13.md)
