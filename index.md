@@ -35,3 +35,5 @@ I'm a college student. These are my notes.
 ## Other
 
 [Cooking](./content/cooking/index.md)
+
+[I'm sick - now what?](./content/meds/index.md)
