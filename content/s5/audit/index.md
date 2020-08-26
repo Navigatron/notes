@@ -21,3 +21,9 @@
 [2020-02-03 - Threat Modeling Activity](./2020-02-02.md)
 
 [2020-02-05 - Standards and Compliance](./2020-02-05.md)
+
+2020-02-10
+
+[2020-02-12 - Finishing SOX and starting HIPAA](./2020-02-12.md)
+
+[2020-02-14 - Guest Speaker](./2020-02-14.md)

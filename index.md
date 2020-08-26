@@ -2,6 +2,16 @@
 
 I'm a college student. These are my notes.
 
+## Fall of 2020
+
+[Intro to Cryptography]
+
+[Web application security]
+
+[Risk management]
+
+[Policy analysis]
+
 ## Spring 2020
 
 [Network and System Security Audit](./content/s5/audit/index.md)
