@@ -1,3 +1,45 @@
+---
+mathjax: true
+---
 [up](./index.md)
 
-# Rings
+> This page doubles as a personal reference for MathJax commands
+
+# What is a Ring?
+
+A *Ring* is a set of integers ($\Bbb Z$) with a size ($m$).
+
+$$\Bbb Z_m = \{ 0,1,2,\dots m-1 \}$$
+
+*Rings* have associated *Operators* with special rules.
+
+- Addition: '+'
+- Multiplication: '*'
+
+For all $a,b\in \Bbb Z_m$:
+
+- $a + b \equiv c \mod m$
+- $a * b \equiv d \mod m$
+
+# Properties of Rings
+
+## Closure
+
+Note that $c,d \in \Bbb Z_m$
+
+## Associative
+
+- $(a+b)+c=a+(b+c)$
+- $(a*b)*c=a*(b*c)$
+
+## Identity
+
+- $a+0=a\mod m$
+- $a*1=a\mod m$
+
+## Inverse
+
+- $a+(-a)=0\mod m$
+- $a*a^{-1}=1\mod m$
+
+Note that $a^{-1}$ only exists when $\gcd (a, m)=1$

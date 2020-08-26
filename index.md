@@ -2,7 +2,7 @@
 
 I'm a college student. These are my notes.
 
-## Fall of 2020
+## Fall 2020
 
 [Intro to Cryptography](./content/s6/crypto/index.md)
 
@@ -14,6 +14,8 @@ I'm a college student. These are my notes.
 
 ## Spring 2020
 
+This semester ended early thanks to you-know-what.
+
 [Network and System Security Audit](./content/s5/audit/index.md)
 
 [Network Security and Forensics](./content/s5/NetSecForensics/index.md)
@@ -21,6 +23,10 @@ I'm a college student. These are my notes.
 [Disaster Recovery and Business Continuity Planning](./content/s5/bcpdr/index.md)
 
 [Intro to Database and Data Modeling - Take II](./content/s5/database/index.md)
+
+## Fall 2019
+
+Co-op :)
 
 ## Spring 2019
 
