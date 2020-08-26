@@ -4,7 +4,7 @@ I'm a college student. These are my notes.
 
 ## Fall of 2020
 
-[Intro to Cryptography]
+[Intro to Cryptography](./content/s6/crypto/index.md)
 
 [Web application security]
 
