@@ -6,7 +6,7 @@ Mom has some advice, and I don't want to forget about it.
 
 ## Eat
 
-> "When you're sick, you don't feel like cookin."
+> "When you're sick, you don't feel like cookin'."
 
 - Canned Soup
 - Crackers
@@ -74,3 +74,5 @@ Makes you drowsy though
 For *Chest* congestion. Late-stage cold. Thins Mucus so you can cough it out.
 
 > "When I had pnemonia as a kid I had to take Quibron and it tasted nasty"
+
+Thanks mom :)

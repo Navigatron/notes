@@ -11,4 +11,4 @@
 
 [10/10Brekky](./1010brekky.md)
 
-[smattering](./new.md)
+[A big list of ideas](./new.md)
