@@ -4,6 +4,11 @@ tikzjax: true
 
 [up](./index.md)
 
+<ul class='breadcrumbs'>
+<li>[Home](../../../index.md)</li>
+<li>[Crypto](./index.md)</li>
+</ul>
+
 # TikZ: A Guide
 
 Sample Code:
