@@ -1,5 +1,5 @@
 ---
-tikz: true
+tikzjax: true
 ---
 
 [up](./index.md)
