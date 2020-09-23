@@ -46,7 +46,7 @@ Co-op :)
 
 [Biology 1 Lecture](./content/s3/bio/index.md)
 
-[Probability and Staticstics I and II](./content/s3/ps/index.md)
+[Probability and Statistics I and II](./content/s3/ps/index.md)
 
 ## Other
 

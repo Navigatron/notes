@@ -2,14 +2,13 @@
 
 These are My Notes.
 
-files:
-```
-_includes/ - for mathjax magic
-_layouts/ - to override the terrible two column layout
-assets/ - to make the remaining column full width
-content/ - where my actual content is
-_config.yml - pull in the theme I'm using.
-```
+ Thing        | Purpose
+--------------|--------------------------------------------
+`_includes/`  | For mathjax and tikzjax magic
+`_layouts/`   | To override the terrible two column layout
+`assets/`     | To make the remaining column full width
+`content/`    | Where my actual content is
+`_config.yml` | Pull in the theme I'm using.
 
 Inside `content`, there is a folder for each class.
 
@@ -22,6 +21,7 @@ notes/ - a folder to hold each class's notes.
 Notes taken each class are named like `AUG30.md`.
 
 If I want the magic of MathJax, make this the first thing in a file:
+
 ```
 ---
 mathjax: true

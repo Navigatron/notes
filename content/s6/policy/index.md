@@ -22,3 +22,43 @@ Four fundamental policy goals:
 - Public Interest
 - Made by Government
 - Action and Inaction
+
+## Pareto Efficiency
+
+In relation to the free market, Pareto Efficiency is the point where nobody can be made better off without making somebody else worse off. In this case, there is no *economic* need for government policy.
+
+If we are *not* in Pareto efficiency, we can make somebody better off without making anyone else worse off - the market is not acting efficiently, and government policy *may* help.
+
+## 2020-09-10
+
+- leave your comments and thoughts in the discussion posts on myCourses
+- Go over the reading and post in the forum by EoD
+- There is a problemset that will be emerging at some point
+- ProblemSet answers due next Tuesday
+- Handwriting answers is acceptable??
+- But scanning to pdf is kinda nice
+- graded by effort
+
+Conditions for an efficient free market:
+
+- Many buyers and sellers - price taken as given
+- identical products
+- no barrier to entry or exit
+- perfect information
+
+# What could create a market failure?
+
+- Externalities
+- Public Goods
+- Monopolies
+- Information Asymmetry
+
+Under a market failure, government intervention *may* be able to increase efficiency.
+
+In a perfect market, there still *might* be regulation, towards the other 3 policy goals.
+
+#What tools do we have to address social damage?
+
+**Pigouvian Tax** - A tax on each unit of good, equal to the social damage of that unit of good.
+
+**Cap and Trade** - In the context of pollution - the cap is the total amount of permitted pollution. Then, a license to polute is given to industry. Different industry players can trade their licenses, to allocate the permitted pollution via a free market.
