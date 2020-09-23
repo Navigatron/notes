@@ -15,6 +15,7 @@
 - Potato, diced, add
 - Egg is the mortar for the potato and sausage, cornbread should sit on top
 - Add hella shredded cheese
+	- *Add hella shredded cheese you fool, you always forget the cheese!*
 - Cornbread batter (7th egg), pour evenly over top
 - bake until knife comes out clean (~30 mins?)
 

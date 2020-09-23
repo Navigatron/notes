@@ -17,9 +17,11 @@
 	- enhance: walnuts
 - Eggs+toast
 	- eggs
+		- warm eggs are fluffier eggs
 	- bread
 - fried-egg sandwich
 	- eggs
+		- warm eggs are fluffier eggs
 	- bread
 	- cheese
 	- enhance: hot sauce
@@ -101,6 +103,11 @@
 	- potato
 	- butter
 	- enhance: sour cream
+- straight-up bread
+	- like a dinner roll?
+	- butter
+- pasta
+	- on the side
 
 #### Veg
 
@@ -131,6 +138,7 @@
 - chicken breast
 	- chicken breast
 	- seasoning
+- meatballs
 
 ### Completes
 
@@ -139,7 +147,7 @@
 ---
 
 - pesto
-	- pasta (farfalle (bow-tie))
+	- pasta (farfalle (bow-tie)) or radiator
 	- pesto sauce
 	- enhance: kielbasa
 	- enhance: Parmesan
@@ -147,6 +155,7 @@
 	- pasta (spaghetti)
 	- red sauce
 		- big range here, from cheap to expensive
+		- Hell, maybe alfredo
 	- enhance: meatballs
 	- enhance: Parmesan
 - chicken parm
@@ -173,6 +182,9 @@
 	- can yellow corn
 	- can creamed corn
 	- can hominy
+	- Don't drain the corn.
+	- Eat w/ cornbread.
+	- corn?
 - ChilliMac
 	- Cook elbow noodles
 	- Brown ground beef and onion
@@ -186,7 +198,7 @@
 	- sour creme
 	- jalapeno
 	- ground beef
-- smashburger
+- burger
 	- beef
 	- bread (buns)
 	- enhance: cheese (cheddar, american)
@@ -200,3 +212,75 @@
 	- Shaved Steak
 	- Peppers / Onions
 	- Cheese of Choice
+- ChilliMac
+	- Cook elbow noodles
+	- Brown ground beef and onion
+	- add 11oz can condensed tomato soup
+	- add 11ox can condensed cream of mushroom soup
+	- Strain noodles, add to skillet
+	- Corn / Peas can be thrown in, why not
+- Red Beans and Rice
+	- Celery
+	- Onion
+	- Green Pepper
+	- garlic
+	- Beans
+	- Broth
+	- rice
+	- thyme
+	- paprika
+	- cayenne
+	- bay leaf
+	- Sausage and Bacon
+	1. Brown the Bacon
+	2. Soften the vegetables, then garlic
+	3. Add beans and broth and seasoning
+	4. After like an hour, add sausage
+	5. After like another hour, eat over rice
+- Maccy Cheese
+	- maccy cheese
+	- salsa?
+- Korma
+	- Rice
+	- Chicken breast, cooked
+	- Korma sauce
+- Schnitzel
+	- Thin meat, fried
+	- Topping of choice: gravy?
+	- Side of buttered noodles, or spetzel
+	- Side of green beans
+	- W/ red sauce on spaghetti, it's chicken parm
+- Fish Tacos
+	- fish (white, cod, haddock)
+	- seasoning (taco / cajun)
+	- Sour cream
+	- Limes
+	- Red Onions + red wine vinegar = pickled onions
+	- Slaw?
+	- Salsa
+- Homemade Pizza Night!
+	- dough
+	- sauce
+	- cheese
+	- toppings
+- Egg Tacos
+	- tortillas
+	- eggs
+	- cheese
+	- hotSauce
+	- onions/peppers
+- Ried Frice
+	- Rice
+	- Frozen Vegetables
+	- Eggs?
+	- Soy sauce?
+	- Sesame oil?
+- Quesodilliards
+	- tortillas
+	- cheezium
+	- refried beans?
+
+# Things to investigate
+
+- Better than Bouillon
+- Lentils
