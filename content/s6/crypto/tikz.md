@@ -4,11 +4,7 @@ tikzjax: true
 
 [up](./index.md)
 
-<div class='breadcrumbs'>
-
 [Home](../../../index.md) > [Crypto](./index.md) > Tikz
-
-</div>
 
 # TikZ: A Guide
 
