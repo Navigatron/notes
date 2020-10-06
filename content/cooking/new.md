@@ -144,8 +144,6 @@
 
 > These can stand on their own, or add a component or two.
 
----
-
 - pesto
 	- pasta (farfalle (bow-tie)) or radiator
 	- pesto sauce
