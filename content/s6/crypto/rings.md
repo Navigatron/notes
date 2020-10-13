@@ -1,7 +1,7 @@
 ---
 mathjax: true
 ---
-[up](./index.md)
+[Home](../../../index.md) > [Crypto](./index.md) > Rings
 
 > This page doubles as a personal reference for MathJax commands
 
@@ -43,3 +43,5 @@ Note that $c,d \in \Bbb Z_m$
 - $a\cdot a^{-1}=1\mod m$
 
 Note that $a^{-1}$ only exists when $\gcd (a, m)=1$
+
+You can find $a^{-1}$ with the [extended euclidean algorithm](./eea.md)

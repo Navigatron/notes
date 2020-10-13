@@ -42,3 +42,5 @@ ax-1=-yb
 ax \equiv 1 \bmod b
 a^{-1}=x
 $$
+
+So, the X output of the EEA is the multiplicative inverse of A mod B.
