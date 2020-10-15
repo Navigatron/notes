@@ -77,7 +77,7 @@ Take $Z_{15}^{*}$ - this is a group, under the multiplication operator, and all 
 
 Finite groups have a finite number of elements.
 
-The sizeof operator looks like two bars on either side of the text, like |G|, idk if that's the tex way?
+The sizeof operator looks like two bars on either side of the text, like \|G\|, idk if that's the tex way?
 
 $$
 |G| < Inf.

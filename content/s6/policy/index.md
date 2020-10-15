@@ -64,3 +64,5 @@ In a perfect market, there still *might* be regulation, towards the other 3 poli
 **Cap and Trade** - In the context of pollution - the cap is the total amount of permitted pollution. Then, a license to polute is given to industry. Different industry players can trade their licenses, to allocate the permitted pollution via a free market.
 
 [Bonus class, 2020-10-06, Tax Policy](./tax.md)
+
+[2020-10-15 - Cost Benefit Analysis](./cost_benefit.md)

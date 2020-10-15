@@ -2,13 +2,17 @@
 
 # Introduction to Cryptography
 
+[Meta: A guide to TikZ](./tikz.md)
+
+[Basic Principles](./w1.md)
+
 [Rings](./rings.md)
 
-[Week 1](./w1.md)
+[The Extended Euclidean Algorithm (EEA)](./eea.md)
 
-[A guide to TikZ](./tikz.md)
+[Groups](./groups.md)
 
-[Extended Euclidean Algorithm (EEA)](./eea.md)
+[Galois (finite) Fields](./galois_field.md)
 
 # Common Terms
 
