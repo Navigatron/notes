@@ -36,13 +36,13 @@ Let's define some terms:
 - $PV$ is the present value
 - $t$ is a number of years
 
-If we have $100, we can determine how much that will be worth in $t=10$ years, given an interest rate of $r=5%$.
+If we have \$100, we can determine how much that will be worth in $t=10$ years, given an interest rate of $r=5%$.
 
 $$
-FV = PV * (1+r)^t
-FV = 100 * (1+0.05)^{10}
-FV = 100 * 1.05^{10}
-FV = 100 * 1.62889462678
+FV = PV * (1+r)^t\\
+FV = 100 * (1+0.05)^{10}\\
+FV = 100 * 1.05^{10}\\
+FV = 100 * 1.62889462678\\
 FV = 162.89
 $$
 
