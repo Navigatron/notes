@@ -6,11 +6,11 @@ I'm a college student. These are my notes.
 
 [Intro to Cryptography](./content/s6/crypto/index.md)
 
-[Web application security]
+[Web application security] - not notes, just homeworks.
 
-[Risk management]
+[Risk management] - notes are a class assignment, so I can't publish them.
 
-[Policy analysis]
+[Policy analysis](./content/s6/policy/index.md)
 
 ## Spring 2020
 

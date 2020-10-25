@@ -14,6 +14,10 @@
 
 [Galois (finite) Fields](./galois_field.md)
 
+[order](./order.md)
+
+[Chapter 4 - AES](./rando.md)
+
 # Common Terms
 
 coprime: a and b are coprime if gcd(a,b)=1
