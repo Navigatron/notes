@@ -81,10 +81,10 @@ So basically, a group $\Bbb Z_n^*$ has all the integers coprime to $n$. If $n$ i
 
 ### 8.2.2 - Cyclic groups
 
-A group is finite if it has a finite number of elements. The size of the group, $|G|$, is called its *order* or *cardinality*.
+A group is finite if it has a finite number of elements. The size of the group, $\|G\|$, is called its *order* or *cardinality*.
 
-> It's whack that order can be written ord(G) or |G|.
-> The book seems to use |G| for groups, and ord(a) for elements.
+> It's whack that order can be written ord(G) or \|G\|.
+> The book seems to use \|G\| for groups, and ord(a) for elements.
 
 The group $\Bbb Z_n^*$ has all integers smaller than $n$ that are coprime to $n$. Recall that euler's phi function is defined as the count of all integers smaller than $n$ that are coprime to $n$. Therefore:
 
@@ -111,16 +111,16 @@ Example: $Z_{11}^*$, and $a=3$.
 Take a look at this shit:
 
 $$
-a^1 = 3
-a^2 = a^1 \cdot a = 9
-a^3 = a^2 \cdot a = 27 \equiv 5 \bmod 11
-a^4 = a^3 \cdot a = 15 \equiv 4 \bmod 11
-a^5 = a^4 \cdot a = 12 \equiv 1 \bmod 11
-a^6 = a^1 \cdot 1 = 3 \equiv 3 \bmod 11
-a^7 = a^2 \cdot 1 = 3 \equiv 9 \bmod 11
-a^8 = a^3 \cdot 1 = 3 \equiv 5 \bmod 11
-a^9 = a^4 \cdot 1 = 3 \equiv 4 \bmod 11
-a^10 = 1 \cdot 1 = 3 \equiv 1 \bmod 11
+a^1 = 3\\\\
+a^2 = a^1 \cdot a = 9\\\\
+a^3 = a^2 \cdot a = 27 \equiv 5 \bmod 11\\\\
+a^4 = a^3 \cdot a = 15 \equiv 4 \bmod 11\\\\
+a^5 = a^4 \cdot a = 12 \equiv 1 \bmod 11\\\\
+a^6 = a^1 \cdot 1 = 3 \equiv 3 \bmod 11\\\\
+a^7 = a^2 \cdot 1 = 3 \equiv 9 \bmod 11\\\\
+a^8 = a^3 \cdot 1 = 3 \equiv 5 \bmod 11\\\\
+a^9 = a^4 \cdot 1 = 3 \equiv 4 \bmod 11\\\\
+a^10 = 1 \cdot 1 = 3 \equiv 1 \bmod 11\\\\
 a^11 = a^1 \cdot 1 = 3 \equiv 3 \bmod 11
 $$
 
@@ -163,8 +163,8 @@ Now that's pretty wild.
 >
 > If $G$ is a finite group, then for every $a \in G$:
 >
-> - $a^{|G|} = 1$
-> - $ord(a)$ divides $|G|$
+> - $a^{\|G\|} = 1$
+> - $ord(a)$ divides $\|G\|$
 
 So, if we use our base 11 group again, and it has order 10, and only 1, 2, 5, and 10 divide 10, then we know the order of every element has to be either 1, 2, 5, or 10.
 
@@ -191,7 +191,7 @@ If the order of the group is prime $p$, then every element except for 1 has an o
 
 > **Theorem 8.2.6**: Lagrange's theorem
 >
-> If H is a subgroup of G, then $|H|$ divides $|G|$
+> If H is a subgroup of G, then $\|H\|$ divides $\|G\|$
 
 Here's a big one:
 
@@ -233,3 +233,5 @@ I failed the logarithm section in high school. This looks particularly scary:
 $$
 x = \log_{\alpha} \beta \bmod p
 $$
+
+If we have $\alpha$, x, and $p$, then it's easy to compute $\beta$. That's just the `squam` function. But yes, turning it around is heckin tough.
