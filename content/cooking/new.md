@@ -281,4 +281,12 @@
 # Things to investigate
 
 - Better than Bouillon
-- Lentils
+- Lentils (Good shit, just need a recipe)
+- Chicken A La King (looks awesome, find a recipe)
+- SOS
+- Biscuits and Gravy
+- Beef Bourguingnon
+- Chicken fried steak
+- soup / chili?
+- cheese steaks
+- Get that pumpkin spice pancake recipe in here

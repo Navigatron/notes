@@ -1,4 +1,5 @@
-[up](../../../index.md)
+
+[Home](../../../index.md) > Public Policy Analysis
 
 # Public Policy Analysis
 
@@ -66,3 +67,10 @@ In a perfect market, there still *might* be regulation, towards the other 3 poli
 [Bonus class, 2020-10-06, Tax Policy](./tax.md)
 
 [2020-10-15 - Cost Benefit Analysis](./cost_benefit.md)
+
+2020-11-05 - Prof. has given the option to opt-out of the final paper. Details:
+
+- Presentation would move from 10% of final to 25% of final
+- 5% penalty, max class grade is now 95%
+
+[2020-11-05 - Policy Evaluation](./eval.md)
