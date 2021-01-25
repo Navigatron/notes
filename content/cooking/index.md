@@ -12,3 +12,7 @@
 [10/10Brekky](./1010brekky.md)
 
 [A big list of ideas](./new.md)
+
+[Sweet/Sour Cabbage](./sweetsourcabbage.md)
+
+[Jack's "Ragu"](./ragu.md)

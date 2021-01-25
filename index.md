@@ -2,13 +2,13 @@
 
 I'm a college student. These are my notes.
 
+## Spring 2021
+
+[Authentication and Security Models](./content/s7/auth/index.md)
+
 ## Fall 2020
 
 [Intro to Cryptography](./content/s6/crypto/index.md)
-
-[Web application security] - not notes, just homeworks.
-
-[Risk management] - notes are a class assignment, so I can't publish them.
 
 [Policy analysis](./content/s6/policy/index.md)
 
@@ -53,3 +53,5 @@ Co-op :)
 [Cooking](./content/cooking/index.md)
 
 [I'm sick - now what?](./content/meds/index.md)
+
+[2014 Imprezza Evap System](./content/other/imprezza_evap.md)

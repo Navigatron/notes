@@ -41,6 +41,11 @@
 	- eggs
 	- milk
 	- enhance: cinnamon, nutmeg
+- Breakfast Burritos
+	- Tortillas
+	- Scrambly Eggs
+	- onions / peppers
+	- sour cream / salsa /
 
 ## Lunch
 
@@ -277,6 +282,18 @@
 	- tortillas
 	- cheezium
 	- refried beans?
+- Eggurito
+	- oil, bell pepper, onion
+	- touch of garlic
+	- meat if you got it
+	- buncha eggs
+	- turn down for heat
+	- Get that tortilla:
+		- sour cream?
+		- cheese?
+		- Hosoose?
+		- BBQ?
+	- send it
 
 # Things to investigate
 
@@ -290,3 +307,14 @@
 - soup / chili?
 - cheese steaks
 - Get that pumpkin spice pancake recipe in here
+- Holy shit figure out lentils you clown
+- Butter chicken / naan
+- Chicken Curry
+- Chicken korma
+- Shauna Special
+	- 1 chicken breast per person, cut in half so the halves are thin
+		- (filleted?)
+	- Chicken on a pan, with seasoning, touch of lemon juice
+	- apply pesto sauce
+	- bake at 350
+	- also, rice and broccoli in the rice cooker
