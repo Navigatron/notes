@@ -8,6 +8,8 @@ I'm a college student. These are my notes.
 
 [Malware Reverse Engineering](./content/s7/malware/index.md)
 
+[Technological Innovation and Public Policy](./content/s7/policy/index.md)
+
 ## Fall 2020
 
 [Intro to Cryptography](./content/s6/crypto/index.md)
