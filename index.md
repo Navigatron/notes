@@ -6,6 +6,8 @@ I'm a college student. These are my notes.
 
 [Authentication and Security Models](./content/s7/auth/index.md)
 
+[Malware Reverse Engineering](./content/s7/malware/index.md)
+
 ## Fall 2020
 
 [Intro to Cryptography](./content/s6/crypto/index.md)
