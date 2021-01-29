@@ -3,7 +3,7 @@
 
 [Index](../../../index.md) > Authentication
 
-# Authentication and Security Models
+# CSEC 472: Authentication and Security Models
 
 [2021-01-25: Course Introduction](./2021-01-25.md)
 
