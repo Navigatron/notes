@@ -10,6 +10,8 @@ I'm a college student. These are my notes.
 
 [Technological Innovation and Public Policy](./content/s7/policy/index.md)
 
+[Decision Analysis](./content/s7/decisions/index.md)
+
 ## Fall 2020
 
 [Intro to Cryptography](./content/s6/crypto/index.md)
