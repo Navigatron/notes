@@ -12,3 +12,5 @@
 [2021-02-01: Module 1: Trust and Security Models](./2021-02-01.md)
 
 [2021-02-03: Lab 1](./2021-02-03.md)
+
+[2021-02-08: Module One: Security Models](./2021-02-08.md)
