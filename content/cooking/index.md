@@ -3,7 +3,7 @@
 
 # Cooking
 
-![](https://elvino.co.uk/wp-content/uploads/2016/03/Food-banner.jpg)
+[The Big List](./new.md)
 
 [Sauerkraut](./sauerkraut.md)
 
@@ -11,8 +11,8 @@
 
 [10/10Brekky](./1010brekky.md)
 
-[A big list of ideas](./new.md)
-
 [Sweet/Sour Cabbage](./sweetsourcabbage.md)
 
 [Jack's "Ragu"](./ragu.md)
+
+[Coffee](./coffee.md)
