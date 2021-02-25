@@ -8,3 +8,7 @@
 [2021-02-04: What is Technology?](./2021-02-04.md)
 
 [2021-02-09: Innovation and Justifications for Government Intervention](./2021-02-09.md)
+
+[2021-02-16: Going over Week 3 Discussions](./2021-02-16.md)
+
+[2021-02-25: Brief Term Project Overview](./2021-02-25.md)

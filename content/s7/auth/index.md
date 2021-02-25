@@ -16,3 +16,11 @@
 [2021-02-08: Module One: Security Models](./2021-02-08.md)
 
 [2021-02-10: Q&A w/ Prof.](./2021-02-10.md)
+
+[2021-02-15: Discretionary Access Control](./2021-02-15.md)
+
+[2021-02-17: Q&A w/ Prof.](./2021-02-17.md)
+
+[2021-02-22: Windows Authentication; Kerberos](./2021-02-22.md)
+
+[2021-02-24: Group work on Lab2](./2021-02-24.md)
