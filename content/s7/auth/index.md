@@ -24,3 +24,5 @@
 [2021-02-22: Windows Authentication; Kerberos](./2021-02-22.md)
 
 [2021-02-24: Group work on Lab2](./2021-02-24.md)
+
+[2021-03-01: Module 3: MAC and SELinux](./2021-03-01.md)
