@@ -1,0 +1,52 @@
+digraph G {
+	graph [
+		label = "Traveling During a Snowstorm";
+		fontname = inconsolata;
+		rankdir = LR;
+	];
+	node [
+		shape = box;
+		fontname = inconsolata;
+	];
+	edge [
+		fontname = inconsolata;
+	];
+
+	# Nodes
+	s [label="How to\nTravel?"];
+	t [label="8 Hours"];
+	c [label="How\nDoes\nit go?\n(7.2hrs)"; shape="circle"]
+	c1 [label="5 Hours"];
+	c2 [label="7 Hours"];
+	c3 [label="9 Hours"];
+	a [label="How\nDoes\nit go?\n(5.6hrs)"; shape="circle"];
+	a1 [label="2 Hours"];
+	a2 [label="Pick\nAgain"];
+	at1 [label="10 Hours"];
+	ac [label="How\nDoes\nit go?\n(9.2hrs)"; shape="circle"];
+	ac1 [label="7 Hours"];
+	ac2 [label="9 Hours"];
+	ac3 [label="11 Hours"];
+
+	# Subgraphs
+
+	subgraph h{
+		rank=same;
+		t;c1;c2;c3;a1;at1;ac1;ac2;ac3
+	}
+
+	# Edges
+	s -> t [label="Train"];
+	s -> c [label="Car"];
+	c -> c1 [label="Smoothly (25%)"];
+	c -> c2 [label="Okay (40%)"];
+	c -> c3 [label="Poorly (35%)"];
+	s-> a[label="Airplane"];
+	a -> a1 [label="Good Weather (40%)"];
+	a -> a2 [label="Flights Grounded (60%)"];
+	a2 -> at1 [label="Train"];
+	a2 -> ac [label="Car"];
+	ac -> ac1 [label="Smoothly (25%)"];
+	ac -> ac2 [label="Okay (40%)"];
+	ac -> ac3 [label="Poorly (35%)"];
+}
