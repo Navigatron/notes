@@ -2,6 +2,14 @@
 
 I'm a college student. These are my notes.
 
+## Fall 2021
+
+[Cyber Risk and Resilience](./content/s8/cyber/index.md)
+
+[Software Engineering](./content/s8/swen/index.md)
+
+Publ 101 coming soon.
+
 ## Spring 2021
 
 [Authentication and Security Models](./content/s7/auth/index.md)
@@ -58,6 +66,8 @@ Co-op :)
 
 [Cooking](./content/cooking/index.md)
 
-[I'm sick - now what?](./content/meds/index.md)
+[I'm sick - now what?](./content/other/index.md)
 
 [2014 Imprezza Evap System](./content/other/imprezza_evap.md)
+
+[Dog Training](./content/other/dog.md)
