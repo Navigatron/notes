@@ -12,3 +12,5 @@
 [2021-02-16: Going over Week 3 Discussions](./2021-02-16.md)
 
 [2021-02-25: Brief Term Project Overview](./2021-02-25.md)
+
+[2021-03-02: Intellectual Property](./2021-03-02.md)
