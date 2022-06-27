@@ -1,8 +1,14 @@
 # Index
 
-I'm a college student. These are my notes.
+I'm Ethan. These are my notes.
 
-## Fall 2021
+[Google Cloud Platform and Certifications](./content/gcp/index.md)
+
+[Programming Microcontrollers](./content/esp32/index.md)
+
+## College
+
+### Fall 2021
 
 [Cyber Risk and Resilience](./content/s8/cyber/index.md)
 
@@ -10,7 +16,7 @@ I'm a college student. These are my notes.
 
 Publ 101 coming soon.
 
-## Spring 2021
+### Spring 2021
 
 [Authentication and Security Models](./content/s7/auth/index.md)
 
@@ -20,13 +26,13 @@ Publ 101 coming soon.
 
 [Decision Analysis](./content/s7/decisions/index.md)
 
-## Fall 2020
+### Fall 2020
 
 [Intro to Cryptography](./content/s6/crypto/index.md)
 
 [Policy analysis](./content/s6/policy/index.md)
 
-## Spring 2020
+### Spring 2020
 
 This semester ended early thanks to you-know-what.
 
@@ -38,11 +44,11 @@ This semester ended early thanks to you-know-what.
 
 [Intro to Database and Data Modeling - Take II](./content/s5/database/index.md)
 
-## Fall 2019
+### Fall 2019
 
-Co-op :)
+Co-op
 
-## Spring 2019
+### Spring 2019
 
 [Database](./content/s4/database/index.md)
 
@@ -50,7 +56,7 @@ Co-op :)
 
 [Biology II Lecture](./content/s4/bio/index.md)
 
-## Fall 2018
+### Fall 2018
 
 [Intro to Environmental Studies](./content/s3/envi/index.md)
 
@@ -62,12 +68,14 @@ Co-op :)
 
 [Probability and Statistics I and II](./content/s3/ps/index.md)
 
-## Other
+# Other Things
 
 [Cooking](./content/cooking/index.md)
 
-[I'm sick - now what?](./content/other/index.md)
+[I'm sick - now what?](./content/other/sick.md)
 
 [2014 Imprezza Evap System](./content/other/imprezza_evap.md)
 
 [Dog Training](./content/other/dog.md)
+
+[Exercise](./content/other/workout.md)

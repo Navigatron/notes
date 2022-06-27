@@ -27,3 +27,7 @@ Policies often have broad scopes - they're said to be "in the public's interest"
 Policy is made by governments, and enforced by governments.
 
 > "Policy is what the government chooses to do or not to do."
+
+---
+
+[Index](../../../index.md) > [Public Policy 101](./index.md) > {{ page.date }}: {{ page.title }}
