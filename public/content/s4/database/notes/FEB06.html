@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- MathJax disabled on this page -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426846">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="../">up</a></p>
+<h1>Database FEB06 - MEI, Normalization</h1>
+<h2>Housekeeping</h2>
+<ul>
+<li>Practice Exercise 3 released today, due Monday FEB11</li>
+<li>Homework 3 due...? Dropbox not created</li>
+</ul>
+<h2>MEI</h2>
+<p><code>M.E.I</code> stands for <em>Must Exist In</em></p>
+<p>MEI is used to constrain inserts. Example used in class:</p>
+<pre><code>Advisor(departmentID) Must Exist In Major(departmentID)
+</code></pre>
+<p>In this case, we cannot insert an advisor with a departmentID that doesn't already exist. If we want to, we must first create their department.</p>
+<h2>Normalization</h2>
+<ol>
+<li>First Normal Form</li>
+<li>Second Normal Form</li>
+<li>Third Normal Form</li>
+<li>Boyce-Codd Normal Form</li>
+</ol>
+<p><a href="https://www.studytonight.com/dbms/database-normalization.php">Here's a good explanation of what normalization is</a></p>
+<h3>For a table to be a relation</h3>
+<ul>
+<li>All cells must be a single value - no arrays
+<ul>
+<li>This breaks on books with multiple authors</li>
+</ul>
+</li>
+<li>Each column has a unique name</li>
+<li>All values in a column are of the same type</li>
+<li>No two rows can be identical</li>
+<li>Order of rows and columns is not relevant</li>
+</ul>
+<h3>Essence of Normalization</h3>
+<ul>
+<li>Any relation that has two or more themes should be broken up into two or more relations</li>
+<li>Each of these new relations has one theme.</li>
+</ul>
+<blockquote>
+<p>Let's see what the internet says</p>
+</blockquote>
+<ul>
+<li>Eliminating reduntant(useless) data.
+<ul>
+<li>This is what jim means by separating themes</li>
+<li>Data must only be updated in one place</li>
+</ul>
+</li>
+<li>Ensuring data dependencies make sense i.e data is logically stored.</li>
+</ul>
+<h3>Anomalies</h3>
+<p>Anomalies must be avoided.</p>
+<ul>
+<li>Insert Anomaly
+<ul>
+<li>Must insert too much data</li>
+</ul>
+</li>
+<li>Update Anomaly
+<ul>
+<li>Data must be changed in multiple colleges</li>
+</ul>
+</li>
+<li>Delete Anomaly
+<ul>
+<li>Losing too much data</li>
+<li>eg. deleting all students looses all department names</li>
+</ul>
+</li>
+</ul>
+<h3>1NF</h3>
+<p>For a table to be in 1NF, the following conditions must be met:</p>
+<ul>
+<li>The table is a relation (see above)</li>
+<li></li>
+</ul>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

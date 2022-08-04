@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- MathJax disabled on this page -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426755">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="./">up</a></p>
+<h1>2020-02-18</h1>
+<ul>
+<li>The midterms are next week</li>
+<li>Homework 4 is due tonight at midnight</li>
+<li>Midterm prep material:
+<ul>
+<li>Practice exam on myCourses</li>
+</ul>
+</li>
+</ul>
+<p>This class is HW3 review and normalization practice. I intend on spending it doing hw4. If there are no notes after this paragraph, you know why.</p>
+<blockquote>
+<p>Class has voted for a 8.5x11 notes sheet during the written exam.</p>
+</blockquote>
+<h2>Practice Normalization</h2>
+<p>normal forms</p>
+<ol>
+<li>intuitive</li>
+<li>incomplete deps</li>
+<li>transitive deps</li>
+<li>something to do with determinants</li>
+</ol>
+<h3>start</h3>
+<p>1,2 -&gt; 3,4,5,6,7,8,9,10,11<br>
+1-&gt;3,4,5,6,7
+2-&gt;9,10,11<br>
+3,4-&gt;5,6<br>
+5-&gt;6<br>
+11-&gt;10<br>
+10-&gt;11</p>
+<p><em>1,2</em> -&gt;8<br>
+1-&gt;<em>3,4</em>,7<br>
+2-&gt;9,<em>10</em><br>
+3,4-&gt;<em>5</em><br>
+5-&gt;6<br>
+10-&gt;11</p>
+<p>&lt;span style='text-decoration:underline;'&gt;Underline is Primary Key&lt;/span&gt;<br>
+&lt;span style='border-bottom:1px dashed;'&gt;Dashed underline is Foreign Key&lt;/span&gt;</p>
+<p>&lt;span style='text-decoration:underline;'&gt;&lt;/span&gt;<br>
+&lt;span style='border-bottom:1px dashed;'&gt;&lt;/span&gt;</p>
+<p>A(&lt;span style='text-decoration:underline;'&gt;&lt;span style='border-bottom:1px dashed;'&gt;1, 2&lt;/span&gt;&lt;/span&gt;, → 8)  <br>
+B(&lt;span style='text-decoration:underline;'&gt;1&lt;/span&gt; → &lt;span style='border-bottom:1px dashed;'&gt;3, 4&lt;/span&gt;, 7)  <br>
+C(&lt;span style='text-decoration:underline;'&gt;2&lt;/span&gt; → 9, &lt;span style='border-bottom:1px dashed;'&gt;10&lt;/span&gt;)  <br>
+D(&lt;span style='text-decoration:underline;'&gt;3,4&lt;/span&gt; → &lt;span style='border-bottom:1px dashed;'&gt;5&lt;/span&gt;)  <br>
+E(&lt;span style='text-decoration:underline;'&gt;5&lt;/span&gt; → 6)  <br>
+F(&lt;span style='text-decoration:underline;'&gt;10&lt;/span&gt; → 11)</p>
+<blockquote>
+<p>alas I have forgotten the MEI statements.</p>
+</blockquote>
+<p>A(1) MEI B(1)<br>
+A(2) MEI C(2)
+B(3) MEI D(3)
+B(4) MEI D(4)
+C(10) MEI F(10)
+D(5) MEI E(5)</p>
+<blockquote>
+<p>Boyce codd - All the determinants that we have, need to be a primary or candidate key in our proposed relations.
+Determinants: 1,2,3,4,5,10,11 - 11 isn't a primary key, but it is a candidate key for relation F.</p>
+</blockquote>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

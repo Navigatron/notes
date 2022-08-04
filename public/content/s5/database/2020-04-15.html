@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- MathJax disabled on this page -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426757">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="./">up</a></p>
+<h1>2020-04-15 - HW7 slides</h1>
+<h2>Transactions</h2>
+<p>Either the whole transaction works, or fails.</p>
+<p>Moving money between bank accounts - withdraw from one, deposit in the other. Either execute both or neither, never just one.</p>
+<p>Transaction Control Language (TCL)</p>
+<ul>
+<li>COMMIT - save these changes</li>
+<li>ROLLBACK - abandon these changes</li>
+</ul>
+<h2>ACID</h2>
+<p>Properties of a transaction</p>
+<ul>
+<li>Atomic
+<ul>
+<li>greek for 'indivisible'</li>
+<li>All or nothing</li>
+</ul>
+</li>
+<li>Consistency
+<ul>
+<li>Must not break integrity constraints (fks)</li>
+</ul>
+</li>
+<li>Isolation
+<ul>
+<li>Concurrent transactions do not impact each other.</li>
+<li>involves locking rows, executing txs 1 at a time</li>
+</ul>
+</li>
+<li>Durability
+<ul>
+<li>If it happens, it happens.</li>
+</ul>
+</li>
+</ul>
+<h2>How to</h2>
+<p>Individual statements are treated as transactions by default. This can be disabled with:</p>
+<pre><code class="language-sql">SET AUTOCOMMIT=0;
+</code></pre>
+<p>Here's a transaction example:</p>
+<pre><code class="language-sql">START TRANSACTION;
+UPDATE Savings SET Balance = Balance - 100 WHERE Account = 'example1';
+UPDATE Checking SET Balance = Balance + 100 WHERE Account = 'example2';
+COMMIT;
+</code></pre>
+<h2>On-Delete and On-Update</h2>
+<pre><code class="language-sql">ADD CONSTRAINT name_fk FOREIGN KEY (keyname) REFERENCES table(keyname) ON DELETE action ON UPDATE action;
+</code></pre>
+<p>Action can be:</p>
+<ul>
+<li>CASCADE</li>
+<li>SET NULL</li>
+<li>SET DEFAULT</li>
+<li>NO ACTION</li>
+</ul>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

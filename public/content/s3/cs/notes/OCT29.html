@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- MathJax disabled on this page -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426825">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="../">up</a></p>
+<h1>Housekeeping</h1>
+<ul>
+<li>Project exists</li>
+<li>Lab 6 not out yet</li>
+</ul>
+<h1>More Circuits</h1>
+<ul>
+<li>Combinational Circuits
+<ul>
+<li>Output completely defined by input</li>
+</ul>
+</li>
+<li>Sequential Circuit
+<ul>
+<li>A circuit with state</li>
+<li>Output depends on Input and Saved State</li>
+<li>I wish I could draw pictures for these notes</li>
+</ul>
+</li>
+</ul>
+<h1>Well Known Circuits</h1>
+<h2>Decoder</h2>
+<p><em>an n-to-2^n decoder</em></p>
+<p>Decoders have names, n is replaced with a constant.</p>
+<ul>
+<li>n Inputs (as n-bit binary number)
+<ul>
+<li>Input 0 (Low Order Bit)</li>
+<li>Input 1</li>
+<li>Input 2</li>
+<li>...</li>
+<li>Input n-1</li>
+</ul>
+</li>
+<li>2^n Outputs
+<ul>
+<li>Output 0</li>
+<li>Output 1</li>
+<li>...</li>
+<li>Output ((2^n)-1)</li>
+</ul>
+</li>
+<li>Action
+<ul>
+<li>Send a 1 to the output wire corresponding to the value of the inputs.</li>
+<li>Send zeros to all others.</li>
+</ul>
+</li>
+</ul>
+<p>In a 2 to 4 decoder, we'd take 2 inputs to 4 outputs.</p>
+<p>Send the Decoder a number (n) in binary, and it'll turn on output n.</p>
+<h3>Truth Table</h3>
+<p>S = Select = Input</p>
+<p>S1 | S0 | Y0 | Y1 | Y2 | Y3
+---|---
+0 | 0 | 1 | 0 | 0 | 0
+0 | 1 | 0 | 1 | 0 | 0
+1 | 0 | 0 | 0 | 1 | 0
+1 | 1 | 0 | 0 | 0 | 1</p>
+<h3>Implementation</h3>
+<p>A function is a column - so for the above 2-to-4 decoder, there are 4 functions.</p>
+<p>Y0 = !s1 AND !S0<br>
+Y1 = !S1 AND S0<br>
+Y2 = S1 AND !S0<br>
+Y3 = S1 AND S0</p>
+<p>Possible use: take 6 bit opcode to 6-to-64 decoder, each output activates a different circuit to do the thing.</p>
+<h3>Draw this</h3>
+<p>Block Diagram: use Boxes with input lines and output lines so we don't have to draw all the internals.</p>
+<ul>
+<li>Label
+<ul>
+<li>&quot;2-to-4 Decoder&quot; in the box</li>
+<li>&quot;S0&quot; and &quot;S1&quot; in the box to the right of their inputs</li>
+<li>label outputs 0 through 3, drop the &quot;Y&quot;s</li>
+</ul>
+</li>
+</ul>
+<p>Logisim does not label for us. Logisim uses shapes to tell us what something is. We cannot do that - we need to label. Shape doesn't matter.</p>
+<blockquote>
+<p>A carefully labeled star will not loose points, but it'll make Prof. Grumpy.</p>
+</blockquote>
+<h3>How to turn off the Decoder?</h3>
+<p>Standard Decoders cannot be turned off. However, there are special things.</p>
+<p>Add another input, E. The decoder operates normally when E is 1. When E is 0, the decoder produces no input.</p>
+<p>A &quot;2-to-4 decoder with enable&quot; typically has the E input at the top or bottom of the block diagram.</p>
+<p>Tack on &quot;AND E&quot; to the end of all &quot;Yn=&quot; functions</p>
+<h3>Any function can be implemented with a decoder and an OR gate</h3>
+<p>Pipe the inputs to the decoder, OR the outputs together to get the function.</p>
+<p>In fact, you can use the same decoder to implement multiple different functions at the same time, as long as they use the same inputs.</p>
+<p>If a function takes a lot of the decoder outputs, flip the function and invert the result. Same output with less decoder outputs.</p>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

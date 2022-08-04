@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- MathJax disabled on this page -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426777">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="../../../">Index</a> &gt; <a href="./">Course</a> &gt; Mon Apr 19 2021 20:00:00 GMT-0400 (Eastern Daylight Time):</p>
+<h1>Mon Apr 19 2021 20:00:00 GMT-0400 (Eastern Daylight Time):</h1>
+<p>Decision Trees! Not on assignment 6. (Assignment 6, by the way, is a big one. Start soon!) Meanwhile, decisions trees will definitely be on the test.</p>
+<h2>The snowstorm example</h2>
+<p>You're traveling home for winter break, and have three options:</p>
+<ul>
+<li>Train, which takes 8 hours</li>
+<li>Car, which could take 5, 7, or 9 hours depending on how it goes</li>
+<li>Airplane, which takes 2 hours, unless the flights are grounded due to snow
+<ul>
+<li>If the flights are grounded, you have to pick another option.</li>
+</ul>
+</li>
+</ul>
+<p>The car has a 25% chance of going smoothly, and a 40% chance of going okay. The flights have a 60% chance of being grounded.</p>
+<p><img src="./images/2021-04-20.png" alt=""></p>
+<p>We see that the best <strong>Strategy</strong> is to head to the airport. If the flights are grounded, the car is the backup.</p>
+<h2>Risk Profiles</h2>
+<p>A <strong>Strategy</strong> is your plan at the start of a decision tree - it's a roadmap from the start to the end. In the snowstorm example, our strategy is to head to the airport, and if the flights are grounded, take a car.</p>
+<blockquote>
+<p>Strategy: <em>&quot;Choose X, and then if Y happens, choose Z.&quot;</em></p>
+</blockquote>
+<p>For each strategy, you can find the probability of each possible outcome. This graph, of outcomes on the X axis and probability on the Y, is a <em>risk profile</em>.</p>
+<h2>Value of Information</h2>
+<p>Our decision trees are based on our best guesses of the probabilities. We can find out how much information is worth to us by looking at the decision trees.</p>
+<p>Normally, we decide which path to take, and then chance nodes resolve. To find the <strong>Expected Value of Perfect Information</strong>, put your chance node first - then make your decisions knowing the output. If this model gives you a higher expected value, then the information is valuable - and you know exactly how valuable.</p>
+<p>TODO - add some example diagrams here.</p>
+<p><img src="./images/2021-04-20.2.png" alt=""></p>
+<hr>
+<p><a href="../../../">Index</a> &gt; <a href="./">Course</a> &gt; Mon Apr 19 2021 20:00:00 GMT-0400 (Eastern Daylight Time):</p>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

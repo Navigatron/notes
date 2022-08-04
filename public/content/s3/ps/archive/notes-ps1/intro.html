@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- <script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+			tex2jax: {
+				inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+				processEscapes: true
+			}
+		});
+	</script> -->
+	<script>
+		MathJax = {
+			tex: {
+				inlineMath: [['$', '$'], ['\\(', '\\)']]
+			}
+		};
+	</script>
+	<!-- <script
+		type="text/javascript"
+		charset="utf-8"
+		src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+		>
+	</script> -->
+	<script
+		type="text/javascript"
+		id="MathJax-script"
+		async
+		src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+		>
+	</script>
+	<!-- <script
+		type="text/javascript"
+		charset="utf-8"
+		src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
+		>
+	</script> -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426850">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="../">up</a></p>
+<h1>Groundwork and Discrete Probability</h1>
+<h2>Set Theory</h2>
+<p>A capital letter denotes a set. Sets are collections of... stuff.</p>
+<ul>
+<li>Numbers</li>
+<li>Strings</li>
+<li>Shoe Sizes</li>
+<li>Shoes</li>
+<li>Whatever, physical or symbolic.</li>
+</ul>
+<p>Below, the set $$A$$ contains some numbers.</p>
+<p>$$ A = { 5, 10, 15, 20, 2 } $$</p>
+<p>There are some symbols involved for operations.</p>
+<table>
+<thead>
+<tr>
+<th>Symbolic</th>
+<th>Meaning</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$$X \in A$$</td>
+<td>Element Of</td>
+<td>X is a thing in set A</td>
+</tr>
+<tr>
+<td>$$A \subset B$$</td>
+<td>Subset</td>
+<td>A is a subset of B. If it's in A, it must be in B.</td>
+</tr>
+<tr>
+<td>$$A \cup B$$</td>
+<td>Union</td>
+<td>Set of all things in A or B. Give me Both.</td>
+</tr>
+<tr>
+<td>$$A \cap B$$</td>
+<td>Intersection</td>
+<td>Set of things in both A and B. The Overlap part of the Venn-Diagram</td>
+</tr>
+</tbody>
+</table>
+<h3>Probability</h3>
+<p>Sets contain possible outcomes. In flipping a coin, there are two possible outcomes: Heads, and Tails.</p>
+<p>$$ Flip = {Heads, Tails}$$</p>
+<p>Sets in probability are <em>Evaluated</em>. When the experiment is performed, we get a result. The Probability that Set F (for flip) evaluates to Heads is as follows:</p>
+<p>$$P(F = Heads)$$</p>
+<p>The set of ping-pong balls in the lottery machine contains the numbers 1 to 30. You've bet on 7.</p>
+<p>$$P(L = 7) = \frac {1} {30}$$</p>
+<h2>Axioms of Probability</h2>
+<ol>
+<li>
+<p>The Probability of an Event is Greater than or Equal to Zero.</p>
+<p>$$P(A) \geq 1$$</p>
+</li>
+<li>
+<p>The Probability of Everything is 1.</p>
+<p>$$P(\varepsilon) = 1$$</p>
+</li>
+<li>
+<p>The probability of something in a group occurring, is equal to the sum of the probabilities of each thing.</p>
+<p>$$P(\cup_{k}A_{k}) = \Sigma P(A_{k})$$</p>
+</li>
+</ol>
+<p>The last one is a <em>little</em> confusing. Take the union of a bunch of things.</p>
+<blockquote>
+<p>Combine all our little sets... INTO A <strong>SUPER SET.</strong></p>
+</blockquote>
+<p>This is just the same as adding them all together - <em>As long as they don't overlap.</em></p>
+<h2>Conditional Probability</h2>
+<p>$A$ and $B$ are possible events. They could both happen, or maybe only one. If B has already happened, What's the probability that A will also happen?</p>
+<p>The following is read as &quot;The Probability of $A$ given $B$.&quot;</p>
+<p>$$P(A | B)$$</p>
+<p>You're falling from the sky. You're going to land in B. What's the probability that you also land in A? Think of it as Overlap of A and B divided by total area of B.</p>
+<p>In fancy notation, it looks like this:</p>
+<p>$$P(A | B) = \frac {P(A \cap B)} {P(B)}$$</p>
+<h2>Magic Formulas</h2>
+<ol>
+<li>
+<p>The Probability that something will happen Plus the Probability that it wont Equals One. It either will or wont, there's no other option.</p>
+<p>$$P(A)+P(A^k)=1$$</p>
+</li>
+<li>
+<p><code>A Union B</code> equals <code>A+B-overlap</code>. Don't count the overlap twice.</p>
+<p>$$P(A \cup B) = P(A) + P(B) - P(A \cap B)$$</p>
+</li>
+<li>
+<p>If B is only defined in relation to A, use this.</p>
+<p>$$P(B)=P(X\cap A)+P(X\cap A^c)$$</p>
+</li>
+</ol>
+<p>It's worth noting that $A^c$ is &quot;A Complement&quot;, or the probability that a <em>won't</em> happen, aka $1-P(A)$</p>
+<h2>Discrete Probability - PMF</h2>
+<p>PMF = Probability Mass Function</p>
+<p>For Discrete Probability (drawing from a set), this is more of a lookup table than a function.</p>
+<p>Sum of two coin flips (heads=1, tails=0):</p>
+<table>
+<thead>
+<tr>
+<th>event</th>
+<th>$P(event)$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>$\frac {1} {4}$</td>
+</tr>
+<tr>
+<td>1</td>
+<td>$\frac {1} {2}$</td>
+</tr>
+<tr>
+<td>2</td>
+<td>$\frac {1} {4}$</td>
+</tr>
+</tbody>
+</table>
+<h2>Expectation</h2>
+<h3>Definition</h3>
+<p>The Weighted average of all possible outcomes. The weights are the probabilities of the outcome.</p>
+<p>$$E(X)=\Sigma (xP(X=x))$$</p>
+<p>A function of a random variable evaluates to... a random variable. Fortunately, it's the same idea.</p>
+<p>$$E(g(X))=\Sigma (g(x)P(X=x))$$</p>
+<p>What is $E(X^2)$? Think of it as $E(g(x))$, where $g(x)=x^2$</p>
+<p>$$E(X^2)=\Sigma (x^2*P(X=x))$$</p>
+<h3>Mean</h3>
+<p>The Mean is what you expect the results to be on average. This greek letter is pronounced &quot;mew&quot;.</p>
+<p>$$\mu = E(X)$$</p>
+<h3>Variance</h3>
+<p>Take each Data Point, find it's distance from the center. Square it. Find the expectation of that.</p>
+<p>Variance tells you how far data points will be, on average, from the mean.</p>
+<p>Hard but understandable:</p>
+<p>$$V(X)=E((X-\mu)^2)$$</p>
+<p>Simplified:</p>
+<p>$$V(X)=E(X^2)-(E(X))^2$$</p>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

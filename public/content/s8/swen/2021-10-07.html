@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- MathJax disabled on this page -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426795">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="../../../">Index</a> &gt; <a href="./">Software Engineering</a> &gt; Wed Oct 06 2021 20:00:00 GMT-0400 (Eastern Daylight Time):</p>
+<h1>Wed Oct 06 2021 20:00:00 GMT-0400 (Eastern Daylight Time):</h1>
+<blockquote>
+<p>Exams will be returned next class</p>
+<p>Sprint demos &quot;went well&quot;</p>
+</blockquote>
+<p>These things are on slide 1:</p>
+<ul>
+<li>Controller</li>
+<li>Pure Fabrication</li>
+<li>Open/Close</li>
+<li>Polymorphism</li>
+<li>Liskov Substitution</li>
+</ul>
+<blockquote>
+<p>There is a thick assignment on this content. Not due today, but be prepared.</p>
+</blockquote>
+<p>Solid:</p>
+<ul>
+<li>single responsibility</li>
+<li>open close</li>
+<li>liskov</li>
+<li>interface segregation</li>
+<li>dependency inversion</li>
+</ul>
+<h2>Controller</h2>
+<p>Delegating responsibility out of the UI layer. Pull the code that drives change-making out of the UI layer, and put it in its own app-level controller file.</p>
+<blockquote>
+<p>In Node, we say that &quot;routes&quot; call &quot;controllers&quot; (request handlers), which translate out of http to call <em>services</em>.</p>
+</blockquote>
+<h2>Pure Fabrication</h2>
+<p>&quot;Assign a cohesive set of responsibilities to a non-domain entity in order to support high cohesion and low coupling&quot;</p>
+<p>Say a model tier entity that represents something needs to write to a database - That's not something that models should worry about.</p>
+<p>Pure fabrication means just making something up.</p>
+<h2>Open / Closed</h2>
+<p>&quot;Software entities should be open for extension, but closed for modification&quot;</p>
+<p>This is a strong preference to extend functionality, rather than edit existing functionality.</p>
+<h2>Polymorphism</h2>
+<p>This is good.</p>
+<p>If there is a class <code>Fruit</code>, and assorted subclasses, then a <code>ChopFruit</code> function should be able to take any of them.</p>
+<h2>Liskov substitution</h2>
+<p>&quot;Objects in a program should be replaceable with instances of their subtypes without altering the correctness of the program&quot;</p>
+<blockquote>
+<p>This sounds like polymorphism with extra steps</p>
+</blockquote>
+<h1>Unit Testing</h1>
+<p>The art of testing tiny components of the code.</p>
+<p>Features of unit testing:</p>
+<ul>
+<li>Automatic
+<ul>
+<li>The tests run all the time, no need to remember</li>
+</ul>
+</li>
+<li>Thorough
+<ul>
+<li>Hit everything</li>
+</ul>
+</li>
+<li>Repeatable
+<ul>
+<li>The same results every time on the same code</li>
+</ul>
+</li>
+<li>Independent
+<ul>
+<li>Tests do not depend on each other</li>
+</ul>
+</li>
+<li>Professional
+<ul>
+<li>Professional</li>
+</ul>
+</li>
+<li>Fast
+<ul>
+<li>Fast</li>
+</ul>
+</li>
+</ul>
+<p>Maven runs tests on every build.</p>
+<p>What are we testing?</p>
+<ul>
+<li>Business logic
+<ul>
+<li>The happy paths and the failure paths</li>
+</ul>
+</li>
+<li>Constructors and accessors</li>
+<li>Defensive programming checks
+<ul>
+<li>Validation of method arguments</li>
+<li>Validation of component state</li>
+</ul>
+</li>
+<li><code>equals</code> and <code>hashCode</code> methods</li>
+</ul>
+<p>&quot;Component under Test&quot; = CuT. Isolate the CuT as much as possible. Do whatever setup necessary to get things into the state needed for testing.</p>
+<ul>
+<li>assertTrue</li>
+<li>assertFalse</li>
+<li>assertEquals</li>
+<li>assertNotEquals</li>
+<li>assertSame</li>
+<li>assertNotSame</li>
+<li>assertNull</li>
+<li>assertNotNull</li>
+</ul>
+<p>Testable code relies on dependency injection such that only specific parts are tested at a time.</p>
+<p>There is a framework called Mockito that helps create mock objects for testing.</p>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

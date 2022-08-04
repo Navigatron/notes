@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- MathJax disabled on this page -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426838">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="../">up</a></p>
+<h1>Housekeeping</h1>
+<ul>
+<li>Lab Report Questions
+<ul>
+<li>STATE
+<ul>
+<li>netstat after the experiment</li>
+<li>Server side</li>
+</ul>
+</li>
+<li>ACKS
+<ul>
+<li>standalone</li>
+<li>piggyback with data</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1>TCP Teardown</h1>
+<p>In this example, client initiates teardown. In reality, either party can initiate teardown.</p>
+<p>This differs from handshake, where server listenss and client must initiate.</p>
+<ol>
+<li>client FIN</li>
+<li>server ACK</li>
+<li>Server sends data until it's done - connection is in &quot;half-closed&quot; state.</li>
+<li>server FIN</li>
+<li>client ACK</li>
+</ol>
+<p>Look closely at sequence and ack numbers to determine exactly what is acking what.</p>
+<p>If, at any point, something goes terribly wrong, an RST is sent.</p>
+<h1>TCP option negotiation</h1>
+<p>options identified by <code>KIND</code> number - 1 byte in length - 256 possibilities.</p>
+<p>Options are either single byte or multi-byte.</p>
+<p>Single byte options consist of only their KIND number.</p>
+<ul>
+<li>EOP
+<ul>
+<li>end of option field</li>
+<li>KIND 0</li>
+<li>used as padding to move data to 32 bit boundary</li>
+</ul>
+</li>
+<li>NOP
+<ul>
+<li>No Operation</li>
+<li>KIND 1</li>
+<li>used to pad options list</li>
+</ul>
+</li>
+</ul>
+<p>Multibyte options have KIND, length, data</p>
+<ul>
+<li>MSU
+<ul>
+<li>Maximum Segment Size</li>
+<li>KIND 2</li>
+<li>default is 536</li>
+</ul>
+</li>
+<li>WSF
+<ul>
+<li>Window Scaling Factor</li>
+<li>KIND 3</li>
+<li>window size is set to 2^n, where n is WSF</li>
+</ul>
+</li>
+<li>Timestamp functions
+<ul>
+<li>Used to calculate round trip time</li>
+<li>KIND 8</li>
+</ul>
+</li>
+<li>SACK
+<ul>
+<li>Selective Acknowledgment</li>
+<li>KIND 5</li>
+<li>If both send SACK-permitted during handshake, then SACK is set for duration of data transfer.</li>
+<li>Useful for recovery from dropped/missing packets.</li>
+</ul>
+</li>
+</ul>
+<h1>TCP Timers</h1>
+<p>Timers control a lot of flow.</p>
+<ul>
+<li>Re-transmission Timer
+<ul>
+<li>Timer is set for every segment sent.</li>
+<li>Segments stay in queue</li>
+<li>Time based on round-trip time [SMA(4)]
+<ul>
+<li>\alpha (last RTT) + (1-\alpha )(Current RTT)</li>
+</ul>
+</li>
+<li>If the timer expires, restart the timer and re-transmit.</li>
+<li>Once the ACK is received, segment leaves queue.</li>
+<li>There's only one timer.</li>
+</ul>
+</li>
+</ul>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

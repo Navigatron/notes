@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- MathJax disabled on this page -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426826">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="../">up</a></p>
+<h1>Housekeeping</h1>
+<ul>
+<li>Exam 1
+<ul>
+<li>Next Class</li>
+<li>GOL 3435</li>
+</ul>
+</li>
+</ul>
+<h1>Do-While loop</h1>
+<h3>Java:</h3>
+<pre><code class="language-java">do{
+    // Code
+}while(condition);
+</code></pre>
+<h3>MIPS pseudo Code:</h3>
+<pre><code>loop:
+    # body
+    # update
+    if(condition) goto loop
+</code></pre>
+<p>or</p>
+<pre><code>    addi    $s0, $zero, 0
+loop:
+    # body
+    addi    $s0, $s0, 1
+    slti    $t0, $s0, 10
+    bne     $t0, $zero, loop
+</code></pre>
+<p>Do while loops are real tasty. But if it can't be persuaded into a do-while, don't force it.</p>
+<h1>Compound Conditionals</h1>
+<p>Just take more code</p>
+<h1>Switch Statements</h1>
+<pre><code class="language-java">switch(s0){
+    case 0:
+        // code
+        break;
+    case 1:
+        // code
+        break;
+    default:
+        // code
+}
+</code></pre>
+<p>Just a bunch of if-else stuff - kinda. Switch has more requirements than if, but runs faster.</p>
+<blockquote>
+<p>Linked list as a constant, idk, put quotes around it!</p>
+</blockquote>
+<p>Cases are right next to each other in mem. When one is done, you fall through into the next one.</p>
+<blockquote>
+<p>Elves like helping people, we all should know that</p>
+</blockquote>
+<p>We've got an elf.</p>
+<p>We give the elf s0 and it returns the address of the correct case.</p>
+<blockquote>
+<p>The elf doesn't do error checking, it's sailing away to an island in the west.</p>
+</blockquote>
+<blockquote>
+<p>Hint: Writing a switch statement on the Exam.</p>
+</blockquote>
+<pre><code># Goal: Switch $s0
+# Hello I am Elf
+# Given s0, elf returns case address in s1
+    # if s0 &lt; 0, goto default
+    slti    $t0, $s0, 0
+    bne     $t0, $zero, default
+    # if so &gt; 2, goto default
+    li      $t1, 2
+    slt     $t0, $t1, $s0
+    bne     $t0, $zero, default
+</code></pre>
+<blockquote>
+<p>Arrays are almost as good as elven magic, they just don't bake cookies.</p>
+</blockquote>
+<p>Tune in next time for the elv magic - It's gonna look a lot like array accessing.</p>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

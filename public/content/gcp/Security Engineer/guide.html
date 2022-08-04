@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- MathJax disabled on this page -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426802">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="../../../">Home</a> &gt; <a href="../">GCP</a> &gt; <a href="./">Professional Security Engineer</a> &gt; Professional Cloud Security Engineer Certification Exam Guide</p>
+<hr>
+<h1>Professional Cloud Security Engineer Certification Exam Guide</h1>
+<ol>
+<li>Configuring access within a cloud solution environment
+<ol>
+<li>Configuring Cloud Identity. Considerations include:
+<ol>
+<li>Managing Cloud Identity</li>
+<li>Configuring Google Cloud Directory Sync</li>
+<li>Managing super administrator account</li>
+<li>Automating user lifecycle management process</li>
+<li>Administering user accounts and groups programmatically</li>
+</ol>
+</li>
+<li>Managing service accounts. Considerations include:
+<ol>
+<li>Protecting and auditing service accounts and keys</li>
+<li>Automating the rotation of user-managed service account keys</li>
+<li>Identifying scenarios requiring service accounts</li>
+<li>Creating, authorizing, and securing service accounts</li>
+<li>Securely managing API access management</li>
+<li>Managing and creating short-lived credentials</li>
+</ol>
+</li>
+<li>Managing authentication. Considerations include:
+<ol>
+<li>Creating a password policy for user accounts</li>
+<li>Establishing Security Assertion Markup Language (SAML)</li>
+<li>Configuring and enforcing two-factor authentication</li>
+</ol>
+</li>
+<li>Managing and implementing authorization controls. Considerations include:
+<ol>
+<li>Managing privileged roles and separation of duties</li>
+<li>Managing IAM permissions with basic, predefined, and custom roles</li>
+<li>Granting permissions to different types of identities</li>
+<li>Understanding difference between Cloud Storage IAM and ACLs</li>
+<li>Designing identity roles at the organization, folder, project, and resource level</li>
+<li>Configuring Access Context Manager</li>
+</ol>
+</li>
+<li>Defining resource hierarchy. Considerations include:
+<ol>
+<li>Creating and managing organizations</li>
+<li>Designing resource policies for organizations, folders, projects, and resources</li>
+<li>Managing organization constraints</li>
+<li>Using resource hierarchy for access control and permissions inheritance</li>
+<li>Designing and managing trust and security boundaries within Google Cloud projects</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>Configuring network security
+<ol>
+<li>Designing network security. Considerations include:
+<ol>
+<li>Configuring network perimeter controls (firewall rules; Identity-Aware Proxy (IAP))</li>
+<li>Configuring load balancing (global, network, HTTP(S), SSL proxy, and TCP proxy load balancers)</li>
+<li>Identifying Domain Name System Security Extensions (DNSSEC)</li>
+<li>Identifying differences between private versus public addressing</li>
+<li>Configuring web application firewall (Google Cloud Armor)</li>
+<li>Configuring Cloud DNS</li>
+</ol>
+</li>
+<li>Configuring network segmentation. Considerations include:
+<ol>
+<li>Configuring security properties of a VPC network, VPC peering, Shared VPC, and firewall rules</li>
+<li>Configuring network isolation and data encapsulation for N tier application design</li>
+<li>Configuring app-to-app security policy</li>
+</ol>
+</li>
+<li>Establishing private connectivity. Considerations include:
+<ol>
+<li>Designing and configuring private RFC1918 connectivity between VPC networks and Google Cloud projects (Shared VPC, VPC peering)</li>
+<li>Designing and configuring private RFC1918 connectivity between data centers and VPC network (IPsec and Cloud Interconnect)</li>
+<li>Establishing private connectivity between VPC and Google APIs (Private Google Access, Private Google Access for on-premises hosts, Private Service Connect)</li>
+<li>Configuring Cloud NAT</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>Ensuring data protection
+<ol>
+<li>Protecting sensitive data. Considerations include:
+<ol>
+<li>Inspecting and redacting personally identifiable information (PII)</li>
+<li>Configuring pseudonymization</li>
+<li>Configuring format-preserving substitution</li>
+<li>Restricting access to BigQuery datasets</li>
+<li>Configuring VPC Service Controls</li>
+<li>Securing secrets with Secret Manager</li>
+<li>Protecting and managing compute instance metadata</li>
+</ol>
+</li>
+<li>Managing encryption at rest. Considerations include:
+<ol>
+<li>Understanding use cases for Google default encryption, customer-managed encryption keys (CMEK), customer-supplied encryption keys (CSEK), Cloud External Key Manager (EKM), and Cloud HSM</li>
+<li>Creating and managing encryption keys for CMEK, CSEK, and EKM</li>
+<li>Applying Google's encryption approach to use cases</li>
+<li>Configuring object lifecycle policies for Cloud Storage</li>
+<li>Enabling confidential computing</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>Managing operations in a cloud solution environment
+<ol>
+<li>Building and deploying secure infrastructure and applications. Considerations include:
+<ol>
+<li>Automating security scanning for Common Vulnerabilities and Exposures (CVEs) through a CI/CD pipeline</li>
+<li>Automating virtual machine image creation, hardening, and maintenance</li>
+<li>Automating container image creation, verification, hardening, maintenance, and patch management</li>
+</ol>
+</li>
+<li>Configuring logging, monitoring, and detection. Considerations include:
+<ol>
+<li>Configuring and analyzing network logs (firewall rule logs, VPC flow logs, packet mirroring)</li>
+<li>Designing an effective logging strategy</li>
+<li>Logging, monitoring, responding to, and remediating security incidents</li>
+<li>Exporting logs to external security systems</li>
+<li>Configuring and analyzing Google Cloud audit logs and data access logs</li>
+<li>Configuring log exports (log sinks, aggregated sinks, logs router)</li>
+<li>Configuring and monitoring Security Command Center (Security Health Analytics, Event Threat Detection, Container Threat Detection, Web Security Scanner)</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>Ensuring compliance
+<ol>
+<li>Determining regulatory requirements for the cloud. Considerations include:
+<ol>
+<li>Determining concerns relative to compute, data, and network</li>
+<li>Evaluating security shared responsibility model</li>
+<li>Configuring security controls within cloud environments</li>
+<li>Limiting compute and data for regulatory compliance</li>
+<li>Determining the Google Cloud environment in scope for regulatory compliance</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<hr>
+<p><a href="../../../">Home</a> &gt; <a href="../">GCP</a> &gt; <a href="./">Professional Security Engineer</a> &gt; Professional Cloud Security Engineer Certification Exam Guide</p>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

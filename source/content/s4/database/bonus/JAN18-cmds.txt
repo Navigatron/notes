@@ -1,0 +1,36 @@
+SOURCE F:\2019_Database\source\tv.sql
+
+TEE F:\2019_Database\CMDS\CMDS_01_19.txt
+
+DESCRIBE play;
+
+DESCRIBE tvstation;
+
+SELECT * from tvstation;
+
+SELECT * from tvstation WHERE city = "Rochester"\G
+
+SELECT * FROM tvstation WHERE city is Null;
+
+SELECT channel, callLetters, phone FROM tvstation;
+
+SHOW CREATE TABLE play;
+
+SELECT name,playDate, playTime, channel FROM play order by name;
+
+SELECT * FROM play WHERE channel in (8, 13, 31);
+
+SELECT 
+  TABLE_NAME,COLUMN_NAME,CONSTRAINT_NAME, REFERENCED_TABLE_NAME,REFERENCED_COLUMN_NAME
+FROM
+  INFORMATION_SCHEMA.KEY_COLUMN_USAGE
+WHERE
+  REFERENCED_TABLE_SCHEMA = 'tv_guide' AND
+  REFERENCED_TABLE_NAME = 'tvstation';
+
+
+
+SELECT play.name, play.channel, affiliate, tvstation.callLetters,
+         playDate, playTime FROM play join tvstation 
+           using (channel);
+

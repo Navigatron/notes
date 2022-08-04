@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- MathJax disabled on this page -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426823">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="../">up</a></p>
+<h1>The Standard Stack Frame</h1>
+<p>Stack starts at top of memory, and expands downwards.</p>
+<h2>Caller</h2>
+<p>Caller places arguments 4..n on the stack (0,1,2,3 in a0, a1, a2, a3). Then the caller moves the stack pointer to the bottom of the stack.</p>
+<p>TL;DR: Caller sets up args for callee via <code>A</code> registers and the stack.</p>
+<p>After the callee returns, the caller removes the arguments from the stack. If the caller doesn't care about the args (most likely), just move the stack pointer.</p>
+<h2>Callee</h2>
+<p>Callee stores <code>$ra</code>, saved registers, local vars in that order. <code>$sp</code> is adjusted.</p>
+<p>Move the stack pointer first, then fill in via offsets.</p>
+<p>When we're done with out things, we need to deconstruct our stack frame. Restore anything we care about (<code>S</code> regs, <code>$ra</code>, etc) and then move the stack pointer back up.</p>
+<h2>The issue with arguments</h2>
+<p>The caller reserves space in the stack for the callee to save a0 through a3 if desired.</p>
+<h2>Chew on This:</h2>
+<pre><code>FunctionA:
+	# Move SP down for all my stack frame (arguments already there)
+	# Push RA
+	# Push s0 to s7 for caller
+	# Push FP for caller
+	# Set FP to top of my stack frame.
+
+
+	# We want to call functionB
+
+	# If I want my a0 to a3 preserved, push em to space set aside by my caller
+	# Adjust SP to make space for args
+	# load a0 to a3 for the callee
+	# Push args 4 through n, leaving space for 0-&gt;3
+	jal	callee
+	# Pop off args 4 through n, adjust sp
+	# If needed, restore my own a0 through a3
+
+
+	# We want to return from this function
+
+	# Restore FP, s0-&gt;s7
+	# restore RA
+	# Move the stack pointer up, removing (most of) my stack frame
+	jr	$ra
+
+</code></pre>
+<p>and now...</p>
+<h1>System Calls</h1>
+<p>Hardware has at least two levels of privilege. The operating system and user-space are physically separated. This stops programs from killing each other, changing their own priority, messing with the OS, reading other users files, regulating fan speed, important stuff.</p>
+<p>The MIPS instruction to do a system call:</p>
+<pre><code>	syscall
+</code></pre>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

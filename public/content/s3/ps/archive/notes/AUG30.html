@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- <script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+			tex2jax: {
+				inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+				processEscapes: true
+			}
+		});
+	</script> -->
+	<script>
+		MathJax = {
+			tex: {
+				inlineMath: [['$', '$'], ['\\(', '\\)']]
+			}
+		};
+	</script>
+	<!-- <script
+		type="text/javascript"
+		charset="utf-8"
+		src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+		>
+	</script> -->
+	<script
+		type="text/javascript"
+		id="MathJax-script"
+		async
+		src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+		>
+	</script>
+	<!-- <script
+		type="text/javascript"
+		charset="utf-8"
+		src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
+		>
+	</script> -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426850">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="../">up</a></p>
+<h1>Properties of Expectation</h1>
+<p>The Expectation of the Population is the Mean.</p>
+<p>$$E(X)=\mu$$</p>
+<p>Expectation has some Linear-ness</p>
+<p>$$E(KX)=K\cdot E(X)$$</p>
+<p>$$E(aX + bY)=a\cdot E(X)+b\cdot E(Y)$$</p>
+<h1>Simplify Variance</h1>
+<p>$$
+\begin{align}
+V(X) &amp; = \sigma ^2 \
+&amp; = E(X-\mu)^2 \
+&amp; = E(X^2)-E(X)^2 \
+&amp; = E(X^2) - \mu ^2
+\end{align}
+$$</p>
+<p>Magic Formula:</p>
+<p>$$E(X^2)=\sigma^2+\mu^2$$</p>
+<h1>CDF Definition</h1>
+<p>where $f(x)$ is the PDF of $X$.</p>
+<p>$$
+F_X(t)=P(X\leq t) = \int_{-\infty}^t f(x),dx
+$$</p>
+<h1>Definitions</h1>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Explanation</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Parameter</td>
+<td>Summary measure of a Population</td>
+<td>$\mu$, $\sigma$</td>
+</tr>
+<tr>
+<td>Statistic</td>
+<td>Summary measure of a Sample</td>
+<td>$\bar x$, $s$ (sample std dev)</td>
+</tr>
+<tr>
+<td>Estimator</td>
+<td>Statistic to Estimate a Parameter</td>
+<td>$\bar x$ estimates $\mu$</td>
+</tr>
+<tr>
+<td>Estimate</td>
+<td>Value of an Estimator for a Sample</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Point Estimation</td>
+<td>Estimating a Param via a Statistic</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>Point Estimator</td>
+<td>Estimator used in the above</td>
+<td>N/A</td>
+</tr>
+</tbody>
+</table>
+<h1>Criteria for an Estimator</h1>
+<ul>
+<li>Unbiased-ness - Doesn't aim high or low</li>
+<li>Efficiency - Low Variance on the guess</li>
+<li>Consistency</li>
+<li>Sufficiency - I'm not sure</li>
+</ul>
+<h1>Very Important Things</h1>
+<p>$\theta$ is a <em>General Parameter</em><br>
+$t$ is a <em>General Statistic</em></p>
+<p>$t$ is an unbiased estimator for $\theta$ IF:</p>
+<p>$$E(t)=\theta$$</p>
+<p>$\bar x$ is an unbiased estimator for $\mu$, because:</p>
+<p>$$
+\begin{align}
+\bar x &amp; = \frac {X_1+X_2+...+X_n} {n} \
+E(\bar x) &amp; = E\left(\frac {X_1+X_2+...+X_n} {n}\right) \
+&amp; = \frac 1 n \Bigl(E(X_1)+E(X_2)+...+E(X_n) \Bigr) \
+&amp; = \frac 1 n (n\mu) \
+E(\bar x) &amp; = \mu
+\end{align}
+$$</p>
+<h1>How to show $t$ is unbiased for $\theta$ (Or producing one if it isn't)</h1>
+<p>Show that $E(t)=\theta$, typically by doing the following:</p>
+<p>$$E(t) = E(\text{definition of }t)$$</p>
+<p>Then, simplify the right hand side down to $a\theta$.</p>
+<p>Multiply the left side by the reciprocal of $a$, and due to the magic of Expectation linear-ness, you've produced an unbiased estimator for $\theta$.</p>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

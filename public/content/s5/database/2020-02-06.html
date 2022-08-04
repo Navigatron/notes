@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- MathJax disabled on this page -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426754">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="./">up</a></p>
+<h1>2020-02-06</h1>
+<blockquote>
+<p>Looks like I missed something important last class</p>
+</blockquote>
+<h2>Catchup</h2>
+<blockquote>
+<p>This section is for the info I find in myCourses about last class</p>
+</blockquote>
+<ul>
+<li>HW3 is due on the 11th at 11:59PM</li>
+<li>New Data Types
+<ul>
+<li>SMALLINT
+<ul>
+<li>an int is 4 bytes but a smallint is only 2</li>
+</ul>
+</li>
+<li>DECIMAL
+<ul>
+<li>two arguments: precision and scale</li>
+<li>precision: how many digits. 999.99 has 5.</li>
+<li>scale: How many of the digits are to the right of the decimal</li>
+</ul>
+</li>
+<li>Things can be UNSIGNED</li>
+</ul>
+</li>
+<li>New Constraints
+<ul>
+<li><code>NOT NULL</code>
+<ul>
+<li>it cannot be null</li>
+<li>Attribute level</li>
+</ul>
+</li>
+<li><code>CHECK</code>
+<ul>
+<li>keeps the value of a column compliant with an expression</li>
+<li>Attribute level: <code>Age int CHECK &gt;= 18</code> (I think)</li>
+<li>Table level: <code>CONSTRAINT table_chk CHECK (Age&gt;=18)</code></li>
+<li>Literally ignored by MySQL</li>
+</ul>
+</li>
+<li><code>DEFAULT</code>
+<ul>
+<li>what is it by default?</li>
+<li><code>Name varchar(255) DEFAULT 'Greg',</code></li>
+</ul>
+</li>
+<li>Atomic vs Relative data integrity checks
+<ul>
+<li>Atomic
+<ul>
+<li>looks at proposed value for attribute before insertion</li>
+<li><code>NOT NULL</code></li>
+</ul>
+</li>
+<li>Relative
+<ul>
+<li>Looks at proposed field value compared to other data</li>
+<li><code>UNIQUE</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Naming
+<ul>
+<li>What?</li>
+</ul>
+</li>
+<li>Table versus Attribute Level
+<ul>
+<li>What?</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>DML
+<ul>
+<li>SELECT
+<ul>
+<li>Relational Operators (&gt;, &gt;=, LIKE <em>string</em>, IN (<em>list</em>), etc)</li>
+<li>LIKE operators:
+<ul>
+<li><code>_</code> matches any single char</li>
+<li><code>%</code> matches 0 or more chars</li>
+<li><code>WHERE thing LIKE '%.exe'</code> matches exe files</li>
+</ul>
+</li>
+<li><code>WHERE attribute BETWEEN low AND high</code></li>
+<li><code>WHERE attribute = value OR attribute = otherValue</code></li>
+<li>Calculations
+<ul>
+<li><code>SELECT </code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>UPDATE</li>
+<li>DELETE
+<ul>
+<li>Will delete everything</li>
+<li>WHERE clauses are mandatory here</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>DDL
+<ul>
+<li>ALTER</li>
+<li>The Help System</li>
+</ul>
+</li>
+</ul>
+<h2>HW2 review</h2>
+<ul>
+<li>Converting from an ER diagram to a Relation
+<ul>
+<li>Colors should be included in the Relation, even though there's no way to store it (it's multi-valued)</li>
+</ul>
+</li>
+</ul>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

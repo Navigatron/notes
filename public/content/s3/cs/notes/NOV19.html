@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- MathJax disabled on this page -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426822">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="../">up</a></p>
+<h1>Housekeeping</h1>
+<ul>
+<li>Reality is not in quantum state</li>
+<li>Experiment 7 is due tonight</li>
+<li>Extra credit project submit is tomorrow evening</li>
+</ul>
+<h1>Register Transfer Language (RTL)</h1>
+<p>How data moves around</p>
+<p>There is no standard, every book has their own version</p>
+<p>Store, Move, Manipulate</p>
+<p>Stand Alone Registers</p>
+<ul>
+<li>Alphanumeric names, A, B, PC, etc.</li>
+</ul>
+<p>In a register file, use array notation, reg[31], tells what register we care about. Normally, rather than a number, we'll have a variable - Reg[rs] or such</p>
+<p>Use subscripts to specify a part of a register - IR_31-26 specifies bits 31 through 26 of the instruction register, aka the opcode.</p>
+<p>Moving data uses a left arrow <code>A &lt;--- B</code>, this shows data from B is copied into A</p>
+<p>Parallel ops are important</p>
+<p>Ima make a table</p>
+<p>Item | Notation | Example
+---|---
+Stand Alone Registers | Alpha-numeric name | A, B, PC
+Register File | Array notation | Reg[A], Reg[rs]
+Parts of a Register | Subscripts, Parenths | A_31, IR(31-26)
+Move Data | Left Arrow | <code>A &lt;---- B</code>
+Parallel Ops | Comma | <code>A &lt;--- B , C &lt;--- D</code>
+ALU ops | 'C' syntax | +, -, &amp;, pipe, &lt;, ==
+Conditional | if,then | if <em>condition</em> then <em>transfer</em> , conditional must be <em>simple</em>
+memory | array | Mem[effective address]
+load | composite of above | <code>A &lt;-- Mem[EA]</code></p>
+<p>Parallel swap, <code>A&lt;--B, B&lt;--A</code>, works perfectly fine.</p>
+<p>The above is all we need for working with mips</p>
+<blockquote>
+<p>Phil city is a city just for Phil. It's a small city. It has his house, his job, and wegmans. That is life in phil city.</p>
+</blockquote>
+<p>Instructions to Consider:</p>
+<ul>
+<li>ALU-R</li>
+<li>ALU-I</li>
+<li>Memory
+<ul>
+<li>sw</li>
+<li>lw</li>
+</ul>
+</li>
+<li>beq</li>
+</ul>
+<p>Hardware to consider:</p>
+<ul>
+<li>Register file</li>
+<li>ALU</li>
+<li>Memory</li>
+<li>Program Counter</li>
+</ul>
+<h2>ALU-R</h2>
+<ul>
+<li>Fetch
+<ul>
+<li>IR &lt;-- Mem[PC]</li>
+<li>PC &lt;-- PC+4</li>
+</ul>
+</li>
+<li>Decode
+<ul>
+<li>Take the instruction, tear it into parts, send the parts away</li>
+<li>A &lt;-- Reg[rs]</li>
+<li>B &lt;-- Reg[rt]</li>
+</ul>
+</li>
+<li>Exec
+<ul>
+<li>ALUout &lt;-- A (operation) B</li>
+</ul>
+</li>
+<li>WriteBack
+<ul>
+<li>Reg[rd] &lt;-- ALUout</li>
+</ul>
+</li>
+</ul>
+<h2>ALU-I</h2>
+<ul>
+<li>Fetch
+<ul>
+<li>IR &lt;-- Mem[PC]</li>
+<li>PC &lt;-- PC+4</li>
+</ul>
+</li>
+<li>Decode
+<ul>
+<li>A &lt;-- Reg[rs]</li>
+<li>IMM &lt;-- S.E.(IR(15-0)) // ohno. &quot;This will be trivial&quot;</li>
+</ul>
+</li>
+<li>Execution
+<ul>
+<li>ALUout &lt;-- A (operation) Imm</li>
+</ul>
+</li>
+<li>Writeback
+<ul>
+<li>Reg[rt] &lt;-- ALUout</li>
+</ul>
+</li>
+</ul>
+<h2>Memory</h2>
+<ul>
+<li>Fetch
+<ul>
+<li>IR &lt;-- Mem[PC]</li>
+<li>PC &lt;-- PC+4</li>
+</ul>
+</li>
+<li>Decode
+<ul>
+<li>A &lt;-- Reg[rs]</li>
+<li>Imm &lt;-- S.E.(IR(15-0))</li>
+<li>B &lt;-- Reg[rt]</li>
+</ul>
+</li>
+<li>Exec
+<ul>
+<li>ALUout &lt;-- A + Imm</li>
+</ul>
+</li>
+<li>Mem
+<ul>
+<li>Load Word
+<ul>
+<li>MDR &lt;-- Mem[ALUout]</li>
+</ul>
+</li>
+<li>Store Word
+<ul>
+<li>Mem[ALUout] &lt;-- B</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Writeback
+<ul>
+<li>Load Word
+<ul>
+<li>Reg[rt] &lt;-- MDR</li>
+</ul>
+</li>
+<li>Store Word
+<ul>
+<li>None, doesn't do anything.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2>BEQ</h2>
+<ul>
+<li>Fetch as before</li>
+<li>Decode as in Memory</li>
+<li>Exec
+<ul>
+<li>isZero &lt;-- A==B // sets isZero to 1 if a is equal to B</li>
+<li>NPC &lt;-- PC+Imm</li>
+</ul>
+</li>
+<li>Mem
+<ul>
+<li>if(isZero), then PC &lt;-- NPC</li>
+</ul>
+</li>
+</ul>
+<p>Rada rada rada</p>
+<p>Tune in next time for... time!</p>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

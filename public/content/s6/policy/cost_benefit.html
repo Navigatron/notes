@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- <script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+			tex2jax: {
+				inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+				processEscapes: true
+			}
+		});
+	</script> -->
+	<script>
+		MathJax = {
+			tex: {
+				inlineMath: [['$', '$'], ['\\(', '\\)']]
+			}
+		};
+	</script>
+	<!-- <script
+		type="text/javascript"
+		charset="utf-8"
+		src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+		>
+	</script> -->
+	<script
+		type="text/javascript"
+		id="MathJax-script"
+		async
+		src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+		>
+	</script>
+	<!-- <script
+		type="text/javascript"
+		charset="utf-8"
+		src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
+		>
+	</script> -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426812">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="../../../">Home</a> &gt; <a href="./">Public Policy</a> &gt; Cost Benefit Analysis</p>
+<h1>Cost Benefit Analysis</h1>
+<blockquote>
+<p>In 1981, President Ronald Reagan required CBA for all major rules.</p>
+</blockquote>
+<p>CBA asks two major questions:</p>
+<ul>
+<li>What are the costs of a decision?</li>
+<li>What are the benefits of a decision?</li>
+<li>Do the benefits outweigh the costs?</li>
+</ul>
+<p>These are the general steps of CBA:</p>
+<ol>
+<li>Define the situation
+<ul>
+<li>including geographic scope!</li>
+</ul>
+</li>
+<li>Identify the costs</li>
+<li>Identify the benefits</li>
+<li>Discount future costs and benefits to identify net present value (NPV)</li>
+<li>Interpret results</li>
+</ol>
+<h2>Net Present Value</h2>
+<p>Some costs / benefits occur in the future, and some occur now. $1 now is not worth the same as $1 in two years.</p>
+<p>The <em>Present Value</em> of X money is the amount you would be willing to pay <em>now</em> to receive X in the future.</p>
+<p>Let's define some terms:</p>
+<ul>
+<li>$r$ is the interest rate</li>
+<li>$FV$ is the future value of some money</li>
+<li>$PV$ is the present value</li>
+<li>$t$ is a number of years</li>
+</ul>
+<p>If we have $100, we can determine how much that will be worth in $t=10$ years, given an interest rate of $r=5%$.</p>
+<p>$$
+FV = PV * (1+r)^t\
+FV = 100 * (1+0.05)^{10}\
+FV = 100 * 1.05^{10}\
+FV = 100 * 1.62889462678\
+FV = 162.89
+$$</p>
+<p>If we are instead given the future value, we can determine the present value.</p>
+<p>$$
+PV = FV / (1+r)^t
+$$</p>
+<h2>Other things that affect the discount rate</h2>
+<ul>
+<li>inflation</li>
+<li>future generations</li>
+</ul>
+<h2>Benefit - Cost Ratio</h2>
+<p>Divide the PV of benefits by the PV of costs. This represents <em>efficiency</em>.</p>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

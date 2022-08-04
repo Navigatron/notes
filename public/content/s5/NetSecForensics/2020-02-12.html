@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- MathJax disabled on this page -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426735">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="./">up</a></p>
+<h1>2020-02-12</h1>
+<blockquote>
+<p>Guest Professor today while H.B. goes to court over his car crash</p>
+</blockquote>
+<p>Simplest firewall architecture: Screening Router. The path to the internet goes through the router, which has a firewall running.</p>
+<p>A firewall is easy to build on a router, because routers are already looking at the packet headers.</p>
+<p>A screening router is:</p>
+<ul>
+<li>Simple and fast</li>
+<li>not flexible
+<ul>
+<li>permits or denies an entire protocol</li>
+</ul>
+</li>
+<li>no depth of defense</li>
+<li>Appropriate only in high-performance networks with hardened hosts.</li>
+</ul>
+<p>Dual Homed Host:</p>
+<ul>
+<li>A computer with two network interfaces</li>
+<li>Can behave exactly like a router</li>
+<li>More powerful than a router - can look beyond the headers</li>
+<li>High level of control</li>
+<li>Could be a bottleneck - lots of work</li>
+<li>Single point of failure</li>
+<li>not great for proxying inbound services</li>
+<li>no separation between high and low trust services</li>
+</ul>
+<p>Screened Host:</p>
+<ul>
+<li>A host within the internal network becomes a <em>bastion host</em>
+<ul>
+<li>Still does proxying</li>
+<li>only needs one interface</li>
+</ul>
+</li>
+<li>And there's a packet-filtering router</li>
+<li>packet filter blocks all inbound traffic except to bastion</li>
+<li>Internal hosts may create outbound connections</li>
+<li>bastion host is still a single point of failure and open to attack</li>
+</ul>
+<p>Screened Subnet:</p>
+<ul>
+<li>There is an external router, internet → DMZ
+<ul>
+<li>'access router'</li>
+</ul>
+</li>
+<li>There is a bastion host in the DMZ</li>
+<li>There is an internal router, DMZ → internal network
+<ul>
+<li>'choke router'</li>
+</ul>
+</li>
+<li>Internal hosts are still not separated from each other</li>
+<li>Compromising the bastion host does not gain much</li>
+<li>if own router is compromised, the other will keep filtering.</li>
+<li>ISPs will do this, DMZ between internet and customers</li>
+<li>Exterior router
+<ul>
+<li>lightweight</li>
+<li>filters spoofed packets</li>
+</ul>
+</li>
+</ul>
+<p>Split-Screened Subnet:</p>
+<ul>
+<li>External router</li>
+<li>dual-homed Host</li>
+<li>Internal router</li>
+<li>All the fun of a dual-homed host in a delicious DMZ package.</li>
+</ul>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

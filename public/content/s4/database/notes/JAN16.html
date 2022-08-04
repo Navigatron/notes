@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- MathJax disabled on this page -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426846">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="../">up</a></p>
+<h1>Database, JAN16 - Starting mysql</h1>
+<p>There's a new Syllabus with more office hours, perhaps more changes. Updated
+version is on MyCourses.</p>
+<ul>
+<li>To Open mysql on a classroom machine
+<ul>
+<li>Windows Search: mysql start</li>
+<li>Windows Search: verbose</li>
+<li>password: student</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>It is helpful to see what you did to get your answer</p>
+</blockquote>
+<p>Verbose mode is good to have enabled</p>
+<p>Verbose is activated by passing the <code>--verbose</code> command line flag</p>
+<p>For fun and profit, edit your mysql startup shortcut to pass the flag for you.</p>
+<p>Put <code>ISTE230</code> (course code) in subject line of emails to get past Prof's spam filters.</p>
+<p>The word Urgent will also accomplish this.</p>
+<h3>What is a database</h3>
+<p>A collection of multiple tables, with zero or more interactions between them.</p>
+<p>A spreadsheet is a good representation of a relational database.</p>
+<p>Rows, from left to right, are called &quot;Records&quot; or &quot;tuples&quot;.</p>
+<p>Databases are very efficient, stupid fast ways to store and retrieve data.</p>
+<h3>Running Linux?</h3>
+<p><a href="https://wiki.archlinux.org/index.php?title=MariaDB&amp;redirect=no#Installation">Arch Linux guide to installing mariaDB</a></p>
+<ol>
+<li><code>sudo pacman -S mariadb</code></li>
+<li><code>sudo mysql_install_db --user=mysql --basedir=/usr --datadir=/var/lib/mysql</code></li>
+<li><code>sudo systemctl start mariadb</code></li>
+<li><code>sudo mysql_secure_installation</code>
+<ul>
+<li>This guides you through setting the root password</li>
+<li>Read carefully, say yes to everything.</li>
+</ul>
+</li>
+<li><code>mysql -u root -p --verbose</code></li>
+<li>Have Fun!</li>
+</ol>
+<h3>Homework</h3>
+<p>Handout given in class</p>
+<p>Printing available in open lab on GOL 2nd floor.</p>
+<h1>End</h1>
+<p>woohoo dabatase</p>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

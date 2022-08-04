@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- MathJax disabled on this page -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426825">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="../">up</a></p>
+<h2>Housekeeping</h2>
+<ul>
+<li>No labs up yet</li>
+</ul>
+<h2>Assembly</h2>
+<p>Fixed line syntax</p>
+<ul>
+<li>Every assembly statement must be on one line</li>
+<li>that line will be rigidly formatted
+<ul>
+<li>Label
+<ul>
+<li>Name it whatever you want</li>
+<li>Use good names, this is the only place you can name things</li>
+<li>Names must be globally unique, because there is no scope</li>
+<li>when compiled, becomes 32 bit constant equal to its memory location</li>
+<li>More constant than C constants. <em>Very</em> constant</li>
+</ul>
+</li>
+<li>opcode</li>
+<li>operands</li>
+<li>comment</li>
+</ul>
+</li>
+</ul>
+<pre><code>[label:][opcode[operand][,operand][,operand]...] [#comment]
+</code></pre>
+<h3>The Standards Guide</h3>
+<ul>
+<li>No lines over 80 characters</li>
+<li>No indentation, because there is no scope</li>
+<li>Labels begin on left margin
+<ul>
+<li>No opcodes on lines with a label</li>
+</ul>
+</li>
+<li>All opcodes begin 8 spaces from left (~1 tab)</li>
+<li>All operands begin 16 spaces from left (~2 tabs)
+<ul>
+<li>aka 8 spaces from where opcodes begin</li>
+</ul>
+</li>
+<li>Once in the operand land, do whatever, as long as consistent.</li>
+<li>At least one space between last operand and comment</li>
+<li>All comments must align
+<ul>
+<li>Proff. is happy as long as they line up in a block</li>
+</ul>
+</li>
+<li>If there's just one very long line, put that line's comment above it
+<ul>
+<li>add whitespace above/below long line + comment</li>
+</ul>
+</li>
+<li>Block comments
+<ul>
+<li>for functions, left side.</li>
+<li>within functions, 8 spaces from left.</li>
+</ul>
+</li>
+</ul>
+<h3>Comments are vitally important</h3>
+<ul>
+<li>Graders read them to see what we're trying to do</li>
+<li>We need them to remember what we're trying to do</li>
+</ul>
+<h1>Assembly!</h1>
+<p>MIPS is a load/store machine.</p>
+<ul>
+<li>LOAD moves from mem to register</li>
+<li>STOR moves from register to mem</li>
+</ul>
+<h2>ALU Instructions</h2>
+<p>Arithmetic Logic Unit</p>
+<p><em>bitwise is become all.</em> There is no logical operations here, only bitwise.</p>
+<p>All binary operators take 3 operands, which must be in registers.</p>
+<p>Format for all ALU commands:</p>
+<pre><code>OPCODE $destination,$source1,$source2
+</code></pre>
+<p>The above performs the below:</p>
+<pre><code>destination = source1 (operator) source2
+</code></pre>
+<p>register format: <code>$x</code>, where x is the number of the register.</p>
+<table>
+<thead>
+<tr>
+<th>meaning</th>
+<th>opcode</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>addition</td>
+<td><code>ADD</code></td>
+</tr>
+<tr>
+<td>subtraction</td>
+<td><code>SUB</code></td>
+</tr>
+<tr>
+<td>Bitwise And</td>
+<td><code>AND</code></td>
+</tr>
+<tr>
+<td>Bitwise Or</td>
+<td><code>OR</code></td>
+</tr>
+<tr>
+<td>bitwise XOR</td>
+<td><code>XOR</code></td>
+</tr>
+<tr>
+<td>nand</td>
+<td><code>NAND</code></td>
+</tr>
+</tbody>
+</table>
+<p><code>NOT</code> takes two operands, destination and source. Meanwhile, <code>NAND</code>ing anything with itself (or <code>NOR</code>ing) does the same thing.</p>
+<p><code>NOT</code> is a pseudo-instruction. At assemble time, it expands to something else. Pseudo-instructions don't teach us the ISA, so they are forbidden, except for 7. <code>NOT</code> is one of the exceptions.</p>
+<h3>i = i + 1; aka Constants.</h3>
+<p>grrr, cliffhanger. Come back next time.</p>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

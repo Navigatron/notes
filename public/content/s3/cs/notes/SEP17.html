@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- MathJax disabled on this page -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426826">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="../">up</a></p>
+<h1>Instruction Encoding</h1>
+<h2>R-Type</h2>
+<p>ALU instructions look like:</p>
+<p><code>ADD rd,rs,rt</code></p>
+<p>We've got 32 bits to work with</p>
+<p>opcode | rs | rt | rd | shift amount | function code
+---|---
+6 bits = 0x0 | 5 bits | 5 bits | 5 bits | 5 bits | 6 bits</p>
+<blockquote>
+<p>&quot;Decisions are bad&quot;</p>
+</blockquote>
+<p>The goal is to keep the number of instruction formats as low as possible. But we have to have big immediates, so there is a second one.</p>
+<h2>I-Type</h2>
+<p>opcode | rs | rt | immediate
+---|---
+6 bits | 5 bits | 5 bits | 16 bits</p>
+<p>We can't have 32 bits for the immediate. 16 is the next best number, leaving 6 bits for the opcode. This means 64 opcodes - that's not enough.</p>
+<blockquote>
+<p>The way they chose to went</p>
+</blockquote>
+<p>R type instructions start with six zero bits. The last 6 bits are the 'function' code, aka opcode at the end.</p>
+<p>I type opcodes cannot be all zeros. There are 63 I type opcodes.</p>
+<h2>Building a 32 bit constant in a register.</h2>
+<p>Assemblers are capable of doing simple math on constants at assemble time.</p>
+<p>32 bit constant goal - split into lower 16 bits and higher 16 bits.</p>
+<pre><code>High = constant &gt;&gt; 16
+Low = constant &amp; 0xFFFF
+</code></pre>
+<h3>The old way: building with 3 instructions.</h3>
+<pre><code>ADDI $to,$zero,const&gt;&gt;16    # assembler handles shift at assemble time
+SLL $t0,$t0,16              # Shift Left Logical, move the high bits to the left
+ORI $t0,$t0,const&amp;0xFFFF    # OR the low bits into the register as well. Done!
+</code></pre>
+<h3>The New Way: Building with 2 instructions.</h3>
+<p>Use this fancy thing:</p>
+<pre><code>LUI rt,imm
+</code></pre>
+<p>Load Upper Immediate: Put an immediate into the top 16 bits, and zero out the lower 16.</p>
+<pre><code>LUI $t0,const&gt;&gt;16           # Put the top 16 bits into the top 16 bits, prep the lower.
+ORI $t0,$t0,const&amp;00xFFFF   # Put the lower 16 bits of the constant into the lower 16 bits
+</code></pre>
+<h3>The Not-Yet-Banned pseudo instruction: Load Address</h3>
+<p>*Unlike all other load instructions, this does * <em><strong>not</strong></em> <em>load from memory.</em></p>
+<p>This puts a 32 bit constant into a register.</p>
+<p><code>LA rt,32-bit-constant</code></p>
+<blockquote>
+<p>I will Hound on this for weeks. Someone will get it wrong on the test. Load Address does not pull from memory.</p>
+</blockquote>
+<p>using LA without a constant becomes something different. Prof won't tell us what happens.</p>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- MathJax disabled on this page -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426794">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="../../../">Index</a> &gt; <a href="./">Software Engineering</a> &gt; Mon Sep 13 2021 20:00:00 GMT-0400 (Eastern Daylight Time):</p>
+<h1>Mon Sep 13 2021 20:00:00 GMT-0400 (Eastern Daylight Time):</h1>
+<h2>HTTP</h2>
+<p>There are verbs. Verbs act on <em>resources</em>.</p>
+<ul>
+<li>GET
+<ul>
+<li>Gets a resource</li>
+<li>Classified as &quot;safe&quot; - <strong>never</strong> modifies the resources / state of the server</li>
+<li>Safe - multiple requests return the same result (unless the resource changes)</li>
+</ul>
+</li>
+<li>POST
+<ul>
+<li>Creates a new resource, where the server chooses its ID</li>
+<li><code>POST /game</code> creates a new game, at <code>/game/game5</code></li>
+<li>Unsafe - multiple requests create multiple resources!</li>
+</ul>
+</li>
+<li>PUT
+<ul>
+<li>Creates a new resource, where the <em>client</em> chooses its ID</li>
+<li><code>PUT /game/game5</code> creates that resource.</li>
+<li>If the resource already exists, PUT updates it</li>
+<li>Idempotent - additional identical requests do nothing</li>
+</ul>
+</li>
+<li>PATCH
+<ul>
+<li>Update a resource</li>
+<li>Patches hold only the changes to the resource</li>
+<li>If you do it right, can be idempotent</li>
+</ul>
+</li>
+<li>DELETE
+<ul>
+<li>Self explanatory</li>
+<li>Idempotent - multiple delete calls result in the same state as one</li>
+</ul>
+</li>
+</ul>
+<h2>Super Basic Webapp</h2>
+<p>There are &quot;UI Controllers&quot; - aka route handlers. Each does some action and returns a <em>view</em>, made from an HTML template, written in FTL.</p>
+<p>Here's some core reference material, for creating the webserver router:</p>
+<pre><code class="language-java">package com.example;
+
+
+// for templating abilities
+import spark.TemplateEngine;
+import spark.template.freemarker.FreeMarkerEngine;
+
+// for get and post requests, and serving static files
+import static spark.Spark.get;
+import static spark.Spark.post;
+import static spark.Spark.staticFiles;
+
+// for game logic - where requests eventually go
+import com.example.appl.GameCenter;
+
+public final class Application {
+    public static void main(String[] args) {
+        // Give me a game center and a template engine
+        final GameCenter gameCenter = new GameCenter();
+        final TemplateEngine templateEngine = new FreeMarkerEngine();
+        // Serve static files
+        staticFiles.location(&quot;/public&quot;);
+        // Relay these routes to their specific controllers.
+        get(&quot;/&quot;, new GetHomeRoute(gameCenter, templateEngine));
+        get(&quot;/game&quot;, new GetGameRoute(templateEngine));
+        post(&quot;/guess&quot;, new PostGuessRoute(gameCenter, templateEngine));
+    }
+}
+</code></pre>
+<p>Tell me about the routes - how do I get query parameters / the session object?</p>
+<pre><code class="language-java">public Object handle(Request request, Response response){
+    final String name = request.queryParams(&quot;name&quot;);
+    final Session session = request.session();
+}
+</code></pre>
+<p>How do we store things in the session object?</p>
+<pre><code class="language-java">if(httpSession.attribute(&quot;playerServices&quot;) == null) {
+
+  // get the object that will provide client-specific services for this player
+  final PlayerServices playerService = gameCenter.newPlayerServices();
+  httpSession.attribute(&quot;playerServices&quot;, playerService);
+
+  // Setup session timeout. The valueUnbound() method in the SessionTimeoutWatchdog will be called when the session is invalidated.
+  httpSession.attribute(&quot;timeoutWatchdog&quot;, new SessionTimeoutWatchdog(playerService));
+
+  // Delete the session after 2 minutes of inactivity
+  httpSession.maxInactiveInterval(120); // seconds
+}
+</code></pre>
+<p>Be careful storing things in the session object.</p>
+<p>How do we set &quot;view model&quot; attributes and render a view?</p>
+<pre><code class="language-java">final Map&lt;String, Object&gt; vm = new HashMap&lt;&gt;();
+vm.put(&quot;title&quot;, &quot;This is the title!&quot;);
+vm.put(GAME_STATS_MSG_ATTR, gameCenter.getGameStatsMessage());
+return templateEngine.render(new ModelAndView(vm, &quot;home.ftl&quot;));
+</code></pre>
+<p>How do we reference variables in FTL?</p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;utf-8&quot;&gt;
+        &lt;title&gt;${title}&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;Hello ${name}!&lt;/h1&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>That's kinda nice.</p>
+<p>How do we work with json?</p>
+<pre><code class="language-java">Customer customer = gson.fromJson(&quot;{name:'fred',age:47}&quot;, Customer.class);
+return gson.toJson(new Customer(47, &quot;fred&quot;));
+</code></pre>
+<p>What things might I need to import?</p>
+<pre><code class="language-java">import static spark.Spark.halt;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
+
+import com.example.appl.GameCenter;
+import com.example.appl.PlayerServices;
+
+import spark.ModelAndView;
+import spark.Request;
+import spark.Response;
+import spark.Route;
+import spark.Session;
+import spark.TemplateEngine;
+import java.util.Objects;
+import java.util.logging.Logger;
+
+import static spark.Spark.get;
+import static spark.Spark.post;
+import static spark.Spark.staticFiles;
+import spark.TemplateEngine;
+
+import com.example.appl.GameCenter;
+import spark.TemplateEngine;
+import spark.template.freemarker.FreeMarkerEngine;
+</code></pre>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

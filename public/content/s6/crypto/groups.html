@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- <script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+			tex2jax: {
+				inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+				processEscapes: true
+			}
+		});
+	</script> -->
+	<script>
+		MathJax = {
+			tex: {
+				inlineMath: [['$', '$'], ['\\(', '\\)']]
+			}
+		};
+	</script>
+	<!-- <script
+		type="text/javascript"
+		charset="utf-8"
+		src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+		>
+	</script> -->
+	<script
+		type="text/javascript"
+		id="MathJax-script"
+		async
+		src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+		>
+	</script>
+	<!-- <script
+		type="text/javascript"
+		charset="utf-8"
+		src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
+		>
+	</script> -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426811">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="../../../">Home</a> &gt; <a href="./">Crypto</a> &gt; Groups</p>
+<h1>Groups</h1>
+<p>A group is a set of elements. There is an <em>operation</em>, represented by $\cdot$, that could be anything (add, multiply, etc).</p>
+<p>A group has four properties:</p>
+<h2>Closure</h2>
+<p>For all $a, b \in G$, $a \cdot b \in G$</p>
+<p>AKA do the operation on any two elements, and the result is also in the group.</p>
+<h2>Associativity</h2>
+<p>For all $a, b, c \in G$, we have:</p>
+<p>$$
+(a \cdot b) \cdot c = a \cdot (b \cdot c)
+$$</p>
+<p>AKA you can apply the operation in any order, and the result is the same.</p>
+<h2>Existence of identity</h2>
+<p>For all $a \in G$, There is an element $e \in G$, such that:</p>
+<p>$$
+e \cdot a = a \cdot e = a
+$$</p>
+<p>So, like, $a+0=a$, or $a*1=a$</p>
+<h2>Existence of inverse</h2>
+<p>For all $a \in G$, there is an element $b \in G$, such that:</p>
+<p>$$
+a \cdot b = b \cdot a = e
+$$</p>
+<p>So, if $e$ were 1 for multiply, then $b$ is whatever multiplies $a$ to 1. $b=1/a$</p>
+<p>If $\cdot $ is plus, then b is whatever gets a to zero, like $-a$.</p>
+<h1>Commutative Groups / Abelian Groups</h1>
+<p>These are regular groups with one more property:</p>
+<h2>Commutativity</h2>
+<p>This basically means the operands can <em>commute</em> / move around.</p>
+<p>For all $a, b \in G$, we have:</p>
+<p>$$
+(a \cdot b) = (b \cdot a)
+$$</p>
+<h2>Example</h2>
+<p>Take $Z_{15}^{*}$ - this is a group, under the multiplication operator, and all the elements are less than 15. If we only include the elements where $gcd(a,15)=1$, then it is an Abelian group:</p>
+<ul>
+<li>a * b * c mod n is associative</li>
+<li>It guess a * b = c is in the group?
+<ul>
+<li>I mean it makes sense</li>
+</ul>
+</li>
+<li>1 is a member of the group, so an identity element exists</li>
+<li>Since they're all coprime to 15, they have inverses, which I guess are also in the group apparently? Are all inverses also coprime to n?</li>
+<li>And yes $a<em>b = b</em>a$ so it's abelian</li>
+</ul>
+<h1>Finite Groups</h1>
+<p>Finite groups have a finite number of elements.</p>
+<p>The sizeof operator looks like two bars on either side of the text, like |G|, idk if that's the tex way?</p>
+<p>$$
+|G| &lt; Inf.
+$$</p>
+<h1>Subgroups</h1>
+<p>A subset of a group that is also a group is called a subgroup. Notation:</p>
+<ul>
+<li>Group G under operator: $(G, \cdot )$</li>
+<li>Group G prime is a subset of G: $G' \subset G$</li>
+</ul>
+<p>I hope this mathjax works lol</p>
+<h2>Generating Subgroups over Addition</h2>
+<p>I'm not sure where this formula came from:</p>
+<p>$$
+a^k \equiv ka \bmod n
+$$</p>
+<p>Looking at the group $Z_6$ (no op means addition?), generating from zero:</p>
+<p>$$
+\langle 0 \rangle = {0}
+$$</p>
+<p>Zero to any power is zero, and zero times anything is zero. So, this subgroup has zero in it.</p>
+<p>Let's try two: Two times anything is an even number. Mod 6, we can only get 0, 2, and 4 out. That's the subgroup then.</p>
+<p>$$
+\langle 2 \rangle = {0,2,4}
+$$</p>
+<h2>Generating Subgroups over Multiplication</h2>
+<p>The magic formula is:</p>
+<p>$$
+a^k \equiv a^k \bmod n
+$$</p>
+<h1>Cyclic Subgroups</h1>
+<p>yeet</p>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

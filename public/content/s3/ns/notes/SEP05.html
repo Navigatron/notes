@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- MathJax disabled on this page -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426837">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="../">up</a></p>
+<h2>ssh</h2>
+<h3>ssh-trans</h3>
+<p>connect to the server and verify the server's identity. Form the Tunnel.</p>
+<h3>ssh-auth</h3>
+<p>Authenticate the Client, via password or keys. Server opens tunnel on its end.</p>
+<ul>
+<li>password
+<ul>
+<li>not recommended</li>
+</ul>
+</li>
+<li>RSA keys
+<ul>
+<li>private key</li>
+<li>public key</li>
+</ul>
+</li>
+</ul>
+<ol>
+<li>Client asks to connet</li>
+<li>Server sends 'challenge'</li>
+<li>Client does something with it and it's private key</li>
+<li>Server checks against something involving a public key</li>
+</ol>
+<p>Those last two steps aren't very well explained.</p>
+<h3>ssh-conn</h3>
+<p>Expose functionality so that things can use the tunnel we've created.</p>
+<h3>sshd</h3>
+<p>The server daemon that listens for new connections.</p>
+<h3>Applications</h3>
+<ul>
+<li>SFTP - secure file transfer</li>
+<li>SHTTP - web stuff</li>
+<li>SCP - secure copy</li>
+</ul>
+<h2>Reading</h2>
+<p>SSH second edition<br>
+Chapters 1, 2, and 3<br>
+Section 9.4: X forwarding</p>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

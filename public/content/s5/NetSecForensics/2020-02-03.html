@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- MathJax disabled on this page -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426734">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="./">up</a></p>
+<h1>2020-02-03</h1>
+<h2>Big project</h2>
+<ul>
+<li>Groups of 3 or 4 are ideal</li>
+<li>Short presentation at end of the semester</li>
+<li>something related to network security</li>
+<li>Three things people really like:
+<ul>
+<li>&quot;here's this cool tool, or problem, I'll run the tool, share results&quot;
+<ul>
+<li>&quot;Here's this firewall, we looked at what traffic our ISP sends us, here's results&quot;</li>
+</ul>
+</li>
+<li>&quot;We have a lab assignment, let's add a lot of extra material to it&quot;</li>
+<li>Replicate the results of a paper from a conference</li>
+</ul>
+</li>
+</ul>
+<p>Past groups:</p>
+<ul>
+<li>Tunneled info out via dns
+<ul>
+<li>Tunneling is putting x data in y format, to get it somewhere</li>
+</ul>
+</li>
+<li>Did a lab on exploiting spanning tree protocol</li>
+</ul>
+<p>To do:</p>
+<ul>
+<li>Form a team</li>
+<li>choose a topic</li>
+<li>email prof. with the above info</li>
+<li>prof will provide feedback</li>
+</ul>
+<h2>Review</h2>
+<ul>
+<li>DHCP Snooping
+<ul>
+<li>Switch builds model of IP associations</li>
+</ul>
+</li>
+<li>Dynamic ARP Inspection
+<ul>
+<li>Switch blocks ARP replies that don't match the model</li>
+</ul>
+</li>
+</ul>
+<h2>IP Spoofing</h2>
+<p>Attacker sends message with incorrect source IP address. The victim cannot reply, as the response goes to the machine with that actual address.</p>
+<p>If the attacker sends a message with an incorrect IP <em>and</em> mac, they can still be detected with the DHCP snooping table, as the table records associations <em>with switch interfaces</em>.</p>
+<p>This completes the pyramid</p>
+<ul>
+<li>Port security</li>
+<li>DHCP Snooping</li>
+<li>Dynamic ARP Inspection</li>
+<li>IP Source Guard</li>
+</ul>
+<p>Thusly ends switch security.</p>
+<h2>Firewalls</h2>
+<p>Not a wall made of fire. It stops fire.</p>
+<p>General principles of a secure system:</p>
+<ul>
+<li>Simplicity
+<ul>
+<li>Choke point - force attackers to use a narrow channel</li>
+<li>Least privilege: Don't allow more than you need</li>
+</ul>
+</li>
+<li>Defense in depth
+<ul>
+<li>Have multiple security mechanisms</li>
+<li>Diversity of defense - have many different security mechanisms</li>
+<li>More than one thing must go wrong before a system dies</li>
+</ul>
+</li>
+<li>Fail-safe stance
+<ul>
+<li>Fail in a way that denies access</li>
+</ul>
+</li>
+<li>Weakest link
+<ul>
+<li>one broken link can endanger the network</li>
+</ul>
+</li>
+</ul>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

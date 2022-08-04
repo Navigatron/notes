@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- MathJax disabled on this page -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426793">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="../../../">Index</a> &gt; <a href="./">Software Engineering</a> &gt; Wed Sep 08 2021 20:00:00 GMT-0400 (Eastern Daylight Time):</p>
+<h1>Wed Sep 08 2021 20:00:00 GMT-0400 (Eastern Daylight Time):</h1>
+<h2>Architecture</h2>
+<p>These are the earliest and most fundamental decisions. Your architecture choices will have huge impacts.</p>
+<p>Architecture is influenced by non-Functional Requirements (NFRs):</p>
+<ul>
+<li>Operational
+<ul>
+<li>Scalability</li>
+<li>Availability</li>
+</ul>
+</li>
+<li>Developmental
+<ul>
+<li>Testability</li>
+<li>Portability</li>
+</ul>
+</li>
+<li>Constraints
+<ul>
+<li>Pre-chosen components (someDB)</li>
+<li>Some framework</li>
+<li>Stakeholder really wants X</li>
+</ul>
+</li>
+</ul>
+<p>Architecture is guided by patterns, like:</p>
+<ul>
+<li>Failover / Load balancing</li>
+<li>Model View Controler</li>
+<li>Layers</li>
+</ul>
+<blockquote>
+<p>&quot;No architecture is right or wrong, just more or less useful&quot;</p>
+</blockquote>
+<p>WebCheckers must be web based, using Spark and Freemaker.</p>
+<p>Architecture is modeled using tiers.</p>
+<ul>
+<li>User interacts with UI</li>
+<li>UI interacts with APP</li>
+<li>APP interacts with DATA MODEL</li>
+</ul>
+<blockquote>
+<p>I personally would split that further, UI / Routes / Controllers / Services / Data</p>
+</blockquote>
+<p>The model tier holds the business logic.</p>
+<blockquote>
+<p>That's just wrong. The data model should not have business logic. Maybe constraint checks at most.</p>
+</blockquote>
+<p>The layers can be broken down:</p>
+<ul>
+<li>frameworks
+<ul>
+<li>like spark / freemarker</li>
+</ul>
+</li>
+<li>Platform
+<ul>
+<li>like java</li>
+</ul>
+</li>
+<li>OS/Hardware
+<ul>
+<li>like Windows / desktop</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>For the quiz, you will need this word: &quot;Elaboration&quot;</p>
+</blockquote>
+<h1>Sprint Planning</h1>
+<blockquote>
+<p>&quot;A sprint plan is a plan to build a small working increment of a product.&quot;</p>
+</blockquote>
+<p>Typically 3 weeks long, a sprint is a commitment to the product owner.</p>
+<p>The sprint planning meeting is what creates the sprint plan.</p>
+<p>The product backlog holds a number of stories. Each has a level of effort, which the team decides on. During the plan meeting, stories are moved from the product backlog to the sprint backlog.</p>
+<p>Effort is measured in points. If a team can do 25 points of work in a sprint, then we pull in stories until we have that many points assigned.</p>
+<p>Stories could fit into the sprint point-wise, but might need to be left out based on dependencies or purposes. Best judgement applies.</p>
+<p>How do you know when you're done with a story?</p>
+<p>Establish criteria for &quot;Definition of Done&quot; - Acceptance Criteria.</p>
+<ul>
+<li>Define acceptance criteria</li>
+<li>Design solution</li>
+<li>Develop solution - &quot;code complete&quot;</li>
+<li>Test the feature manually</li>
+</ul>
+<p>Other things we'll hit later:</p>
+<ul>
+<li>feature branches</li>
+<li>unit testing</li>
+<li>code coverage?</li>
+<li>Pull requests / code reviews?</li>
+<li>Demonstrations?</li>
+</ul>
+<p>The many transitions and states:</p>
+<ul>
+<li>Product Backlog
+<ul>
+<li>Advance when acceptance criteria are defined, and makes sense in the sprint</li>
+</ul>
+</li>
+<li>Sprint backlog
+<ul>
+<li>Advance when someone starts working on it</li>
+</ul>
+</li>
+<li>In Development
+<ul>
+<li>Advance when dev is done</li>
+</ul>
+</li>
+<li>Ready for Test
+<ul>
+<li>Advance when someone starts testing it</li>
+</ul>
+</li>
+<li>In Test
+<ul>
+<li>Advance when testing is complete - passes acceptance criteria</li>
+</ul>
+</li>
+<li>Done</li>
+</ul>
+<p>The sprint board - trello - tells us the status of all work.</p>
+<p>If you have too much going on, a dropped story <em>should</em> go back to the product backlog.</p>
+<p>The number of points your team can do in a sprint is called the <em>velocity</em>.</p>
+<p>Your velocity should be a rolling average of the <em>completed</em> points of the last three sprints.</p>
+<p>Velocity is a <em>metric</em> - a measurement - you cannot declare a board to be some length, and you cannot declare the velocity of a team. Since velocity is a measurement of a single team on a single project, and point levels are estimated, velocities <em>cannot</em> be compared between teams.</p>
+<p>Life impacts how much a team can actually handle. The rolling average will smooth over most things, but teams <em>can</em> manually scale down if needed.</p>
+<hr>
+<p><a href="../../../">Index</a> &gt; <a href="./">Software Engineering</a> &gt; Wed Sep 08 2021 20:00:00 GMT-0400 (Eastern Daylight Time):</p>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

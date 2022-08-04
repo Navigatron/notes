@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- MathJax disabled on this page -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426825">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="../index">up</a></p>
+<h1>Concepts - Haloween edition - spookiest class yet</h1>
+<p><em>THE MULTIPLEXER.</em></p>
+<ul>
+<li>n Select Inputs - as an N-bit binary number</li>
+<li>2^n Data Inputs - numbered from 0 to 2^n-1</li>
+<li>1 Output</li>
+</ul>
+<p>Call this a &quot;2^n by 1 mux&quot;.</p>
+<p>Takes input n and sends it to the output.</p>
+<p>We'll use a modified truth table, because a 4x1 mux has a lot of rows that don't do anything.</p>
+<table>
+<thead>
+<tr>
+<th>E</th>
+<th>S1</th>
+<th>S0</th>
+<th>Y</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>d0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>d1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>d2</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>d3</td>
+</tr>
+<tr>
+<td>0</td>
+<td>X</td>
+<td>X</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<h2>Block Diagram</h2>
+<pre><code>  +---------+
+  | 4x1 mux |
+ -+s0       |
+ -+s1       |
+  |        Y+-
+ -+0        |
+ -+1        |
+ -+2        |
+ -+3   E    |
+  +----+----+
+       |
+</code></pre>
+<h2>Implementation</h2>
+<p>Each combination of S0 and S1 go to an AND. Each AND also attaches to one of the data. The output of all ands goes to an OR, which acts as a collector. We can't just wire all the outputs together because zero is not voltage zero.</p>
+<h2>Using a mux to implement a function</h2>
+<p>A|B|C|F
+---|---
+0|0|0|1
+0|0|1|1
+0|1|0|0
+0|1|1|0
+1|0|0|1
+1|0|1|0
+1|1|0|0
+1|1|1|1</p>
+<p>8x1 Mux - Select S2 through S0, and Data 0 through 7.</p>
+<p>A -&gt; S2<br>
+B -&gt; S1<br>
+C -&gt; S0</p>
+<p>Then attach 1 or 0 to the data such that it works. This feels like bad programming, but it works I guess.</p>
+<p>Aha, it is terrible - because Muxs use a lot of hardware. Almost every other method is more efficient.</p>
+<h1>Other standard things</h1>
+<h2>Turning Corners is Hard</h2>
+<h2>PLA - Programmable Logic Array</h2>
+<p>Inputs to an AND array to an OR array - outputs many functions</p>
+<p>Every AND is connected to every input by fuses - to program the PLA, you burn out the fuses you don't want.</p>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

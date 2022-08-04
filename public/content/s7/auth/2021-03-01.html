@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- MathJax disabled on this page -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426765">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="../../../">Index</a> &gt; <a href="./">Auth</a> &gt; Sun Feb 28 2021 19:00:00 GMT-0500 (Eastern Standard Time):</p>
+<h1>Sun Feb 28 2021 19:00:00 GMT-0500 (Eastern Standard Time):</h1>
+<h2>Administrative</h2>
+<p>An empty DACL is a dacl with no contents. A null dacl doesn't exist.</p>
+<blockquote>
+<p>The quizzes are confirmed to be open internet</p>
+</blockquote>
+<h2>Files</h2>
+<ul>
+<li>Directory Files
+<ul>
+<li><code>/homework/</code></li>
+</ul>
+</li>
+<li>Regular Files
+<ul>
+<li><code>/homework/week6.docx</code></li>
+</ul>
+</li>
+<li>Special Files
+<ul>
+<li>Pipes</li>
+<li>Devices</li>
+<li>hard/soft Symlinks</li>
+<li>Network Sockets</li>
+<li>&quot;doors&quot; (for ipc on solaris)</li>
+</ul>
+</li>
+</ul>
+<h2>ACLs</h2>
+<p>Entries are called Access Control Entries (ACEs).</p>
+<p>The typical ACEs include:</p>
+<ul>
+<li>Attributes
+<ul>
+<li>SetUID</li>
+<li>SetGID</li>
+<li>Sticky Bits</li>
+</ul>
+</li>
+<li>Base Permissions
+<ul>
+<li>chmod 777 / owner / group / everyone</li>
+</ul>
+</li>
+<li>Extended Permissions</li>
+</ul>
+<p>When running <code>ls -l</code>, the first character in the permissions list is the file type. <code>-</code> is regular, <code>d</code> is a directory, <code>l</code> is a link.</p>
+<p>There are only 3 levels of access by default, but there can be...</p>
+<h2>Extended Permissions</h2>
+<p>An ACL with more than three ACEs is called an <em>Extended ACL</em>.</p>
+<blockquote>
+<p>There's something about masks but Prof. isn't clear about it, do outside research.</p>
+</blockquote>
+<h2>Process Permissions</h2>
+<p>Processes also get a user ID (UID) and group ID (GID).</p>
+<p>By default, the UID of a process is the same as the user who started the process. Same with the GID.</p>
+<p>If the process binary has the <code>SetUID</code> bit set, then the process runs with the UID of its file. Same with the GID.</p>
+<p>Processes can only send signals to other processes with the same UID. Joe can't kill bob's processes.</p>
+<h2>root</h2>
+<p>The root user, with uid=0, can do anything. ACLs do not apply.</p>
+<h2>SetUID</h2>
+<p>Binaries with the SetUID bit in their ACL are started with the UID of the file owner, rather than the caller.</p>
+<p>The <code>passwd</code> command has the SetUID bit set. This way, users cannot read the shadow file, but the password change process can write to it.</p>
+<p>SetGID is the same, but for groups.</p>
+<h2>The Sticky Bit</h2>
+<p>Rarely used. On program files, it loads the file into ram so it doesn't get loaded from the hdd multiple times.</p>
+<p>On a directory, it prevents users from deleting each other's files.</p>
+<h2>Default Permissions</h2>
+<p>Files: 666
+Directories: 777</p>
+<h2>Umask</h2>
+<p>the umask variable <em>removes</em> permissions. The default umask is 022.</p>
+<pre><code>default file: 110 110 110 (666)
+umask:        000 010 010 (022)
+effective:    110 100 100 (644)
+</code></pre>
+<p>aka remove write for group and global.</p>
+<h2>Linux-Specific single-file access passing</h2>
+<p>We can pass access to a single file to a process, without passing any other perms.</p>
+<blockquote>
+<p>Something something file handles? Thanks for the in-depth explanation, prof.</p>
+</blockquote>
+<blockquote>
+<p>TODO: read what file handles are outside of class.</p>
+</blockquote>
+<h2>Pluggable Authentication Modules (PAM)</h2>
+<p>Any system that wants to authenticate users can use PAM. Root can edit PAM files to create backdoors.</p>
+<p>PAM acts as a centralized authentication services - this keeps user authentication data in sync everywhere.</p>
+<h2>sudo</h2>
+<p>Sudo lets users run commands as root, without knowing the root password. Additionally, commands can be allow/block-listed.</p>
+<blockquote>
+<p>On wednesday, there will be a lab demo to get us started. &quot;This is the lab folks groan about and struggle with&quot;. - Prof.</p>
+</blockquote>
+<h1>SELinux</h1>
+<h2>Linux Security Modules (LSM)</h2>
+<p>A set of hooks in the kernel that perform checks:</p>
+<ol>
+<li>DAC checks
+<ul>
+<li>If this fails, we don't go further.</li>
+</ul>
+</li>
+<li>LSM Hook checks</li>
+<li>Resource Access</li>
+</ol>
+<blockquote>
+<p>The <a href="https://en.wikipedia.org/wiki/Linux_Security_Modules">wikipedia page for LSM</a> actually provides a really good overview. The Kernel calls LSM hooks before accessing resources, to do extra checks. All SELinux is, is some functions for those hooks to call.</p>
+</blockquote>
+<p><em>LSM is not for auditing</em> - the kernel can return failures well before approaching an LSM hook, since the hooks are right in front of the resources. There would need to be a lot more hooks in order to make LSM an auditing tool.</p>
+<h2>Task Hooks</h2>
+<p>These hooks detect and validate some stuff:</p>
+<ul>
+<li>creating a process</li>
+<li>killing a process</li>
+<li>allocating / freeing a &quot;security field&quot;</li>
+</ul>
+<p>There are a lot of types of hooks:</p>
+<ul>
+<li>Program Loading hooks</li>
+<li>Filesystem hooks</li>
+<li>IPC hooks</li>
+<li>others</li>
+</ul>
+<h2>SELinux Modes</h2>
+<ul>
+<li>Disabled</li>
+<li>Permissive</li>
+<li>Enforcing</li>
+<li>Management</li>
+</ul>
+<blockquote>
+<p>&quot;This lab is a tough one, start working on it before Wednesday&quot; - Prof.</p>
+</blockquote>
+<hr>
+<p><a href="../../../">Index</a> &gt; <a href="./">Auth</a> &gt; Sun Feb 28 2021 19:00:00 GMT-0500 (Eastern Standard Time):</p>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- MathJax disabled on this page -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426753">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="./">up</a></p>
+<h1>2020-01-28</h1>
+<p>Today we get to jump into SQL</p>
+<h2>Step 4 - Creating a relational schema in a DBMS</h2>
+<ul>
+<li>Data Definition Language (DDL)
+<ul>
+<li>Deals primarily with Metadata</li>
+<li>Create DBs, Tables, Changing structure</li>
+</ul>
+</li>
+<li>Data Manipulation Language (DML)
+<ul>
+<li>Deals primarily with User Data</li>
+<li>INSERT, SELECT</li>
+</ul>
+</li>
+</ul>
+<p>Each manufacturer of a DBMS adds a few special features to differentiate their product. This can cause problems.</p>
+<p>We will be using MySQL, which was open source and was then eaten by oracle.</p>
+<blockquote>
+<p>There's a fork called MariaDB, it's a drop-in, open-source substitute.</p>
+</blockquote>
+<h2>metadata commands</h2>
+<p>Create a database</p>
+<p><code>CREATE DATABASE databasename</code></p>
+<p>Remove a database</p>
+<p><code>DROP DATABASE databasename</code></p>
+<p>Show databases with <code>SHOW</code></p>
+<p>Comments work like this:</p>
+<pre><code class="language-sql">-- Single line comments
+-- hyphen hyphen space
+
+/*
+Multi-line comments are like Java
+*/
+</code></pre>
+<h2>Use</h2>
+<p>'Open' a database with <code>USE databasename</code></p>
+<h2>Creating Tables</h2>
+<pre><code>CREATE TABLE tablename (
+	attributeName datatype,
+	attributeName datatype,
+	CONSTRAINT constraint_name PRIMARY KEY (attributeName)
+);
+</code></pre>
+<h3>Datatypes</h3>
+<blockquote>
+<p>TODO - insert link here to datatypes</p>
+</blockquote>
+<p><code>DESCRIBE tablename</code> will show the metadata about a table</p>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

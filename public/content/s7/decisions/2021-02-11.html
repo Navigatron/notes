@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- <script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+			tex2jax: {
+				inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+				processEscapes: true
+			}
+		});
+	</script> -->
+	<script>
+		MathJax = {
+			tex: {
+				inlineMath: [['$', '$'], ['\\(', '\\)']]
+			}
+		};
+	</script>
+	<!-- <script
+		type="text/javascript"
+		charset="utf-8"
+		src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+		>
+	</script> -->
+	<script
+		type="text/javascript"
+		id="MathJax-script"
+		async
+		src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+		>
+	</script>
+	<!-- <script
+		type="text/javascript"
+		charset="utf-8"
+		src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
+		>
+	</script> -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426771">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="../../../">Index</a> &gt; <a href="./">Decisions</a> &gt; Wed Feb 10 2021 19:00:00 GMT-0500 (Eastern Standard Time):</p>
+<h1>Wed Feb 10 2021 19:00:00 GMT-0500 (Eastern Standard Time):</h1>
+<p>When doing analysis, multiple perspectives must be considered - the <em>stakeholders</em>. Raising electricity costs hurts consumers, but benefits the electric company.</p>
+<p>The &quot;society&quot; perspective includes true costs and benefits, and excludes anything that could be classified as a wealth transfer. Taking from one group and giving to another may have impacts, but doesn't increase or decrease the value in the system.</p>
+<p>Converting dollars to other things can have a benefit or cost - if a bridge costs 1 million, but the expected value is 10 million, then the bridge increases the value of the system.</p>
+<p>An idea can be good from one perspective, but bad from another. The goal is often clear, but determining how to achieve it can be tough. If something is a good idea, then the &quot;winners&quot; should be able to help offset the costs to the &quot;losers&quot;.</p>
+<h2>The Bounding Problem</h2>
+<p>How do we draw the line on what benefits and costs to include?</p>
+<p>Example: Benefits / Costs of a life-saving treatment. Do we include:</p>
+<ul>
+<li>Future Earnings?
+<ul>
+<li>Future costs?</li>
+</ul>
+</li>
+<li>Children?
+<ul>
+<li>Children's Future Earnings?</li>
+</ul>
+</li>
+<li>&quot;Revenue Recycling&quot;?</li>
+</ul>
+<h1>Discounting and Net Present Value (NPV)</h1>
+<p>$1000 in one year is equal to $X in two years - but how much is X? X has to be more than 1k to be worth it, but probably doesn't have to be 10k.</p>
+<p>Example:</p>
+<ul>
+<li>You have 10k</li>
+<li>You could buy art, and sell it for 11k in one year</li>
+<li>You have a savings account that makes 4% interest</li>
+</ul>
+<p>There are multiple analysis strategies:</p>
+<ul>
+<li>Future Value
+<ul>
+<li>Buying the painting has a future value of 1k</li>
+<li>Saving has a future value of $400</li>
+<li>The painting is more profitable - Buy the painting!</li>
+</ul>
+</li>
+<li>Present Value
+<ul>
+<li>Getting 11k through the painting requires 10k right now</li>
+<li>Getting 11k through savings requires 10576 right now</li>
+<li>The painting is cheaper - Buy the painting!</li>
+</ul>
+</li>
+<li>Net Present Value
+<ul>
+<li>We need to define some kind of discount rate, $d=0.04$</li>
+<li>Painting:
+<ul>
+<li>worth -10k today</li>
+<li>worth +11k in one year
+<ul>
+<li>worth $11000/(1+d)=10577$ today</li>
+</ul>
+</li>
+<li>Now that everything is in &quot;Present Value&quot;, we can find the net present value</li>
+<li>NPV of this option = $577; it's a good choice</li>
+</ul>
+</li>
+<li>Savings Account:
+<ul>
+<li>Present value of this option: -10k</li>
+<li>Future value of this option: 10400
+<ul>
+<li>Present value of future value: $10400/(1+d)=10000$</li>
+</ul>
+</li>
+<li>Net Present Value: $0</li>
+<li>This option is neutral.</li>
+</ul>
+</li>
+<li>The painting option is better - Buy the painting!</li>
+</ul>
+</li>
+</ul>
+<p>Let's define some terms:</p>
+<ul>
+<li>Future Value: $FV$</li>
+<li>Present Value: $PV$</li>
+<li>Net Present Value: $NPV$</li>
+<li>Discount Rate: $d$</li>
+<li>Number of years: $n$</li>
+</ul>
+<p>Converting a present value into a future value:</p>
+<p>$$
+FV=PV*(1+d)^n
+$$</p>
+<p>Converting a future value into a present value:</p>
+<p>$$
+PV=\frac{FV}{(1+d)^n}
+$$</p>
+<h2>Minimum Attractive Rate of Return</h2>
+<p>Entities usually only look at investments with expected returns above a certain threshold.</p>
+<p>Companies look for 10 to 20%, the government looks for 5%, and private citizens can go anywhere from 0 to over 100%.</p>
+<h2>NPV Steps</h2>
+<ul>
+<li>Find all the costs and benefits, and the years they occur</li>
+<li>Make a <em>Cash-Flow Diagram</em></li>
+<li>Make a second <em>Cash-Flow Diagram</em> with discounting applied</li>
+<li>Add things together!</li>
+</ul>
+<h2>Example</h2>
+<p>A friend is thinking of buying either:</p>
+<ul>
+<li>A Prius
+<ul>
+<li>$24k</li>
+<li>50 mpg</li>
+</ul>
+</li>
+<li>A Toyota Matrix
+<ul>
+<li>$19.5k</li>
+<li>25mpg</li>
+</ul>
+</li>
+</ul>
+<p>Our friend drives ~12k miles per year, and will keep the car for 100k miles.</p>
+<p>Let's use a discount rate of 10%.</p>
+<p>Here's our comparison:</p>
+<p><img src="./images/2021-02-11.png" alt=""></p>
+<blockquote>
+<p>I used excel because markdown can't do formulas lol</p>
+</blockquote>
+<p>The prius will cost $27,200.96 over its lifetime, measured in present dollars. The matrix will cost $27,579.29, which is about $380 more in present dollars, over its lifetime.</p>
+<p>Despite the Prius's higher startup costs, it is worth it over the live of the vehicle.</p>
+<blockquote>
+<p>Note that this doesn't include the cost of insuring a more expensive car - the higher startup cost gives the prius a higher risk level even if probabilities are the same.</p>
+</blockquote>
+<h2>Cash Flow Diagram</h2>
+<p>A cash flow diagram has an arrow pointing from left to right, from zero years to the lifetime of the thing being measured. From this central arrow, other arrows (one for each year) point up or down with a cash value. The length of the vertical arrows corresponds to their value.</p>
+<blockquote>
+<p>This will probably be tough in graphviz. I'll see if I can setup a template in tikz.</p>
+</blockquote>
+<hr>
+<p><a href="../../../">Index</a> &gt; <a href="./">Decisions</a> &gt; Wed Feb 10 2021 19:00:00 GMT-0500 (Eastern Standard Time):</p>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- MathJax disabled on this page -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426847">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="../">up</a></p>
+<blockquote>
+<p>I know you guys don't like physical copies... That will change...</p>
+</blockquote>
+<p><img src="https://i.kym-cdn.com/entries/icons/mobile/000/023/021/e02e5ffb5f980cd8262cf7f0ae00a4a9_press-x-to-doubt-memes-memesuper-la-noire-doubt-meme_419-238.jpg" alt=""></p>
+<h1>Database JAN18 - Composite Primary Key, Intro to queries</h1>
+<p>Text file for today is <a href="../bonus/JAN18-cmds.txt">Here.</a></p>
+<p>SQL file for today is <a href="../bonus/JAN18.sql">Here.</a></p>
+<p>Getting Started:</p>
+<pre><code>mysql -u root -p --verbose
+SOURCE C:\path\to\JAN18.sql
+TEE C:\path\to\tee\file.txt
+</code></pre>
+<h3>Database structure and foreign keys</h3>
+<p>Databases are made up of <em>tables</em>.</p>
+<p>Tables consist of multiple columns, each of which is a <em>field</em>, and has a name.</p>
+<p>Each entry in the table can be called a Tuple, Row, Record, they're all the same.</p>
+<p>Each table has one column with the primary key attribute - the data in the primary key field
+must <em>uniquely</em> identify the record.</p>
+<p>A column can have the <em>foreign key</em> attribute, where the data it holds is the
+primary key for an entry in another table.</p>
+<p>For example, each item in the products table has a supplierID field with the
+foreign key attribute. This can be used to look up the supplier of that product in
+the suppliers table.</p>
+<h3>What's Prof up to?</h3>
+<p>I'm using the TV sql file linked above.</p>
+<blockquote>
+<p>This is basically notes.txt from MyCourses with my own notes on top</p>
+</blockquote>
+<p><code>DESC play</code> - describe the play table. Multiple fields are labeled as <code>PRI</code>, or
+primary key - this means the primary key is <em>composite</em>, or made of multiple fields.</p>
+<p><code>DESC tvstation</code> - Channel is the primary key - each station uses a unique channel. The multiple
+NULL fields allow the information to be missing.</p>
+<p><code>SELECT * FROM tvstation</code> - get everything out of this table. See it all.</p>
+<p><code>SELECT * FROM tvstation WHERE city = &quot;Rochester&quot;;</code> - Get all the records in which the
+city field is set to &quot;Rochester&quot;.</p>
+<p><code>SELECT * FROM tvstation WHERE city IS NULL;</code> - this should be obvious</p>
+<p><code>SELECT channel, callLetters, phone FROM tvstation;</code> - Get only some specific columns.</p>
+<p><code>SHOW CREATE TABLE play;</code> - Displays how the table was created. This helps us see
+what constraints are set, such as foreign keys.</p>
+<p>In the play table, the channel column is a foreign key that references the channel column in the tvstation table.</p>
+<p><code>SELECT name,playDate, playTime, channel FROM play order by name;</code> -
+Selected data is now in order, alphabetically by name. Add <code>DESC</code> to the end to
+reverse the order.</p>
+<p><code>SELECT * FROM play WHERE channel IN (8, 13, 31);</code> - IN compares the value to all items
+of a set. The set is denoted by <code>(8, 13, 31)</code>.</p>
+<h1>END</h1>
+<p>This got real interesting real fast. Let's go.</p>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

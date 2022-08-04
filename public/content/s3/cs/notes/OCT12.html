@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- MathJax disabled on this page -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426823">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="../">up</a></p>
+<h1>Housekeeping</h1>
+<ul>
+<li>Exp 4 due tonight!</li>
+<li>Exp 5 (the hard one) due the 24th
+<ul>
+<li>Build and Traverse a binary tree (Hard)
+<ul>
+<li>Traverse must be recursive</li>
+<li>Build doesn't have to be</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Exam 2
+<ul>
+<li>Next Wednesday, OCT 17th</li>
+<li>In class</li>
+<li>GOL 3435</li>
+<li>Review
+<ul>
+<li>GOL 2590</li>
+<li>11 to noon</li>
+<li>Oct 15th</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1>Methods of IO</h1>
+<h2>Interupt Driven IO</h2>
+<ul>
+<li>Ask the OS to do some IO</li>
+<li>OS records that you want IO, moves your process to waiting</li>
+<li>You no longer get time slices</li>
+<li>When there's IO, OS moves your process to ready so you can run.</li>
+</ul>
+<p>Advanced IO requests, like read_int, wait for more than one byte.</p>
+<p>With high-speed devices, this creates hella interrupts.</p>
+<h2>Direct Memory Access IO</h2>
+<p>Allows IO to be managed off of the main CPU.</p>
+<p>Add a DMA CPU, an external cpu to manage devices. DMA devices can <em>directly access memory</em>.</p>
+<ol>
+<li>You request IO</li>
+<li>OS builds DMA program in Memory</li>
+<li>OS sets aside memory for DMA device</li>
+<li>OS puts your program to sleep.</li>
+<li>When the DMA is done doing IO, it generated an interrupt.</li>
+</ol>
+<p>DMA is used for any high-speed system. For humans, it could be super simple DMA
+or maybe still interrupt based.</p>
+<h1>Assembly</h1>
+<p>Take an assembly file, create an object file.</p>
+<p>Use a two-pass assembler.</p>
+<h3>Pass One</h3>
+<p>On pass one, find every label and their addresses.
+This more or less builds the symbol table, aka symtab. Also, Perform
+&quot;Lexical Analysis&quot; - convert text to a linked list of tokens so pass2 is easier.</p>
+<p>Syntax Analysis checks for syntax errors</p>
+<p>Semantic Analysis check for errors in the meaning of an instruction.</p>
+<h3>Pass Two</h3>
+<p>On Pass two, build the text block. Every real instruction is converted to
+machine code. Use the Directives to build the data block.</p>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

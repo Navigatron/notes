@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- MathJax disabled on this page -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426794">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="../../../">Index</a> &gt; <a href="./">Software Engineering</a> &gt; Wed Sep 15 2021 20:00:00 GMT-0400 (Eastern Daylight Time):</p>
+<h1>Wed Sep 15 2021 20:00:00 GMT-0400 (Eastern Daylight Time):</h1>
+<h2>Domain Driven Design</h2>
+<blockquote>
+<p>&quot;Domain Driven Design centers the architecture on the problem domain.&quot;</p>
+</blockquote>
+<p>The application layer holds application-wide things, like the logging entity, and other infrastructure. &quot;Try to keep the app layer as light as possible&quot;.</p>
+<p>The model layer has:</p>
+<ul>
+<li>Entity objects
+<ul>
+<li>Must have some unique ID field</li>
+</ul>
+</li>
+<li>Value objects
+<ul>
+<li>Dates, credit card numbers, X/Y coordinates</li>
+<li>Not just a data holder</li>
+<li>Comparison based on field values, not object handles</li>
+</ul>
+</li>
+</ul>
+<p>Model layer things may need custom <code>equals</code> and <code>hashCode</code> methods.</p>
+<p>HTTP requests hit controllers, which use services, delegate to entities, and serve FTL files.</p>
+<p>Prof says study this for the exam:</p>
+<p><img src="./images/2021-09-16.html" alt=""></p>
+<h2>State Based Behavior</h2>
+<p>State describes kinda how your models work, the relationships between these components. We put it in a state chart, which is a kind of uml diagram.</p>
+<p>A solid ball represents the starting state. Arrows show where a state may transition to another state.</p>
+<p>Transitions have labels, which tell you three things:</p>
+<ul>
+<li>The <em>Event</em>
+<ul>
+<li>What triggers this transition</li>
+</ul>
+</li>
+<li>The <em>Guard</em>
+<ul>
+<li>What criteria must be matched to continue</li>
+</ul>
+</li>
+<li>The <em>Action</em>
+<ul>
+<li>Something that happens during the transition</li>
+</ul>
+</li>
+</ul>
+<pre><code>event [guard] / action
+</code></pre>
+<p>If a state has many transitions out, on the same trigger, then the guards of those transitions should be mutually exclusive. Guards should have no side effects.</p>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

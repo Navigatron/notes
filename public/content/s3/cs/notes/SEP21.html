@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- MathJax disabled on this page -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426827">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="../">up</a></p>
+<h1>Housekeeping</h1>
+<ul>
+<li>Exam 1
+<ul>
+<li>Wednesday 26th</li>
+<li>GOL 3435</li>
+<li>Review Session
+<ul>
+<li>24th</li>
+<li>GOL 2590</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Experiment 2
+<ul>
+<li>Do the things
+<ul>
+<li>Returns</li>
+<li>etc.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1>Branch Instructions</h1>
+<p>Branch if Equal (<code>beq</code>) and Branch if Not Equal (<code>bne</code>)</p>
+<pre><code>beq rs,rt,dest (as label)
+</code></pre>
+<p>if rs is exactly equal to rt, goto dest.</p>
+<pre><code>bne rs,rt,dest (as label)
+</code></pre>
+<p>if rs is not equal to rt, goto dest.</p>
+<h2>Instruction Format</h2>
+<p>I type instruction, and can't use absolute address mode. Create PC Relative Address Mode - dest can be anywhere within 32k of the branch. dest is computed to be the offset from the program counter.</p>
+<h2>Inequalities</h2>
+<p><em>Set if Less Than</em></p>
+<pre><code>slt rd, rs, rt
+</code></pre>
+<p>If rs is less than rt, rd will be set to exactly 1. Otherwise, it will be zero.</p>
+<pre><code>slti rt,rs,imm
+</code></pre>
+<p>The above detects if rs is less than the specified immediate.</p>
+<h2>You don't need greater than.</h2>
+<p>Just flip the less than. <code>sgt</code> is a pseudo instruction that we can use on the project, but not until then.</p>
+<h2>You don't need leq or geq either</h2>
+<p>geq = !(less)</p>
+<p>leq = !(greater)</p>
+<blockquote>
+<p>&quot;For the project, ya'll can use any pseudo instruction you want.&quot; - Prof</p>
+</blockquote>
+<h2>Aight loops real quick</h2>
+<pre><code>loop:
+    if !conditional goto done
+    # body
+    j loop
+done:
+</code></pre>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

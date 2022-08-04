@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- MathJax disabled on this page -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426836">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="../">up</a></p>
+<h1>Housekeeping</h1>
+<p>DHCP lab due monday</p>
+<h1>Advanced DHCP Topics</h1>
+<p>If the server offers an addr, the client ARPs to see if its already in use. If it is,
+client sends server DHCPDecline. Server marks addr as in use and notifies admin.</p>
+<h3>Multiple NICs</h3>
+<p>Each NIC runs it's own DORA process and receives its own addr.</p>
+<h3>DHCP Relay Servers</h3>
+<p>Relay picks up broadcast from client, converts to unicast to server. Relay fills in
+giAddr field (default gateway).</p>
+<p>Routers most commonly also act as a dhcp relay</p>
+<p>Relays may support a threshold - only forward requests if the seconds field is above
+a threshold.</p>
+<p>Seconds field in DISCOVER messages tells how long it's been since the client started
+searching for an addr.</p>
+<p>Theshold can be used to only forward requests if a server doesn't respond in time.</p>
+<h3>DHCP Failovers</h3>
+<p>split and mlt parameters are set on primary and communicated to secondary.</p>
+<p>If one DHCP server goes down, the other takes over.</p>
+<p>Their clocks must be synchronized, they must be able to communicate with each other.</p>
+<p>In fact, almost everything needs to be the same so they can stand in for each other.</p>
+<p>Five parameters defined on primary, 3 on secondary.</p>
+<p>Max Response Delay - How long to wait for messages from peer before assuming the
+peer is down.</p>
+<p>Max Unacked Updates - How many messages I send without a response.</p>
+<p>Maximum Client Lease Time - Primary Only - How long a peer can renew a lease
+without informing the other peer.</p>
+<p>Split - Load balancing between primary and secondary. Hash the client MAC, if it's
+less than 128 then one peer does it, otherwise the other. 50/50 split load balancing.</p>
+<p>Load Balance Max Seconds - Load balancing disabled after this much time, so a peer
+can issue a lease while the other is down.</p>
+<h3>Summary</h3>
+<p>Client sends DISCOVER via broadcast. Relay agents forward to both servers.</p>
+<p>Servers determine which will handle the lease</p>
+<p>If a server goes down, one peer may issue/renew leases.</p>
+<h3>Windows</h3>
+<p>It's possible to configure this on windows, but it's more complicated.</p>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

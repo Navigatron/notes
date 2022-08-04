@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- MathJax disabled on this page -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426846">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="../">up</a></p>
+<h1>Database, FEB01</h1>
+<h2>Data Types</h2>
+<table>
+<thead>
+<tr>
+<th>type</th>
+<th>Max capacity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tinyInt</td>
+<td>255</td>
+</tr>
+<tr>
+<td>smallInt</td>
+<td>65k</td>
+</tr>
+<tr>
+<td>int</td>
+<td>a lot</td>
+</tr>
+</tbody>
+</table>
+<h2>Statement Categories</h2>
+<ul>
+<li>DDL - data definition language
+<ul>
+<li>CREATE</li>
+</ul>
+</li>
+<li>DML - data manipulation language
+<ul>
+<li>SELECT</li>
+<li>INSERT</li>
+</ul>
+</li>
+<li>DCL - data control language
+<ul>
+<li>Rollbacks</li>
+<li>Commits</li>
+</ul>
+</li>
+</ul>
+<h2>?</h2>
+<ul>
+<li>CRUD
+<ul>
+<li>Create</li>
+<li>Read (select)</li>
+<li>Update</li>
+<li>Delete
+<ul>
+<li>Use PK when deleting, to ensure correct record</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2>View Metadata</h2>
+<ul>
+<li>SHOW DATABASES
+<ul>
+<li>Shows databases</li>
+</ul>
+</li>
+<li>SHOW TABLES
+<ul>
+<li>Shows what tables there are</li>
+</ul>
+</li>
+<li>SHOW CREATE TABLE table_name
+<ul>
+<li>shows metadata - comments, constraints, types</li>
+</ul>
+</li>
+<li>DESCRIBE table_name
+<ul>
+<li>Shows some of the metadata</li>
+</ul>
+</li>
+</ul>
+<h2>More Types</h2>
+<ul>
+<li>CHAR(size)
+<ul>
+<li>Fixed-length string</li>
+</ul>
+</li>
+<li>VARCHAR(size)
+<ul>
+<li>Variable length string</li>
+</ul>
+</li>
+<li>DECIMAL(M,D)
+<ul>
+<li>M=digits</li>
+<li>D=decimal places</li>
+</ul>
+</li>
+<li>INT</li>
+<li>DATE
+<ul>
+<li>Only date, not time.</li>
+</ul>
+</li>
+</ul>
+<h2>Constraint - not null</h2>
+<pre><code class="language-mysql">ALTER TABLE table_name MODIFY field data_type [NULL/NOT NULL]
+</code></pre>
+<blockquote>
+<p>At this point I starting working on something else.</p>
+</blockquote>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

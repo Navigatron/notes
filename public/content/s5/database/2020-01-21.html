@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- MathJax disabled on this page -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426752">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="./">up</a></p>
+<h1>2020-01-21</h1>
+<h2>Review - DB dev lifecycle</h2>
+<ul>
+<li>Create a model</li>
+<li>Translate to relations</li>
+<li>Normalize relations</li>
+<li>Create the DB structure</li>
+<li>Define relationships between DB tables</li>
+</ul>
+<h2>Expanded DB dev lifecycle</h2>
+<ul>
+<li>Create an ERM Model</li>
+<li>Transpose into Relations</li>
+<li>Normalize Relations</li>
+<li>Create the Schema within the DBMS
+<ul>
+<li>Create the DB</li>
+<li>Create the Tables</li>
+</ul>
+</li>
+<li>Populate the DB with Data</li>
+</ul>
+<h2>ERM review</h2>
+<ul>
+<li>Entity Class
+<ul>
+<li>Represented by a Rectangle</li>
+<li>A table in a DB</li>
+</ul>
+</li>
+<li>Entity Instance
+<ul>
+<li>a row in a table</li>
+</ul>
+</li>
+</ul>
+<p>Instances have <em>Identifiers</em></p>
+<p><a href="https://www.vertabelo.com/blog/chen-erd-notation/">My favorite ERM resource (so far)</a></p>
+<blockquote>
+<p>Doing practice exercise 1 together</p>
+</blockquote>
+<blockquote>
+<p>I should really do the practice exercises :/</p>
+</blockquote>
+<p>Attribute attributes:</p>
+<ul>
+<li>Composite / Simple
+<ul>
+<li>Made of many parts or one - has children or not</li>
+<li>'Name' can have firstName or lastName</li>
+</ul>
+</li>
+<li>Single / Multivalued
+<ul>
+<li>How many values can it have? Two ovals if multivalued</li>
+<li>Books</li>
+</ul>
+</li>
+<li>Stored / Derived
+<ul>
+<li>Stored or calculated when needed - dashed outline if derived</li>
+</ul>
+</li>
+<li>Identifier
+<ul>
+<li>Used to uniquely identify an entity instance</li>
+</ul>
+</li>
+</ul>
+<h2>Transposing ERMs to Relations</h2>
+<p>A relation starts with a capital name, and then in parenthesis there is a list of attributes. Only and all simple, single-valued, and stored attributes are included.</p>
+<p>For example:</p>
+<p><code>EMPLOYEE(SSN, DOB, Name)</code></p>
+<blockquote>
+<p>I could do the crazy underlining with MathJax, but that's a lot of work. Pretend 'SSN' is underlined.</p>
+</blockquote>
+<p>When this becomes a table:</p>
+<ul>
+<li>Attributes become 'Fields' or 'Columns'</li>
+<li>Instances are 'Rows' or 'Tuples'</li>
+</ul>
+<blockquote>
+<p>Prof is using a lot of terms that require context. Anyone coming in here with no background knowledge is likely completely lost right now.</p>
+</blockquote>
+<h2>Normalizing Relations</h2>
+<p>Welcome to <strong>First Normal Form</strong> (1NF)</p>
+<ul>
+<li>Rows contain instances of the relation</li>
+<li>Cells hold a single value</li>
+<li>Columns are attributes of the relation</li>
+<li>All entries in a column are of the same 'domain'
+<ul>
+<li>The Information belongs together, It's all about the same thing</li>
+</ul>
+</li>
+<li>Each column has a unique name</li>
+<li>The order of the attributes is unimportant</li>
+<li>the order of the rows is unimportant</li>
+<li>No two tuples may be identical (There must be a primary key)
+<ul>
+<li>Natural primary key (an attribute)</li>
+<li>Surrogate primary key (an attribute added just to guarantee uniqueness)</li>
+</ul>
+</li>
+</ul>
+<p>If a relation meets all of the above criteria, then it is in <strong>First Normal Form</strong>.</p>
+<blockquote>
+<p>Normal forms are def. on the test.</p>
+</blockquote>
+<blockquote>
+<p>HW #2 will be assigned next week, deals with detecting NF, not with correcting it</p>
+</blockquote>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

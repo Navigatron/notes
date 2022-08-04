@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- MathJax disabled on this page -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426793">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="../../../">Index</a> &gt; <a href="./">Software Engineering</a> &gt; Mon Sep 06 2021 20:00:00 GMT-0400 (Eastern Daylight Time):</p>
+<h1>Mon Sep 06 2021 20:00:00 GMT-0400 (Eastern Daylight Time):</h1>
+<ul>
+<li>Single Responsibility</li>
+<li>High Cohesion</li>
+<li>Information Expert</li>
+<li>Low Coupling</li>
+<li>Law of Demeter</li>
+<li>Dependency Inversion</li>
+</ul>
+<blockquote>
+<p>What does stack overflow have to say about coupling and cohesion? https://stackoverflow.com/questions/14000762/what-does-low-in-coupling-and-high-in-cohesion-mean</p>
+</blockquote>
+<p>There's two design principles, SOLID and GRASP, that are commonly used.</p>
+<p>SOLID:</p>
+<ul>
+<li><em>Single Responsibility</em></li>
+<li>Open/Closed</li>
+<li>Liskov Substitution</li>
+<li>Interface Segregation</li>
+<li><em>Dependency Inversion</em></li>
+</ul>
+<p><em>Italics</em> items are covered today. We'll also hit <em>Law of Demeter</em>, and <em>High cohesion</em> and <em>low coupling</em> from GRASP.</p>
+<h2>Single Responsibility</h2>
+<p>An object should have one job. No &quot;god&quot; classes that do everything - no Swiss army knives.</p>
+<p>Classes should be small, simple, focused, and numerous.</p>
+<p>This helps a lot with team coordination and unit testing.</p>
+<h2>High Cohesion</h2>
+<p>The fields and methods of a class should be closely related. A class with too many responsibilities should be broken apart.</p>
+<blockquote>
+<p>&quot;This design goal should have a higher priority than the others&quot; - prof</p>
+</blockquote>
+<p>All these tiny classes will need to interact. You will increase coupling by pursuing this goal - that's okay, to an extent.</p>
+<blockquote>
+<p>&quot;Everything should be as simple as possible, but not simpler&quot; - Einstein</p>
+</blockquote>
+<p>Some classes <em>will</em> be complex, and they should be - only break them if there are two jobs present.</p>
+<h2>Information Expert</h2>
+<blockquote>
+<p>&quot;Assign responsibility to the class that has the information needed to fulfill the responsibility&quot;</p>
+</blockquote>
+<h2>Low Coupling</h2>
+<p>This attempts to minimize the impact of changes in the system.</p>
+<p>We want to minimize unnecessary coupling. There is a real balance here between number of classes and relationships between classes.</p>
+<h2>Law of Demeter</h2>
+<p>Limit the range of classes that a class talks to - essentially boils down to &quot;Only talk to your friends&quot;.</p>
+<p>If you're doing <code>board.getPiece(x,y).getAttribute()</code>, you might not need to know about piece - try <code>board.getPieceAttributeAt(x,y)</code>.</p>
+<blockquote>
+<p>I think this is kinda horrible, since board now needs &quot;getters&quot; for attributes of someone else.</p>
+</blockquote>
+<h2>Dependency Inversion</h2>
+<blockquote>
+<p>&quot;High-level modules should rely only on abstractions (interfaces).&quot;</p>
+</blockquote>
+<blockquote>
+<p>&quot;Abstractions should not rely on details - details should rely on abstractions.&quot;</p>
+</blockquote>
+<p>A &quot;copy&quot; object (a high-level module) should not depend on a keyboardReader or screenWriter, but a <code>Reader</code> abstraction and a <code>Writer</code> abstraction (interfaces) that these things implement.</p>
+<h1>Administrative</h1>
+<p>Do not come to class on Thursday! The lecture will be recorded and posted. Prof. will be available throughout the day to answer questions.</p>
+<p>When the class site and myCourses disagree, use myCourses as the source of truth.</p>
+<hr>
+<p><a href="../../../">Index</a> &gt; <a href="./">Software Engineering</a> &gt; Mon Sep 06 2021 20:00:00 GMT-0400 (Eastern Daylight Time):</p>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

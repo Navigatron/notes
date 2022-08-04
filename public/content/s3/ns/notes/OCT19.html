@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- MathJax disabled on this page -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426836">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="../">up</a></p>
+<h1>TCP</h1>
+<h2>Congestion Control</h2>
+<p>TCP assumes lost segments are caused by congestion.</p>
+<p>Re-transmitting creates more congestion.</p>
+<p>Slowing down the sender happens through the receiver's advertised window size
+and the &quot;congestion&quot; window.</p>
+<h3>Methods of congesiton handling / avoidance</h3>
+<p>These are terrible notes, gotta look this up online.</p>
+<ol>
+<li>Slow Start
+<ul>
+<li>CWMND size = 1 mss</li>
+<li>On each ACK, CWND++</li>
+<li>As soon as there's a re-transmission,
+<ul>
+<li>Set the &quot;threshold&quot; to half of current CWND</li>
+<li>re-start slow start</li>
+</ul>
+</li>
+<li>If we hit the threshold, switch to additive increase</li>
+</ul>
+</li>
+<li>Additive Increase - Congestion Avoidance
+<ul>
+<li>Increase CWND by 1 for every full CWND we send and get back.</li>
+<li>If we get three acks for the same thing, fast-retransmit.
+<ul>
+<li>half CWND</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Multiplicative Decrease - Congestion alleviation
+<ul>
+<li>Half CWND?</li>
+</ul>
+</li>
+</ol>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

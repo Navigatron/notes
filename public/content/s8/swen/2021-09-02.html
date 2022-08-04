@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- MathJax disabled on this page -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426793">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="../../../">Index</a> &gt; <a href="./">Software Engineering</a> &gt; Wed Sep 01 2021 20:00:00 GMT-0400 (Eastern Daylight Time):</p>
+<h1>Wed Sep 01 2021 20:00:00 GMT-0400 (Eastern Daylight Time):</h1>
+<h2>Gathering Project Requirements</h2>
+<p>Two types:</p>
+<ul>
+<li>functional
+<ul>
+<li>The behaviours of the application</li>
+</ul>
+</li>
+<li>non-functional
+<ul>
+<li>Systemic qualities, like response time or reliability</li>
+<li>Things like Security, or extendability</li>
+<li>&quot;Inherent Attributes&quot;</li>
+</ul>
+</li>
+</ul>
+<p>There is a functional requirement hierarchy:</p>
+<pre><code class="language-dot">digraph g{
+    Project -&gt; Feature -&gt; Epic -&gt; Story -&gt; &quot;Acceptance\nCriteria&quot;;
+    Feature -&gt; Story;
+}
+</code></pre>
+<p>If a feature is made up of more than one story, then the collection of stories is called an &quot;Epic&quot;.</p>
+<h3>Example:</h3>
+<blockquote>
+<p>The &quot;Director&quot; manages a soccer league three seasons a year. Players need to register. The director selects a group of captains to form teams. The director moderates the drafting of teams by captains. The Director must also schedule the games of the league across the whole seasons up to 15 weeks. The Director must also be able to record game results and keep track of team rankings.</p>
+</blockquote>
+<ul>
+<li>Users register</li>
+<li>The Director can create Teams</li>
+<li>The Director can set players as captains of teams</li>
+<li>Team captains can &quot;request&quot; a player</li>
+<li>The director can approve requests</li>
+<li>The director adds games to a calendar</li>
+<li>Games have state: upcoming, canceled, won, lost, etc.</li>
+<li>The director can change game state</li>
+</ul>
+<h3>Stories</h3>
+<p>In Agile, requirements are written as user stories.</p>
+<blockquote>
+<p>As a &lt;ROLE&gt;, I want to &lt;GOAL&gt; so that &lt;BENEFIT&gt;.</p>
+</blockquote>
+<p>We'll be using Trello to record and manage stories.</p>
+<blockquote>
+<p>Teams will create a trello group, then Prof. will supply us with some defaults.</p>
+</blockquote>
+<p>The story is a little vague, which is why we get...</p>
+<h3>Acceptance Criteria</h3>
+<p>A detailed statements about how the system should behave.</p>
+<p><strong>GIVEN {some condition} WHEN {some action occurs} THEN {system does some} thing</strong></p>
+<blockquote>
+<p>Given that I am not signed in, when viewing the home page, then I should see a sign-in button.<br>
+Given that I am not an administrator, when hitting back-end APIs, then I should be denied access.</p>
+</blockquote>
+<p>When a story gets too big, it should be broken into smaller stories to become an epic - a group of stories. A story must be achievable within 1 sprint (week).</p>
+<h3>Spikes</h3>
+<blockquote>
+<p>&quot;A story or task aimed at answering a question or gathering information, rather than at producing shippable product&quot;</p>
+</blockquote>
+<p>Use spikes for learning new technologies or new techniques. If using for code, it's proof-of-concept / throw-away code.</p>
+<h3>Minimum Viable Product</h3>
+<p>The absolute slimmest set of requirements standing between you and &quot;functional&quot;.</p>
+<h2>OOP Review</h2>
+<p>A <em>Class</em> is a template for a run-time <em>Object</em>. UML notation helps us model our objects/classes.</p>
+<p>Objects have <em>state</em>, and <em>functions</em> to transform that state.</p>
+<blockquote>
+<p>When objects interact, the state may not be on the object you think. A checker piece has no concept of position, it doesn't care where it is - but the board certainly cares. The board maintains a mapping of positions to pieces.</p>
+</blockquote>
+<p>If objects have similar state (and maybe state mutators), then this <em>common functionality</em> should be <em>abstracted</em>, into an <em>interface</em> or an <em>abstract class</em>.</p>
+<p><strong>Interfaces</strong> contain function <em>signatures</em> - they force inheritors to implement those functions.</p>
+<p><strong>Abstract Classes</strong> cannot be instantiated, but they can define functionality. You cannot have a shape, but you can have a rectangle.</p>
+<hr>
+<p><a href="../../../">Index</a> &gt; <a href="./">Software Engineering</a> &gt; Wed Sep 01 2021 20:00:00 GMT-0400 (Eastern Daylight Time):</p>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

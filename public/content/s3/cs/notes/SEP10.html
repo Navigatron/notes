@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- MathJax disabled on this page -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426825">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="../">up</a></p>
+<h2>The last four registers</h2>
+<ul>
+<li>28 - gp - Global Pointer
+<ul>
+<li>Ignore, we don't use it</li>
+</ul>
+</li>
+<li>29 - sp - Stack Pointer
+<ul>
+<li>Use it what it should be used for</li>
+<li>Push to the stack</li>
+<li>Pop from the stack</li>
+</ul>
+</li>
+<li>30 - fp - Frame Pointer
+<ul>
+<li>Used by standard stack frame</li>
+<li>Not really sure what it does</li>
+</ul>
+</li>
+<li>31 - ra - return address
+<ul>
+<li>Where functions go to when they're done.</li>
+<li>Set when you call a function</li>
+<li>Two functions deep, gotta use the stack.</li>
+</ul>
+</li>
+</ul>
+<h2>A few more mathematical things</h2>
+<p><em>Division, Multiplication, Mod</em></p>
+<p>These are much more complex than addition and subtraction.</p>
+<p><code>MULT rs,rt</code> writes its result to <code>hi</code> and <code>lo</code>, which are special purpose registers.</p>
+<p><code>MFHI rd</code> copies <code>hi</code> to <code>rd</code>.
+<code>MFLO rd</code> does the same.</p>
+<p>The simulator for this class does not support 64bit numbers, so we'll be ignoring <code>hi</code>.</p>
+<h2>Mult pseudo - we can use this</h2>
+<p><code>MUL rd,rs,rs2</code>. Multiplies rs and rs2, then copies lo into rd.</p>
+<p>rs2, aka source 2, can be an immediate or a register. Either works here. If it's an immediate,
+it loads it into $at, the assemblers reserved register.</p>
+<h2>Division</h2>
+<p><code>DIV rs,rt</code>. <code>lo=rs/rt</code>, <code>hi=rs%rt</code></p>
+<p>There are some pseudo instructions here that we can use, yay.</p>
+<p><code>DIV rd,rs,src2</code> rd = rs/src2. src2 can be an immediate if you want.</p>
+<p><code>REM rd,rs,src2</code> rd = rs%src2</p>
+<p>Easy game, easy life.</p>
+<h2>Load Immediate</h2>
+<p>Pseudo Instruction, we can use it. <code>li rd, imm</code> makes code more readable.</p>
+<h2>Copy register to another register</h2>
+<p>There are a lot of ways to do this. To make code more readable, we have</p>
+<p><code>MOVE rd,rs</code> rd=rs</p>
+<p>Arithmetic Operations complete! Now on to...</p>
+<h1>Move to Memory</h1>
+<p>Memory is byte addressable - every byte has it's own address.</p>
+<p>Multiple bytes in one unit</p>
+<p>4 bytes makes a word</p>
+<p>Next: how to read.</p>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

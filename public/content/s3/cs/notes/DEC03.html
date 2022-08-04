@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- MathJax disabled on this page -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426820">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="../">up</a></p>
+<h1>Housekeeping</h1>
+<p>none I guess</p>
+<h1>Dec03</h1>
+<p>handout for mips single-cycle control unit handed out</p>
+<p>ALU-op discussed, woohoo truth tables</p>
+<h2>multi-cycle</h2>
+<p>RTL had to be modified, to make things fit.</p>
+<p>There are 11 different &quot;things&quot; to do, each of which is just a state of the 16 control points.</p>
+<p>The job of the control unit is to walk through the states in a logical order.</p>
+<p>State diagram built - where each state can go, based on what.</p>
+<blockquote>
+<p>If the control point has nothing to do with whatever's going on, you can assume the value is zero. Items that have to be zero must be specified.</p>
+</blockquote>
+<h2>Do state 1</h2>
+<p>a &lt;- reg[rs]
+B &lt;- reg[rt]
+Imm &lt;- S.E.(imm)</p>
+<p>ALoad = 1;
+BLoad = 1;</p>
+<h2>Do state 8</h2>
+<p>zero &lt;- A==B</p>
+<p>ALUsrc1 = 1
+ALUsrc2 = 0
+ALUop = Subtraction</p>
+<p>if(zero) PC &lt;- ALUout</p>
+<p>PCload = zero
+PCSource = zero</p>
+<blockquote>
+<p>overspecify</p>
+</blockquote>
+<p>ALUoutLoad = 0</p>
+<p>It's possible to do this for every state - we'll get the handout next class.</p>
+<p>Now, we have the set of outputs for each state. Now, how to decide what state we're in? What hardware?</p>
+<p>All we need is an output wire for each state</p>
+<p>We need hardware to determine the state, that is all</p>
+<p>Stage of execution = row, instruction = column; of state diagram as table.</p>
+<p><em>Time to Draw</em></p>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

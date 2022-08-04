@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- MathJax disabled on this page -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426735">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="./">up</a></p>
+<h1>2020-02-05</h1>
+<p>Firewalls are a kind of access control</p>
+<p>These three things are close together:</p>
+<ul>
+<li>Authentication</li>
+<li>Authorization</li>
+<li>Access Control</li>
+</ul>
+<p>Subjects vs Objects</p>
+<ul>
+<li>Subject
+<ul>
+<li>An entity that may perform an action</li>
+<li>Like a process</li>
+</ul>
+</li>
+<li>Object
+<ul>
+<li>An entity on which an action can be performed</li>
+<li>Like a file</li>
+</ul>
+</li>
+</ul>
+<p>Access Control List - ACL - a list attached to an object that says what subjects may perform what action</p>
+<p>There are two kinds of firewalls:</p>
+<ul>
+<li>Packet Filtering
+<ul>
+<li>Looks at packet headers, maybe something else</li>
+<li>can look at source and dest port</li>
+<li>might know things from past packets (statefull)</li>
+</ul>
+</li>
+<li>Proxy Servers</li>
+</ul>
+<p>They can do other things too:</p>
+<ul>
+<li>NAT</li>
+<li>VPN Endpoint</li>
+</ul>
+<p>This will be on the test:</p>
+<blockquote>
+<p>When the IP header 'next protocol' field is '4', it means the content is <em>another</em> IP packet.</p>
+</blockquote>
+<p>Levels of Inspection:</p>
+<ul>
+<li>Header inspection</li>
+<li>Deep Packet Inspection</li>
+<li>Deep Content Inspection</li>
+</ul>
+<p>Things firewalls and such can do about packets:</p>
+<ul>
+<li>Accept the packet</li>
+<li>Drop the packet</li>
+<li>Reject it loudly</li>
+</ul>
+<p>Things firewalls typically also do:</p>
+<ul>
+<li>Log some information</li>
+<li>Fire an alert if something is very scary</li>
+</ul>
+<p>Oh boy more things they can do:</p>
+<ul>
+<li>Modify the packet, like NAT</li>
+<li>Load balancing (all hail the load balancers)</li>
+</ul>
+<p>&quot;Why even have little firewalls?&quot; -&gt; &quot;It's a good first line of defense in depth&quot;</p>
+<blockquote>
+<p>HB says to read &quot;Firewalls don't stop dragons&quot;</p>
+</blockquote>
+<h2>Linux Firewall Structure</h2>
+<p><code>netfilter</code> provides hooks into the packet processing stack. <code>iptables</code> allows the user to read/write packet processing <em>policy</em>.</p>
+<p>IPTables has multiple <em>Tables</em>, each of which has many <em>Chains</em>, each of which has many <em>Rules</em>.</p>
+<p>Tables:</p>
+<ul>
+<li>raw</li>
+<li>filter</li>
+<li>nat</li>
+<li>mangle</li>
+</ul>
+<p>Chains - in order of when they hit:</p>
+<ul>
+<li>PREROUTING
+<ul>
+<li>Triggered when a packet is received</li>
+<li>Given to INPUT or FORWARD depending on the destination</li>
+</ul>
+</li>
+<li>INPUT
+<ul>
+<li>for packets we are going to welcome into our house</li>
+</ul>
+</li>
+<li>FORWARD
+<ul>
+<li>for packets we are going to send, from someone else</li>
+</ul>
+</li>
+<li>OUTPUT
+<ul>
+<li>for packets we are going to send, from us</li>
+</ul>
+</li>
+<li>POSTROUTING
+<ul>
+<li>For putting things in our outbound mailbox</li>
+</ul>
+</li>
+</ul>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

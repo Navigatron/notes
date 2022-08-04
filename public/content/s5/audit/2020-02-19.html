@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- MathJax disabled on this page -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426741">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="./">up</a></p>
+<h1>2020-02-19</h1>
+<ul>
+<li>Lab1 is graded for groups 1 through 6
+<ul>
+<li>biggest pain point: identifying a measurable metric</li>
+</ul>
+</li>
+<li>teams 2 and 4 presenting their labs on Friday</li>
+<li>lab3 posted</li>
+<li>Homework due this evening
+<ul>
+<li>doing half in class today?</li>
+</ul>
+</li>
+</ul>
+<h2>Asset Discovery</h2>
+<p>You need to know what you have in order to protect it.</p>
+<blockquote>
+<p>Stackpole loves numbers. &quot;Do the math&quot; - stackpole</p>
+</blockquote>
+<p>Undocumented machines may have a good reason for being there.</p>
+<blockquote>
+<p>Sometimes undocumented machines have a good reason for being undocumented.</p>
+</blockquote>
+<p>But most of the time it's a bad reason.</p>
+<ul>
+<li>Hiding XP boxes</li>
+<li>They don't know it's there</li>
+</ul>
+<p>Scanning tools will identify physical things that respond, but they don't know about policy. They don't know who owns that hardware.</p>
+<p>When performing an audit, you need information. Discussions with a point-of-contact. Local knowledge.</p>
+<p>If using tools, understand how they work. Tools:</p>
+<ul>
+<li>Nessus</li>
+<li>SentinalOne</li>
+<li>OSQuery</li>
+</ul>
+<p>Assets can be many things:</p>
+<ul>
+<li>people</li>
+<li>IP addresses</li>
+<li>Services / ports</li>
+<li>policies</li>
+</ul>
+<p>Consider layer 2 assets:</p>
+<ul>
+<li>All the ethernet ports in a building
+<ul>
+<li>location</li>
+<li>connection status</li>
+<li>map assets</li>
+<li>creation / update timestamps</li>
+</ul>
+</li>
+</ul>
+<p>Layer 3:</p>
+<ul>
+<li>IP to MAC mappings?</li>
+<li>Shared IPs?</li>
+<li>ipv4 and ipv6 enablings / mappings</li>
+</ul>
+<p>Layer n:</p>
+<ul>
+<li>What should be there?</li>
+<li>How can you test it?</li>
+</ul>
+<p>There's a tool, Bro / Zeek, that categorizes protocols.</p>
+<p>If during, say, a PCI audit, you want to verify that all traffic is encrypted - Zeek can catch all the running shenanigans.</p>
+<h2>Homework</h2>
+<p>write a bash ping-sweeper using <code>/dev/tcp</code> and/or <code>/dev/udp</code>. If two separate scripts, post them separately.</p>
+<p>Assignment detailed in slide-deck 5. Two scripts. Virtual Env required.</p>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

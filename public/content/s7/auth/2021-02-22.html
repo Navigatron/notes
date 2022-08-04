@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- MathJax disabled on this page -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426764">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="../../../">Index</a> &gt; <a href="./">Course</a> &gt; Sun Feb 21 2021 19:00:00 GMT-0500 (Eastern Standard Time):</p>
+<h1>Sun Feb 21 2021 19:00:00 GMT-0500 (Eastern Standard Time):</h1>
+<p>Source summary peer-review is <em>canceled</em>, but now the &quot;next module's&quot; discussion is more complicated to include some peer review thing.</p>
+<h2>Restricted Tokens</h2>
+<p>A primary or impersonation token can be restricted via <code>CreateRestrictedToken</code>. Processes using a restricted token are restricted.</p>
+<h2>Impersonation Tokens</h2>
+<p>A client makes a request to a service.</p>
+<p>There are four levels of impersonation token:</p>
+<ul>
+<li>Anonymous
+<ul>
+<li>Doesn't identify the client</li>
+</ul>
+</li>
+<li>Identify
+<ul>
+<li>The service can get the client's identity, but can't act as them</li>
+</ul>
+</li>
+<li>Impersonate
+<ul>
+<li>The service can act as the client</li>
+</ul>
+</li>
+<li>Delegate
+<ul>
+<li>Prof. changed slides too fast</li>
+</ul>
+</li>
+</ul>
+<h2>Special Service Accounts</h2>
+<p>Windows comes with some built-in accounts:</p>
+<ul>
+<li>NT AUTHORITY\
+<ul>
+<li>LocalService</li>
+<li>networkService</li>
+<li>LocalSystem</li>
+</ul>
+</li>
+</ul>
+<h2>Metasploit plugin: Incognito</h2>
+<p>When a user logs off, their delegate tokens look like impersonation tokens, but still have all their powers - tokens aren't cleared until reboot.</p>
+<p>File servers have people logging in and out all the time.</p>
+<p>With a meterpreter session, you can harvest these tokens and act as these users. No creds or hashes needed.</p>
+<h2>Service DACLs</h2>
+<p>Services also have access control lists, which can be misconfigured.</p>
+<p>Non-admins changing which binary the service runs is bad.</p>
+<h2>Auth Components</h2>
+<ul>
+<li>Security Reference Monitor</li>
+<li>LSASS</li>
+<li>SAM
+<ul>
+<li>Security Account Manager</li>
+</ul>
+</li>
+</ul>
+<h2>Comms between LSA and SRM</h2>
+<ul>
+<li>Local Security Authority</li>
+<li>Security Reference Monitor</li>
+</ul>
+<p>How do they communicate? There's a <em>communication port</em>.</p>
+<blockquote>
+<p>woah</p>
+</blockquote>
+<h2>Logon Process</h2>
+<p>The WinLogon Process presents the login screen. Creds go to the LSA, which returns an access token, which is used to create the new logged-in process.</p>
+<h3>More detail</h3>
+<ol>
+<li>User hits ctrl+alt+del</li>
+<li>Winlogon.exe requests creds via CredUI.dll</li>
+<li>CredUI.dll uses the Cred Provider Interface to get possible logins</li>
+<li>CredUI.dll shows the Login UI</li>
+<li>User enters creds to Login UI</li>
+<li>CredUI.dll returns creds to WinLogon</li>
+<li>WinLogon sends creds to LSA</li>
+</ol>
+<p>LSA does a bunch of checks.</p>
+<h2>What about a domain-joined computer?</h2>
+<ol>
+<li>ctrl+alt+del</li>
+<li>WinLogon / GINA gets cresd from user, hands to LSA</li>
+<li>LSA hits up the domain controllers via Kerberberberososos</li>
+<li>The domain controller checks AD, returns results</li>
+<li>LSA returns an access token.</li>
+</ol>
+<h1>KERBEROS</h1>
+<p>Kerberos provides authentication over an untrusted network.</p>
+<p>There is:</p>
+<ul>
+<li>A user, who wants access to:</li>
+<li>A server/service/resource.</li>
+<li>An Authentication Server</li>
+<li>A &quot;Ticket Granting&quot; Server (TGS)</li>
+</ul>
+<p>The user asks the Authentication Server for a ticket-granting ticket. If the Auth server likes you, it returns a session key for the TGS and a ticket-granting-ticket (TGT).</p>
+<p>The user asks the TGS for a ticket for the server/service/resource. The TGS returns a session key to use, and a ticket for the server/service/resource.</p>
+<p>The user can use their new session key and ticket to talk to the server/service/resource, without ever passing logon creds to the server/service/resource.</p>
+<hr>
+<p><a href="../../../">Index</a> &gt; <a href="./">Course</a> &gt; Sun Feb 21 2021 19:00:00 GMT-0500 (Eastern Standard Time):</p>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

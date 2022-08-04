@@ -1,0 +1,46 @@
+digraph G {
+	graph [
+		label = "Traveling During a Snowstorm";
+		fontname = inconsolata;
+		rankdir = LR;
+	];
+	node [
+		shape = box;
+		fontname = inconsolata;
+	];
+	edge [
+		fontname = inconsolata;
+	];
+
+	# Nodes
+	a [label="Do the\nAirplanes\nTake Off?";shape="circle"];
+	a1 [label="Choose"];
+	a2 [label="Choose"];
+	a -> a1 [label="Yes! (40%)"];
+	a -> a2 [label="No! (60%)"];
+
+	aa [label="2 Hours"];
+	a1 -> aa [label="100%"];
+
+	ac[label="How\nDoes\nit go?";shape="circle"];
+	ac1[label="5 Hours"];
+	ac2[label="7 Hours"];
+	ac3[label="9 Hours"];
+
+	at1[label="8 Hours"];
+
+	# Subgraphs
+
+	subgraph h{
+		rank=same;
+		at1;ac1;ac2;ac3;aa;
+	}
+
+	# Edges
+
+	a2 -> at1 [label="Train"];
+	a2 -> ac [label="Car"];
+	ac -> ac1 [label="Smoothly (25%)"];
+	ac -> ac2 [label="Okay (40%)"];
+	ac -> ac3 [label="Poorly (35%)"];
+}

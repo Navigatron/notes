@@ -1,0 +1,93 @@
+---
+title: GCP Services
+layout: advanced
+---
+
+Here's a list of the GCP services (and features) I've heard about:
+
+- Load Balancing
+	- "HTTPS"
+		- Expose via a single IP, globally
+		- TLS terminating reverse proxy, optimized for HTTPS
+	- "SSL Proxy"
+		- A TLS Terminating reverse proxy
+		- Intended for **Non**-HTTPS traffic
+	- "TCP Proxy"
+		- it's a tcp reverse proxy
+- CloudArmor
+	- WAF
+- Cloud DNS
+	- A DNS service that loves DNSSEC
+	- "Public Zone"
+		- A DNS zone exposed to the internet
+	- "Private Zone"
+		- A DNS zone exposed to a VPC
+	- "Peering Zone"
+		- The Cloud DNS provider in VPC-A can be configged to send certain requests to the instance in VPC-B. No communication between VPCs required, it's handled behind the scenes by the Cloud DNS backbone.
+	- "Forwarding Zone"
+		- Similar to Peering, requests hit GCP DNS and are *forwarded* to some other IP, like an external/public DNS server. Can be configged to only forward certain requests.
+- Identity-Aware Proxy
+	- **Further research required**
+- Identity Platform
+	- It's an identity provider, where users sign in and stuff
+- Directory Sync
+	- A tool that syncs on-prem AD with the Identity Platform
+- IAM Conditions
+	- Rules that control when/where perms/roles can be used
+- Google Key Management
+	- "GKE Workload Identity"
+		- Sounds like system-assigned managed identity from azure?
+		- Like a service account?
+	- "Workload Identity Federation"
+		- **Not sure what this is**
+- "Firewall Rules"
+	- yeah
+- VPC: Virtual Private Cloud Network
+	- "Shared VPC"
+		- What is this?
+		- It's like a big VPC that you put *projects* in. There's a host project that owns the shared vpc.
+	- "VPC Peering"
+		- Allows VPCs to talk to each other
+	- "VPC Service Controls"
+		- like IAM conditions, but for data transiting a VPC
+- Cloud VPN
+	- Endpoints communicate via IPSEC
+	- an on-prem gateway and a VPC gateway makes a hybrid network
+	- Multiple gateways in the cloud could also connect to each other
+- Interconnect
+	- low-latency, highly-available connection from on-prem to gcp. Two flavors.
+	- "Dedicated Interconnect"
+		- Direct physical connection, with wires and shovels
+		- 10GBps
+	- "Partner Interconnect"
+		- The ISP / 3rd party lets you use their high-speed line
+- Google Private Access
+	- Allows requests to GCP APIs from private networks
+	- **What? How??**
+	- VPC peering connects your VPC to one that has google stuff
+	- "Private Service Connect for Google APIS"
+		- Goes in a VPC, forwards requests to google's APIs.
+- Cloud NAT
+	- It's a NAT gateway for VPCs.
+- BigQuery
+	- A database?
+- CloudStorage
+	- blob storage
+- ComputeEngine
+	- VMs
+- CloudRouter
+	- **??**
+- googleapis.com
+	- private.googleapis.com
+		- **??**
+	- restricted.googleapis.com
+		- **??**
+- Cloud DLP
+	- Scans data (including images and PDFs via OCR) for *patterns*
+	- Extensive library of patterns built-in, custom ones can be added
+	- On pattern recognition, can *classify* or *transform*
+- Access Control
+	- Can filter on DLP Classification
+- Secret Manager
+	- Stores key-value secrets
+	- Changes in secrets can trigger notifications

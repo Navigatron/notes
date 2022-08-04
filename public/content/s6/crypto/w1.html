@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- <script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+			tex2jax: {
+				inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+				processEscapes: true
+			}
+		});
+	</script> -->
+	<script>
+		MathJax = {
+			tex: {
+				inlineMath: [['$', '$'], ['\\(', '\\)']]
+			}
+		};
+	</script>
+	<!-- <script
+		type="text/javascript"
+		charset="utf-8"
+		src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+		>
+	</script> -->
+	<script
+		type="text/javascript"
+		id="MathJax-script"
+		async
+		src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+		>
+	</script>
+	<!-- <script
+		type="text/javascript"
+		charset="utf-8"
+		src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
+		>
+	</script> -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426812">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="./">up</a></p>
+<h1>Week 1</h1>
+<p>We want these:</p>
+<ul>
+<li>Confidentiality</li>
+<li>Integrity</li>
+<li>Authentication</li>
+<li>Non-repudiation</li>
+</ul>
+<blockquote>
+<p>See the security properties notes from Forensics last semester</p>
+</blockquote>
+<p>Cryptology can be broken into:</p>
+<ul>
+<li>Cryptanalysis - Breaking cryptosystems
+<ul>
+<li>Classical Cryptanalysis
+<ul>
+<li>Mathematical Analysis</li>
+<li>Brute-force attacks</li>
+</ul>
+</li>
+<li>Implementation Attacks</li>
+<li>Social Engineering</li>
+</ul>
+</li>
+<li>Cryptography
+<ul>
+<li>Symmetric Ciphers</li>
+<li>Asymmetric Ciphers</li>
+<li>Protocols</li>
+</ul>
+</li>
+</ul>
+<p>Encryption of Plaintext yields Ciphertext:</p>
+<p>$$
+e_K(x) = y
+$$</p>
+<p>Decryption of Ciphertext yeilds Plaintext:</p>
+<p>$$
+d_K(y) = x
+$$</p>
+<p>The set of all keys is the <strong>Key Space</strong>:</p>
+<p>$$
+\text{keyspace} = { K_1, K_2,\dots ,K_n }
+$$</p>
+<p>If the same key is used, encryption and decryption are inverse operations:</p>
+<p>$$
+d_K(e_K(x)) = y
+$$</p>
+<p><strong>Kerckhoff's Principle</strong>:</p>
+<blockquote>
+<p>A cryptosystem should be secure even if the attacker knows all the details about the system, with the exception of the secret key</p>
+</blockquote>
+<p>Meaning: <em>Do not roll-your-own cryptosystem</em></p>
+<h2>Shift Cipher</h2>
+<p>Where $$ k, x, y \in { 0, 1, 2, \dots , 25 } $$</p>
+<p>$$
+\begin {align}
+y = e_K(x) = x + k \bmod 26 \
+x = d_K(y) = y -k \bmod 26
+\end {align}
+$$</p>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

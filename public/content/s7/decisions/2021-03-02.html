@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- MathJax disabled on this page -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426773">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="../../../">Index</a> &gt; <a href="./">Course</a> &gt; Mon Mar 01 2021 19:00:00 GMT-0500 (Eastern Standard Time):</p>
+<h1>Mon Mar 01 2021 19:00:00 GMT-0500 (Eastern Standard Time):</h1>
+<h2>Administrative</h2>
+<ul>
+<li>Assignment 2 is coming up - the 4th?
+<ul>
+<li>The rest of it got delayed, it might be delayed</li>
+</ul>
+</li>
+<li>Assignment 3 is released</li>
+<li>There is a take home test coming up
+<ul>
+<li>4 hour time limit</li>
+<li>it should take 1 hour</li>
+<li>it might take 2 hours</li>
+</ul>
+</li>
+</ul>
+<h2>Chapter 6 Discussion</h2>
+<p>Heuristics:</p>
+<ul>
+<li>availability: prob of occurrence of event
+<ul>
+<li>prob(running into a cop on the drive to work)</li>
+</ul>
+</li>
+<li>representativeness</li>
+</ul>
+<p>How to account for subjective probability?</p>
+<p>Non-experts show overconfidence. Calibration attempts to account for this.</p>
+<h2>Chapter 7 discussion</h2>
+<p>How to perform a probability assessment</p>
+<ul>
+<li>stanford assessment</li>
+<li>&quot;epi&quot; protocol?</li>
+</ul>
+<p>How to get reliable, consistent, accurate data from experts?</p>
+<p>The Delphi Method:</p>
+<ul>
+<li>ask everybody the question</li>
+<li>compile a report and send it to everybody</li>
+<li>Ask the question again, letting people change their answers.</li>
+</ul>
+<p>Availability bias: we only really consider things that we know about.</p>
+<p>Anchor and adjust bias: we know this number, and adjust to account for problems that we know about.</p>
+<h2>PDFs and CDFs</h2>
+<blockquote>
+<p>Am I gonna have to turn on mathjax lol</p>
+</blockquote>
+<p>Probability Density function: What is the probability of X happening, given parameter Y? This is the classic bell curve.</p>
+<p>Cumulative Density Function: The probability of X happening, given that parameter Y is at <em>or less than</em> some value. It's the integral of the PDF.</p>
+<blockquote>
+<p>This is going to take tikz in the pdfs. I barely know tikz.</p>
+</blockquote>
+<h1>Expert Elicitation</h1>
+<p><em>When google fails.</em></p>
+<ul>
+<li>We have a question</li>
+<li>It's very hard to measure</li>
+<li>It's very hard to estimate</li>
+</ul>
+<p>It's time to find an adult who knows what they're doing. Or lots of them. But we can't just ask them what they think:</p>
+<ul>
+<li>Bias!
+<ul>
+<li>The weatherman says it's going to snow <em>A LOT</em>.</li>
+<li>(It turns out they get the percentages roughly right, but I'm still convinced they overestimate amounts.)</li>
+</ul>
+</li>
+<li>The person we're asking might not be good at statistics
+<ul>
+<li>The 70th percentile of grilled-cheese doneness is sunflower golden.</li>
+</ul>
+</li>
+</ul>
+<h2>Estimation Exercise</h2>
+<blockquote>
+<p>A series of questions with numerical answers. No looking things up. Provide your best guess and your 90% confidence interval.</p>
+</blockquote>
+<ul>
+<li>Example: How many ice cream shops are in the city of Rochester?
+<ul>
+<li>Probably 40?</li>
+<li>Almost certainly between 5 and 300</li>
+</ul>
+</li>
+<li>How long is the Erie canal, in miles?
+<ul>
+<li>Like, 100 miles?</li>
+<li>Almost certainly between 5 and 200</li>
+<li>Answer: 363 miles. (3 students got it)</li>
+</ul>
+</li>
+<li>How long is the suez canal? (I've never heard of this canal)
+<ul>
+<li>Could be 40 miles</li>
+<li>Probably between 2 and 100</li>
+<li>Answer: 120 miles. (6 students got it)</li>
+</ul>
+</li>
+<li>Area, in square miles, of the city of Rochester
+<ul>
+<li>I'm guessing a square, 10 miles to a side, so 100 sq miles</li>
+<li>Probably more than 9sqm, less than 400</li>
+<li>Answer: 37.1 (4 correct)</li>
+</ul>
+</li>
+<li>Area, in square miles, of the city of Los Angeles?
+<ul>
+<li>A square, 50 miles to a side, 2500 sqm</li>
+<li>More than 100, less than 10,000</li>
+<li>Answer: 502 sq miles (5)</li>
+</ul>
+</li>
+<li>What is the population of New York State?
+<ul>
+<li>50 million</li>
+<li>Between 10 mil and 200 mil</li>
+<li>Answer: 19.5 million (2)</li>
+</ul>
+</li>
+<li>What is the population of Australia?
+<ul>
+<li>10 million</li>
+<li>1 mil to 80 mil</li>
+<li>Answer: 25.3 mil (5)</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Question</th>
+<th>Correct Intervals</th>
+<th>Percentage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>3</td>
+<td>30%</td>
+</tr>
+<tr>
+<td>2</td>
+<td>6</td>
+<td>60%</td>
+</tr>
+<tr>
+<td>3</td>
+<td>4</td>
+<td>40%</td>
+</tr>
+<tr>
+<td>4</td>
+<td>5</td>
+<td>50%</td>
+</tr>
+<tr>
+<td>5</td>
+<td>2</td>
+<td>20%</td>
+</tr>
+<tr>
+<td>6</td>
+<td>5</td>
+<td>50%</td>
+</tr>
+</tbody>
+</table>
+<p>If we were good at making confidence intervals, we should capture the correct value 90% of the time. But at best, we saw 60%. Our ranges were too small, we were too confident in our answers.</p>
+<blockquote>
+<p>I captured the right answer in 4 of 6 questions, or 66% of the time.</p>
+</blockquote>
+<p>We were overconfident in the familiar questions, and <em>still</em> overconfident with unfamiliar questions.</p>
+<h3>This is graphable</h3>
+<p>We say that infrequent things, never happen. And common things, always happen.</p>
+<blockquote>
+<p>&quot;Everyone is overconfident; in Everything; All the time.&quot; - Prof.</p>
+</blockquote>
+<p>Except weather forecasters, apparently. They predict things, with percentages, every day. And they get quick feedback.</p>
+<p>Good job, weatherman.</p>
+<hr>
+<p><a href="../../../">Index</a> &gt; <a href="./">Course</a> &gt; Mon Mar 01 2021 19:00:00 GMT-0500 (Eastern Standard Time):</p>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

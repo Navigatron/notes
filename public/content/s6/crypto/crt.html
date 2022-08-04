@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- <script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+			tex2jax: {
+				inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+				processEscapes: true
+			}
+		});
+	</script> -->
+	<script>
+		MathJax = {
+			tex: {
+				inlineMath: [['$', '$'], ['\\(', '\\)']]
+			}
+		};
+	</script>
+	<!-- <script
+		type="text/javascript"
+		charset="utf-8"
+		src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+		>
+	</script> -->
+	<script
+		type="text/javascript"
+		id="MathJax-script"
+		async
+		src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+		>
+	</script>
+	<!-- <script
+		type="text/javascript"
+		charset="utf-8"
+		src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
+		>
+	</script> -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426810">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="../../../">Home</a> &gt; <a href="./">Crypto</a> &gt; Chinese Remainder Theorem</p>
+<h1>Chinese Remainder Theorem</h1>
+<p>There is some number, like 8, that we want to mod by some other number, like 35.</p>
+<p>In this case, 35 happens to be $5*7$, so we're going to use CRT to split the 8 mod 35 problem into two smaller mod problems.</p>
+<p>8 mod 5 is 3, and 8 mod 7 is 1, so 8 in the &quot;standard domain&quot; (mod 35) is the ordered pair (3,1) in the &quot;CRT Domain&quot; (mod 5 and 7).</p>
+<p>Math works in both domains - 8 + 6 = 14, and the CRT versions of 8 and 6, when added, are the CRT version of 14. cool.</p>
+<p>Converting back to normal space requires &quot;Basis Vectors&quot;:</p>
+<p>$$
+(1,0) = q * (q^{-1} \bmod p)
+(0,1) = p * (p^{-1} \bmod q)
+$$</p>
+<p>Now, any pair can be computed:</p>
+<p>$$
+(a,b) = a \cdot (1,0) + b \cdot (0,1) mod n
+$$</p>
+<p>Example converting (2,1):</p>
+<p>$$
+(1,0) = 7 * (7^{-1} \bmod 5) = 7 * 3 = 21
+(0,1) = 5 * (5^{-1} \bmod 7) = 5 * 3 = 15
+(2,1) = a \cdot (1,0) + b \cdot (0,1) mod n
+(2,1) = 2 \cdot 21 + 1 \cdot 15 mod 35
+(2,1) = 42 + 15 mod 35
+(2,1) = 57 mod 35
+(2,1) = 22
+$$</p>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

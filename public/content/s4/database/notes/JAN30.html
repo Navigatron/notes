@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- MathJax disabled on this page -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426847">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="../">up</a></p>
+<h1>Database, JAN30</h1>
+<h2>Hosekeeping</h2>
+<ul>
+<li>MyCourses has things
+<ul>
+<li>Week 3 powerpoint</li>
+<li>Book excerpt &quot;sql 63-69&quot;
+<ul>
+<li>has good example of &quot;normal form 1&quot;</li>
+</ul>
+</li>
+<li>Commands and notes and such</li>
+<li>Colleges_UML_01_28
+<ul>
+<li>good example of Join</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2>Database Stew</h2>
+<p>Database stew is not like a sad burrito.</p>
+<p>In a sad burrito, you might get a bite of just salsa, then a few bites of rice, etc.</p>
+<p>In Database stew, we get a taste of everything at once.</p>
+<p>For example:</p>
+<p>1NF = Normal Form 1</p>
+<p>TinyInt is a single byte of storage, unsigned holds 0-255
+smallint, when unsigned, holds up to ~65k</p>
+<p>DESCRIBE will show information about a table, and EXPLAIN will do the same thing.</p>
+<p>Midterm question: &quot;How do you see the makeup of the table, with metadata?&quot;</p>
+<p>answer: <code>SHOW CREATE TABLE</code></p>
+<p>there is test data on the following slides of todays powerpoint:</p>
+<p>slides 1, 2, 4, 6, 11, 12, 13, 15</p>
+<p>slide 15 helps with HW number 3.</p>
+<p>There rules determine if a DB is in 1NF:</p>
+<ul>
+<li>Rows contain data about the records</li>
+<li>Cells hold a single value</li>
+<li>Columns contain data about attributes</li>
+<li>All entries in a table are &quot;of the same domain&quot;</li>
+<li>Each column has a unique name</li>
+<li>Order of attributes is not important</li>
+<li>Order of records is not important</li>
+<li>No two records may be identical</li>
+</ul>
+<p>All SQL terms can be broken into 3 terms</p>
+<ul>
+<li>DDL - Data Definition
+<ul>
+<li>CREATE...</li>
+</ul>
+</li>
+<li>DML - Data manipulation
+<ul>
+<li>INSERT</li>
+<li>SELECT</li>
+<li>DELETE</li>
+<li>UPDATE</li>
+</ul>
+</li>
+<li>DCL - Data Control - Roll back DB to time where it is correct</li>
+</ul>
+<p>HW#3 is due at some point</p>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- MathJax disabled on this page -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426801">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<h1>Setting up this fucking bullshit</h1>
+<p>My ipv6 address ends with: ::6680:99FF:FE18:9664</p>
+<p>It should start with fe80.</p>
+<p>It shall be: <code>fe80::6680:99ff:fe18:9664</code> /64</p>
+<p>Manually assign it with</p>
+<pre><code>ip address add fe80::6680:99ff:fe18:9664/64 dev wlan0
+</code></pre>
+<p>PERMISSION FUCKING DENIED I&quot;M FUCKING ROOT YOU PIECE OF SHIT</p>
+<h1>Tools</h1>
+<ul>
+<li>rdisc6 - router discovery</li>
+<li>ndisc6 - neighbor discovery</li>
+<li>traceroute6 - yep</li>
+</ul>
+<h1>I found why permission denied</h1>
+<pre><code>sudo sysctl -a | grep ipv6 | grep disable
+</code></pre>
+<p>reveals:</p>
+<pre><code>net.ipv6.conf.wlan0.disable_ipv6 = 1
+</code></pre>
+<p>WHY THE FUCK WAS THAT THERE?</p>
+<pre><code>sudo sysctl -a | grep net.ipv6.conf.wlan0.disable_ipv6
+</code></pre>
+<p>Turn it off with:</p>
+<pre><code>sudo sysctl -w net.ipv6.conf.wlan0.disable_ipv6=0
+</code></pre>
+<p>Cool! Now what?</p>
+<h1>Ping my neighbors</h1>
+<pre><code>ping ff02::1%wlan0
+</code></pre>
+<p>Fuck yeah, there's lots of ipv6 devices on the link. List them:</p>
+<pre><code>ip -6 neigh
+</code></pre>
+<p>rdisc6 says that there are no routers though.</p>
+<blockquote>
+<p>Enabled ipv6 connection sharing</p>
+</blockquote>
+<p>IT&quot;S ALIVE, THATS A WIN FOR THE E-DOG</p>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

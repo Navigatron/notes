@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- MathJax disabled on this page -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426751">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="./">up</a></p>
+<h1>2020-01-16</h1>
+<p>Practice Exercises will be on MyCourses - Use to Practice!</p>
+<h2>Re-cap from last week</h2>
+<p>File processing systems pre-date the DB. There are some legacy systems that still exist. They are expensive and hard to maintain.</p>
+<p>Databases are collections of related information.</p>
+<h2>What can we store</h2>
+<ul>
+<li>Numbers</li>
+<li>Text</li>
+<li>Date/time</li>
+<li>Graphics and images</li>
+<li>sound and video</li>
+<li>programs and objects</li>
+</ul>
+<h2>Parts of the DB</h2>
+<ul>
+<li>App metadata
+<ul>
+<li>Info about forms and apps</li>
+</ul>
+</li>
+<li>Metadata
+<ul>
+<li>what's the structure of our db</li>
+</ul>
+</li>
+<li>Index and Overhead
+<ul>
+<li>Indexing shenanigans</li>
+<li>Indexing in DBs is dark magic, easily an entire course</li>
+</ul>
+</li>
+<li>User data
+<ul>
+<li>The data you want</li>
+</ul>
+</li>
+</ul>
+<h2>Metadata</h2>
+<p>Tells you about the DB. Table of tables, info about relations and rules and constraints and all that stuff.</p>
+<h2>DBMS components</h2>
+<ul>
+<li>Design tools
+<ul>
+<li>Developers use design tools</li>
+<li>Design tools use the engine to change the DB</li>
+</ul>
+</li>
+<li>runtime
+<ul>
+<li>Applications use the runtime</li>
+<li>The runtime uses the engine to query the DB</li>
+</ul>
+</li>
+<li>dbms engine
+<ul>
+<li>Handles requests, changes the db</li>
+</ul>
+</li>
+</ul>
+<h2>DB as a Model</h2>
+<p>A database is a model of the reality of the subject matter expert / user.</p>
+<h2>DB development life cycle</h2>
+<p>We'll cover these things in this class:</p>
+<ul>
+<li>Create an entity-relationship model</li>
+<li>Transpose data model into relations</li>
+<li>Normalize relations</li>
+<li>Create the DB Tables</li>
+<li>Define relationships between tables</li>
+</ul>
+<blockquote>
+<p>Prof. didn't say it but we're gonna query like crazy</p>
+</blockquote>
+<h2>Creating Data models</h2>
+<p>&quot;Identify the Universe of Discourse of the problem&quot;</p>
+<p>The UoD describes the subset of reality that we are interested in modeling.</p>
+<ul>
+<li>Entities - Things</li>
+<li>Attributes - Properties of the things</li>
+<li>Relationships (between the things)</li>
+<li>Business Rules about the things</li>
+</ul>
+<p>As the UoD changes, we will have to modify the data model.</p>
+<h2>Data Modeling</h2>
+<p>A method of communication between the DB expert and the client, such that each can understand what is being captured in the model.</p>
+<p>ERP = Entity-relationship model</p>
+<p>UML = Universal Modeling Language</p>
+<h2>Levels of Abstraction</h2>
+<ul>
+<li>High Level
+<ul>
+<li>Abstract representation</li>
+<li>UML / ERP</li>
+</ul>
+</li>
+<li>Representational Level
+<ul>
+<li>Movement between high and low levels</li>
+<li>SQL</li>
+</ul>
+</li>
+<li>Low Level
+<ul>
+<li>Physical, filesystem layouts, etc.</li>
+<li>Bits on Chips</li>
+</ul>
+</li>
+</ul>
+<h2>Attributes</h2>
+<ul>
+<li>Chen's Model
+<ul>
+<li>Oval, connected to entity class (rectangle) by line.</li>
+</ul>
+</li>
+<li>Crow's Foot Model
+<ul>
+<li>Listed in box</li>
+</ul>
+</li>
+</ul>
+<p>Simple attributes are a single piece of data. Example, firstname.</p>
+<p>Composite attributes are composed of other attributes. Fullname = firstname + lastname.</p>
+<p>Composite Attributes are not listed in Crow's foot notation</p>
+<p>Single valued attributes store one thing. Firstname.</p>
+<p>Multi-value attributes: Skills: carpentry, plumbing, etc.</p>
+<p>In Chen's notation, multi-value attributes are in a Double Oval.</p>
+<p>Stored vs. Derived - is it in the db, or calculated when needed?</p>
+<p>An identifier tells you something unique about that entity. For example, SSN, or a composite identifier of firstname+lastname.</p>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- MathJax disabled on this page -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426827">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="../">up</a></p>
+<h1>Quick Reference - Instructions</h1>
+<table>
+<thead>
+<tr>
+<th>symbol</th>
+<th>meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>dest</code></td>
+<td>destination, where results are stored to.</td>
+</tr>
+<tr>
+<td><code>s1</code></td>
+<td>A source register used in a calculation.</td>
+</tr>
+<tr>
+<td><code>imm</code></td>
+<td>an immediate value.</td>
+</tr>
+</tbody>
+</table>
+<h2>Real instructions</h2>
+<h3>Easy ALU instructions</h3>
+<table>
+<thead>
+<tr>
+<th>opcode</th>
+<th>name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>add</code></td>
+<td>add</td>
+</tr>
+<tr>
+<td><code>sub</code></td>
+<td>subtract</td>
+</tr>
+<tr>
+<td><code>and</code></td>
+<td>bitwise and</td>
+</tr>
+<tr>
+<td><code>or</code></td>
+<td>bitwise or</td>
+</tr>
+<tr>
+<td><code>xor</code></td>
+<td>bitwise xor</td>
+</tr>
+<tr>
+<td><code>nand</code></td>
+<td>bitwise nand</td>
+</tr>
+</tbody>
+</table>
+<p>All of the above take a destination and two sources, in that order. All of the above can be followed by an i to replace the second source with an immediate.</p>
+<h3>not</h3>
+<p><code>not</code> is an ALU instruction that only takes two operands - dest and source. There is no immediate version.</p>
+<h3>Multiplication</h3>
+<p><code>mult s1, s2</code></p>
+<p>Multiplies s1 and s2, stores the result in HI and LO. see <code>MUL</code> under legal pseudo instructions.</p>
+<h3>Division</h3>
+<p><code>div s1, s2</code></p>
+<p>Stores s1/s2 into LO. Stores the remainder, s1%s2, into HI. There are pseudo-instructions we can use here.</p>
+<h3>Move from High/Low</h3>
+<p><code>mfhi rd</code></p>
+<p>moves HI into the destination.</p>
+<p><code>mflo rd</code></p>
+<p>moves LO into the destination.</p>
+<h2>Legal Pseudo Instructions</h2>
+<h3>Multiply</h3>
+<p><code>mul dest, s1, s2</code></p>
+<p>multiplies s1 and s2, then moves LO into dest.</p>
+<p>Expansion:</p>
+<pre><code>MULT s1, s2
+MFLO dest
+</code></pre>
+<h3>Load Immediate</h3>
+<p><code>li dest, imm</code></p>
+<p>Put an immediate value into a register.</p>
+<p>Expansion:</p>
+<pre><code>addi dest, $zero, imm
+</code></pre>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- MathJax disabled on this page -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426821">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="../">up</a></p>
+<h1>Housekeeping</h1>
+<ul>
+<li>Lab 6 is due this Friday
+<ul>
+<li>There's discussion on X forwarding?</li>
+<li>SSH clients?</li>
+<li>sftp file transfer?</li>
+<li>oh no</li>
+<li>Note on experiment 2 - it starts at zero, that's not a typo</li>
+</ul>
+</li>
+<li>Project one exists
+<ul>
+<li>Note: Backtracking is inherently slow. Prune early and often. Do every pruning you can possibly do.</li>
+</ul>
+</li>
+</ul>
+<h1>The One-Bit storage cell</h1>
+<h2>Async version - &quot;The Latch&quot;</h2>
+<h3>S.R. Latch</h3>
+<table>
+<thead>
+<tr>
+<th>component</th>
+<th>output goes to</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>input R</td>
+<td>Nor1</td>
+</tr>
+<tr>
+<td>input S</td>
+<td>Nor 2</td>
+</tr>
+<tr>
+<td>Nor1</td>
+<td>Output Q, and Nor 2</td>
+</tr>
+<tr>
+<td>Nor2</td>
+<td>Output Qbar, and Nor 1</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>I might have to switch to paper notes</p>
+</blockquote>
+<p>Timing diagram:</p>
+<p>Inputs | t0 | 1 | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8
+---|---
+R  |   | 0 |   | 0 | 1 | 1 | 1 | 0 | 0 | 0 | 0
+S  |   | 0 |   | 0 | 0 | 0 | 0 | 0 | 1 | 1 | 1
+Q  | 0 | 0 | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 1 | 1
+Qb | 1 | 1 | 0 | 0 | 0 | 1 | 1 | 1 | 0 | 0 | 0</p>
+<p>If the input is zero zero, the output does not change.</p>
+<p>Characteristic Table</p>
+<p>S | R | Q(T+1) | name
+---|---
+0 | 0 | Qt | no change
+0 | 1 | 0  | reset state - R stands for reset
+1 | 0 | 1  | set state - S stands for Set
+1 | 1 |    | Undefined</p>
+<p>Just don't send a one one.</p>
+<p>Definitions:</p>
+<p>a synchronous 1-bit storage cell, is a flip-flop.</p>
+<p>add a control signal, C - if C is zero, we want to ignore input. sending zero zero has no effect on the state, so if C is zero, send zero.</p>
+<p>in short, and R with C and and S with C, so that they only pass through when C is high.</p>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- MathJax disabled on this page -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426737">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="./">up</a></p>
+<h1>2020-03-04</h1>
+<blockquote>
+<p>Why might we need a secure way to communicate?</p>
+</blockquote>
+<ul>
+<li>confidentiality</li>
+<li>integrity</li>
+<li>authentication - knowing who you're talking to</li>
+</ul>
+<p>Adversary Model: Dolev-Yao</p>
+<ul>
+<li>Able to read all traffic</li>
+<li>write anything</li>
+<li>pretending to be anybody</li>
+<li>stop messages</li>
+<li><em>cannot</em> break encryption</li>
+</ul>
+<p>SPD - Security Policy Database</p>
+<p>SPI - security parameter index</p>
+<p><code>isakmp</code> is the ipsec protocol used for key exchange, not in the syllabus</p>
+<p>TLS sessions start with public-key crypto.</p>
+<p><em>Certificate</em></p>
+<p>ipsec has two modes:</p>
+<ul>
+<li>transport</li>
+<li>tunnel
+<ul>
+<li>There are two IP headers.</li>
+</ul>
+</li>
+</ul>
+<p>and two protocols:</p>
+<ul>
+<li>AH
+<ul>
+<li>Authentication header</li>
+</ul>
+</li>
+<li>ESP
+<ul>
+<li>Encapsulated Security Payload</li>
+</ul>
+</li>
+</ul>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

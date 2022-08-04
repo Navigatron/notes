@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- MathJax disabled on this page -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426827">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="../">up</a></p>
+<h1>Quick Reference - Registers</h1>
+<h2>Standard Registers.</h2>
+<table>
+<thead>
+<tr>
+<th>Number</th>
+<th>Alias</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>zero</td>
+<td>always zero</td>
+</tr>
+<tr>
+<td>1</td>
+<td>at</td>
+<td>reserved for assembler</td>
+</tr>
+<tr>
+<td>2</td>
+<td>v0</td>
+<td>Function Return Values</td>
+</tr>
+<tr>
+<td>3</td>
+<td>v1</td>
+<td></td>
+</tr>
+<tr>
+<td>4</td>
+<td>a0</td>
+<td>(A)rguments - data passed to functions or Procedures.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>a1</td>
+<td></td>
+</tr>
+<tr>
+<td>6</td>
+<td>a2</td>
+<td></td>
+</tr>
+<tr>
+<td>7</td>
+<td>a3</td>
+<td></td>
+</tr>
+<tr>
+<td>8</td>
+<td>t0</td>
+<td>(T)emporary - not preserved by functions. Set, Use, Forget.</td>
+</tr>
+<tr>
+<td>9</td>
+<td>t1</td>
+<td></td>
+</tr>
+<tr>
+<td>10</td>
+<td>t2</td>
+<td></td>
+</tr>
+<tr>
+<td>11</td>
+<td>t3</td>
+<td></td>
+</tr>
+<tr>
+<td>12</td>
+<td>t4</td>
+<td></td>
+</tr>
+<tr>
+<td>13</td>
+<td>t5</td>
+<td></td>
+</tr>
+<tr>
+<td>14</td>
+<td>t6</td>
+<td></td>
+</tr>
+<tr>
+<td>15</td>
+<td>t7</td>
+<td></td>
+</tr>
+<tr>
+<td>16</td>
+<td>s0</td>
+<td>(S)ystem or (S)torage. Preserved across function calls, longer term than temp.</td>
+</tr>
+<tr>
+<td>17</td>
+<td>s1</td>
+<td></td>
+</tr>
+<tr>
+<td>18</td>
+<td>s2</td>
+<td></td>
+</tr>
+<tr>
+<td>19</td>
+<td>s3</td>
+<td></td>
+</tr>
+<tr>
+<td>20</td>
+<td>s4</td>
+<td></td>
+</tr>
+<tr>
+<td>21</td>
+<td>s5</td>
+<td></td>
+</tr>
+<tr>
+<td>22</td>
+<td>s6</td>
+<td></td>
+</tr>
+<tr>
+<td>23</td>
+<td>s7</td>
+<td></td>
+</tr>
+<tr>
+<td>24</td>
+<td>t8</td>
+<td>More temporary storage</td>
+</tr>
+<tr>
+<td>25</td>
+<td>t9</td>
+<td></td>
+</tr>
+<tr>
+<td>26</td>
+<td>k0</td>
+<td>Reserved for Operating System. See Below.</td>
+</tr>
+<tr>
+<td>27</td>
+<td>k1</td>
+<td></td>
+</tr>
+<tr>
+<td>28</td>
+<td>gp</td>
+<td>Global Area Pointer</td>
+</tr>
+<tr>
+<td>29</td>
+<td>sp</td>
+<td>Stack Pointer</td>
+</tr>
+<tr>
+<td>30</td>
+<td>fp</td>
+<td>Frame Pointer</td>
+</tr>
+<tr>
+<td>31</td>
+<td>ra</td>
+<td>Return Address Register</td>
+</tr>
+</tbody>
+</table>
+<h3>zero</h3>
+<p>This one is a physical wire to ground. It always reads as zero, no matter how much data you dump into it.</p>
+<h3>at</h3>
+<p>Reserved for the Assembler.</p>
+<p>//TODO - show la and la expansion.</p>
+<h3>v0 and v1</h3>
+<p>Values returned from functions.</p>
+<h3>a0 through a3</h3>
+<p>Arguments passed to functions</p>
+<h3>t0 through t9</h3>
+<p>Temporary storage. Use 'em, abuse 'em, but don't expect the values to stick around if you call a function.</p>
+<h3>s0 through s7</h3>
+<p>Long term storage. If you're going to alter one of these in a function, remember to save the original value and restore it before you return.</p>
+<h3>k0 and k1</h3>
+<p>The OS uses these registers whenever there is an interrupt. Interrupts can happen at any time. You could write to k0 and read from it in the very next instruction, and it wouldn't be what you set. Don't touch these.</p>
+<h3>Global Area Pointer</h3>
+<p>Prof says to ignore this one, we won't be using it.</p>
+<h3>Stack Pointer</h3>
+<p>Used to keep track of the stack. Change this when pushing or popping from the stack.</p>
+<h3>Frame Pointer</h3>
+<p>&quot;Used by Standard Stack Frame&quot;</p>
+<p>I'm not sure what this does, gotta fill this in.</p>
+<pre><code class="language-java">//TODO
+</code></pre>
+<h3>Return Address</h3>
+<p>Functions return to this address when they're done executing. Set it before you call a function, and use the stack when going more than 1 function deep.</p>
+<h2>Special registers</h2>
+<h3>HI and LO</h3>
+<h3>PC</h3>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

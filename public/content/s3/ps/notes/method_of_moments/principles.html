@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- <script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+			tex2jax: {
+				inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+				processEscapes: true
+			}
+		});
+	</script> -->
+	<script>
+		MathJax = {
+			tex: {
+				inlineMath: [['$', '$'], ['\\(', '\\)']]
+			}
+		};
+	</script>
+	<!-- <script
+		type="text/javascript"
+		charset="utf-8"
+		src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+		>
+	</script> -->
+	<script
+		type="text/javascript"
+		id="MathJax-script"
+		async
+		src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+		>
+	</script>
+	<!-- <script
+		type="text/javascript"
+		charset="utf-8"
+		src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
+		>
+	</script> -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426851">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="../../">up</a></p>
+<h1>Creating Point Estimators - Method of Moments</h1>
+<p>A moment is ... a measure of ... the shape? of a function?</p>
+<p>Populations have moments, Samples have moments, and these moments relate to each other.</p>
+<h2>Definitions</h2>
+<p>$K$th population moment = $\mu _ k$ = $E(X^k)$</p>
+<p>$K$th sample moment = $m _ k$ = $\frac 1 n \sum (x_i^k)$</p>
+<h2>The First Moment - Easy Street</h2>
+<p>$\mu _ 1$ = $E(X^1)$ = Population Mean</p>
+<p>$m_1$ = $\frac 1 n \sum (x_i)$ = $\bar x$ = Sample Mean</p>
+<h2>The Goal</h2>
+<p>Estimate $\theta _ 1 , \theta _ 2 , ... \theta _ k$</p>
+<h2>The Method</h2>
+<p>Solve the System of Equations $\mu _ k = m _ k$</p>
+<p>Finding the estimator for one parameter is easy.
+Finding two is harder, as it becomes a system of equations.</p>
+<p>See the exponential example.</p>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

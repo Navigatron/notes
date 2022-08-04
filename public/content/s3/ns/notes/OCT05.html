@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- MathJax disabled on this page -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426835">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="../">up</a></p>
+<h1>DHCP</h1>
+<ul>
+<li>dhcpdecline
+<ul>
+<li>DORA complete, client sends ARP and someone is using the offered addr.</li>
+<li>sends DHCPDecline, restarts DORA</li>
+</ul>
+</li>
+<li>DHCPRelease
+<ul>
+<li>Client sends when done with IP</li>
+<li>server returns address to pool</li>
+</ul>
+</li>
+</ul>
+<h2>Discover</h2>
+<ul>
+<li>Options
+<ul>
+<li>magic cookie</li>
+<li>others</li>
+<li>end</li>
+</ul>
+</li>
+</ul>
+<h2>Offer</h2>
+<ul>
+<li>Hop Count - how many relay agents to get to the server</li>
+<li>Other fields, like offered IP, client mac, etc.</li>
+<li>Only the first relay agent updates the relay agent IP field</li>
+</ul>
+<h2>Request</h2>
+<h2>Acknowledgement</h2>
+<h2>Oh No</h2>
+<p>Client discovers, asking for an ip. IP is not available, server offers something else.
+If the client wants to take the offer, it requests it.
+If the client really wants what it asked for, it'll ask again.</p>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

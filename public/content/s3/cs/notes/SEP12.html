@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- MathJax disabled on this page -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426826">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="../">up</a></p>
+<h1>Alignment</h1>
+<p>Memory is like an array of bytes - its very hard to control which bytes we're reading.</p>
+<p>Solution: Don't get individual byte control. Memory is stored in 4byte groups.</p>
+<p>To read 4 bytes, if the bytes are stored at a +0, that's one read.</p>
+<p>If the stuff is at a+2, then it takes two reads.</p>
+<p>Compilers put data at good locations.</p>
+<h1>Data Alignment Defenition</h1>
+<p>a piece of data is aligned if addr%len==0</p>
+<p>If data is aligned, it can be accessed in the minimum number of memory calls.</p>
+<p>If we try and read/write to an un-aligned address, rsim will give us an error.</p>
+<h1>Three Load Instructions</h1>
+<p><code>lw</code> - Load Word
+<code>lh</code> - Load Half Word
+<code>lb</code> - Load Byte</p>
+<p>Words are typically the width of the bus.</p>
+<p>Ints are at least as big as a short, which is at least as big as a byte, which is 8 bits.</p>
+<p>C wanted everyone to use ints. Ints are typically as long as a word. This causes problems.</p>
+<p>If you turn on backwards compatibility on all x86 C compilers, you get 16bit ints.</p>
+<p>Microsoft has int_128, int_64, etc.</p>
+<h1>Three store instructions</h1>
+<p><code>sw, sh, and sb</code>.</p>
+<p>Each command takes two things: a register and a memory locaiton. Memory locations do not fit in registers.</p>
+<h1>Address Modes</h1>
+<p>Mathematical formulas that compute a location in memory, aka an effective address, or EA.</p>
+<p>High languages have syntax to get parts of an array - assembly has address modes.</p>
+<p>High Level Language | Address Mode | Math Formula
+---|---
+Global Variable | Absolute AM | EA = constant
+Pointer | Indirect AM | EA = value of a register.
+Array index | Scaled | EA = reg + reg * constant
+Structure | Displacement | EA = reg + constant</p>
+<p>We cant use Absolute AM in MIPS because we cant put a 32bit thing in the instructions.</p>
+<p>Scaled mode can simulate Displacement mode, but it cant work the other way.</p>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- MathJax disabled on this page -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426804">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="./">up</a></p>
+<h1>Lab 4</h1>
+<p><em>Start Early</em></p>
+<h2>Structure</h2>
+<h3>Network A</h3>
+<p>Name | OS | Role | IP
+---|---
+Flank | WServer2016 | DHCP Server, Relay | .2
+Roger | W7 | DHCP Client | .12, reserved
+Russet | CentOS | DHCP Client | dynamic</p>
+<h3>Network B</h3>
+<p>Name | OS | Role | IP
+---|---
+Yukon | CentOS | DHCP Server | .2
+Gold  | CentOS | DHCP Server Secondary | .200
+sirloin | WServer2012 | DHCP Client | dynamic
+Russet | CentOS | DHCP Client | .48, reserved</p>
+<h1>Activity 2</h1>
+<h2>2.4</h2>
+<p>Save a copy of the dhcpd.conf file for report question 4. The instructions do not mention this.</p>
+<h1>Activity 3 - Capturing DORA</h1>
+<h2>3.1 and 3.2 - DORA Capture</h2>
+<p>test | client | server | pcap
+---|---
+1 | WS2012 (sirloin) 	| WS2016 (Flank) | windowsunderwindows
+2 | CentOS (Russet)		| WS2016 (Flank) | linuxunderwindows
+3 | WS2012 (sirloin)	| CentOS (Yukon) | windowsunderlinux
+4 | CentOS (Russet)		| CentOS (Yukon) | linuxunderlinux</p>
+<h2>3.3 - Broadcast Flags</h2>
+<ol>
+<li>Change registry keys on server and client</li>
+<li>release, start capture, renew, stop capture on Roger</li>
+</ol>
+<p>Test	| Client DhcpConnForceBroadcastFlag | Server IgnoreBroadcastFlag	| pcap
+---|---
+4 		| 1 - Broadcast						| 0								| 3.3.1
+3		| 1 								| 1								| 3.3.2
+2		| 0 - Unicast 						| 1								| 3.3.3
+1 		| 0									| 0								| 3.3.4</p>
+<h1>Activity 4 - release and renewal process</h1>
+<p>Recording bootp packets for 2 minutes to see the renewal process</p>
+<h2>4.1</h2>
+<p>Release and renew under windows DHCP server.</p>
+<p>See table in 4.2 for packet captures</p>
+<h2>4.2</h2>
+<p>Release and renew under linux DHCP server.</p>
+<p>Remember to clear arp on the server before renew</p>
+<p>test | client | server | pcap
+---|---
+1 | W7 (Roger) | WServer (Flank) | windowsunderwindows
+2 | CentOS (Russet) | WServer (Flank) | linuxunderwindows
+3 | WS2012 (sirloin) | CentOS (Yukon) | windowsunderlinux
+4 | CentOS (Russet) | CentOS (Yukon) | linuxunderlinux</p>
+<h2>4.3 - Lease information</h2>
+<p>dhclient.leases.txt from Russet<br>
+windows.leases.txt from B-Sirloin</p>
+<h1>Activity 5 - DHCP Relay</h1>
+<h2>5.1 - linux dhcp relay</h2>
+<h3>Step D</h3>
+<p>The command here is incorrect. Instead of:</p>
+<pre><code>cp /libsystemd/system/dhcrelay.service /etc/system/system
+</code></pre>
+<p>It should be:</p>
+<pre><code>cp /lib/systemd/system/dhcrelay.service /etc/systemd/system
+</code></pre>
+<h3>Step E</h3>
+<p>The command here is incorrect. Instead of:</p>
+<pre><code>vim /etc/system/systemdhcrelay.service
+</code></pre>
+<p>It should be:</p>
+<pre><code>vim /etc/systemd/system/dhcrelay.service
+</code></pre>
+<h3>Step g/h</h3>
+<p>pcap on Yukon, as linuxrelay</p>
+<p>They don't tell you until the end of 5.2, but you also need to dump dhclient.leases here to prove the ip came from the other server.</p>
+<p>dhclient.leases.relay.txt on Russet</p>
+<h2>5.2 and 5.3 - windows dhcp relay</h2>
+<p>You need to setup the Windows relay for activity 6, but otherwise don't bother with captures here, the report doesn't ask for them.</p>
+<h1>Activity 6 - DHCP Failover</h1>
+<p><em>The Beginning of the End</em></p>
+<h2>6.1 - Setup</h2>
+<h3>My VM Structure</h3>
+<h4>Network A</h4>
+<p>OS | DHCP Role | Name
+---|---
+Windows | RELAY | flank
+Windows | Client | sirloin</p>
+<h4>Network B</h4>
+<p>OS | DHCP Role | Name
+---|---
+Linux | PRIMARY | Yukon
+Linux | SECONDARY | Gold
+Linux | Client | Russet</p>
+<h3>Configuration</h3>
+<p><em>Remember to Change the IP addresses to match your bench.</em></p>
+<h4>PRIMARY</h4>
+<pre><code># dhcpd.conf
+
+# option definitions common to all supported networks
+option domain-name &quot;networkA.com&quot;;
+option domain-name-servers 8.8.8.8, 8.8.4.4;
+
+# Configure Failover
+# I named it alaskan to fit with the potato theme
+failover peer &quot;alaskan&quot; {
+	primary;						# This is the Primary server
+	address 10.150.12.2;			# This server's IP
+	port 321;						# The port we use to talk to Secondary
+	peer address 10.150.12.200;		# SECONDARY's IP
+	peer port 321;					# port Secondary uses to communicate with us
+	max-response-delay 60;			# I'm not sure from here down
+	max-unacked-updates 10;
+	mclt 3600;
+	split 128;
+	load balance max seconds 3;
+}
+
+# How long do leases last for?
+default-lease-time 120;
+max-lease-time 120;
+
+# If this DHCP server is the official DHCP server for the local
+# network, the authoritative directive should be uncommented.
+authoritative;
+
+# NOTE - Copy paste all lines below here into SECONDARY where it says to.
+
+# Network B subnet
+subnet 10.150.12.0 netmask 255.255.255.0 {
+	pool{
+		failover peer &quot;alaskan&quot;;
+		# Note: remove &quot;dynamic-bootp&quot;
+		range 10.150.12.40 10.150.12.42;
+		range 10.150.12.46 10.150.12.60;
+	}
+	option broadcast-address 10.150.12.255;
+	option routers 10.150.12.254;
+}
+
+# Network A subnet
+subnet 10.150.11.0 netmask 255.255.255.0 {
+	pool{
+		failover peer &quot;alaskan&quot;;
+		range 10.150.11.80 10.150.11.90;
+	}
+	option broadcast-address 10.150.11.255;
+	option routers 10.150.11.254;
+}
+
+# Reservation for 48
+host Russet {
+	hardware ethernet 00:0c:29:c7:60:58;
+	fixed-address 10.150.12.48;
+}
+
+</code></pre>
+<h4>SECONDARY</h4>
+<pre><code># dhcpd.conf
+
+# option definitions common to all supported networks...
+option domain-name &quot;networkB.com&quot;;
+option domain-name-servers 8.8.8.8, 8.8.4.4;
+
+
+# Secondary
+failover peer &quot;alaskan&quot; {
+	secondary;					# This is the backup
+	address 10.150.12.200;
+	port 321;
+	peer address 10.150.12.2;
+	peer port 321;
+	max-response-delay 60;
+	max-unacked-updates 10;
+	load balance max seconds 3;
+	# NOTE: There are lines in PRIMARY that aren't here.
+	# They cannot be here. This is correct.
+}
+
+default-lease-time 120;
+max-lease-time 120;
+
+# Use this to enble / disable dynamic dns updates globally.
+#ddns-update-style none;
+
+# If this DHCP server is the official DHCP server for the local
+# network, the authoritative directive should be uncommented.
+authoritative;
+
+# NOTE
+# Here, copy/paste the EXACT SAME subnet and host delcarations as in PRIMARY.
+
+</code></pre>
+<h3>Allowing the failover servers to communicate</h3>
+<h4>Attempt 1 - Firewall Rules</h4>
+<pre><code>firewall-cmd --zone=public --add-port=321/udp –-permanent
+firewall-cmd --zone=public --add-port=321/tcp –-permanent
+</code></pre>
+<p>This allows traffic through the port, but the OS might not allow DHCPD to bind to the port. SElinux is the likely culprit.</p>
+<h4>Attempt 2 - Disable SELinux</h4>
+<p>This sets SELinux to permissive mode, which only logs things, no blocking.</p>
+<pre><code>setenforce 0
+</code></pre>
+<p>For me, this wasn't enough.</p>
+<h4>Attempt 3 - Disable SELinux, for real this time.</h4>
+<pre><code>tail -f /var/log/messages
+</code></pre>
+<p>The above command shows the system log in real time. SELinux, while permissive, was still denying DHCPD access to port 321.</p>
+<pre><code>vim /etc/selinux/config
+</code></pre>
+<p>and replace <code>enforcing</code> with <code>disabled</code>. Use <code>:wq</code> and then:</p>
+<pre><code>shutdown -r now
+</code></pre>
+<p>Refer to <a href="./lab1.html">lab1 - secret commands to make CentOS less terrible</a> to turn networking back on.</p>
+<p>Remember to do this on both VMs.</p>
+<h2>6.2 - Capture... what? Oh, everything.</h2>
+<p>Neither the report nor the Instructions provide what specifically needs to be done.</p>
+<h3>Structure</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PRIMARY</td>
+<td>CentOS Primary dhcp server on network B</td>
+</tr>
+<tr>
+<td>SECONDARY</td>
+<td>CentOS Secondary dhcp server on network B</td>
+</tr>
+<tr>
+<td>RELAY</td>
+<td>windows server 2k16 dhcp relay agent on network A</td>
+</tr>
+<tr>
+<td>WC</td>
+<td>Windows client on network A</td>
+</tr>
+<tr>
+<td>LC</td>
+<td>Linux client on network B</td>
+</tr>
+</tbody>
+</table>
+<h3>Steps</h3>
+<p>The windows DHCP relay is configured to send to PRIMARY. Add a second destination, SECONDARY.</p>
+<ol>
+<li>Make sure both PRIMARY and SECONDARY and RELAY are working correctly.</li>
+<li>skip 'The Loop' - go right to 10a. (You'll jump back to the loop from there.)</li>
+</ol>
+<h4>The Loop</h4>
+<p>If 10a hasn't told you to 'run the loop' yet, goto 10a.</p>
+<ul>
+<li>SETUP
+<ol>
+<li>Release on WC</li>
+<li>release on LC</li>
+</ol>
+</li>
+<li>CAPTURE WINDOWS
+3. Start wireshark on RELAY (Net A logger)
+3. Start wireshark on PRIMARY (Net B logger)
+4. renew on WC
+4. Stop wireshark on PRIMARY
+4. Stop wireshark on RELAY
+5. Dump <code>ipconfig /all</code> on WC to {A|B|C}.wc.ipall.txt
+4. save wireshark files as {A|B|C}.{RELAY|PRIMARY}.wc.pcap
+4. release on WC to prevent lease extensions</li>
+<li>CAPTURE LINUX
+11. Start wireshark on PRIMARY
+5. renew on LC
+2. Stop wireshark on PRIMARY
+5. Dump <code>/var/lib/dhclient/dhclient.leases</code> on LC
+4. save wireshark files as {A|B|C}.{RELAY|PRIMARY}.lc.pcap
+2. release on LC
+4. <code>echo &gt; /var/lib/dhclient/dhclient.leases</code></li>
+</ul>
+<h4>Report 10 a - Only Secondary</h4>
+<ol>
+<li>Stop DHCPD on PRIMARY</li>
+<li>run the loop.</li>
+</ol>
+<h4>Report 10 b - Only Primary</h4>
+<ol>
+<li>start DHCPD on PRIMARY</li>
+<li>stop DHCPD on SECONDARY</li>
+<li>run the loop</li>
+</ol>
+<h4>Report 10 c - Both running</h4>
+<ol>
+<li>start DHCPD on SECONDARY</li>
+<li>run the loop</li>
+</ol>
+<h4>Clean-Up</h4>
+<ol>
+<li>Extract all ipconfig captures to flash drive</li>
+<li>Extract all RELAY pcaps to flash drive</li>
+<li>Extract all dhcp.leases files to flash drive</li>
+<li>Extract all PRIMARY pcaps to flash drive</li>
+<li>Backup ALL vms used.</li>
+</ol>
+<h4>Celebrating</h4>
+<ol>
+<li>Congrats, you're done with the lab!</li>
+<li>Good luck with the report.</li>
+</ol>
+<hr>
+<h1>Assorted bonus notes below this point</h1>
+<p><em>God help us</em></p>
+<h2>Lab</h2>
+<p>Event | Action | Time Spent | Running Total
+---|---
+Class Lab 1 | Got signoff 1 | 2 hours | 2 hours
+Class Lab 2 | Not enough to get signoff 2 | 2 hours | 4 hours
+Oct 16th | up to act6, TA MIA though. | 6 hours | 10 hours
+Oct 18th | saving and restoring VMS killed DHCPD. Fixed that. | 2 hours | 12 hours
+Oct18th | Activity 6 | 2 Hours | 14 Hours</p>
+<p>Having your caffeine wear off in the middle of a work session is just a bad time.</p>
+<h2>Lab Report</h2>
+<p>Haven't started yet, I'm guessing this will take 4 to 6 hours.</p>
+<h1>Lab Setup Protocol</h1>
+<ul>
+<li>Enter Lab, Locate Bench</li>
+<li>Restart Machines</li>
+<li>Unpack</li>
+<li>Switch cables from DHCP to VLAN</li>
+<li>Configure bench IPs as 71.1 and 72.1</li>
+<li>Add mapped network drives</li>
+<li>Determine what VMs on network A</li>
+<li>Copy those VMs to A</li>
+<li>Determine what VMs on network B</li>
+<li>Copy those VMs to B</li>
+<li>Start network A VMs</li>
+<li>Start network B VMs</li>
+<li>Configure IPs of all running VMS</li>
+</ul>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

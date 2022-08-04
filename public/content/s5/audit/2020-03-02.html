@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- MathJax disabled on this page -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426742">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="./">up</a></p>
+<h1>2020-03-02</h1>
+<p>Sounds like OSQuery and Ansible?</p>
+<p>Ansible is a configuration management tool that can affect multiple boxes at once. It's great for deploying things and setting things up.</p>
+<p>If you've got a box with SSH, ansible can manage it. No agent required.</p>
+<h2>Inventories</h2>
+<p>Ansible needs targets to work with. An <em>Inventory</em> is just a list of targets.</p>
+<blockquote>
+<p>&quot;Idempotable&quot; - the concept of idempotence - ansible will not attempt changes that are already made</p>
+</blockquote>
+<p>A simple inventory is just a list of IPs.</p>
+<p>Or, things can be in groups.</p>
+<pre><code>[web]
+hostname1
+hostname2
+
+[db]
+hostname3
+</code></pre>
+<p>Looks like INI format.</p>
+<p>Patterns:</p>
+<ul>
+<li>Single
+<ul>
+<li>just X</li>
+</ul>
+</li>
+<li>Inclusive
+<ul>
+<li>X and Y</li>
+</ul>
+</li>
+<li>Exclusive
+<ul>
+<li>All of X except Y</li>
+</ul>
+</li>
+<li>Unions
+<ul>
+<li>X and Y again I guess</li>
+</ul>
+</li>
+</ul>
+<p>Specify things from most to least specific.</p>
+<p>All actions describe tasks, which describe a state. Expressed in YAML.</p>
+<p>In other words, define a state in YAML. Ansible then performs the <em>task</em> of getting a machine to that state.</p>
+<p>Task control:</p>
+<ul>
+<li>Looping</li>
+<li>privesc</li>
+<li>conditionals</li>
+</ul>
+<p>Idempotence - Ansible has it, scripts do not.</p>
+<p>Tasks return data, like what they did.</p>
+<p>Modules? Oh boy. &quot;bits of code&quot;. hmmmmm.</p>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

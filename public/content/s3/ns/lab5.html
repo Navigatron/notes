@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- MathJax disabled on this page -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426804">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="./">up</a></p>
+<h1>Lab 5 - DNS</h1>
+<p>Mr. David Norse Soloman, founder of Double Neutron Star Digital Network Solutions, Son of Daniel N. Soloman (Department of Nuclear Safety) and Mrs. Daisy N. Soloman (Director of Nursing Services), has responded to our requests with &quot;Do Not Survey&quot; - and as such, his Data is Not Shown in our survey of Daily Nutritional Support.</p>
+<p>Remember: Without proper Daily Nutritional Support, one could become a Drowning Non-Swimmer - and then who would manufacture the Doppler Navigation Systems?</p>
+<h1>Activity 0</h1>
+<h2>Part 1 - Nuke past VMS</h2>
+<p>Delete all the clones, we're making fresh ones.</p>
+<h2>Part 2 - New VMs</h2>
+<p>They're all going on the same network.</p>
+<p>Name | Operating System | IP | Role
+---|---
+LambSauce | CentOS 7 | .2 | Linux DNS Server
+Wisdom | Windows 2016 | .3 | Windows DNS Server
+Lucy | CentOS 7 | .4 | Linux DNS Client
+Wacco | Windows 7 | .5 | Windows DNS Client</p>
+<h2>Part 3 - Config VMs</h2>
+<p>Config the IP of your bench machine.</p>
+<p>See <a href="./lab1.html">Lab1 - Secret Commands to make CentOS not Terrible</a> to config the CentOS vms.</p>
+<p>The windows VMs are all GUI based. Setup IP, DNS, Default gateway, netmask, standard stuff.</p>
+<p>You can do part 4 for windows while waiting for yum to update.</p>
+<h2>Part 4 - Giving VMs Hostnames.</h2>
+<h3>Windows</h3>
+<p>If you're using windows 10, the lab will help you out.</p>
+<p><a href="https://www.server-world.info/en/note?os=Windows_Server_2016&amp;p=initial_conf&amp;f=3">Setting hostname on windows server 2016</a></p>
+<p>Windows 7:</p>
+<ul>
+<li>Start menu</li>
+<li>control panel</li>
+<li>System and Security</li>
+<li>&quot;Set the name of this computer&quot; under System</li>
+<li>Change Settings</li>
+</ul>
+<p><strong>Restart the windows VMs</strong></p>
+<h3>CentOS 7</h3>
+<p>Wait for Yum to update on the CentOS machines...</p>
+<p>Use <code>hostnamectl set-hostname [name]</code></p>
+<h2>Part 5 - Setting SELinux to Permissive</h2>
+<h3>What <em>Should</em> Work (But Sometimes Doesn't)</h3>
+<ol>
+<li><code>vim /etc/selinux/config</code></li>
+<li>set <code>SELINUX=permissive</code></li>
+<li>restart with <code>shutdown -r now</code></li>
+</ol>
+<h3>How to tell if it worked</h3>
+<p><code>sestatus</code> will show you the current mode. We want &quot;permissive&quot;, not &quot;enforcing&quot;.</p>
+<h3>What to do if it didn't work</h3>
+<p>Use <code>setenforce permissive</code>.</p>
+<p><strong>You will have to do this again after <em>every</em> restart.</strong></p>
+<h2>Part 6 - pre-launch checklist</h2>
+<ul>
+<li>CentOS can ping google</li>
+<li>SELinux is set to permissive (<code>sestatus</code>)</li>
+</ul>
+<h1>Activity 1 - Installing BIND</h1>
+<p>This website is great - keep it open somewhere.</p>
+<p><a href="http://www.zytrax.com/books/dns/">Zytrax - DNS for Rocket Scientists.</a></p>
+<h2>1.1 - Ah, Skip this.</h2>
+<p>We are not freshly installing CentOS onto anything, this section is useless.</p>
+<h2>1.2 - Installing BIND on CentOS 7</h2>
+<ul>
+<li>Make sure you've updated YUM</li>
+<li>If you restarted after setting ip via ifoncfig, you have to set IP again and add the default gateway again.</li>
+<li>install bind with <code>yum -y install bind bind-utils</code></li>
+<li>Firewall: <code>firewall-cmd --zone=public --permanent --add-service=dns</code></li>
+<li>We've already set SELinux to permissive in Act 0.</li>
+</ul>
+<h2>1.3 - Config Zone Data Files</h2>
+<p>No actions, just info.</p>
+<h2>1.4 - Config zone data file</h2>
+<p>No actions, just info.</p>
+<h2>1.5 - Reverse Lookup</h2>
+<p>Lots of info for reference later</p>
+<h2>1.6 - Loopback zone</h2>
+<p>More info for reference</p>
+<h2>1.7 - Root hints</h2>
+<p>More info, not really needed</p>
+<h2>1.8 - named.conf</h2>
+<p>Real good reference info in here.</p>
+<h2>1.9 - other options</h2>
+<p>I'll update this later if we need these.</p>
+<h2>Signoff</h2>
+<p>Now we use the above reference info to create the configs.</p>
+<ol>
+<li>Use 1.8 to make a named.conf file</li>
+<li>Use 1.4 to make a zone file</li>
+<li>Test! With the above two, the service should start and run.
+<ul>
+<li><code>named-checkconf</code></li>
+<li><code>named-checkzone</code></li>
+</ul>
+</li>
+<li>Use 1.5 to make a reverse lookup</li>
+<li>Use 1.6 to make a loopback zone</li>
+<li>add the reverse and loopback zones the named.conf</li>
+<li>make sure all configs are good via the above commands</li>
+<li>Signoff!</li>
+</ol>
+<blockquote>
+<p>This is where I got to during the first lab session.</p>
+</blockquote>
+<h1>Activity 2 - Does it Work?</h1>
+<h2>2.1 - make errors and fix them</h2>
+<p>deleting a semicolon is all you really need to do.</p>
+<h2>2.2 - rndc and screenshots</h2>
+<p>Run the following command:</p>
+<pre><code>rndc status
+</code></pre>
+<p>Take a screenshot.</p>
+<p>Change the debug level with:</p>
+<pre><code>rndc trace X
+</code></pre>
+<p>where X is the debug level you want. I used 71.</p>
+<pre><code>rndc status
+</code></pre>
+<p>Take a screenshot.</p>
+<p>run:</p>
+<pre><code>rndc reload
+</code></pre>
+<p>Take a screenshot.</p>
+<p>Just for fun, you may run <code>man rndc</code>, scroll to commands, and take a screenshot of the reload command description.</p>
+<blockquote>
+<p>Note - we never configured rndc to communicate with the server, this could be a problem later? Saving this link here just in case: <a href="https://www.centos.org/docs/5/html/Deployment_Guide-en-US/s1-bind-rndc.html">config rndc with bind</a></p>
+</blockquote>
+<blockquote>
+<p>Note as of completing the lab, the above is not needed - the report doesn't care than it never worked properly. I'll use this as another testament to how horrid these labs are.</p>
+</blockquote>
+<h2>2.3</h2>
+<p>At this point, the instructions and the report diverge.</p>
+<p>Here's my understanding of the report:</p>
+<h4>Question 9</h4>
+<ul>
+<li>screenshot of command of choice - for me it's dig</li>
+<li>explain how it's output can be used in troubleshooting</li>
+<li>explain what debug levels are</li>
+<li>include a screenshot of nslookup</li>
+<li>include a screenshot of host</li>
+</ul>
+<h4>Question 10</h4>
+<p>using info from nslookup, dig, or host:</p>
+<ul>
+<li>explain args used, how useful in troubleshooting</li>
+<li>screenshot showing args used, info provided</li>
+</ul>
+<p>Back to activity 2.3.</p>
+<blockquote>
+<p>This is as far as I've gotten in lab section 2, understanding this part, 2.3, really held me up a lot.</p>
+</blockquote>
+<p>Question 9's requirements are easy, question ten requires the use of command line arguments.</p>
+<p>Dig @server name type</p>
+<p>type can be A, NS, ANY, whatever you're looking for</p>
+<p>-4 forces ipv4, -6 forces ipv6, -p to specify port (53 is default), +trace enables tracing the delegation path, +norecurse turns off the recursive resolve bit</p>
+<pre><code>dig @10.150.71.2 lambsauce.myco.[name].com CNAME -4 +norecurse -p 53
+</code></pre>
+<h1>Activity 3 - Bring on the Clients</h1>
+<h2>3.1 - /etc/resolv.conf</h2>
+<p>The instructions do not tell you how to do this. Fortunately, it's very easy.</p>
+<p>Here's what mine looks like:</p>
+<pre><code>nameserver 10.150.71.2
+</code></pre>
+<p>Do that on both CentOS vms, the server and the client.</p>
+<h2>3.2</h2>
+<p>Set the windows VMs to use LambSauce as the DNS server. Easy.</p>
+<h2>3.3</h2>
+<p>Instructions don't specify which VMs to start wireshark on, nor which VM to run ping from.</p>
+<p>This relates to question 12 on the report. Question 12 doesn't care which VM sends the requests, as long as we can see the request and reply. (One request reply pair, no need to ping every client.)</p>
+<ol>
+<li>Start wireshark on Lucy</li>
+<li>Ping wisdom: <code>ping wisdom.myco.[name].com</code></li>
+<li>stop wireshark - Save this trace to show the request reply pair in Question 12</li>
+<li><code>cat /etc/resolv.conf</code></li>
+</ol>
+<p>The signoff also wants to be able to resolve requests from windows.</p>
+<ol>
+<li>Start wireshark on Wisdom</li>
+<li>Ping Lucy</li>
+<li>Stop wireshark - no need to save this trace</li>
+<li>run <code>ipconfig /all</code></li>
+</ol>
+<p>Signoff!</p>
+<blockquote>
+<p>TODO: Save 3.3.reqrep.pcapng from Lucy [TODO offload file]</p>
+</blockquote>
+<h1>Activity 4 - Second in Command</h1>
+<p>We're setting up a Windows DNS server as a secondary - in my case, Wisdom.</p>
+<h2>4.1 - Install</h2>
+<p>The instructions go step-by-step here. Follow those.</p>
+<h2>4.2 - Configure Server</h2>
+<p>The instructions go pretty much step by step.</p>
+<p>For part E, use <code>myco.[name].com</code></p>
+<p>For part J, use the ip address as normal - <code>10.150.71</code>, it will reverse it on its own.</p>
+<h2>4.3 - Configure Clients</h2>
+<p>Gotta add <code>nameserver 10.150.71.3</code> to the CentOS VMs, and set the secondary on the windows VMs. Easy.</p>
+<h2>4.4 - The End is Near!</h2>
+<p>This works with questions 14 and 15 in the report.</p>
+<p>For 14, we need a screenshot of the dig output showing if the second server is authoritative</p>
+<p>For 15, we need a network trace of a zone transfer.</p>
+<p>For the signoff, we need a network trace of a DNS request/reply on the secondary server, as well as the transfer trace for question 15.</p>
+<p>Steps for capture 1:</p>
+<ol>
+<li>Activate wireshark on Lucy</li>
+<li>dig @secondary wacco.myco.[name].com</li>
+<li>stop wireshark</li>
+<li>Save wireshark capture</li>
+<li>Screenshot dig to show authoritativeness of secondary (Secondary is not authoritative) [TODO offload file]</li>
+</ol>
+<p>Steps for capture 2:</p>
+<ol>
+<li>Enable named on LambSauce</li>
+<li>Disable dns on wisdom</li>
+<li>Update zone file on lambsauce, increment serial number</li>
+<li>Start wireshark on Wisdom</li>
+<li>start dns on wisdom - this will check lambsauce, and due to serial number, initiate transfer.</li>
+<li>stop wireshark, save trace [TODO offload File]</li>
+</ol>
+<p>Signoff.</p>
+<blockquote>
+<p>At the end of the third lab session, I wrote the above steps but have yet to execute them.</p>
+</blockquote>
+<blockquote>
+<p>It's November 15th. Bench 7 wasn't available. Reset IPs, did the above, signoff. Boom! Done! All is well once again, until tomorrow at least.</p>
+</blockquote>
+<h1>Bonus Content</h1>
+<h2>How long did this take me?</h2>
+<p>Data | Time Spent | Progress
+---|---
+First lab session | 2 hours | Finish act 1, got signoff 1.
+Lab nov05 | 2 hours | Got signoff 2
+Lab nov12 | 2 hours | Got signoff 3 - so close to signoff 4, but not close enough.
+Nov 15th | 45 minutes | Setup, run 4.4 - got last signoff! - teardown</p>
+<p>In total, this lab took me 6 hours and 45 minutes.</p>
+<h2>Storing VMs</h2>
+<ul>
+<li>Shutdown All</li>
+<li>Connect Network Drive</li>
+<li>Copy all files over</li>
+</ul>
+<h2>Reviving VMs</h2>
+<ul>
+<li>Connect Network</li>
+<li>Copy Files</li>
+<li>Setup laptop, water bottle, etc.</li>
+<li>Open VMs</li>
+<li>Power Up VMs</li>
+<li><code>setenforce permissive</code> on CentOS</li>
+<li>configure IP and default gateway on CentOS</li>
+</ul>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

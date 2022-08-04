@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- MathJax disabled on this page -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426753">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="./">up</a></p>
+<h1>2020-02-11 - Normalization</h1>
+<ul>
+<li>Homework 3 is due tonight at midnight</li>
+<li>Homework 4 is due next tuesday, the 18th, at midnight.
+<ul>
+<li>There may be no late submissions on HW4</li>
+</ul>
+</li>
+</ul>
+<h2>Normalization</h2>
+<ul>
+<li>Conceptual
+<ul>
+<li>Entity - an ER Diagram</li>
+<li>Entity Instance</li>
+<li>Attribute</li>
+</ul>
+</li>
+<li>Representational
+<ul>
+<li>Relation - a relation</li>
+<li>Tuple</li>
+<li>Attribute</li>
+</ul>
+</li>
+<li>Physical
+<ul>
+<li>Table</li>
+<li>Record</li>
+<li>Field / Attribute</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>Oh my goodness we're finna hit the normal forms</p>
+</blockquote>
+<p>Normalization: reduce anomalies</p>
+<p>Anomolies:</p>
+<ul>
+<li>Redundancy
+<ul>
+<li>information repeated in multiple places</li>
+</ul>
+</li>
+<li>Update
+<ul>
+<li>Failure to change all instances of a specific value</li>
+</ul>
+</li>
+<li>Delete
+<ul>
+<li>Delete data and lose other values as a side effect</li>
+</ul>
+</li>
+<li>Insert
+<ul>
+<li>A requirement to add data about multiple themes</li>
+</ul>
+</li>
+</ul>
+<h2>Functional Dependencies</h2>
+<p>A functional attribute shows a connection between attributes within a relation.</p>
+<p>If A determines the value of B, aka B depends on A, write this:</p>
+<p><strong>A → B</strong></p>
+<p>If we know the value of A, then we can determine the value of B <em>and only B</em>.</p>
+<p>Example: EMPLOYEE(EmployeeID, firstname, lastname)</p>
+<p><strong>EmployeeID → Firstname, Lastname</strong></p>
+<p>In the above example, EmployeeID is a <em>determinant</em>.</p>
+<p>Functional dependencies can require a set or determine a set.</p>
+<p><strong>A → B, C</strong></p>
+<p>or</p>
+<p><strong>A, B → C</strong></p>
+<p>Consider:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>DOB</th>
+<th>Dept</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Joe</td>
+<td>12/15/60</td>
+<td>Acct</td>
+</tr>
+<tr>
+<td>Bill</td>
+<td>4/11/71</td>
+<td>Acct</td>
+</tr>
+<tr>
+<td>Joe</td>
+<td>12/15/60</td>
+<td>Mgt</td>
+</tr>
+<tr>
+<td>Tom</td>
+<td>8/23/73</td>
+<td>Ship</td>
+</tr>
+<tr>
+<td>Al</td>
+<td>12/15/60</td>
+<td>Acct</td>
+</tr>
+</tbody>
+</table>
+<p>In the above table, <strong>Name → DOB</strong>. However, Name does <em>not</em> determine Dept. DOB does not determine Name or dept, and dept does not determine name or dob.</p>
+<p>However, it can be said that <strong>Name, Dept → DOB</strong>.</p>
+<h2>Normalizing these shenanigans</h2>
+<h3>Identify all functional dependencies</h3>
+<p>This is step 1. Find all the ones you can.</p>
+<h3>Determine Candidate Keys</h3>
+<p>All the Determinants that could be primary keys are called <em>candidate keys</em>.</p>
+<p>We must pick among the candidates which key shall become the primary key.</p>
+<p>Composite determinants, candidate keys, and primary keys are all allowed.</p>
+<h3>Confirm or modify the proposed candidate key</h3>
+<p>Then it becomes your actual primary key</p>
+<h3>Upgrade the Normalization level</h3>
+<blockquote>
+<p>MyCourses has a 'normalization process reference' in week5</p>
+</blockquote>
+<h4>Second Normal Form</h4>
+<p>&quot;A relation is in second normal form if it is in first normal form and all of its non-key attributes are dependent on the entire primary key&quot;</p>
+<ul>
+<li>Non-key attribute
+<ul>
+<li>It's an attribute not being used as a key</li>
+</ul>
+</li>
+<li>Dependent
+<ul>
+<li>On the right side of a functional dependency</li>
+</ul>
+</li>
+<li>Partial dependency
+<ul>
+<li>A non-key attribute that it dependent on only a part of a primary key</li>
+</ul>
+</li>
+</ul>
+<h3>Foreign Keys</h3>
+<p>When the primary key of a relation appears in another relation, it is a foreign key. This forms relationships between relations.</p>
+<p>In type, foreign keys are shown in <em>italics</em>. When hand-writing, use a dashed underline.</p>
+<p>&lt;span style='border-bottom: 1px dashed black'&gt;
+Here's my attempt at a dashed underline in markdown
+&lt;/span&gt;</p>
+<h3>Referential Integrity</h3>
+<p>The values of foreign key attributes <em>must</em> reference a valid, existing primary key.</p>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

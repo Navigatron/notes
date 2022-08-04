@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- MathJax disabled on this page -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426834">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="../">up</a></p>
+<h1>Housekeeping</h1>
+<ul>
+<li>IBM has a thing going on outside Golisano, check it out?
+<ul>
+<li>Mobile X-Com unit demo tomorrow 9 am to 11 am</li>
+</ul>
+</li>
+</ul>
+<h1>DNS Configuration</h1>
+<ul>
+<li>SOA (Start of Authority) Record
+<ul>
+<li>The serial number is checked at startup and every 15 minutes.</li>
+<li>If the serial number on disk is larger than the one in memory, the zone record is reloaded from disk.</li>
+</ul>
+</li>
+</ul>
+<h2>Record Types</h2>
+<ul>
+<li>NS
+<ul>
+<li>defines name of nameserver for a domain.</li>
+</ul>
+</li>
+<li>A
+<ul>
+<li>defines IPv4 address for a name</li>
+</ul>
+</li>
+<li>CNAME
+<ul>
+<li>defines the actual name for an alias name</li>
+</ul>
+</li>
+<li>MX
+<ul>
+<li>define the name of a mailserver for a domain</li>
+</ul>
+</li>
+<li>TXT
+<ul>
+<li>records plain text for a name</li>
+</ul>
+</li>
+</ul>
+<p>HINFO and WKS also exist, but are rarely used.</p>
+<h2>Shortcuts</h2>
+<p><code>$TTL</code> can be used to declare a default time to live
+<code>$ORIGIN</code> is pretty cool</p>
+<p>Leave any field empty, and it takes the value of the above field.</p>
+<h2>Slave Zones</h2>
+<p>Slave DNS polls a master server. The master transfers a zone file to the slave, which then
+serves records from memory exactly like the master does.</p>
+<p>This can be used to easily distro zone files between a network of DNS servers, and
+easily enable backups - to keep DNS online, all the time.</p>
+<h2>Forwarding</h2>
+<p>If, say, a DNS server cannot get through a firewall - it can forward to a specific other server if it cannot answer a request itself.</p>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

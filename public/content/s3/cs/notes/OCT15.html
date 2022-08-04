@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- MathJax disabled on this page -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426824">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="../">up</a></p>
+<h1>Housekeeping</h1>
+<ul>
+<li>Exam 2 Wednesday
+<ul>
+<li>GOL 3435</li>
+<li>a bunch of code</li>
+<li>read the lecture notes</li>
+</ul>
+</li>
+<li>Exp 5 is up</li>
+<li>Project coming out late this week or next week!</li>
+</ul>
+<h1>Assembling</h1>
+<p>Pass1 parses the file, pass2 uses the parsed file to build the object file.</p>
+<h2>paper handout</h2>
+<p>Text location counter and data location counter both start at zero.
+As we move through the code, we increment the counters to determine where things go.</p>
+<p>When we encounter <code>.data</code>, we know we're working with the DLC (data location counter)</p>
+<p>deftab - table of all external definitions and their addresses. There are also
+flags, but we aren't going to learn about those right now.</p>
+<p><code>.byte 0</code> writes a zero byte, aka a null-terminator.</p>
+<p>REFTAB - table of external references and lines of code that use them.
+This is so the linker can fill in some labels later on.</p>
+<p>RELTAB - tells everywhere in the code that an absolute address was used.
+Linker adds load point offset to each of these.</p>
+<p>The Linker:</p>
+<ul>
+<li>uses the deftab to tell others where my defs are</li>
+<li>uses the reftab to fill in other's definitions</li>
+<li>uses the reltab</li>
+</ul>
+<h2>The linker is on the test</h2>
+<p>Linker takes multiple Obj modules and squishes them together. This is quite litteraly
+appending t2 to t1 and d3 to d2 to d1 and so on.</p>
+<ul>
+<li>Linker Major Tasks
+<ul>
+<li>Merge multiple obj modules together.</li>
+<li>Fix the resulting address changes
+<ul>
+<li>aka relocate all abs addr in each OM by their load point.
+<ul>
+<li>aka update all addresses</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Resolve External References to external definitions
+<ul>
+<li>uses the reftab</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>To be executable, all references must be resolved, and
+there must be an entry point.</p>
+<p>We don't need a main if we're building a library, but we still need an external def
+so that something can run.</p>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

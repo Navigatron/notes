@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- MathJax disabled on this page -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426804">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="./">up</a></p>
+<h1>CentOS is hard</h1>
+<h3>First, activate root:</h3>
+<pre><code class="language-bash">sudo su
+</code></pre>
+<h3>Set ip:</h3>
+<p>Gotta find out what your ethernet interface is called.</p>
+<p>Sometimes it's eno16777736, sometimes its eth33 or similar.</p>
+<pre><code class="language-bash">ifconfig
+</code></pre>
+<p>Then, config the interface.</p>
+<pre><code class="language-bash">ifconfig eno16777736 10.150.x.y netmask 255.255.255.0 up
+</code></pre>
+<p>Then, hit the up arrow and hit enter again. Running this once isn't enough. Sometimes twice isn't enough.</p>
+<h3>Set Gateway:</h3>
+<pre><code class="language-bash">ip route add default via 10.150.x.254
+</code></pre>
+<p>Run this twice too.</p>
+<h3>Set DNS:</h3>
+<pre><code class="language-bash">vim /etc/resolv.conf
+</code></pre>
+<p>Add This Line:
+<code>nameserver 8.8.8.8</code></p>
+<h3>Fix YUM:</h3>
+<pre><code class="language-bash">yum clean all
+yum --disablerepo=\* --enablerepo=base,extras,updates update
+</code></pre>
+<h3>SSH with X11 forwarding:</h3>
+<pre><code class="language-bash">ssh -CY student@10.150.x.y
+</code></pre>
+<p>C enables compression, makes things faster<br>
+Y enables X11 forwarding, trusted, no extra security.</p>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

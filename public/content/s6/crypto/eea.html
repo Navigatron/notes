@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- <script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+			tex2jax: {
+				inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+				processEscapes: true
+			}
+		});
+	</script> -->
+	<script>
+		MathJax = {
+			tex: {
+				inlineMath: [['$', '$'], ['\\(', '\\)']]
+			}
+		};
+	</script>
+	<!-- <script
+		type="text/javascript"
+		charset="utf-8"
+		src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+		>
+	</script> -->
+	<script
+		type="text/javascript"
+		id="MathJax-script"
+		async
+		src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+		>
+	</script>
+	<!-- <script
+		type="text/javascript"
+		charset="utf-8"
+		src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
+		>
+	</script> -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426810">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="../../../">Home</a> &gt; <a href="./">Crypto</a> &gt; Tikz</p>
+<h1>Extended Euclidean Algorithm (EEA)</h1>
+<p>Given two integers $a$ and $b$, The EEA finds $x$, $y$, and $z$, such that:</p>
+<p>$$
+z = ax+by = gcd(a, b)
+$$</p>
+<h2>What is the algorithm?</h2>
+<p>In javascript:</p>
+<pre><code class="language-js">// ax + by = gcd(a,b) = d
+// function: a,b -&gt; x, y, d
+function xgcd(a, b) {
+	if (b === 0) {
+		return [1, 0, a];
+	}
+	let [x, y, d] = xgcd(b, a % b);
+	return [y, x-y*Math.floor(a/b), d];
+}
+</code></pre>
+<h2>Finding multiplicative inverses</h2>
+<p>Consider $a \bmod b$:</p>
+<p>A multiplicative inverse $a^{-1}$ only exists if $a$ and $b$ are coprime, aka $gcd(a,b)=1$. Therefore, the EEA results can be simplified:</p>
+<p>$$
+z = ax+by = gcd(a, b)
+1 = ax+by = gcd(a, b)
+ax+by = 1
+ax-1=-yb
+ax \equiv 1 \bmod b
+a^{-1}=x
+$$</p>
+<p>So, the X output of the EEA is the multiplicative inverse of A mod B.</p>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- MathJax disabled on this page -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426825">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="../">up</a></p>
+<h2>How do I get One?</h2>
+<p>Load it from memory - slow
+Divide something by itself - slow</p>
+<p>I really want some way of having literals. Please?</p>
+<p>Data can be in:</p>
+<ul>
+<li>Registers</li>
+<li>Memory</li>
+<li>Can we have another please?</li>
+</ul>
+<p>Yes! Constants in the Instructions!</p>
+<h2>Immediate Values</h2>
+<p>A <em>short, signed</em> constant inside the instructions.</p>
+<p><code>ADD</code> uses registers, and
+<code>ADDI</code> uses an immediate. Immediates must be third.</p>
+<p>Can't use SUBI, it's just ADDI with a negative immediate.</p>
+<p>I can use <em>any</em> real instructions.</p>
+<p>floating point and double word instructions are not supported by our assembler.</p>
+<ul>
+<li><code>ADDI</code></li>
+<li><code>ANDI</code></li>
+<li><code>ORI</code></li>
+<li><code>XORI</code></li>
+<li><code>NANDI</code></li>
+</ul>
+<p>How to put an immediate in a register?</p>
+<p>Register zero (<code>$0</code>) always contains zero. It's literally wired into ground. You can read from it all day and dump data into it all day.</p>
+<p>There's a pseudo-instruction called <code>li</code> - load immediate. It takes a destination and an immediate. It expands to <code>ADDI rt,$0,imm</code>. We are allowed to use this.</p>
+<h2>Register Table</h2>
+<p>We must always use the Aliases. Precede aliases with <code>$</code></p>
+<table>
+<thead>
+<tr>
+<th>Number</th>
+<th>Alias</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>zero</td>
+<td>always zero</td>
+</tr>
+<tr>
+<td>1</td>
+<td>at</td>
+<td>reserved for assembler</td>
+</tr>
+<tr>
+<td>2-&gt;3</td>
+<td>v0,v1</td>
+<td>expression eval, function results.</td>
+</tr>
+<tr>
+<td>4-&gt;7</td>
+<td>a0-&gt;a3</td>
+<td>(A)rguments passed to procedures and functions</td>
+</tr>
+<tr>
+<td>8-&gt;15</td>
+<td>t0-&gt;t7</td>
+<td>(T)emp - can be overwritten by functions. Set-&gt;Used-&gt;Forgotten.</td>
+</tr>
+<tr>
+<td>16-&gt;23</td>
+<td>s0-&gt;s7</td>
+<td>(S)torage - Saved by called functions. Save it, use it, then restore it.</td>
+</tr>
+<tr>
+<td>24-&gt;25</td>
+<td>t8-&gt;t9</td>
+<td>(T)emp more</td>
+</tr>
+<tr>
+<td>26-&gt;27</td>
+<td>k0-&gt;k1</td>
+<td>reserved for OS. Interrupts will eat these.</td>
+</tr>
+<tr>
+<td>28</td>
+<td>gp</td>
+<td>Global Area Pointer</td>
+</tr>
+<tr>
+<td>29</td>
+<td>sp</td>
+<td>Stack Pointer</td>
+</tr>
+<tr>
+<td>30</td>
+<td>fp</td>
+<td>Frame Pointer</td>
+</tr>
+<tr>
+<td>31</td>
+<td>ra</td>
+<td>Return Address Register</td>
+</tr>
+</tbody>
+</table>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

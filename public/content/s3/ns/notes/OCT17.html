@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- MathJax disabled on this page -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426836">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="../">up</a></p>
+<h1>Housekeeping</h1>
+<ul>
+<li>Exam during Lab next Monday
+<ul>
+<li>Finish early? Lab 5 released.</li>
+</ul>
+</li>
+<li>VMware was updated without testing the labs
+<ul>
+<li>Troubleshooting guide coming out eventually</li>
+</ul>
+</li>
+</ul>
+<h1>TCP</h1>
+<h2>Preview</h2>
+<ul>
+<li>control mechanisms
+<ul>
+<li>Flow control
+<ul>
+<li>sliding window</li>
+<li>silly window syndrome</li>
+</ul>
+</li>
+<li>Error Control</li>
+<li>Congestion Control
+<ul>
+<li>Slow Start</li>
+<li>Fast Re-transmit</li>
+<li>Fast Recovery</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2>Flow Control</h2>
+<p>Flow control prevents the sender from overwhelming the receiver.</p>
+<p>&quot;Sliding window&quot; is TCP's flow control mechanism.</p>
+<p>The window size on the sender is determined by available buffer space on receiver.</p>
+<h3>Sliding Window</h3>
+<p>Sender does not have to send a full segment - source can send what they've got
+at any time.</p>
+<p>The receiver can decide at any time to increase or decrease the sender's window
+size. This is accomplished though specific TCP flags.</p>
+<p>Bytes in the window are sent from left to right. As the ones on the left are
+acked, the window slides to the right, revealing more bytes to send.</p>
+<h3>Silly Window Syndrome</h3>
+<p>Consider typing in a terminal emulator over ssh. Each keystroke generates
+1 byte. Sending 1 byte takes 58 bytes of overhead, which is silly.</p>
+<p>Either the sender has small data, or the receiver can't process fast enough. In
+either case, the sender is sending very small pieces, which is inefficient.</p>
+<h4>Nagle's Algorithm</h4>
+<ol>
+<li>Send the first byte</li>
+<li>Wait until one of two conditions is true:
+<ul>
+<li>I have an mss of data</li>
+<li>I receive an ACK from that first byte</li>
+</ul>
+</li>
+</ol>
+<h4>Clark's Solution</h4>
+<p>Consider a receiver that has broadcast a window size of zero.</p>
+<p>If the receiver sends small window sizes, silly window syndrome occurs.</p>
+<p>Clark's solution says to keep sending a window size of zero until either:</p>
+<ul>
+<li>I have enough buffer to receive an MSS</li>
+<li>My buffer is now 50% free</li>
+</ul>
+<h4>Delayed Ack</h4>
+<p>Delaying ACKS reduces the amount of traffic - but we must avoid unnecessary
+re-transmissions.</p>
+<h2>Error Control</h2>
+<h3>Checksum</h3>
+<p>Checksums verify data integrity. Corrupted segments are thrown away, treated the
+same as lost segments.</p>
+<h3>Acks</h3>
+<p>Acks let the sender know that the message was received.</p>
+<p>Cumulative acks ack continuous, contiguous chunks of data.</p>
+<p>Selective acks allow the acking of non-in-order segments.</p>
+<ul>
+<li>This moves less data, though it sends more acks.</li>
+<li>Uses the TCP options field</li>
+</ul>
+<p>Interesting thing - Later Acks help recover from earlier acks if RTO hasn't happened yet.</p>
+<h3>Time-Out</h3>
+<p>If the data gets lost, or the ack gets lost on the way back, the RTO kicks in.</p>
+<p>RTO tells us to re-transmit data if we don't hear back within a timeframe.</p>
+<h4>Fast RT</h4>
+<p>If we're using cumulative ACKs and we get 3 acks in a row for the same data,
+we re-transmit that data.</p>
+<h2>Congestion Control</h2>
+<p>When network load is greater than network capacity, there is congestion.</p>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

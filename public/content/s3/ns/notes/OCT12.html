@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- MathJax disabled on this page -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426836">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="../">up</a></p>
+<h1>Housekeeping</h1>
+<ul>
+<li>Midterm on Monday
+<ul>
+<li>involves dhcp configuration</li>
+<li>Crib-sheet
+<ul>
+<li>8.5x11, <strong>1 sided</strong></li>
+<li>DHCP config</li>
+<li>DHCP state machine</li>
+<li>TCP state machine</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>MyCourses Quiz this weekend</li>
+</ul>
+<h1>TCP Timers</h1>
+<ul>
+<li>Re-transmission Time Out (RTO) (Did you get that?)
+<ul>
+<li>How long to wait for an ACK before re-transmitting</li>
+<li>Time based on SMA(Round Trip Time[RTT])
+<ul>
+<li>a * (last RTT) + (1-a)* (Current RTT)</li>
+<li>alpha often 0.90</li>
+</ul>
+</li>
+<li>Timer activated when first item in queue sent</li>
+</ul>
+</li>
+<li>Persistence Timer (Can I send more Data?)
+<ul>
+<li>On window size zero, the other end has no room to accept more data</li>
+<li>If we wait, other side clears buffer, they send non-zero window size.</li>
+<li>But what if we don't get the non-zero message?</li>
+<li>after Persistence Timer, send &quot;Probe&quot;, requesting window size.</li>
+</ul>
+</li>
+<li>KEEP_ALIVE (Are you still there?)
+<ul>
+<li>If there's no traffic for a while, what do?</li>
+<li>Send ACK probe (request repeat ACK) every two hours
+<ul>
+<li>expecting reply of repeat ack</li>
+</ul>
+</li>
+<li>No answer?
+<ul>
+<li>10 attempts, 75 seconds apart, then drop connection.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>FIN_WAIT
+<ul>
+<li>Client sends FIN, moves to fin_wait_1 state</li>
+<li>When server acks the fin, move to fin_wait_2</li>
+<li>Wait for the server's ack for 10 mins before dropping</li>
+</ul>
+</li>
+<li>TIME_WAIT
+<ul>
+<li>If the client recieves a FIN while in FIN_WAIT_2,</li>
+<li>first of all, ack it</li>
+<li>Wait for 2xMSL (Max time segment may live on network) before closing.</li>
+<li>Allows client to receive delayed things or ack probes</li>
+</ul>
+</li>
+</ul>
+<h1>TCP finite state machine</h1>
+<p>Movement from one state to another depending on outside events.</p>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

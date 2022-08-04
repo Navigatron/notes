@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- <script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+			tex2jax: {
+				inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+				processEscapes: true
+			}
+		});
+	</script> -->
+	<script>
+		MathJax = {
+			tex: {
+				inlineMath: [['$', '$'], ['\\(', '\\)']]
+			}
+		};
+	</script>
+	<!-- <script
+		type="text/javascript"
+		charset="utf-8"
+		src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+		>
+	</script> -->
+	<script
+		type="text/javascript"
+		id="MathJax-script"
+		async
+		src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+		>
+	</script>
+	<!-- <script
+		type="text/javascript"
+		charset="utf-8"
+		src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
+		>
+	</script> -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426775">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="../../../">Index</a> &gt; <a href="./">Course</a> &gt; Wed Mar 24 2021 20:00:00 GMT-0400 (Eastern Daylight Time):</p>
+<h1>Wed Mar 24 2021 20:00:00 GMT-0400 (Eastern Daylight Time):</h1>
+<blockquote>
+<p>If the crickets decide to chirp faster, then it gets hotter. Meanwhile, if the crickets take a nap, the earth will freeze. This is why not all of the crickets on earth sleep at the same time.</p>
+</blockquote>
+<p>We want to explain the output of the regression in simple everyday english.</p>
+<p>For every increase in (The input variable), we expect a (first coefficient) change in (the output variable). If (the input variable) were zero, we would expect the output variable to be (the zeroth coefficient).</p>
+<p>Stata provides a 95% confidence interval for all coefficients.</p>
+<p>There is also a $t$ value, and a $P&gt;|t|$ value, and those are a little more complicated.</p>
+<p>The Null Hypothesis is that a given coefficient is zero. The P value is how likely that is true. A P value of less than 0.05 means you can reject the null hypothesis, and say that there <em>is</em> a strong correlation between the input and output.</p>
+<p>In the cricket example, the P value for the zeroth coefficient was 0.992 - very high.</p>
+<h2>Sum of Squares and $R^2$</h2>
+<p>Our data comes with some variation. Some of that can be explained by our model, but not all of it. $R^2$ is the percentage of variation that our model can explain.</p>
+<p>The variation for one data point is its distance from the average of the data set. The variation for one data point in the model is its distance from where the model predicts it to be.</p>
+<p>$$
+\sum{(p_x-\hat{x})^2}\
+\sum{(p_x-f(x))^2}
+$$</p>
+<h2>Global Tests</h2>
+<p>$R^2$ and F-tests (what are F tests?) are global indicators. They can return the same results for different data. That's tough.</p>
+<p>We can take the distance from each point to the predicted line to find that point's <em>residual</em>. The residuals can be plotted too!</p>
+<p>The residuals should look like a random cloud.</p>
+<hr>
+<p><a href="../../../">Index</a> &gt; <a href="./">Course</a> &gt; Wed Mar 24 2021 20:00:00 GMT-0400 (Eastern Daylight Time):</p>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

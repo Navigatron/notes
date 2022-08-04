@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- MathJax disabled on this page -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426776">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="../../../">Index</a> &gt; <a href="./">Course</a> &gt; Wed Apr 14 2021 20:00:00 GMT-0400 (Eastern Daylight Time):</p>
+<h1>Wed Apr 14 2021 20:00:00 GMT-0400 (Eastern Daylight Time):</h1>
+<p>There are two things left in the class.</p>
+<ul>
+<li>Assignment 6
+<ul>
+<li>Consists of two case studies
+<ul>
+<li>Predict the values of Monroe county houses</li>
+<li>Did the Prof save money with a wood burning stove?</li>
+</ul>
+</li>
+<li>Goes pretty in-depth</li>
+</ul>
+</li>
+<li>Test 2
+<ul>
+<li>Non-cumulative</li>
+</ul>
+</li>
+</ul>
+<h1>Decision Trees</h1>
+<blockquote>
+<p>Not in assignment 6, but on the test</p>
+</blockquote>
+<p>You have a choice between:</p>
+<ul>
+<li>Receiving $100</li>
+<li>3 to 1 odds of getting $70 or $200</li>
+</ul>
+<pre><code class="language-dot">digraph G {
+    /* Entities */
+    d1  [label=&quot;Decision 1&quot;, shape=&quot;square&quot;]
+    o1  [label=&quot;$100&quot;, shape=&quot;circle&quot;]
+    d2  [label=&quot;Random Choice&quot;, shape=&quot;rectangle&quot;]
+    o2  [label=&quot;$70&quot;, shape=&quot;circle&quot;]
+    o3  [label=&quot;$200&quot;, shape=&quot;circle&quot;]
+    /* Relationships */
+    d1 -&gt; o1 [label=&quot;100%&quot;];
+    d1 -&gt; d2;
+    d2 -&gt; o2 [label=&quot;75%&quot;];
+    d2 -&gt; o3 [label=&quot;25%&quot;];
+}
+</code></pre>
+<p><img src="./images/2021-04-15.png" alt=""></p>
+<p>Outputs are worth some value. Solve the tree from right to left. (Bottom to Top in my graph). When you reach a chance node, calculate its expected value. When you reach a decision node, give it the value of the highest downstream chance node.</p>
+<h1>Me, Messing around</h1>
+<p>You have a choice between:</p>
+<ul>
+<li>Receiving $100</li>
+<li>3 to 1 odds of getting $70 or $200</li>
+</ul>
+<p>Using arithmetic mean, the second choice is worth $102. Using the geometric mean, it's worth $91.</p>
+<p>What if we simulate this? It costs $100 to play, and we get some amount back.</p>
+<pre><code class="language-js">function simulate(){
+    let bank = 0;
+    let iterations = 1000000;
+    for(let i=0; i&lt;iterations; i++){
+        bank -= 100;
+        bank += Math.ceil(Math.random()*4) === 4 ? 200 : 70;
+    }
+    // return avg gain per play
+    return bank/iterations;
+}
+</code></pre>
+<p>I ran this a few times. Results ranged from 2.4 to 2.5, implying the gamble is worth $102.5, and the arithmetic mean is correct.</p>
+<p>Let's change up the code...</p>
+<pre><code class="language-js">function simulate(){
+    let bank = 1000; // start with 1k
+    let iterations = 1000000; // 1m rounds
+    for(let i=0; i&lt;iterations; i++){
+        if(bank &lt; 100){
+            return (bank - 1000)/i;
+        }
+        bank -= 100;
+        bank += Math.ceil(Math.random()*4) === 4 ? 200 : 70;
+    }
+    return (bank-1000)/iterations;
+}
+</code></pre>
+<p>Most of the time, the game ends with an average return of $2.40 per turn. However, sometimes the player goes bankrupt before completing all million rounds. Let's run the simulation 1000 times, and record the results:</p>
+<pre><code class="language-js">function metaSim(){
+    let wins = 0;
+    for(let i=0; i&lt;1000; i++){
+        wins += simulate() &gt; 0 ? 1 : 0;
+    }
+    console.log(`${wins} out of 1000 games survived. Win rate is ${Math.round(wins/10)}%`);
+}
+</code></pre>
+<p>Each call to <code>metaSim()</code> simulates one <em>billion</em> rounds of the game. This takes about a minute. Running this multiple times took a while.</p>
+<pre><code>811 out of 1000 games survived. Win rate is 81%
+774 out of 1000 games survived. Win rate is 77%
+781 out of 1000 games survived. Win rate is 78%
+</code></pre>
+<p>Let's say there is an 80% chance of 2.4% returns, and a 20% chance of -100% returns. Over many iterations, this means we expect -18% returns. You shouldn't play this game. I wonder if I can simulate this, too.</p>
+<p>I'll simulate a shop that runs this game (starts with 1m) and sees multiple customers (each with 1k). Most customers will walk away with 2.5% returns - but the ones that go bankrupt can't play the game anymore, so the shop will keep all of their money.</p>
+<pre><code class="language-js">function shopSim(){
+    // The shop starts with 1mil
+    let shopBalance = 1000000;
+    // 1k customers will start with 1k each
+    for(let cNum=0; cNum&lt;1000; cNum++){
+        let customerBalance = 1000;
+        for(let round=0; round&lt;1000; round++){
+            // Can the customer afford to play?
+            if(customerBalance&lt;100) break;
+            // Can the store afford to play?
+            if(shopBalance&lt;200) break;
+            // Play!
+            let result = Math.random()*4 &gt; 3 ? 200 : 70;
+            customerBalance += result-100;
+            shopBalance -= result-100;
+        }
+    }
+    console.log(shopBalance);
+}
+</code></pre>
+<p>If I'm right (you shouldn't play this game) then the shop will end with more money than it started with.</p>
+<p>Results:</p>
+<pre><code>190
+190
+190
+100
+170
+170
+180
+100
+160
+</code></pre>
+<p>No! The shop is going bankrupt! The customers are making a profit! <em>What if I give the shop more money?</em></p>
+<p>Starting the shop with 1 billion dollars:</p>
+<pre><code>997883940
+997918710
+997892580
+997984120
+997787270
+997852830
+997804050
+</code></pre>
+<p>All of these are less than 1 billion. The shop is losing money (roughly 3mil), but no longer going bankrupt (that's hard to do when you start with 1b).</p>
+<p>Here's another idea - playing the game for more rounds, while it <em>does</em> let the customers make more money, also gives them more opportunities to go bankrupt. Let's run the sim again, with 1mil rounds per customer instead of 1k:</p>
+<p>(Once again, at 1b rounds, this takes a while):</p>
+<pre><code>100
+150
+180
+</code></pre>
+<p>The shop is going bankrupt again. It's losing all <em>billion</em> dollars. This is a disaster!</p>
+<p>I really need to dig-in and understand what's going on. It's time to break out the R code.</p>
+<pre><code class="language-r"># How many rounds will the game last?
+iterations &lt;- 1000
+# How much cash will players start with?
+startingBalance &lt;- 1000
+# How many players will we simulate?
+linesCount &lt;- 30
+# Function to simulate one player
+doSim &lt;- function(){
+    results &lt;- vector(&quot;numeric&quot;, iterations)
+    balance &lt;- startingBalance
+    for(i in 1:iterations){
+        random &lt;- runif(1, min=0, max=4)
+        if(random &gt; 3){
+            balance &lt;- balance + 100
+        }else{
+            balance &lt;- balance - 30
+        }
+        results[i] &lt;- balance
+    }
+    results
+}
+# Run the function a bunch of times
+lines &lt;- list(linesCount)
+for(l in 1:linesCount){
+    lines[[l]] &lt;- doSim()
+}
+# Find the range of the lines, for the graph
+myRange &lt;- range(lines[[1]])
+for(l in 2:linesCount){
+    myRange &lt;- range(myRange, lines[[l]])
+}
+colors &lt;- rainbow(linesCount) # colors are cool
+# Plot the first line
+plot(
+    1:iterations,
+    lines[[1]],
+    ylim=myRange,
+    type=&quot;l&quot;,
+    col=colors[1],
+    main=&quot;30 Simulated Games&quot;,
+    ylab=&quot;Player Cash&quot;,
+    xlab=&quot;Rounds Played&quot;
+)
+# Plot the other lines
+for(l in 2:linesCount){
+    lines(1:iterations, lines[[l]], col=colors[l])
+}
+# Add some reference lines
+abline(c(0,iterations),c(0,0))
+abline(c(0,iterations),c(startingBalance,startingBalance*1.025))
+</code></pre>
+<p><img src="./images/simulation.png" alt=""></p>
+<p>Now that's some unicorn vomit. This graph teaches us some important lessons (Or at least makes more obvious things we should already know):</p>
+<ul>
+<li>Everyone starts at the same point</li>
+<li>From there, things <em>very quickly</em> spread out</li>
+<li>Games that go up a lot, go up a lot</li>
+<li>Games that go down, don't actually go down that much</li>
+<li>In general, players make money over time</li>
+<li>The starting balance for a player is <em>very</em> relevant to weather or not they go bankrupt.</li>
+</ul>
+<p>So what went wrong with the previous simulations? Those simulations let players play a <em>lot</em> of rounds, and we expect players to make roughly $2.50 per round. By the law of large numbers, this general increase gets more accurate with time.</p>
+<p>So - if we're the shop, we want to <em>stop</em> players from playing a lot of rounds. How can we do that?</p>
+<ul>
+<li>If the players start with less money, they are more likely to go bankrupt</li>
+<li>If the players get kicked out when they make too much, we can avoid &quot;un-bounded&quot; losses.</li>
+</ul>
+<p>// TODO - JS that finds what percentage of players take <em>any</em> loss within the first 5 rounds.</p>
+<hr>
+<p><a href="../../../">Index</a> &gt; <a href="./">Course</a> &gt; Wed Apr 14 2021 20:00:00 GMT-0400 (Eastern Daylight Time):</p>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

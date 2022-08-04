@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- MathJax disabled on this page -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426763">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="../../../">Index</a> &gt; <a href="./">Course</a> &gt; Sun Feb 14 2021 19:00:00 GMT-0500 (Eastern Standard Time):</p>
+<h1>Sun Feb 14 2021 19:00:00 GMT-0500 (Eastern Standard Time):</h1>
+<blockquote>
+<p>There are a number of things due this week. There are a number of things due next week. Prof. will not tell you exactly what, or when, or where exactly to check. Good luck!</p>
+</blockquote>
+<p>Data owners have discretion to assign/allow/restrict access to data.</p>
+<p>MULTICS = Multiplexed Information and Computing Service. The access control system of MULTICS inspired modern access control schemes, and pioneered the idea of rings. RuBAC = Rules based access control.</p>
+<p>Subjects request action on an object:</p>
+<ul>
+<li>Read</li>
+<li>Write</li>
+<li>Open a socket</li>
+<li>etc</li>
+</ul>
+<p>The owner of the file may set the access control matrix: Lookup(Subject, Object), returns the allowed actions.</p>
+<h2>ACLs vs Capability lists</h2>
+<p>An ACL is just a list. If every object needs an ACL, and every ACL is a list, well that's pretty heavy.</p>
+<p>An ACL is defined on the file - who has what access level.</p>
+<p>A Capability List is defined on the subject - what things do they have access to.</p>
+<h2>Confused Deputy</h2>
+<h2>Windows Access Control</h2>
+<p>Access Tokens: contain information about the user</p>
+<p>Sceurity Descriptors: list of who can do what with the thing, how to audit attempts w/ the object. Applied to securable objects.</p>
+<p>A successful logon creates a new access token, which is copied into every process started by that user. On the NTFS filesystem, files have a security header where the security descriptor lives.</p>
+<p>If the Discretionary Access Control list (DACL) isn't specified, then it fails open - everyone can access.</p>
+<p>There are three types of access control entries (ACEs):</p>
+<ul>
+<li>Access Allowed</li>
+<li>Access Denied</li>
+<li>System Audit
+<ul>
+<li>What does this do?</li>
+</ul>
+</li>
+</ul>
+<p>An explicit deny ACE overrides an explicit allow ACE. Ace's contain a few things, including the SID it applies to. SIDs are made of a few fields.</p>
+<h1>Administrative</h1>
+<p>Discussion post 1 due Saturday</p>
+<p>Next Source Summary due Saturday</p>
+<hr>
+<p><a href="../../../">Index</a> &gt; <a href="./">Course</a> &gt; Sun Feb 14 2021 19:00:00 GMT-0500 (Eastern Standard Time):</p>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

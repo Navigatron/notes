@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- MathJax disabled on this page -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426823">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="../">up</a></p>
+<h1>Housekeeping</h1>
+<ul>
+<li>Exp 5 due next wednesday</li>
+<li>Project is posted
+<ul>
+<li>submit by 11/20 for 10% bonus - this is worth more than 2 labs</li>
+<li>12:01 on monday is 20% off</li>
+</ul>
+</li>
+</ul>
+<h1>Linker</h1>
+<p>Major Tasks:</p>
+<ol>
+<li>Combine all our little modules into a <strong>SUPER MODULE!</strong>
+<ul>
+<li>Code Relocation</li>
+</ul>
+</li>
+<li>Resolve extRefs to extDefs</li>
+</ol>
+<p>How?</p>
+<ol>
+<li>Init Load points TLP=400K DLP=10M</li>
+<li>Loop through all Object Modules
+<ul>
+<li>Append Text to Global Text</li>
+<li>Append Data to Global Data</li>
+<li>Loop through all entries in reltab, reftab, deftab, symtab
+<ul>
+<li>Add correct load point, put in global table</li>
+</ul>
+</li>
+<li>Loop global ref tab
+<ul>
+<li>Update code addresses</li>
+</ul>
+</li>
+<li>Update load points with size of this OM's text and Data</li>
+</ul>
+</li>
+<li>Loop through Global Ref Tab
+<ul>
+<li>Each line here is a line of code where we used an extRef.</li>
+<li>Look up label in global deftab, replace in code.</li>
+<li>Remove unneeded reftab entries.</li>
+<li>If deftab doesn't tell us where the label is,
+<ul>
+<li>It's still an external reference. Let it sit.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>If deftab has at least 1 entry, mark built file as executable.
+<ul>
+<li>If there's anything left in the reftab, Fail.</li>
+</ul>
+</li>
+</ol>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

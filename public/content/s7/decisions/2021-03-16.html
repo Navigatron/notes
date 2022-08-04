@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- <script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+			tex2jax: {
+				inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+				processEscapes: true
+			}
+		});
+	</script> -->
+	<script>
+		MathJax = {
+			tex: {
+				inlineMath: [['$', '$'], ['\\(', '\\)']]
+			}
+		};
+	</script>
+	<!-- <script
+		type="text/javascript"
+		charset="utf-8"
+		src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+		>
+	</script> -->
+	<script
+		type="text/javascript"
+		id="MathJax-script"
+		async
+		src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+		>
+	</script>
+	<!-- <script
+		type="text/javascript"
+		charset="utf-8"
+		src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
+		>
+	</script> -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426774">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="../../../">Index</a> &gt; <a href="./">Course</a> &gt; Mon Mar 15 2021 20:00:00 GMT-0400 (Eastern Daylight Time):</p>
+<h1>Mon Mar 15 2021 20:00:00 GMT-0400 (Eastern Daylight Time):</h1>
+<p>The test is taking the place of next class. It's available from 10AM to 2PM, and should take about an hour.</p>
+<p>Buy the textbook! Signal and the Noise.</p>
+<p>Regression is coming in soon. You need software:</p>
+<ul>
+<li>Stata</li>
+<li>Excel (though not recommended)</li>
+<li>R</li>
+<li>Matlab</li>
+<li>minitab</li>
+</ul>
+<blockquote>
+<p>I feel like I'm gonna need mathjax for today. My mathjax is rusty but we'll get through it.</p>
+</blockquote>
+<h2>Probability Question Example</h2>
+<p>In the next 10 minutes, 30 busses will arrive at the bus station. One of them will be the RIT bus.</p>
+<p>50% of RIT people wear RIT gear/swag, while the background rate is 2%.</p>
+<p>A bus arrives. The first person off is wearing an RIT hat. Is this the RIT bus?</p>
+<p>The second person off the bus is <em>not</em> wearing RIT swag. Is this the RIT bus?</p>
+<p>The third person is wearing an RIT shirt. Is this the RIT bus?</p>
+<h2>Approaches</h2>
+<h3>Bayesian</h3>
+<p>A Bayesian starts with a &quot;prior probability&quot;, and then uses each new piece of data to adjust their expected probability that something is true.</p>
+<p>The probability of A given B is A intersection B over B</p>
+<blockquote>
+<p>MATHJAX ENGAGED!</p>
+</blockquote>
+<p>$$
+P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B)}
+$$</p>
+<p>Let's define some sets:</p>
+<p>$$
+A = {\text{RIT Bus}, \text{Regular Bus}} \
+B = {\text{RIT Swagged}, \text{Regular swag}}
+$$</p>
+<p>Remember that $P(A=\text{Swagged})$ is the probability of set $A$ evaluating to Swagged.</p>
+<p>$$
+P(A = \text{RIT Bus} | B = \text{RIT Swagged}) = \frac{P(B|A) \cdot P(A = \text{RIT Bus})}{P(B=\text{RIT Swagged})} = \frac{0.5 \cdot \frac{1}{30}}{P(B=\text{RIT Swagged})}
+$$</p>
+<p>But, how often do we expect to see someone in RIT gear, from any bus?</p>
+<p>$$
+P(B) = P(A = \text{RIT Bus}) \cdot P(B = \text{RIT Swagged} | A = \text{RIT Bus}) + P(A = \text{Regular Bus}) \cdot P(B = \text{Regular swag} | A = \text{Regular Bus}) = \frac{1}{30} \cdot 0.5 + \frac{29}{30} \cdot 0.02 = 0.036
+$$</p>
+<p>Therefore:</p>
+<p>$$
+P(A = \text{RIT Bus} | B = \text{RIT Swagged}) = \frac{0.5 \cdot \frac{1}{30}}{0.036} = 0.4630
+$$</p>
+<p>After seing the <em>first</em> person, there is a 46% chance that this is the RIT bus.</p>
+<p>To calculate the second person, we now have to use 46% as our prior probability ($P(A=\text{RIT Bus})$).</p>
+<h3>Frequentist</h3>
+<p>A frequentist looks at the data, and finds the probability of this outcome from a random sample under a &quot;null hypothesis&quot;.</p>
+<p>Null Hypothesis: This is a regular bus. The probability of the first person off having RIT gear is 2%. &quot;You are 98% confident that this is not a normal bus&quot; (that's technically incorrect). If you use a threshold of 95%, then we can safely reject the null hypothesis.</p>
+<p>The second person is not wearing gear: $P=(0.2)<em>(0.98)</em>(2)=0.392$</p>
+<h2>Three Card Monte problem</h2>
+<p>The game: There are 2 black cards and 1 red card. They are shuffled, and if you pick the red one, then you win.</p>
+<p>We're a frequentist, and we suspect that the game is rigged.</p>
+<p>Null Hypothesis: Everything is fine.</p>
+<p>The first loss: This is expected. We would see this 66% of the time. Cool.</p>
+<p>The second loss: $(2/3)^2 = 0.444$ , not unheard of</p>
+<p>We would see 7 losses 5.9% of the time. We would see 8 losses 3.9% of the time.</p>
+<p>The probability of this outcome (8 losses, 0 wins), given our null hypothesis, is exceedingly rare (3.9%). Therefore, we can reject the null hypothesis. The game is rigged!</p>
+<h3>Bayesian</h3>
+<p>we'll enter with 40% confidence that the game is rigged.</p>
+<p>$$
+A = {\text{Rigged}, \text{Chill}} \
+B = {\text{Loss}, \text{Win}} \
+P(A=\text{Rigged}|B=\text{Loss}) = \frac{P(B=\text{Loss}|A=\text{Rigged})\cdot P(A=\text{Rigged})}{P(B=\text{Loss})}
+$$</p>
+<p>But what is the probability that we lose?</p>
+<p>$$
+P(B=\text{Loss}) = P(B=\text{Loss}|A=\text{Rigged})\cdot P(A=\text{Rigged}) + P(B=\text{Loss}|A=\text{Chill})\cdot P(A=\text{Chill}) = 1 * 0.4 + 0.33 * 0.6 = 0.598
+$$</p>
+<p>If $P(A=\text{Rigged})=0.4$, then $P(B=\text{Loss})=0.598$ for the first iteration.</p>
+<p>$$
+P(A=\text{Rigged}|B=\text{Loss}) = (1*0.4)/0.598 = 0.6689
+$$</p>
+<p>Recap:</p>
+<ul>
+<li>We assumed there was a 40% chance the game was rigged</li>
+<li>We played the game, and lost</li>
+<li>We think there's a 67% chance the game is rigged</li>
+</ul>
+<p>We now need to repeat to get an answer.</p>
+<blockquote>
+<p>I want to write a program for this. I should also learn R, huh?</p>
+</blockquote>
+<blockquote>
+<p>Time to try uploading to github and debugging my mathjax lmao</p>
+</blockquote>
+<hr>
+<p><a href="../../../">Index</a> &gt; <a href="./">Course</a> &gt; Mon Mar 15 2021 20:00:00 GMT-0400 (Eastern Daylight Time):</p>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

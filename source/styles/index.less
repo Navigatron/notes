@@ -1,0 +1,84 @@
+
+@vertical-tempo: 1.5rem;
+
+body {
+	margin: 0;
+
+	// Put my main column right down the center
+	display: flex;
+	justify-content: center;
+
+	// Default colors
+	background-color: #fffff8;
+	color: #222;
+
+	// Default Font
+	font: 14px/1.5 'Open Sans', sans-serif;
+}
+
+main {
+	// Take as much width as you can, up to a reasonable limit
+	flex-grow: 1;
+	max-width: 850px;
+
+	// Safety bumpers for small screens
+	margin: 1rem;
+
+	// Headroom is pretty
+	padding-top: 10%;
+	padding-bottom: 5%;
+}
+
+// Headers look official
+h1, h2, h3, h4 {
+	font-family: 'Arvo', serif;
+	color: #000;
+}
+
+// spacing
+p, ul, ol, table, pre, dl, blockquote{
+	margin: 0 0 @vertical-tempo;
+}
+
+// Code is swanky
+code, pre {
+	font-family: 'Fira Mono', monospace;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+	th {
+		color: #000;
+	}
+	th, td {
+		text-align: left;
+		padding: 5px 10px;
+		border-bottom: 1px solid #e5e5e5;
+	}
+}
+
+blockquote {
+	border-left: 2px solid #e5e5e5;
+	padding-left: @vertical-tempo;
+	padding-top: @vertical-tempo;
+	overflow: auto; // Nothing to do with overflow - just contain child margins.
+	background-color: #fafafa;
+}
+
+hr {
+	border: none;
+	height: 1px;
+	background-color: #888;
+	margin: 0.5rem 0;
+}
+
+// Footer
+footer {
+	margin-top: 4rem;
+	p {
+		font-size: 0.75rem;
+		color: #444;
+		text-align: center;
+	}
+}

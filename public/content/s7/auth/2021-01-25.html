@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- MathJax disabled on this page -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426758">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="../../../">Index</a> &gt; <a href="./">Authentication</a> &gt; 2021-01-25: Intro</p>
+<h1>Module Zero: &quot;Innit&quot;</h1>
+<blockquote>
+<p>&quot;The course is somewhat theoretical&quot;</p>
+</blockquote>
+<p>Course Outline:</p>
+<ul>
+<li>Security Models and Trust</li>
+<li>Quantum and Post-Quantum Cryptography</li>
+<li>Access control models
+<ul>
+<li>DAC and AD</li>
+<li>MAC and SELinux</li>
+</ul>
+</li>
+<li>Single-factor and multi-factor auth methods</li>
+</ul>
+<p>Why study this?</p>
+<ul>
+<li>Learn how to implement and attack auth mechanisms</li>
+<li>CISSP is auth-heavy</li>
+</ul>
+<p>Course background:</p>
+<ul>
+<li>Networking</li>
+<li>System administration</li>
+<li>Basic programming</li>
+<li>Cryptography</li>
+<li>Linear Algebra
+<ul>
+<li>Prof. recommends https://www.khanacademy.org/math/linear-algebra</li>
+</ul>
+</li>
+</ul>
+<p><strong>Course Structure</strong> - one module roughly corresponds to two weeks. Prof. won't lecture on wednesdays, those will be for group time. To make up for the lost lecture time, there are videos (none over 30 minutes long).</p>
+<blockquote>
+<p>Prof. has had the course approved as a writing intensive class.</p>
+</blockquote>
+<p>70% of the final grade is from group work. The peer-evaluation creates a &quot;multiplier&quot; that the prof. uses to scale that 70%.</p>
+<blockquote>
+<p>&quot;Communicate Early and Often&quot;</p>
+</blockquote>
+<p>Late assignments are not accepted.</p>
+<h2>IAAA</h2>
+<ul>
+<li>Identification
+<ul>
+<li>claiming an identity</li>
+</ul>
+</li>
+<li>Authentication
+<ul>
+<li>Measuring a feature of the supplicant</li>
+<li>seeing if it matches a model of the identity</li>
+</ul>
+</li>
+<li>Authorization
+<ul>
+<li>The level of access granted to a specific identity</li>
+</ul>
+</li>
+<li>Accountability
+<ul>
+<li>Recording all interactions between the supplication, the authenticator, and the resource</li>
+</ul>
+</li>
+</ul>
+<h2>Access Control</h2>
+<ul>
+<li>DAC: Discretionary
+<ul>
+<li>The resource owner sets the permissions</li>
+</ul>
+</li>
+<li>MAC: Mandatory
+<ul>
+<li>The policy document sets the permissions</li>
+</ul>
+</li>
+<li>RBAC: <em>Role</em> based
+<ul>
+<li>IT, but not sales</li>
+</ul>
+</li>
+<li>RBAC: <em>Rule</em> based
+<ul>
+<li>Users with these attributes</li>
+</ul>
+</li>
+</ul>
+<h2>Controls</h2>
+<h3>Control Types</h3>
+<ul>
+<li>technical</li>
+<li>administrative</li>
+<li>physical</li>
+</ul>
+<h3>Control &quot;Functions&quot;</h3>
+<ul>
+<li>Deterrent
+<ul>
+<li>Discourages the attempted violation of policies</li>
+<li>Guard dogs are scary</li>
+</ul>
+</li>
+<li>Directive
+<ul>
+<li>Directs, confines, or controls the actions of the supplicant</li>
+<li>Security guards make sure things go to plan</li>
+</ul>
+</li>
+<li>Preventive
+<ul>
+<li>Prevents the violation of policies</li>
+<li>Guard dogs pushing back the intruder</li>
+</ul>
+</li>
+<li>Detective
+<ul>
+<li>Detect a violation</li>
+<li>Motion sensor</li>
+</ul>
+</li>
+<li>Corrective
+<ul>
+<li>Restores things to normal after a violation</li>
+<li>short-term</li>
+</ul>
+</li>
+<li>Compensating
+<ul>
+<li>what you settle for when you can't have a guard dog</li>
+</ul>
+</li>
+<li>Recovery
+<ul>
+<li>Repairing and restoring after a violation</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>I need to look more into compensating controls</p>
+</blockquote>
+<p><em>Corrective</em> is like business continuity - keep going under non-ideal circumstances. <em>Recovery</em> is like disaster recovery - it gets things back to ideal conditions.</p>
+<hr>
+<p><a href="../../../">Index</a> &gt; <a href="./">Authentication</a> &gt; 2021-01-25: Intro</p>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

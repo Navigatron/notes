@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- MathJax disabled on this page -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426823">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="../">up</a></p>
+<h1>Housekeeping</h1>
+<ul>
+<li>Exp 3 due Wednesday 11:59PM</li>
+<li>Despite the career fair, there will be class on Wednesday.
+<ul>
+<li>It won't be too rough to skip though.</li>
+</ul>
+</li>
+</ul>
+<h1>Dot directives (Cont.)</h1>
+<p><code>.ascii</code></p>
+<p><code>.asciiz</code></p>
+<p>Both take a quoted string. They initialize one byte per char and initialize each
+byte to their char. The <code>.asciiz</code> adds another byte at the end and adds a <code>\0</code>.</p>
+<p>The C escape sequences are supported.</p>
+<table>
+<thead>
+<tr>
+<th>code</th>
+<th>meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\t</td>
+<td>tab</td>
+</tr>
+<tr>
+<td>\n</td>
+<td>newline</td>
+</tr>
+<tr>
+<td>|\</td>
+<td></td>
+</tr>
+<tr>
+<td>&quot;</td>
+<td>&quot;</td>
+</tr>
+<tr>
+<td>\0</td>
+<td>null</td>
+</tr>
+</tbody>
+</table>
+<h2>.space</h2>
+<p>Takes a single number, n, and sets aside n bytes of <em>uninitialized</em> memory. This lets you allocate large chunks of memory easily.</p>
+<h2>.globl</h2>
+<p>Yes, it's spelled that way on purpose. It takes one thing, a label.</p>
+<p>This involves assembling multiple files.</p>
+<p>There are two things:</p>
+<p><code>.globl extref</code> - a label you use but don't define. &quot;Here's a function label, it goes somewhere else.&quot;</p>
+<p><code>.globl extdef</code> - Labels you define for others to use.</p>
+<h1>Structures</h1>
+<p><em>A collection of heterogeneous data</em></p>
+<p>In C:</p>
+<pre><code class="language-C">struct foo{
+	int x;
+	int y;
+	int z;
+}bar;
+</code></pre>
+<p>Bar is an address, at which there are 3 contiguous ints.</p>
+<p>In MIPS:</p>
+<pre><code>	.data
+	.align 2
+bar:
+	.word	1		# X
+	.word	2		# Y
+	.word	3		# Z
+bar2:
+	.word	1, 2, 3		# X, Y, Z
+</code></pre>
+<p>acessing bar.2:</p>
+<pre><code>	LA	$t0, bar
+	LW	$t1, 0($t0)	# t1 has bar[0]
+	LW	$t2, 4($t0)	# t2 has bar[1]
+	LW	$t3, 8($t0)	# t3 has bar[2]
+</code></pre>
+<p>Oh no, Y is now one byte. The struct could be 9, 12, or 24 bytes in size. In assembly, because things cannot be misaligned, we pad Y to be 2 bytes long?</p>
+<pre><code>bar:
+	.word 	1	# X
+	.ascii	&quot;a&quot;	# Y
+	.align	2	# pad for alignment
+	.word	3	# Z
+</code></pre>
+<p>Okay, okay... but now how do we read Z if we don't know the size of Y?</p>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

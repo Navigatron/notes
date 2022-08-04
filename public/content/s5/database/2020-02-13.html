@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- MathJax disabled on this page -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426754">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="./">up</a></p>
+<h1>2020-02-13</h1>
+<ul>
+<li>Feb 25th and 27th will be midterm written and practical
+<ul>
+<li>Can be normalization</li>
+<li>Interpreting ER diagrams and / or relations</li>
+</ul>
+</li>
+</ul>
+<p>Class must pick one:</p>
+<ul>
+<li>An 8.5x11 cheat-sheet during the midterm</li>
+<li>Forgiveness on difficult questions</li>
+</ul>
+<p>voting will take place next class.</p>
+<h2>Practice</h2>
+<blockquote>
+<p>I will bold the keys instead of underlining them</p>
+</blockquote>
+<p>Normalize this relation:</p>
+<p>A(<strong>1,2,3</strong>,4,5,6,7,8,9)</p>
+<p>With these dependencies:</p>
+<ul>
+<li>1,2,3 → 4,5,6,7,8,9</li>
+<li>1 → 4</li>
+<li>4 → 1</li>
+<li>2 → 6,7,8,9</li>
+<li>6,7 → 8,9</li>
+</ul>
+<h3>My Solution</h3>
+<h4>Identify problem dependencies</h4>
+<p>partial dependencies:</p>
+<ul>
+<li>4 only depends on 1</li>
+<li>6,7,8,9 only depend on 2</li>
+</ul>
+<h4>Shuffle Shuffle</h4>
+<p>Alright so now we have:</p>
+<ul>
+<li>A(<strong>1,2,3</strong>,5)</li>
+<li>B(<strong>1</strong>,4)</li>
+<li>C(<strong>2</strong>,6,7,8,9)</li>
+</ul>
+<h3>Solution</h3>
+<p>Prof has identified the same problem dependencies:</p>
+<ul>
+<li>1 → 4</li>
+<li>2 → 6,7,8,9</li>
+</ul>
+<p><em>When moving dependencies to a new relation, the keys of the new relation become foreign keys in the original relation.</em></p>
+<blockquote>
+<p>italics is used for something but I'ma use it here for foreign keys. Looking back, that's hard to see. 2 is a foreign key below.</p>
+</blockquote>
+<p>A(<strong>1</strong>, <em><strong>2</strong></em>, <strong>3</strong>, 4, 5)</p>
+<p>B(<strong>2</strong>, 6, 7, 8, 9)</p>
+<p><em>There must be a reference statement for referential integrity</em></p>
+<p>This is a reference statement:</p>
+<pre><code>A(2) mei B(2)
+</code></pre>
+<blockquote>
+<p>'mei' means 'must exist in'</p>
+</blockquote>
+<p>A is still not in second normal form, because of the relationship between 1 and 4.</p>
+<p>In the new relation, C, we use 1 as the PK because it's already a key in A.</p>
+<blockquote>
+<p>Note because italics are hard: 1 and 2 are foreign keys.</p>
+</blockquote>
+<ul>
+<li>A(<em><strong>1</strong></em>, <em><strong>2</strong></em>, <strong>3</strong>, 5)</li>
+<li>B(<strong>2</strong>, 6, 7, 8, 9)</li>
+<li>C(<strong>1</strong>, 4)</li>
+<li>A(2) mei B(2)</li>
+<li>A(1) mei C(1)</li>
+</ul>
+<blockquote>
+<p>I'm going to try and do the relation with html</p>
+</blockquote>
+<p>A(&lt;span style='text-decoration:underline'&gt;&lt;span style='border-bottom:1px dashed'&gt;1,2&lt;/span&gt;,3&lt;/span&gt;,5)</p>
+<blockquote>
+<p>That actually turned out really well</p>
+</blockquote>
+<p>Alright - turns out we aren't done. Because 2 determines 6,7, and 6,7 determined 8,9, there is a <em>transitive dependency</em> in relation B.</p>
+<p>We fix this by making a new dependency.</p>
+<p>Here are the results, in glorious HTML markup:</p>
+<p>A(&lt;span style='text-decoration:underline'&gt;&lt;span style='border-bottom:1px dashed'&gt;1,2&lt;/span&gt;,3&lt;/span&gt;,5)</p>
+<p>B(&lt;span style='border-bottom:1px dashed'&gt;&lt;span style='text-decoration:underline'&gt;2&lt;/span&gt;,6,7&lt;/span&gt;)</p>
+<p>C(&lt;span style='text-decoration:underline'&gt;1&lt;/span&gt;,4)</p>
+<p>D(&lt;span style='text-decoration:underline'&gt;6,7&lt;/span&gt;,8,9)</p>
+<h2>Slides</h2>
+<p>Kinds of anomalies:</p>
+<ul>
+<li>Redundancy
+<ul>
+<li>Stuff stored too many times</li>
+</ul>
+</li>
+<li>update
+<ul>
+<li>failure to update in all places</li>
+</ul>
+</li>
+<li>delete
+<ul>
+<li>deleting too much</li>
+</ul>
+</li>
+<li>insert
+<ul>
+<li>adding data about many themes</li>
+</ul>
+</li>
+</ul>
+<p>Second normal form requirements:</p>
+<ul>
+<li>First normal form</li>
+<li>All attributes are dependent on the entire primary key</li>
+</ul>
+<h2>BCNF</h2>
+<p>&quot;A relation is in BCNF if all <em>determinants</em> are a <em>candidate key</em>&quot;.</p>
+<p>A good data model will require less normalization.</p>
+<h2>Notes from another example</h2>
+<ul>
+<li>First Normal Form
+<ul>
+<li>idk how to describe this</li>
+</ul>
+</li>
+<li>Second Normal Form
+<ul>
+<li>No <em>partial</em> dependencies</li>
+</ul>
+</li>
+<li>Third Normal Form
+<ul>
+<li>No <em>transitive</em> dependencies</li>
+</ul>
+</li>
+<li>Boyce-Codd Normal Form
+<ul>
+<li>All dependents are candidate or primary keys</li>
+</ul>
+</li>
+</ul>
+<p>Relation names must be in all capitals. Points will be lost because of this.</p>
+<ul>
+<li>underline
+<ul>
+<li>primary key</li>
+</ul>
+</li>
+<li>dashed underline
+<ul>
+<li>foreign key</li>
+</ul>
+</li>
+</ul>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

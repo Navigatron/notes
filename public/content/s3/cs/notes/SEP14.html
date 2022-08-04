@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- MathJax disabled on this page -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426826">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="../">up</a></p>
+<h1>housekeeping</h1>
+<p>Experiment 1 is up. It's written to be very simple, no worries.</p>
+<p>The goal is to learn the debugger.</p>
+<h1>Print debugging is rough</h1>
+<p>it takes 3 lines of code, and 2 registers (which change), to print something.</p>
+<p>Printing a newline takes another 3 lines of code.</p>
+<p><em>Use the Debugger.</em></p>
+<h1>displacement mode</h1>
+<p>The Effective Address is equal to a register value plus a constant.</p>
+<p>This was designed to allow access to a struct.</p>
+<pre><code>lw rt,imm(rs) # rt = mem(rs+imm)
+</code></pre>
+<p><em>Add imm and the value of rs. Get the memory from there. Store it in rt.</em></p>
+<pre><code>sw rt,imm(rs) # mem(rs+imm) = rt
+</code></pre>
+<p>The above is the only command where the destination is second.</p>
+<h1>Sign extension</h1>
+<p>When we load a half-word or a byte into a 32bit register, we don't change the magnitude or sign.</p>
+<p>AKA positives are padded with zeroes and negatives are padded with... ones?</p>
+<p>To keep unsigned things from turning negative, we use <code>lhu</code> and <code>lbu</code>, which only zero extend.</p>
+<p>There are no unsigned variants of store, because there is no need.</p>
+<h1>Swap function for Bubble-Sort</h1>
+<h2>in C</h2>
+<pre><code class="language-C">// Swap a[k] with a[k+1]
+void swap(int a[], int k){
+    int t = a[k];
+    a[k] = a[k+1];
+    a[k+1] = t
+}
+</code></pre>
+<h2>in MIPS</h2>
+<pre><code>swap:
+        # a0 = address of a
+        # a1 = value of k
+        # Elements of a are integers, 4 bytes.
+        # Find address of a[k]
+        MUL     $t0,$a1,4       # k*4 to get offset
+        ADD     $t1,$a0,$t0     # offset + base = address
+        LW      $t2,0($t1)      # t2 = a[k]
+        LW      $t3,4($t1)      # t3 = a[k+1]
+        SW      $t3,0($t1)      # a[k+1] = a[k]
+        SW      $t2,4($t1)      # ?
+</code></pre>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

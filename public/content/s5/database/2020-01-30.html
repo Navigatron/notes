@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- MathJax disabled on this page -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426753">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="./">up</a></p>
+<h1>2020-01-30</h1>
+<blockquote>
+<p>homework 1 review</p>
+</blockquote>
+<p>Single quotes are required for string literals and dates, as double quotes do not work in some DBMS systems.</p>
+<p>What we have so far:</p>
+<ul>
+<li>DDL - data definition language</li>
+<li>DML - data manipulation language</li>
+</ul>
+<p>Commands:</p>
+<ul>
+<li><code>USE &lt;name&gt;</code></li>
+<li><code>SHOW &lt;name&gt;</code></li>
+<li><code>DESCRIBE &lt;name&gt;</code></li>
+<li><code>CREATE [DATABASE|TABLE] &lt;name&gt;</code></li>
+<li><code>DROP [DATABASE|TABLE] &lt;name&gt;</code></li>
+</ul>
+<pre><code>CREATE DATABASE conman;
+SHOW DATABASES; -- ensure all goes well
+USE conman; -- use the db we just created
+SHOW TABLES; -- throws an error if not using a db
+</code></pre>
+<p>Datatypes:</p>
+<ul>
+<li><code>CHAR (size)</code>
+<ul>
+<li>fixed-length string</li>
+</ul>
+</li>
+<li><code>VARCHAR (size)</code>
+<ul>
+<li>variable length string</li>
+</ul>
+</li>
+<li><code>INT</code> or <code>INTEGER</code></li>
+<li><code>DATE</code></li>
+</ul>
+<p>Rules that limit the values of an attribute, aka Constraints:</p>
+<ul>
+<li>in creating a table: <code>CONSTRAINT constraint_name CONSTRAINT TYPE (arguments)</code></li>
+<li><code>PRIMARY KEY</code>
+<ul>
+<li>every value must be unique</li>
+<li>not null</li>
+</ul>
+</li>
+</ul>
+<p>Creating a table:</p>
+<pre><code>CREATE TABLE tablename(
+	attr1 datatype,
+	attr2 datatype,
+	CONSTRAINT tablename_pk PRIMARY KEY (primary key attributes)
+);
+</code></pre>
+<p>Look at the table's metadata with SHOW or DESCRIBE.</p>
+<p>Looks like <code>DESCRIBE</code> is just a shortcut for <code>SHOW COLUMNS</code> that only exists for oracle compatability.</p>
+<h2>Scripts</h2>
+<p><code>myScript.sql</code> contains a semi-colon (<code>;</code>) delimited list of SQL commands.</p>
+<p>load in a script with <code>SOURCE &lt;filepath&gt;</code>, or the shortcut <code>\.</code></p>
+<h2>in-class example</h2>
+<ul>
+<li><code>conman</code> database</li>
+<li><code>contact_info</code> table</li>
+</ul>
+<p>Now - inserting data into the db</p>
+<pre><code>INSERT INTO tablename (attr1, attr2) VALUES (attr1val, attr2val);
+</code></pre>
+<p>If a value is being added for every attribute, then the attr names do not need to be specified. However, the order must still be maintained.</p>
+<h2>Getting info out</h2>
+<p><code>SELECT *| attr1, attr2 FROM tablename;</code></p>
+<p>use an alias for an attribute:</p>
+<p><code>SELECT attr1 AS 'alias' FROM tablename;</code></p>
+<h2>Conditional Selection - WHERE</h2>
+<p><code>SELECT * FROM tablename WHERE attr1='clean warm socks';</code></p>
+<p>finding null things: <code>WHERE attr1 IS NULL;</code></p>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

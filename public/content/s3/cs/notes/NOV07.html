@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- MathJax disabled on this page -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426821">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="../">up</a></p>
+<h1>Housekeeping</h1>
+<ul>
+<li>Test 1 week from today, in the same room we're used to.</li>
+</ul>
+<h1>More Latches and such</h1>
+<h2>D-Latch</h2>
+<p>The (1, 1) input causes problems for the SR latch.</p>
+<p>What if we have input D, and send D to S and !D to R?</p>
+<table>
+<thead>
+<tr>
+<th>D</th>
+<th>Q</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>This seems useless, but with clock cycles, it can remember one bit for one clock cycle.</p>
+<p>If we take Q and pipe it back into D, we can remember a bit for as long as we want.</p>
+<p><code>D</code> can also mean delay, but we won't use it for that - for us, D is Data.</p>
+<pre><code> +---------+
+ | D-Latch |
+-+D       Q|-
+ |       !Q|-
+ +---/\----+
+</code></pre>
+<p>Add a C input to the above to make it a D flip-flop.</p>
+<h2>T-latch - (T is for Toggle)</h2>
+<table>
+<thead>
+<tr>
+<th>T</th>
+<th>Q(t+1)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>Q(t)</td>
+</tr>
+<tr>
+<td>1</td>
+<td>!Q(t)</td>
+</tr>
+</tbody>
+</table>
+<p>Every time it gets a one, it flips.</p>
+<h2>JK Flip Flop</h2>
+<p>J | K | Q(t+1)
+---|---
+0 | 0 | Q(t)
+0 | 1 | 0
+1 | 0 | 1
+1 | 1 | !Q(t)</p>
+<p>This is the master of all flip-flops. It can emulate any other flip-flop.</p>
+<p>This is, however, complicated - so it's rarely used in real circuitry.</p>
+<h2>what even is a register</h2>
+<p>N data wires in, N data wires out.</p>
+<pre><code>      +n
+  +---+------------+
+  | n-bit register |
+ -+Load            |
+  &gt;                |
+  +---+------------+
+      +n
+</code></pre>
+<h3>The yell and ignore model</h3>
+<p>All components will be shouting their output at all times. Results will be calculated and piped to inputs - where they're either listened to or piped to nowhere.</p>
+<p>The load input sets the register value if it's one - otherwise, input is ignored.</p>
+<h2>Here's a 1 bit register to store bit i</h2>
+<ul>
+<li>2x1 mux, component A
+<ul>
+<li>load to select</li>
+<li>in to data 1</li>
+<li>Q to data 0</li>
+<li>Output to D</li>
+</ul>
+</li>
+<li>D flipflop
+<ul>
+<li>D from output of 2x1 mux</li>
+<li>output Q to out, and data 0 of mux</li>
+<li>!Q to nowhere</li>
+</ul>
+</li>
+</ul>
+<h3>You can turn this into a T flip flop.</h3>
+<p>replace data 1 of the mux with !Q from the D flippyflop</p>
+<h3>You can turn this into a shift-register</h3>
+<p>take data 1 from Q of another register, and send Q to another register as well.</p>
+<h2>Spaghetti for days</h2>
+<p>In mips, we have 32x 32bit registers.</p>
+<p>This is an absurd amount of wires.</p>
+<p>so we don't - we can't. Instead, we use:</p>
+<h2>The Fleet of Buses</h2>
+<p>A bus is a &quot;Common communication medium&quot;</p>
+<p>Some kind of control decides who may board the bus.</p>
+<p>All registers read from the bus and write to the bus. Control decides who reads and who writes.</p>
+<h2>Register File</h2>
+<p>The package of the registers - limits ins and outs to what's needed by ISA.</p>
+<p>In MIPS, two buses come out and one bus goes in.</p>
+<p>Next time, we'll build a register file and start the ALU.</p>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

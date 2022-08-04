@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- <script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+			tex2jax: {
+				inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+				processEscapes: true
+			}
+		});
+	</script> -->
+	<script>
+		MathJax = {
+			tex: {
+				inlineMath: [['$', '$'], ['\\(', '\\)']]
+			}
+		};
+	</script>
+	<!-- <script
+		type="text/javascript"
+		charset="utf-8"
+		src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+		>
+	</script> -->
+	<script
+		type="text/javascript"
+		id="MathJax-script"
+		async
+		src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+		>
+	</script>
+	<!-- <script
+		type="text/javascript"
+		charset="utf-8"
+		src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
+		>
+	</script> -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426809">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="../../../">Home</a> &gt; <a href="./">Crypto</a> &gt; Chapter 7 - RSA</p>
+<h1>Chapter 7 - RSA</h1>
+<p>RSA relies on multiplying two large primes. It's easy to do, but very hard to reverse.</p>
+<h2>7.2 - Encryption / Decryption</h2>
+<p>Done in ring $\Bbb Z_n$ - so $x$ (as a bitstring) has to be smaller than n.</p>
+<p>Given:</p>
+<ul>
+<li>Plaintext $x$</li>
+<li>Public key $k_{pub}=(n,e)$</li>
+</ul>
+<p>Encryption is:</p>
+<p>$$
+y = e_{k_{pub}}(x) \equiv x^e \bmod n
+$$</p>
+<p>Where $x, y \in \Bbb Z_n$</p>
+<p>Given:</p>
+<ul>
+<li>Ciphertext $y$</li>
+<li>Private key $k_{pr} = d$</li>
+</ul>
+<p>Decryption is:</p>
+<p>$$
+x = d_{k_{pr}}(y) \equiv y^d \bmod n
+$$</p>
+<blockquote>
+<p>How does the decrypter get n? Ah, that's part of their public key?</p>
+</blockquote>
+<p>Where $x, y \in \Bbb Z_n$</p>
+<p>So, plain to the $e$ is cipher, which then to the $d$ is plain again. In the ring ofc.</p>
+<h2>7.3 - Key Generation</h2>
+<ol>
+<li>Choose two large primes $p$ and $q$</li>
+<li>$n=p \cdot q$</li>
+<li>Compute $\phi (n) = (p-1)(q-1)$</li>
+<li>Select public exponent $e \in {1,2,...,\phi(n)-1}$, such that:<br>
+$$
+gcd(e, \phi(n))=1
+$$
+(so that we know $d$ will exist)</li>
+<li>Compute $d$ such that<br>
+$$
+d \cdot e \equiv 1 \bmod \phi(n)
+$$</li>
+</ol>
+<p>You can use the EEA to find the inverse of $e$ - call that $t$.</p>
+<p>You can use $t$ to find $d$ using:</p>
+<p>$$
+d = t \bmod \phi(n)
+$$</p>
+<h2>7.4 - Fast Exponentiation</h2>
+<p>$x^8 = x * x * x * x * x * x * x * x$</p>
+<p>That's a lot, and if we had a number that's 1024 bits long, this would take absolutely forever. However, $x^8 = ((x^2)^2)^2$, which is only 3 operations.</p>
+<p>Through combinations of squaring and multiplying, we can get big fast.</p>
+<p>Start with y=1, and scan the bits of the exponent from most to least significant.</p>
+<ul>
+<li>if the bit is 0, $y = y^2$</li>
+<li>if the bit is 1, $y=y^2*y$</li>
+</ul>
+<p>Basically, squaring left-shifts the exponent (in binary), and multiplying switches the rightmost bit from zero to 1.</p>
+<blockquote>
+<p>BigInt.toString(2) will print your bigint as binary.</p>
+</blockquote>
+<h2>7.5 - Going <em>FASTER</em></h2>
+<p>tl;dr: doing big math is hard</p>
+<h3>7.5.1 - fast encryption with short public exponents</h3>
+<p>make e small, like 3, 17, and 2^16+1. These are easy to do fast exponentiation with.</p>
+<h3>7.5.2 - Fast decryption with CRT</h3>
+<p><a href="./crt.html">The Chinese Remainder Theorem</a></p>
+<p>While $e$ can be small, $d$ cannot - otherwise attackers can brute-force it pretty easily. $d$ should be at least $0.3t$, where $t$ is the bit length of $n$.</p>
+<p>Goal: $x^d \bmod n$</p>
+<p>But, $x^d$ is gonna be absolutely absurdly big, and $n$ is also huge.</p>
+<p>So, use <a href="./crt.html">CRT</a> to get $x_d$ and $x_p$, and do $y_p = {x_p}^d_p \bmod p$, and the $q$ version, and then bring it back to the real world.</p>
+<h2>7.6 - Finding big primes</h2>
+<p>$p$ and $q$ should have about half the bitlength of the desired bitlength of $n$. So if $n$ should have a bitlength of 1024, $p$ and $q$ should be about 512.</p>
+<p>Generate random big numbers, and see if they're prime tho.</p>
+<h3>7.6.1 - Are there big primes?</h3>
+<p>yes.</p>
+<h3>7.6.2 - Tests</h3>
+<p><strong>Fermat</strong></p>
+<p>Basically, $a^{p-1} \equiv 1 \bmod p$ if p is prime. $a$ can be anything from 2 to $p-2$. We generally test a bunch of a's, and if they all pass, it's probably fine.</p>
+<p><strong>Charmichael Numbers</strong></p>
+<p>These are composite ints that behave like primes - they'll pass the Fermat test if $gcd(a,p)=1$. That's a lot of a's. They're sneaky.</p>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

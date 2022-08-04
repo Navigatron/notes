@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- MathJax disabled on this page -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426847">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="../">up</a></p>
+<h1>Database, Jan 23rd</h1>
+<h2>Housekeeping</h2>
+<ul>
+<li>HW2 due start of class Friday</li>
+</ul>
+<h2>Tee file</h2>
+<ul>
+<li>make sure verbose is on</li>
+<li>after doing the HW, edit the tee file
+<ul>
+<li>insert comments identifying HW questions</li>
+<li>Delete errors</li>
+</ul>
+</li>
+<li>Header comments
+<ul>
+<li>Lastname, firstname</li>
+<li>ISTE 230.05 9:00AM MWF</li>
+<li>Professor Jim Habbermas</li>
+<li>HW X Tee File</li>
+</ul>
+</li>
+</ul>
+<h2>LIKE</h2>
+<p>use like to search for similar strings. Like requires an exact match, trailing whitespace included.
+For example, <code>'a'='a '</code> (note the trailing space) is true, while <code>'a' LIKE 'a '</code> is false.</p>
+<p>If like requires an exact match, how does it search for similar strings?</p>
+<p>Use wildcards:</p>
+<ul>
+<li><code>_</code> matches a single unkown character</li>
+<li><code>%</code> matches any number of unknown characters</li>
+</ul>
+<p><code>WHERE X LIKE 'D%v%'</code> will match both 'David' and 'Do not vacation here'</p>
+<h2>E-R Diagrams</h2>
+<ul>
+<li>rectangles denote the object being represented, this is the &quot;data type&quot;, or the table name. e.g, Employees</li>
+<li>Ovals represent attributes of the item being described. e.g, ID number</li>
+<li>Ovals can further represent attributes of attributes. e.g, <em>firstname</em> is a part of <em>name</em></li>
+<li>Underline the words in the oval that represents the primary key</li>
+</ul>
+<h2>UML Diagram</h2>
+<ul>
+<li>Big Square contains all attributes</li>
+<li>Big Square header is name of table</li>
+<li>Lines connect FKs to PKs.
+<ul>
+<li>TV antenna looking thing indicates one</li>
+<li>Fan looking thing indicates many</li>
+<li>e.g, multiple TV shows are on the same channel</li>
+</ul>
+</li>
+</ul>
+<h1>End</h1>
+<blockquote>
+<p>composite primary keys are spooky</p>
+</blockquote>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

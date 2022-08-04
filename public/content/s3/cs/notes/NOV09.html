@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- MathJax disabled on this page -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426821">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="../">up</a></p>
+<h1>Housekeeping</h1>
+<ul>
+<li>It's the last day to withdraw</li>
+<li>Lab 6 is due tonight</li>
+<li>Exam 3, Nov 14th, next Wednesday, GOL3435
+<ul>
+<li>Review sesh, monday nov12, gol2590, 11am</li>
+<li>Linkers through ALU, code is on the table</li>
+</ul>
+</li>
+</ul>
+<h1>A side-track - the ALU - Arithmetic and Logic unit</h1>
+<p>In preparation for the next lab, we're putting off register files - right now, we're talking about the ALU.</p>
+<p>The ALU is a combinational circuit - so we can represent it as boolean expressions, and/or a truth table.</p>
+<p>This truth table has 2^64 rows. It's impossible to build.</p>
+<p>Rules to make it possible to build:</p>
+<ul>
+<li>No solving 64bit problems
+<ul>
+<li>Instead, it can be broken into 32 2-bit problems.</li>
+<li>This makes it solvable - but it's still messy</li>
+</ul>
+</li>
+<li>Build functions as separate circuits, and use a mux to choose output</li>
+</ul>
+<p>To find Result(bit i), take A(i) and B(i)</p>
+<p>Doing bitwise operations is trivial. A(AND)B -&gt; mux, done. Let's do addition.</p>
+<p>A | B | C(in) | C(out) | R
+---|---
+0|0|0|0|0
+0|0|1|0|1
+0|1|0|0|1
+0|1|1|1|0
+1|0|0|0|1
+1|0|1|1|0
+1|1|0|1|0
+1|1|1|1|1</p>
+<p>This truth table matches 3-input xor exactly.</p>
+<p>R = A XOR B XOR Cin
+Cout = AB+AC+BC</p>
+<p>This is a circuit called a full-adder.</p>
+<pre><code>       |
+  +----+--------+
+  |    C-in     |
+  |  Full-Adder |
+--+A            |
+  |            R+--
+--+B            |
+  |    C-out    |
+  +----+--------+
+       |
+</code></pre>
+<p>Putting all these in a row creates a 64xPropogation delay system. It turns out, this is okay. In this class, this is how it will be done.</p>
+<p>In the real world, carry lookaside buffers are very cool and work much better.</p>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

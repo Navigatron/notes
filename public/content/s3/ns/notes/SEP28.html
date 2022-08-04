@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- MathJax disabled on this page -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426838">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="../">up</a></p>
+<h1>RARP / BOOTP / DHCP</h1>
+<p>Arp connects layer two to layer three - finding MAC address of IP address.</p>
+<p>RARP = reverse arp. send mac, recieve ip</p>
+<p>boostrap proto, aka bootp.
+built to move more than just ip - dns, gateway, etc.
+server tables built manually</p>
+<p>dhcp was built on bootp</p>
+<p>Bootp server replies to client request with stuff, one of which things is called the &quot;Magic Cookie&quot;</p>
+<p>In DHCP, there's another message type: DHCP Message, code 53.</p>
+<p>BOOTP relays! relays relay from the current subnet to the subnet with the bootp server.
+This allows one server to serve multiple subnets.</p>
+<p>Windows caches protocol stack info.</p>
+<h2>DHCP</h2>
+<p>remember DORA.</p>
+<p>there are 8 dhcp messages. 4 are used in the handshake.</p>
+<ul>
+<li>(D)iscover
+<ul>
+<li>client -&gt; server</li>
+<li>opcode 1</li>
+<li>discover dhcp servers</li>
+</ul>
+</li>
+<li>(O)ffer
+<ul>
+<li>server -&gt; client</li>
+<li>opcode 2</li>
+<li>&quot;I'll serve you&quot;</li>
+</ul>
+</li>
+<li>(R)equest
+<ul>
+<li>client -&gt; server</li>
+<li>opcode 1</li>
+<li>&quot;Please Serve me&quot;</li>
+</ul>
+</li>
+<li>(A)cknowledge
+<ul>
+<li>server -&gt; client</li>
+<li>opcode 2</li>
+<li>Actually served the client info</li>
+</ul>
+</li>
+</ul>
+<p>Magic cookie to start options, option code 53 tells that it's DHCP, code tells which DHCP message it is.</p>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

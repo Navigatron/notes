@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- MathJax disabled on this page -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426760">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="../../../">Index</a> &gt; <a href="./">Authentication</a> &gt; Sun Feb 07 2021 19:00:00 GMT-0500 (Eastern Standard Time):</p>
+<h1>Sun Feb 07 2021 19:00:00 GMT-0500 (Eastern Standard Time):</h1>
+<blockquote>
+<p>Surprise! Things were due. MyCourses didn't tell you because Prof. didn't put them in.</p>
+<p>Module One discussion post was due last Friday. Replies are due this Friday.</p>
+<p>Thanks, Prof.</p>
+</blockquote>
+<p>The key concept here is <em>Evaluation Assurance Levels</em> (EAL). There are 7 levels:</p>
+<ol>
+<li>Functional Testing</li>
+<li>Structural Testing</li>
+<li>Methodically Tested</li>
+<li>Methodically Designed and Tested</li>
+<li>Semi-formally Designed and Tested</li>
+<li>Semi-formally Verified Design, Tested</li>
+<li>Formally Verified Design, Tested</li>
+</ol>
+<p>Most commercial operating systems are around EAL4.</p>
+<h2>Security Modeling</h2>
+<p>A model is a &quot;symbolic representation of a policy&quot;. Formal models are <em>provable</em>, while informal models are more like guidelines.</p>
+<blockquote>
+<p>&quot;Symbolic representation of a policy&quot; - what does that mean? I think I know what a policy is, but Prof. might think of it in another way.</p>
+</blockquote>
+<p>We can model all kinds of things, not just security things. We see what states things can be in, and what makes them flow between the states. We draw this on paper as a <em>Finite State Machine</em>.</p>
+<pre><code class="language-dot">digraph g {
+	door_open [label=&quot;Door is Open&quot;];
+	door_close [label=&quot;Door is Closed&quot;];
+
+	door_open -&gt; door_close [label=&quot;Close the Door&quot;];
+	door_close -&gt; door_open [label=&quot;Open the Door&quot;];
+}
+</code></pre>
+<p>We can draw an <em>Information Flow Model</em> to show how data can move between components. If two components can communicate that shouldn't, then we know there's an issue.</p>
+<p>Security modeling helps us understand what we're trying to achieve, and prove that we've achieved it.</p>
+<h3>Bell-LaPadula</h3>
+<ul>
+<li>Focuses on Confidentiality</li>
+<li>O is an object</li>
+<li>S is a subject</li>
+<li>L(O) or L(S) returns the security level of the thing
+<ul>
+<li>This is different from the EAL</li>
+</ul>
+</li>
+</ul>
+<p>Two Rules:</p>
+<ul>
+<li>Simple Security Condition
+<ul>
+<li>S can read O if L(S)&gt;=L(O)</li>
+<li>S has to be at O's level or higher</li>
+<li>You can't read classified documents</li>
+</ul>
+</li>
+<li>*-Property (Star Property)
+<ul>
+<li>S can write O if L(S) &lt;= L(O)</li>
+<li>S has to be at O's level or <em>lower</em> to write it.</li>
+<li>Classified people can't write unclassified documents.</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>But... root can write anything? How does this relate to the real world?</p>
+</blockquote>
+<ul>
+<li>BLP is very simple</li>
+<li>BLP can be used to prove things about systems</li>
+<li>BLP inspired other models, which are more complex.</li>
+</ul>
+<h3>Biba's Model</h3>
+<ul>
+<li>Focuses on Integrity</li>
+<li>Is complementary to BLP</li>
+</ul>
+<p>If you trust $O_1$, but not $O_2$, and $O_3$ includes both, then you <em>cannot</em> trust $O_3$.</p>
+<ul>
+<li>Write access rule
+<ul>
+<li>S can write O if and only if I(O) &lt;= I(S)</li>
+</ul>
+</li>
+<li>Biba's Model
+<ul>
+<li>S can read O if and only if I(S) &lt;= I(O)</li>
+</ul>
+</li>
+</ul>
+<p>In english, the integrity of a new object is less than or equal to it's writer. The integrity of a reader is less than or equal to the objects that it reads.</p>
+<blockquote>
+<p>Why isn't Biba's model called the read access rule?</p>
+</blockquote>
+<h3>Clark-Wilson Model</h3>
+<p>Models system behavior as subjects performing transactions on objects. Subjects can't see the objects, but they can see the &quot;transactions&quot;, which do have access.</p>
+<p>There are two types of data items:</p>
+<ul>
+<li>Constrained Data Items
+<ul>
+<li>Have been verified by an &quot;IVP&quot;</li>
+</ul>
+</li>
+<li>Unconstrained Data Items</li>
+</ul>
+<p>9 rules of 2 types:</p>
+<ul>
+<li>Certification Rules</li>
+<li>Enforcement Rules</li>
+</ul>
+<blockquote>
+<p>I'm not typing all that.</p>
+</blockquote>
+<p><img src="./images/2021-02-08.png" alt=""></p>
+<h3>Graham-Denning Model</h3>
+<p>It has 8 rules.</p>
+<blockquote>
+<p>That's really all we get to know. Looks like I'm gonna watch a lot of youtube later to actually learn this.</p>
+</blockquote>
+<h3>Harrison-Ruzzo-Ullman Model</h3>
+<blockquote>
+<p>&quot;Some pieces of chocolate have almonds in them&quot; - Prof.</p>
+</blockquote>
+<ul>
+<li>It extends Graham-Denning</li>
+<li>That's it. That's all you get to know. Cool.</li>
+</ul>
+<h2>Multiple Levels of Security (MLS) and Multilateral Security</h2>
+<p>Governments use a level system:</p>
+<ul>
+<li>Objects receive classifications</li>
+<li>Subjects receive certifications to read objects of equal or lesser rank</li>
+</ul>
+<p><em>Reference Monitors</em> (remember reference monitors?) make sure that a subject's cert matches the object's class.</p>
+<p>There's also typically a <em>Need to Know</em> system, wherein objects are classified into compartments. Only subjects with the certification level <em>and</em> are in the same compartment can read those objects.</p>
+<p><em>Need to Know</em>, aka <em>Compartmentalization</em>, can live side-by-side with MLS.</p>
+<h2>Chinese Wall Policy</h2>
+<p>This one prevents conflicts of interest.</p>
+<p>If S reads any O from a compartment, then S can no longer read or write any O in a different compartment. Different compartments are &quot;walled off&quot; from each other.</p>
+<h2>Formal Modeling</h2>
+<ul>
+<li>Models based in mathematics</li>
+<li>Are provable</li>
+</ul>
+<p><img src="./images/2021-02-08.1.png" alt=""></p>
+<p>Top rule is BLP, bottom rule is STAR</p>
+<p><img src="./images/2021-02-08.2.png" alt=""></p>
+<p>For all subjects, objects, and levels (where level of S is greater than or equal to level of O), then the subject has read access to the object.</p>
+<h2>BLP Example</h2>
+<p>If Alice has a secret clearance, and there is a secret report, then alice can read the report, since her clearance is at or above the level of the report.</p>
+<blockquote>
+<p>Why wasn't this right after the slides on Biba's model?</p>
+</blockquote>
+<hr>
+<p><a href="../../../">Index</a> &gt; <a href="./">Authentication</a> &gt; Sun Feb 07 2021 19:00:00 GMT-0500 (Eastern Standard Time):</p>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

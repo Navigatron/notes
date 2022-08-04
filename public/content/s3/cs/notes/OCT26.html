@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- MathJax disabled on this page -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426824">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="../">up</a></p>
+<h1>Housekeeping</h1>
+<ul>
+<li>Project 1 exists</li>
+<li>Lab 6 not yet released</li>
+</ul>
+<h1>Circuits</h1>
+<p>Electricity moving through a wire is slowed down by resistance.</p>
+<p>Resistance is based mainly on heat, and wire diameter.</p>
+<p>Electricity travels about half the speed of light.</p>
+<p>Circuit time is based on wire time and propagation time.</p>
+<p>Wire time is just the time through the wires.</p>
+<p>Propagation time is the time it takes for output to be stable after inputs are
+introduced.</p>
+<p>The circuit has a propagation time, as do all components / gates.</p>
+<p>In this class, we're going to ignore wire length.</p>
+<h2>Levels of a circuit</h2>
+<p>The maximum number of gates the input has to travel through to make it to the
+output.</p>
+<p>Note - we ignore inverters.</p>
+<p>levels of a circuit is a very very rough estimation of how long a circuit will
+take.</p>
+<p>We won't do simplification - simplification involves decreasing the levels of a
+circuit so that it may run faster.</p>
+<h2>Standard Forms</h2>
+<p>Any function can be converted into one of two standard forms.</p>
+<h3>Sum Of Product (SOP) [we'll use this one mostly]</h3>
+<ul>
+<li>An expression that uses only product terms and ors them together</li>
+<li>At most two levels</li>
+<li><code>F= {\bar A} AND B OR {\bar A} AND B AND C</code></li>
+</ul>
+<h3>Product of Sum (POS)</h3>
+<ul>
+<li>pretty much the same thing as above, but flip the order.</li>
+<li>Expression of sum terms anded together</li>
+</ul>
+<h3>minterms and maxterms</h3>
+<p>A minterm is a product term with every variable in problem is either
+complemented or uncomplemented. <code>A AND B AND C; {\bar A} AND B AND C</code></p>
+<p>a maxterm is a sum term with all the vars in either complemented or
+uncomplemented form. <code>A OR {\bar B} OR C</code></p>
+<p>minterms and maxterms are a stepping stone to turn any function into a SOP
+function.</p>
+<h2>Truth Tables</h2>
+<p>In the world, truth tables are way too unrestricted. In this class, there are
+rules.</p>
+<ul>
+<li>Inputs listed in alphabetical order.
+<ul>
+<li>As long as the variables are independent.</li>
+<li>Otherwise, leave em in the order of the most sense.</li>
+</ul>
+</li>
+<li>List values in base 2 order.</li>
+</ul>
+<p>A | B | C | !A AND B AND C | !A AND B AND !C | minterm 1 OR minterm 2 | Minterm that owns this row
+---|---
+0|0|0|0|0|0
+0|0|1|0|0|0
+0|1|0|0|1|1
+0|1|1|1|0|1
+1|0|0|0|0|0
+1|0|1|0|0|0
+1|1|0|0|0|0
+1|1|1|0|0|0</p>
+<p>Every row corresponds to a minterm. By ORing minterms, we can create any function output by ORing minterms.</p>
+<p>This creates a large upsetting function expression - this is where simplificaiton would come in if we were going to worry about that.</p>
+<p>&quot;Carnomap&quot;s are the magic of how simplification happens.</p>
+<p>Maxterms, or an OR of inputs, are zero for only one row. similar logic as above applies.</p>
+<p>Result: Anything is a two-level circuit.</p>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

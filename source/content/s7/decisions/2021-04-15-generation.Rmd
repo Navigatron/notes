@@ -1,0 +1,54 @@
+This is the website
+
+```{r, fig.height=10, fig.width=7.5, dpi=332}
+# How many rounds will the game last?
+iterations <- 1000
+# How much cash will players start with?
+startingBalance <- 1000
+# How many players will we simulate?
+linesCount <- 30
+# Function to simulate one player
+doSim <- function(){
+    results <- vector("numeric", iterations)
+    balance <- startingBalance
+    for(i in 1:iterations){
+        random <- runif(1, min=0, max=4)
+        if(random > 3){
+            balance <- balance + 100
+        }else{
+            balance <- balance - 30
+        }
+        results[i] <- balance
+    }
+    results
+}
+# Run the function a bunch of times
+lines <- list(linesCount)
+for(l in 1:linesCount){
+    lines[[l]] <- doSim()
+}
+# Find the range of the lines, for the graph
+myRange <- range(lines[[1]])
+for(l in 2:linesCount){
+    myRange <- range(myRange, lines[[l]])
+}
+colors <- rainbow(linesCount) # colors are cool
+# Plot the first line
+plot(
+    1:iterations,
+    lines[[1]],
+    ylim=myRange,
+    type="l",
+    col=colors[1],
+    main="30 Simulated Games",
+    ylab="Player Cash",
+    xlab="Rounds Played"
+)
+# Plot the other lines
+for(l in 2:linesCount){
+    lines(1:iterations, lines[[l]], col=colors[l])
+}
+# Add some reference lines
+abline(a=0, b=0)
+abline(a=1000,b=2.5)
+```

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- MathJax disabled on this page -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426847">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="../">up</a></p>
+<h1>Database, JAN25</h1>
+<h2>Housekeeping</h2>
+<p>HW2 due this sunday at 6PM, submission via MyCourses</p>
+<h2>More Commands</h2>
+<p>Note: The source file provided for today has capitalization errors</p>
+<pre><code>SELECT concat(advisor.lastName, &quot;, &quot;, advisor.firstName) as Advisor,
+    Departments.departmentName FROM Advisor JOIN Departments USING
+    (departmentID) ORDER BY Advisor;
+</code></pre>
+<ul>
+<li>The above does the following
+<ul>
+<li>Mash table Advisor and table Departments together</li>
+<li>Use departmentID to line up the records in each table</li>
+<li>From the mega table, return the department name column</li>
+<li>From the mega table, return a column called &quot;advisor&quot;,
+which is made of both lastname and firstname.</li>
+</ul>
+</li>
+<li>CONCAT AS
+<ul>
+<li>Put multiple columsn together, and return the new column with a specific name.</li>
+<li><code>SELECT concat(lastName, &quot;, &quot;, firstName) as FullName</code></li>
+</ul>
+</li>
+<li>JOIN
+<ul>
+<li>Put multiple tables together so we can query both at once</li>
+<li><code>SELECT * FROM (tableA JOIN tableB)</code></li>
+</ul>
+</li>
+<li>USING
+<ul>
+<li>This is more difficult to define, apparently there is an equivalent called ON as well.</li>
+</ul>
+</li>
+<li>Lookup Table
+<ul>
+<li>A table with just an ID and another column, used to prevent duplicate data</li>
+</ul>
+</li>
+<li>Transitive Dependency
+<ul>
+<li>Columns that depend on each other rather than the primary key</li>
+</ul>
+</li>
+<li>Looking at a table
+<ul>
+<li>Describe table</li>
+<li>explain table</li>
+<li>show create table</li>
+</ul>
+</li>
+</ul>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

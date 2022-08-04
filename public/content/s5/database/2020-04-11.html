@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- MathJax disabled on this page -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426756">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="./">up</a></p>
+<h1>2020-04-11: Database Week 11 Notes</h1>
+<p>&lt;!-- These are my notes. --&gt;</p>
+<p><em>Converting an ER-Diagram to Relations</em></p>
+<p>Foreign keys are italicized, unless handwritten - that's the only case for dashed underline.</p>
+<p>Entities become relations.</p>
+<p>Relationships become pk/fk links between relations.</p>
+<ul>
+<li>1:1 - avoid null values if needed</li>
+<li>1:N - the many need links to the one</li>
+<li>M:N - Ah, the linking relation.
+<ul>
+<li>an FK to each entity.</li>
+<li>FKs form a composite PK.</li>
+</ul>
+</li>
+<li>sub/super
+<ul>
+<li>Each subtype gets a fk link to the super</li>
+<li>said fk is that subtype's pk.</li>
+</ul>
+</li>
+</ul>
+<p><em>reference statements</em></p>
+<p>RELATION_X(fk) mei RELATION(pk)</p>
+<p><em>participation constraints</em></p>
+<ul>
+<li>total participation
+<ul>
+<li>If the entity exists, is must be a part of this.</li>
+</ul>
+</li>
+<li>Partial participation
+<ul>
+<li>Can exist without participating</li>
+</ul>
+</li>
+</ul>
+<p><em>ID-Dependent weak entity</em></p>
+<p>Said entity needs help forming a unique identifier.</p>
+<p>for example, employee 1 dependent 2.</p>
+<p>There are other dependent numbers 2s - but this one belongs to employee 1.</p>
+<p><em>Identifying and Non-identifying Relationships</em></p>
+<blockquote>
+<p>Now this is where it gets extra smelly</p>
+</blockquote>
+<p>&quot;A solid relationship line denotes that the foreign key will need to help form a primary key&quot;</p>
+<blockquote>
+<p>That's bullshit because so far <em>all</em> lines have been solid.</p>
+</blockquote>
+<ul>
+<li>identifying
+<ul>
+<li>solid line</li>
+</ul>
+</li>
+<li>non-identifying
+<ul>
+<li>dashed line</li>
+<li>fk not needed to help form pk</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>So what's the difference between identifying and id-dependent?</p>
+</blockquote>
+<p><em>M:N Relationships can have attributes</em></p>
+<blockquote>
+<p>Now that's spicy.</p>
+</blockquote>
+<p>The associative entity implements the M:N relationship and stores the attributes about the relationship.</p>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

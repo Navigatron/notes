@@ -1,0 +1,6 @@
+---
+---
+- Binomial Distribution
+- Poisson Distribution
+- Negative Binomial Distribution
+- Geometric Distribution

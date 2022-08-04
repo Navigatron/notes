@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- MathJax disabled on this page -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426794">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="../../../">Index</a> &gt; <a href="./">Software Engineering</a> &gt; Mon Sep 20 2021 20:00:00 GMT-0400 (Eastern Daylight Time):</p>
+<h1>Mon Sep 20 2021 20:00:00 GMT-0400 (Eastern Daylight Time):</h1>
+<p>Administrative stuff:</p>
+<p>There is an exam next Tuesday. Has some definitions.
+2-sided, hand-written crib sheet is permitted.
+Must be handed in after the exam.</p>
+<p>There's a review session at some point, expect an email.</p>
+<h2>Acceptance Testing</h2>
+<p>A user story is a project requirement. The product owner may be involved in writing these.</p>
+<p>A user story must pass acceptance tests to be called done. One story will have many tests.</p>
+<p><em>Backlog Refinement</em> - when moving a story from the product to sprint backlog, its acceptance criteria must be defined.</p>
+<p>Acceptance Criteria are formatted:</p>
+<blockquote>
+<p><strong>Given</strong> criteria, <strong>When</strong> event, <strong>Then</strong> other event.</p>
+</blockquote>
+<p>The <em>Acceptance Test Plan</em> is the set of all these tests for a story.</p>
+<p>For sprints 1 through 3, we will need to create acceptance test plans.</p>
+<h2>Version Control</h2>
+<p>A &quot;software release&quot; is a snapshot of code at a certain time. The snapshot captures some set of user stories, and you may need to make multiple snapshots as the code evolves.</p>
+<p>Version Control manages changes made to code, and also tags releases.</p>
+<ul>
+<li>Each dev has a workspace (&quot;Local Repository&quot;)</li>
+<li>There is also a shared workspace (&quot;Remote Repository&quot;)</li>
+<li>Devs can make changes to their local repos</li>
+<li>Changes can be synced between repos</li>
+<li>&quot;Branches&quot; allow parallel development</li>
+<li>Branches can be merged together</li>
+</ul>
+<h3>Git</h3>
+<p>I have files. I make changes to them.</p>
+<p>Git lets me record my changes. It puts each change (also called a diff or a delta) in a bucket, in order, like a history. Now I can undo changes!</p>
+<p>Git lets me push/pull my &quot;stack of changes&quot; (a repo) to other people's stacks of changes.</p>
+<blockquote>
+<p>If two people have a FILE, and one of them makes a change, they can share that change with the other person</p>
+</blockquote>
+<p>Since people aren't always around, or aren't always online (like my laptop while driving to school), it's nice to have a server somewhere. The server isn't a developer, but can keep track of our change stack. Now anyone can share changes at any time, and anyone else can grab those changes.</p>
+<p>If people are working on different things, they can create <em>branches</em>. Branches are independent stacks of changes. There is typically a main branch (formerly called the master branch). When a &quot;feature branch&quot; is done, it can be <em>merged</em> back <em>into</em> the main branch.</p>
+<p>When merging, if the changes in two branches change the same line of a file, you'll have to pick which change you want to apply to that line. This is what it means to <em>resolve merge conflicts</em>.</p>
+<h3>Git Flow</h3>
+<p>From the main branch, create <em>feature branches</em> for each user story.</p>
+<p>When a feature branch is done, the developer should create a pull request to merge it back into main. A pull request is like a code review.</p>
+<p>Once the changes are back into main, other feature branches should merge main into them, so that they are developing on top of the most recent version of the code.</p>
+<h3>Avoiding Conflicts</h3>
+<ul>
+<li>Keep lines short</li>
+<li>Keep commits small and focused</li>
+<li>If multiple devs are working on the same branch:
+<ul>
+<li>Pull <em>all the time</em></li>
+<li>Push <em>as often as possible</em></li>
+</ul>
+</li>
+<li>If a feature branch is taking a long time:
+<ul>
+<li>Merge in main, so that you're building on the most recent version</li>
+</ul>
+</li>
+</ul>
+<p>The class advocates for deleting branches. I don't think this is a good idea, but such is life.</p>
+<hr>
+<p><a href="../../../">Index</a> &gt; <a href="./">Software Engineering</a> &gt; Mon Sep 20 2021 20:00:00 GMT-0400 (Eastern Daylight Time):</p>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

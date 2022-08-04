@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- <script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+			tex2jax: {
+				inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+				processEscapes: true
+			}
+		});
+	</script> -->
+	<script>
+		MathJax = {
+			tex: {
+				inlineMath: [['$', '$'], ['\\(', '\\)']]
+			}
+		};
+	</script>
+	<!-- <script
+		type="text/javascript"
+		charset="utf-8"
+		src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+		>
+	</script> -->
+	<script
+		type="text/javascript"
+		id="MathJax-script"
+		async
+		src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+		>
+	</script>
+	<!-- <script
+		type="text/javascript"
+		charset="utf-8"
+		src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
+		>
+	</script> -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426851">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="../../">up</a></p>
+<h1>Maximum Likelyhood Estimators - Principles</h1>
+<p>MoM Estimators are okay... but these are better.</p>
+<h2>Theory:</h2>
+<p>Maximize the Following Function:</p>
+<p>$$ L(\theta)=P(\text{our sample appearing}) $$</p>
+<p>We'll find the value of $\theta$ that maximizes the probability of our sample appearing.</p>
+<p>In reality, the likelyhood function is composed more like this:</p>
+<p>$$
+f(x) = \theta X ^ {\theta - 1}
+$$</p>
+<p>$$
+L(\theta _ 1 , \theta _ 2 , ... \theta _ k ; x_1, x_2, ... x_n) = f(x_1) \cdot f(x_2) \cdot ... \cdot f(x_n)
+$$</p>
+<h2>Process:</h2>
+<ol>
+<li>Identify the PMF/PDF of the population.</li>
+<li>Write the Likelyhood Function
+<ul>
+<li>Either a joint PMF or joint PDF</li>
+</ul>
+</li>
+<li>Simplify! If needed, simplify further with $ln()$</li>
+<li>Maximize the function:
+<ol>
+<li>Take Derivative</li>
+<li>Set equal to zero to find critical points</li>
+<li>Verify crit points are max by showing the second derivative is negative</li>
+</ol>
+</li>
+<li>Write conclusion in complete sentences.</li>
+</ol>
+<h2>Log Rules</h2>
+<p>These are helpful.</p>
+<p>$ln(a\cdot b)=ln(a)+ln(b)$</p>
+<p>$ln(a^b) = b\cdot ln(a)$</p>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

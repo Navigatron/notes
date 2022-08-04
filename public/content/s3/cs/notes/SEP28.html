@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- MathJax disabled on this page -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426827">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="../">up</a></p>
+<h1>Switch Statements Continued</h1>
+<pre><code class="language-C">int i = 5;
+switch (i) {
+	case 1:
+		//Code
+		break;
+	case 2:
+		//Code
+		break;
+	default:
+		//Code
+}
+</code></pre>
+<p>Cases have addresses. We've got a table of case addresses.</p>
+<p>We need to turn the switch argument into an index of the case table.</p>
+<p>s1 = table[s0]
+s1 = lw(table + s0 * 4)</p>
+<h2>It's a hash map now.</h2>
+<p>The above isn't quite what java and C do. Oh no.</p>
+<p>hashmaps are how switches actually work, but they're hard af</p>
+<h2>Not a hash map anymore. How to build the table?</h2>
+<p>Mips standard puts text block at 400k, data block at 10M (Hex)</p>
+<p>Directives tell the assembler what to do -or- where to put things -or- what to put.
+Basically, put X at Y location in the Object module.</p>
+<h3>Dot Directives</h3>
+<p>Kinda like assembler commands. They're indented one to line up with opcodes.</p>
+<p><code>.text</code>: Put stuff after here in the Text block.</p>
+<p><code>.data</code>: Put stuff after here in the Data block.</p>
+<p><code>.align</code> Takes a single parameter, n. It &quot;Moves you ahead&quot; to the next 2^n aligned
+boundary. This isn't a toggle. Use this before putting words / data in the data section.</p>
+<h2>5 minutes to build this table in memory</h2>
+<p><code>.byte, .half, and .word</code>: These allow us to allocate constants into the data section.</p>
+<p>Each directive takes a comma separated list of any number of args, sets aside a chunk of memory
+containing the specified constants.</p>
+<pre><code>.byte 1, 2, 4
+</code></pre>
+<p>The above creates a 3 byte section in memory, filled with 1, 2 and 4 contiguously.</p>
+<p>Finally: Building the jump table. Addresses of cases are labels.</p>
+<pre><code>	.data
+	.align 2
+table:
+	.word case0, case1, case2, case3
+</code></pre>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

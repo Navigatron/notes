@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- <script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+			tex2jax: {
+				inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+				processEscapes: true
+			}
+		});
+	</script> -->
+	<script>
+		MathJax = {
+			tex: {
+				inlineMath: [['$', '$'], ['\\(', '\\)']]
+			}
+		};
+	</script>
+	<!-- <script
+		type="text/javascript"
+		charset="utf-8"
+		src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+		>
+	</script> -->
+	<script
+		type="text/javascript"
+		id="MathJax-script"
+		async
+		src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+		>
+	</script>
+	<!-- <script
+		type="text/javascript"
+		charset="utf-8"
+		src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
+		>
+	</script> -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426811">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="../../../">Home</a> &gt; <a href="./">Crypto</a> &gt; Rings</p>
+<blockquote>
+<p>This page doubles as a personal reference for MathJax commands</p>
+</blockquote>
+<h1>What is a Ring?</h1>
+<p>A <em>Ring</em> is a set of integers ($\Bbb Z$) with a size ($m$).</p>
+<p>$$\Bbb Z_m = { 0,1,2,\dots m-1 }$$</p>
+<p><em>Rings</em> have associated <em>Operators</em> with special rules.</p>
+<ul>
+<li>Addition: '+'</li>
+<li>Multiplication: '*'</li>
+</ul>
+<p>For all $a,b\in \Bbb Z_m$:</p>
+<ul>
+<li>$a + b \equiv c \bmod m$</li>
+<li>$a * b \equiv d \bmod m$</li>
+</ul>
+<h1>Properties of Rings</h1>
+<h2>Closure</h2>
+<p>Note that $c,d \in \Bbb Z_m$</p>
+<h2>Associative</h2>
+<ul>
+<li>$(a+b)+c=a+(b+c)$</li>
+<li>$(a\cdot b)\cdot c=a\cdot (b\cdot c)$</li>
+</ul>
+<h2>Identity</h2>
+<ul>
+<li>$a+0=a\mod m$</li>
+<li>$a\cdot 1=a\mod m$</li>
+</ul>
+<h2>Inverse</h2>
+<ul>
+<li>$a+(-a)=0\mod m$</li>
+<li>$a\cdot a^{-1}=1\mod m$</li>
+</ul>
+<p>Note that $a^{-1}$ only exists when $\gcd (a, m)=1$</p>
+<p>You can find $a^{-1}$ with the <a href="./eea.html">extended euclidean algorithm</a></p>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

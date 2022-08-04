@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- MathJax disabled on this page -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426806">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="./">up</a></p>
+<h1>Lab 7 - VoIP</h1>
+<h1>Activity 1 - Vlan setup</h1>
+<p>Note from Prof:</p>
+<blockquote>
+<p>Use pc 1 as your client pc, use pc2 as your monitor</p>
+</blockquote>
+<h2>Step 1 - Activate switch</h2>
+<ul>
+<li>Grab some cables</li>
+<li>turn on your rack</li>
+<li>Connect switch D to pc console 1</li>
+<li>Open putty</li>
+<li>Select serial</li>
+<li>Select serial on the left, turn flow control off</li>
+<li>Connect!
+<ul>
+<li>No - do not enter initial configuration dialog</li>
+<li>Yes - terminate autoinstall</li>
+<li><code>enable</code> - give yourself superpowers</li>
+<li><code>config t</code> - activate config mode</li>
+</ul>
+</li>
+<li>Use the &quot;Command Cheat Sheet&quot;
+<ul>
+<li>&quot;Configure the VLans&quot; section configures the VLans</li>
+<li>&quot;Configure monitoring&quot; sets up monitoring</li>
+</ul>
+</li>
+</ul>
+<h1>Activity 2 - Activate Router</h1>
+<h2>Part 1 - route between VLans</h2>
+<ul>
+<li>Router on a stick, while cool, is not what we'll be using</li>
+<li>Use a cable to attach router B console to PC2</li>
+<li>putty, serial, no flow control, connect
+<ul>
+<li>No initial config dialog</li>
+</ul>
+</li>
+<li><code>enable</code>, then <code>config t</code></li>
+<li>Follow &quot;Command Cheat Sheets - Router interface configuration&quot;
+<ul>
+<li>interface fa0/0
+<ul>
+<li>vlan 101</li>
+</ul>
+</li>
+<li>interface fa0/1
+<ul>
+<li>vlan 102</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2>Part 2 - Make the router a dhcp server</h2>
+<ul>
+<li>enter config terminal mode</li>
+<li>Follow &quot;Command cheat sheets - dhcp router config&quot;
+<ul>
+<li>voice vlan
+<ul>
+<li>network defines the network</li>
+<li>option 150 defines the tftp server address - in this case, the router.</li>
+<li>default router sets the gateway of dhcp clients</li>
+</ul>
+</li>
+<li>data vlan
+<ul>
+<li>same as above minus option 150</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2>Part 3 - verify file presence</h2>
+<ul>
+<li>use <code>exit</code> to leave config t or whatever, get back to <code>enable</code> level</li>
+<li><code>dir</code></li>
+</ul>
+<h1>Activity 3 - Test Connectivity</h1>
+<h2>Step 1 - Can we do the ping?</h2>
+<ul>
+<li>Use more cables, lol
+<ul>
+<li>port 1 - Voice monitor</li>
+<li>port 2 - PC1</li>
+<li>ports 3 through 5 - Voice vlan, nothing yet</li>
+<li>port 6 - Voice vlan connection to router interface fa0/0</li>
+<li>port 7 - monitor output</li>
+<li>port 8 - PC2, for now</li>
+<li>ports 6, 10, 11 - data vlan, nothing yet</li>
+<li>port 12 - data vlan connection to router fa0/1</li>
+</ul>
+</li>
+<li>On each PC
+<ul>
+<li>Open command prompt with admin</li>
+<li>run <code>ipconfig /renew</code></li>
+<li>Ping from pc1 to pc2 (101.1 to 102.1)</li>
+</ul>
+</li>
+<li>If ping works, continue
+<ul>
+<li>Unplug PCs from switch (Switch ports 2 and 8)</li>
+</ul>
+</li>
+</ul>
+<h2>Step 2 - spanning-tree portfast</h2>
+<p>I didn't need to do this.</p>
+<h2>Step 3 - config phone lines</h2>
+<ul>
+<li>Go get two phones from the cage
+<ul>
+<li>The one with the lower number yellow sticker will be called phone 1</li>
+<li>Phone 1 SW port to switch port 1</li>
+<li>Phone 2 SW port to switch port 2</li>
+</ul>
+</li>
+<li>Once they boot, settings -&gt; network, scroll down to MAC</li>
+<li>Write the MACS down</li>
+<li><strong>unplug the phones.</strong>
+<ul>
+<li>Otherwise they steal registration slots from each other.</li>
+</ul>
+</li>
+<li>Run: <code>ip tftp source-interface fa0/1</code>
+<ul>
+<li>This seems very wrong, and I don't know why it works, but it does</li>
+</ul>
+</li>
+</ul>
+<p>&quot;Command cheat sheets - Config the lines for the phones&quot; has enough errors with it that I'm re-writing the instructions here.</p>
+<p>Yes, you have 7960s instead of 7961s. This still works. I tried it with 7960 and it didn't.</p>
+<p>Obviously, replace the MACs in the instructions with the MACs you wrote down earlier.</p>
+<pre><code>enable
+config t
+
+telephony-service
+max-ephones 8
+max-dn 8
+ip source-address 192.168.101.254 port 2000
+load 7961 term41.7-0-3-05
+max-conferences 8 gain -6
+transfer-system full-consult
+create cnf-files version-stamp jan 01 2002 00:00:00
+
+ephone-dn 1 dual-line
+number 1001
+
+ephone-dn 2 dual-line
+number 1002
+
+ephone 1
+mac-address 001B.D584.60E1 // replace
+button 1:2
+
+ephone 2
+mac-address 001B.D584.603F // replace
+button 1:1
+</code></pre>
+<ul>
+<li>Hit CTRL+Z to apply changes</li>
+<li>Plug the phones back in and hope for the best</li>
+</ul>
+<h1>How to get the signoffs</h1>
+<p>These will be out of order - that's okay.</p>
+<h2>2B</h2>
+<p>Take a screenshot of PuTTY when the router says the phones are registered.</p>
+<h2>2Signoff</h2>
+<p>Show an instructor that you can call the other phone</p>
+<h2>2C</h2>
+<p>Run a cable from switch output 7 to PC2 NIC. Start wireshark on PC2.</p>
+<p>Call from one phone to the other.</p>
+<h1>I had issues on attempt 1.</h1>
+<p>Below here are misc notes I took while troubleshooting.</p>
+<p><code>Show Run</code> on the router should reveal this:</p>
+<pre><code>telephony-service
+ load 7961 term41.7-0-3-0S
+ max-ephones 8
+ max-dn 8
+ ip source-address 192.168.101.254 port 2000
+ create cnf-files version-stamp jan 01 2002 00:00:00
+ max-conferences 8 gain -6
+ transfer-system full-consult
+</code></pre>
+<blockquote>
+<p>TROUBLESHOOTING</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Phone</th>
+<th>MAC</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>001B.D584.60E1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>001B.D584.603F</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p>TERM41.7-0-3-05.loads</p>
+</li>
+<li>
+<p>term41.default.loads</p>
+</li>
+<li>
+<p>term61.default.loads</p>
+</li>
+<li>
+<p>Jar41.2-9-2-26.sbn</p>
+</li>
+<li>
+<p>cnu41.2-7-6-26.sbn</p>
+</li>
+<li>
+<p>CVM41.2-0-2-26.sbn</p>
+</li>
+<li>
+<p>tried tftp source 0/1, which sounds wrong</p>
+</li>
+<li>
+<p>oh no</p>
+</li>
+<li>
+<p>&quot;host not found&quot;, says the phones, as they sit there sadly.</p>
+</li>
+<li>
+<p>They have IPs via dhcp, so that's good at least.</p>
+</li>
+<li>
+<p>Why cannot contact tftp server? Why cannot contact CME?</p>
+</li>
+<li>
+<p>IP dhcp pool is correct</p>
+<ul>
+<li>Phones are getting ip addresses</li>
+</ul>
+</li>
+<li>
+<p>Option 150 is set</p>
+<ul>
+<li>phones are getting tftp server address</li>
+</ul>
+</li>
+<li>
+<p>tftp-server [file]</p>
+<ul>
+<li>Sets the file the tftp server is pushing</li>
+<li>Phones load, I think this works?</li>
+<li>Prof helping selected random file, idk which file to use?</li>
+<li>Why is ip tftp source-address set to the data network? There's nothing there</li>
+</ul>
+</li>
+<li>
+<h2>telephony-service</h2>
+</li>
+</ul>
+<p><code>load 7961 [file]</code> in case I messed up in loading 7960</p>
+<p>Lucas goes to switch config
+Lucas re-runs my vlan commands</p>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

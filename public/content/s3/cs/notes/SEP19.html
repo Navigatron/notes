@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- MathJax disabled on this page -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426826">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="../">up</a></p>
+<h1>Housekeeping</h1>
+<ul>
+<li>Experiment 1 due tonight at 11:59:59PM</li>
+<li>First exam next Wednesday, SEP 26
+<ul>
+<li>GOL 3435</li>
+</ul>
+</li>
+<li>Review session for the exam
+<ul>
+<li>SEP 24</li>
+<li>11 -&gt; Noon</li>
+<li>GOL 2590</li>
+<li>Q/A Session, no prepared material.</li>
+</ul>
+</li>
+</ul>
+<h1>Instructions that change execution location</h1>
+<p><em>AKA &quot;Flow Control&quot;</em></p>
+<h2>The Fetch/Execute Cycle</h2>
+<ol>
+<li>Fetch Instruction from Memory</li>
+<li>Decode the instruction
+<ul>
+<li>considers encoding</li>
+</ul>
+</li>
+<li>Execute the instruction</li>
+<li>repeat, heckin' quick.</li>
+</ol>
+<p><strong>Question</strong>: Which instruction do we fetch?</p>
+<p>Every instruction lives at an address - we've got a &quot;Program Counter&quot; that points at the next instruction to run.</p>
+<h2>Types of change</h2>
+<ul>
+<li>unconditional change
+<ul>
+<li>Jumps</li>
+</ul>
+</li>
+<li>Conditional change
+<ul>
+<li>Branches</li>
+</ul>
+</li>
+</ul>
+<h2>Jump</h2>
+<p>name | opcode | operands
+---|---
+jump! | <code>j</code> | label as destination</p>
+<p>goes to the label.</p>
+<h2>quick break for a new instruction format</h2>
+<p>J Type - Built just for Jumps.</p>
+<table>
+<thead>
+<tr>
+<th>section</th>
+<th>size</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Opcode</td>
+<td>6 bits</td>
+</tr>
+<tr>
+<td>Destination</td>
+<td>26 bits</td>
+</tr>
+</tbody>
+</table>
+<p>We're trying to get a 32 bit address with 26 bits of instruction.</p>
+<p>All addresses that are <em>aligned</em> are multiples of 4 - the last two bits are always 00. Now we represent 28 bits.</p>
+<p>Jump instructions don't represent the upper 4 bits - we just don't overwrite them. Because our code will be less than 256Megs in size, this isn't a problem for us. I'm not sure what would happen if we wanted to jump between 256M sections.</p>
+<h2>Jump Register</h2>
+<ul>
+<li>Jump Register
+<ul>
+<li><code>jr rs</code></li>
+<li>takes one register as target.</li>
+<li>Uses R-Type encoding.</li>
+</ul>
+</li>
+</ul>
+<p>JR is used to return from a function. <code>$ra</code> contains return address, so we <code>jr $ra</code></p>
+<h2>Calling a Function</h2>
+<p>All we gotta do is put the program counter into the return address. But we can't mess with the program counter - so we get two more instructions that mirror the other jump instructions.</p>
+<h3>Jump and Link</h3>
+<p><code>jal label</code></p>
+<p>Goto the label, copy program counter into return address.</p>
+<h3>Jump and Link Register</h3>
+<p><code>jalr rs</code></p>
+<p>Goto address in register, copy program counter into return address.</p>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

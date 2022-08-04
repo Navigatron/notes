@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- <script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+			tex2jax: {
+				inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+				processEscapes: true
+			}
+		});
+	</script> -->
+	<script>
+		MathJax = {
+			tex: {
+				inlineMath: [['$', '$'], ['\\(', '\\)']]
+			}
+		};
+	</script>
+	<!-- <script
+		type="text/javascript"
+		charset="utf-8"
+		src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+		>
+	</script> -->
+	<script
+		type="text/javascript"
+		id="MathJax-script"
+		async
+		src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+		>
+	</script>
+	<!-- <script
+		type="text/javascript"
+		charset="utf-8"
+		src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
+		>
+	</script> -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426851">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="../../">up</a></p>
+<h1>Method of Moments Example - Exponential Distribution</h1>
+<p>$X$ =&gt; Population Data.<br>
+$X$ is exponentially distributed =&gt; There is one parameter, $\lambda$.</p>
+<h2>Known:</h2>
+<p>$$
+E(X) = \frac {1} {\lambda}
+$$</p>
+<p>$$
+V(X) = \frac {1} {\lambda ^ 2}
+$$</p>
+<blockquote>
+<p>$\lambda$ is the <em>rate</em> of events, aka $\frac {\text {Number of Events} } {\text {Unit of Time}}$</p>
+</blockquote>
+<h2>Process</h2>
+<p>Estimate $\lambda$ using the method of moments. Since there's only one parameter, we only need one equation.</p>
+<p>$$
+\begin {align}
+m_1 &amp;= \mu _ 1 \
+\bar x &amp;= \mu \
+\bar x &amp;= \frac 1 \lambda \
+\lambda &amp;= \frac 1 {\bar x} \
+\therefore \hat \lambda &amp;= \frac 1 {\bar x} \
+\end {align}
+$$</p>
+<p>Note that $E(\frac 1 {\bar x}) \ne \lambda$. $\frac 1 {\bar x}$ is <em>not</em> an unbiassed estimator for $\lambda$.</p>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

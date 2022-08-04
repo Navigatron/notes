@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- <script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+			tex2jax: {
+				inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+				processEscapes: true
+			}
+		});
+	</script> -->
+	<script>
+		MathJax = {
+			tex: {
+				inlineMath: [['$', '$'], ['\\(', '\\)']]
+			}
+		};
+	</script>
+	<!-- <script
+		type="text/javascript"
+		charset="utf-8"
+		src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+		>
+	</script> -->
+	<script
+		type="text/javascript"
+		id="MathJax-script"
+		async
+		src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+		>
+	</script>
+	<!-- <script
+		type="text/javascript"
+		charset="utf-8"
+		src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
+		>
+	</script> -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426774">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="../../../">Index</a> &gt; <a href="./">Course</a> &gt; Mon Mar 22 2021 20:00:00 GMT-0400 (Eastern Daylight Time):</p>
+<h1>Mon Mar 22 2021 20:00:00 GMT-0400 (Eastern Daylight Time):</h1>
+<p>As long as you can do the homework, any regression software will work. Excel isn't as nice, but it works. Examples will be provided in Stata.</p>
+<p>Assignment 3 is due tonight, Assignment 4 is released.</p>
+<p>For March 25th, read &quot;An Introduction to Regression Analysis&quot;</p>
+<p>For March 30th, read chapters 1, 2, and 4 from &quot;The Signal and the Noise&quot;</p>
+<h1>The Three Card Monte Example</h1>
+<h2>Frequentist Approach</h2>
+<p><strong>Null Hypothesis</strong>: <em>Everything is fine</em>. We will gather some evidence, and see if that evidence contradicts this point.</p>
+<p>We expect a 66.7% chance of loosing any given game.</p>
+<p>Given that we have lost n games in a row, what is the probability of this happening under the null hypothesis?</p>
+<p>$$
+P(n)=(\frac{2}{3})^n
+$$</p>
+<p><em>The probability of n losses is equal to two-thirds to the n power</em></p>
+<table>
+<thead>
+<tr>
+<th>$n$</th>
+<th>$P(n)$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>0.6667</td>
+</tr>
+<tr>
+<td>2</td>
+<td>0.4444</td>
+</tr>
+<tr>
+<td>3</td>
+<td>0.2963</td>
+</tr>
+<tr>
+<td>4</td>
+<td>0.1975</td>
+</tr>
+<tr>
+<td>5</td>
+<td>0.1317</td>
+</tr>
+<tr>
+<td>6</td>
+<td>0.0878</td>
+</tr>
+<tr>
+<td>7</td>
+<td>0.0585</td>
+</tr>
+<tr>
+<td>8</td>
+<td>0.0390</td>
+</tr>
+<tr>
+<td>9</td>
+<td>0.0260</td>
+</tr>
+<tr>
+<td>10</td>
+<td>0.0173</td>
+</tr>
+</tbody>
+</table>
+<p>After the 8th loss, we can be 95% confident that the game is rigged.</p>
+<h2>Bayesian</h2>
+<p>Remember the magic incantation:</p>
+<p>$$
+P(A|B)=\frac{P(B|A)P(A)}{P(B)}
+$$</p>
+<p>Where $A = $ &quot;The game is rigged&quot;, and $B =$ &quot;I lost&quot;.</p>
+<p>We enter the game with a 40% belief that the game is rigged.</p>
+<p>$$
+P(B) = 1<em>P(A_{n-1}) + (2/3)</em>(1-P(A_{n-1}))
+$$</p>
+<p>The probability that we loose, is the probability of loss if the game is rigged (1), plus the probability of loss if the game is fair (2/3). These are weighted by the probability of their respective outcomes.</p>
+<p>Now, I can use a simple program to calculate these values after each loss:</p>
+<pre><code class="language-js">let prior = 0.4;
+for(let n=1; n&lt;10; n++){
+    let p_b = prior + 2/3*(1-prior);
+    let p_a = prior / p_b;
+    console.log(`${n} | ${p_a.toFixed(3)} | ${p_b.toFixed(3)}`);
+    prior = p_a;
+}
+</code></pre>
+<p>Here's the output in table format:</p>
+<table>
+<thead>
+<tr>
+<th>$n$</th>
+<th>$P(A|B)$</th>
+<th>$P(B)$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>0.500</td>
+<td>0.800</td>
+</tr>
+<tr>
+<td>2</td>
+<td>0.600</td>
+<td>0.833</td>
+</tr>
+<tr>
+<td>3</td>
+<td>0.692</td>
+<td>0.867</td>
+</tr>
+<tr>
+<td>4</td>
+<td>0.771</td>
+<td>0.897</td>
+</tr>
+<tr>
+<td>5</td>
+<td>0.835</td>
+<td>0.924</td>
+</tr>
+<tr>
+<td>6</td>
+<td>0.884</td>
+<td>0.945</td>
+</tr>
+<tr>
+<td>7</td>
+<td>0.919</td>
+<td>0.961</td>
+</tr>
+<tr>
+<td>8</td>
+<td>0.945</td>
+<td>0.973</td>
+</tr>
+<tr>
+<td>9</td>
+<td>0.962</td>
+<td>0.982</td>
+</tr>
+</tbody>
+</table>
+<p>After the 9th loss, we have 96% confidence that the game is rigged.</p>
+<h1>A relationship between A and B</h1>
+<p>Ice cream sales and <em>Murders</em> are positively correlated.</p>
+<p>There are 4 explanations for this.</p>
+<ul>
+<li>A Causes B
+<ul>
+<li>Ice cream causes murder!</li>
+</ul>
+</li>
+<li>B causes A
+<ul>
+<li>Murder causes Ice cream?</li>
+</ul>
+</li>
+<li>C causes A and B
+<ul>
+<li>oooo where did C come from? That's pretty wild yo</li>
+<li>People stay inside during the winter, and don't get murdered</li>
+<li>It's cold in the winter, so people eat less ice cream</li>
+<li>Hot Weather causes ice cream <em>and</em> murder</li>
+</ul>
+</li>
+<li>A and B aren't related at all
+<ul>
+<li>The universe is playing jokes on you</li>
+</ul>
+</li>
+</ul>
+<h1>Regression</h1>
+<blockquote>
+<p>&quot;Fear always finds its victim&quot; - Prof.</p>
+</blockquote>
+<p>Regression describes the relationship between some variables in the presence of noise.</p>
+<p>There are at least two variables, called the:</p>
+<ul>
+<li>Input and Output</li>
+<li>Stimulus and Response</li>
+<li>Predictor and Predicted</li>
+<li>Argument and Result</li>
+</ul>
+<p>Long story short, one &quot;causes&quot; the other.</p>
+<hr>
+<p><a href="../../../">Index</a> &gt; <a href="./">Course</a> &gt; Mon Mar 22 2021 20:00:00 GMT-0400 (Eastern Daylight Time):</p>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

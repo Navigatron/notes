@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- MathJax disabled on this page -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426820">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="../">up</a></p>
+<h1>August 29th - Abstract</h1>
+<h3>CPU</h3>
+<ul>
+<li>Internal Parts
+<ul>
+<li>Control Unit
+<ul>
+<li>Instructions from Program (x=a+b)
+<ul>
+<li>what to do (+) [opcode]</li>
+<li>when to do it (Get ab, add, store)</li>
+<li>what data to work with [operands] (a and b -&gt; x)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Data Path
+<ul>
+<li>User data lives here
+<ul>
+<li>Stuff currently in use</li>
+</ul>
+</li>
+<li>Store User Data
+<ul>
+<li>Registers
+<ul>
+<li>Physically inside the cpu</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Move User Data
+<ul>
+<li>on wires</li>
+</ul>
+</li>
+<li>Manipulate Data
+<ul>
+<li>Gates, transistors.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>External Components
+<ul>
+<li>memory
+<ul>
+<li>3 layers of cache on the cpu</li>
+<li>maybe ssd buffer</li>
+<li>Ram</li>
+<li>Swap on disk</li>
+<li>For our purposes, it doesn't matter.
+<ul>
+<li>Program works with virtual memory - 2^64</li>
+<li>hardware knows where things actually are</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>input devices
+<ul>
+<li>Keyboard</li>
+<li>anything is fine</li>
+</ul>
+</li>
+<li>output devices
+<ul>
+<li>Screen</li>
+<li>Whatever, it's all the same to the computer.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ol>
+<li>Put the instruction in the control unit</li>
+<li>control unit decides what to do</li>
+<li>data path carries out the action</li>
+</ol>
+<p>add A and B, store to X</p>
+<p>Hardware detects things, tells the OS via interrupt / exception.
+(Such as integer overflow, or division by zero.)</p>
+<p>ISA - the language - binary run by hardware</p>
+<h3>Layers:</h3>
+<ol>
+<li>Hardware
+<ul>
+<li>Understands an ISA</li>
+</ul>
+</li>
+<li>Machine Code / Machine Language
+<ul>
+<li>Instruction Set Architecture
+<ul>
+<li>Rules that define the language of commands</li>
+<li>Opcodes</li>
+<li>Sysntax</li>
+<li>Operands</li>
+<li>Encoding
+<ul>
+<li>Converting ADD to binary</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Assembly</li>
+</ol>
+<h3>MIPS</h3>
+<ul>
+<li>Instructions based on fields</li>
+<li>first field opcode</li>
+<li>last sometimes opcode</li>
+</ul>
+<p>Addition:</p>
+<pre><code>| 6 bits | 5 bits  | 5 bits  | 5 bits      | 5 bits | 6 bits |  
+|--------|---------|---------|-------------|--------|--------|  
+| 000000 | source1 | source2 | destination | ?????? | 100000 |
+</code></pre>
+<p>Multiply in assembly becomes two instructions in machine code</p>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

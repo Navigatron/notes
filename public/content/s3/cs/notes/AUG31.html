@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- <script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+			tex2jax: {
+				inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+				processEscapes: true
+			}
+		});
+	</script> -->
+	<script>
+		MathJax = {
+			tex: {
+				inlineMath: [['$', '$'], ['\\(', '\\)']]
+			}
+		};
+	</script>
+	<!-- <script
+		type="text/javascript"
+		charset="utf-8"
+		src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+		>
+	</script> -->
+	<script
+		type="text/javascript"
+		id="MathJax-script"
+		async
+		src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+		>
+	</script>
+	<!-- <script
+		type="text/javascript"
+		charset="utf-8"
+		src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
+		>
+	</script> -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426819">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="../">up</a></p>
+<h3>ISA</h3>
+<p><em>Instruction Set .... something</em></p>
+<p>The spectrum of ISAs:</p>
+<ul>
+<li>CISC
+<ul>
+<li>Complex Instruction Set Computer</li>
+<li>Some instructions do a lot of work</li>
+<li>not all of them have to be complicated</li>
+</ul>
+</li>
+<li>RISC
+<ul>
+<li>Reduced Instruction Set Computer</li>
+<li>All instructions do little work</li>
+<li>Reduced = Reduction in Complexity, simpler.</li>
+</ul>
+</li>
+</ul>
+<p>MIPS is almost as RISC as it gets.</p>
+<p>VAX is an ISA that is almost as CISC as it gets. VAX has string copy, other string ops,
+and an instruction to calc the roots of a polynomial. Why?</p>
+<ul>
+<li>Pre-written</li>
+<li>Tested</li>
+<li>Optimized</li>
+</ul>
+<p>Other ISAs:</p>
+<ul>
+<li>ARM
+<ul>
+<li>A little more complex than MIPS</li>
+</ul>
+</li>
+<li>x86
+<ul>
+<li>A little simpler than VAX</li>
+<li>String copy is awesome, check it out.</li>
+</ul>
+</li>
+</ul>
+<h3>Important Formula Time</h3>
+<p><em>It is very difficult to measure execution time.</em> Magic Formula here mathematically estimates the execution time of a program.</p>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>E</td>
+<td>Total Execution Time</td>
+</tr>
+<tr>
+<td>I</td>
+<td>Instruction Count</td>
+</tr>
+<tr>
+<td>C</td>
+<td>Cycles Per Instruction</td>
+</tr>
+<tr>
+<td>T</td>
+<td>Clock Cycle Time</td>
+</tr>
+</tbody>
+</table>
+<p>$$E=I<em>C</em>T$$</p>
+<p>RISC will have:</p>
+<ul>
+<li>Much Higher Instruction Count</li>
+<li>Much fewer cycles per instruction</li>
+</ul>
+<p>Example: VAX 32k string copy instruction. VAX Hardware can check if the char is null and write the char at the same time. This is very cool.</p>
+<p>In a vacuum, in a nanosecond, travels 11.5 inches. Electricity travels about half that, slower if the wire is hot. This puts a cap on Clock Cycle Time.</p>
+<p>Clock Speed is primarily affected by Chip Size.</p>
+<h3>Pipelining</h3>
+<p>CISC is really hard to pipeline, but Intel cares about backwards compatibility. x86 is entirely backwards compatible.</p>
+<p>New Intel Chips, in hardware, take x86 and translate to a different ISA. This works and it is great.</p>
+<p>X-assemble is part of the pipeline. It's wicked fast.</p>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>

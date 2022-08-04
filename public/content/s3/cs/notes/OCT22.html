@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		
+	<!-- MathJax disabled on this page -->
+
+		
+
+
+		<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Mono&family=Open+Sans&display=swap');
+		</style>
+		<link rel="stylesheet" href="/styles/index.css?v=1657689426824">
+
+		<!-- Code Highlighting -->
+		<link rel="stylesheet" href="https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-one-light.css">
+	</head>
+
+	<body>
+		<main>
+			
+			
+
+
+<article>
+	<p><a href="../">up</a></p>
+<h1>Housekeeping</h1>
+<ul>
+<li>Exp 5 due Wednesday</li>
+<li>Proj 1 due eventually</li>
+</ul>
+<h1>Number System</h1>
+<p>We're used to sign magnitude. We have a sign, and then a magnitude. If missing,
+sign is assumed to be positive.</p>
+<blockquote>
+<p>&quot;16&quot; represents the concept of the quantity 16.<br>
+&quot;Negative Numbers Don't Exist.&quot;</p>
+</blockquote>
+<p>Agree from here-forth that the preceding negative sign multiplies the magnitude
+by -1. It's important to separate representation from concept, as we'll be working
+through many representations.</p>
+<p><code>713 = 7*100+1*10+3*10 = 7*10^2 + 7*10^1 + 7*10^0</code></p>
+<h2>Algorithm - Base 10 to Base 2.</h2>
+<p>136 to base 10</p>
+<pre><code>136 % 10 = 6
+    / 10
+ 13 % 10 = 3
+    / 10
+  1 % 10 = 1
+    / 10
+  0 % 10 = 0 -&gt; Read number upwards
+
+136(base 10), in base 10, is 136.
+
+</code></pre>
+<p>136 to base 2</p>
+<pre><code>
+136 % 2 = 0
+    / 2
+ 68 % 2 = 0
+    / 2
+ 34 % 2 = 0
+    / 2
+ 17 % 2 = 1
+    / 2
+  8 % 2 = 0
+    / 2
+  4 % 2 = 0
+    / 2
+  2 % 2 = 0
+  	/ 2
+  1 % 2 = 1
+
+  136 in base 2 is 10001000
+
+</code></pre>
+<h2>Negatives - What do they do? Do they do things? Let's find out</h2>
+<p>Due to the magic if fixed-length number systems, we can do this:</p>
+<pre><code>+------+-----------+
+| sign | Magnitude |
++------+-----------+
+</code></pre>
+<p>However, this makes negative zero possible.</p>
+<p>This also makes math hard. Adding with different signs is complicated.</p>
+<p>Therefore, sign-magnitude is problematic and slow in computers.</p>
+<h2>It doesn't have to be this way</h2>
+<p><em>The joy of 2's Complement</em></p>
+<p>To convert + to - OR - to +:</p>
+<ol>
+<li>Flip the Bits</li>
+<li>Add 1</li>
+</ol>
+<p>3 bits represents 0 to 7, or 8 numbers total.</p>
+<p>Make this signed with 2's complement:</p>
+<pre><code>  0 1 2 3   4 5 6 7
++---------+---------+
+| 0 0 0 0 | 1 1 1 1 |
+| 0 0 1 1 | 0 0 1 1 |
+| 0 1 0 1 | 0 1 0 1 |
++---------+---------+
+  0 1 2 3  -4-3-2-1
+</code></pre>
+<p>-3 plus 2 is now -1 very easily</p>
+<blockquote>
+<p>Computers only deal with translation when working with squishies</p>
+</blockquote>
+<h2>Now sign extension makes sense</h2>
+<p>Converting 4 bit numbers to 8 bits:</p>
+<pre><code> 5 =     0101
+ 5 = 00000101
+-5 =     1011
+-5 = 11111011
+</code></pre>
+<h1>Hexadeximexical</h1>
+<p>Dealing with Binary is hard for &quot;Squishies&quot;. So we use Hex.</p>
+<p>Converting binary to hex is easy - we'll get to that next time.</p>
+
+</article>
+			
+			<footer>
+				<hr>
+				<p>
+					&copy; <a href="https://ewitherington.me">Ethan Witherington</a> 2022
+				</p>
+			</footer>
+		</main>
+	</body>
+
+</html>
